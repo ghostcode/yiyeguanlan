@@ -292,6 +292,87 @@
     /* =========================================================
    书架 / 书卡
    ========================================================= */
+    /* 分类筛选条 */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 26px;
+      padding: 0 0 24px;
+      border-bottom: 1px dashed var(--rule-soft);
+    }
+
+    .filters .flabel {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 2.5px;
+      color: var(--ink-3);
+      margin-right: 2px;
+    }
+
+    .filter {
+      appearance: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: .5px;
+      color: var(--ink-2);
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 7px 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .filter:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter .cnt {
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--ink-3);
+    }
+
+    .filter.is-active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #f6ecd6;
+    }
+
+    .filter.is-active .cnt {
+      color: #e6d8bb;
+    }
+
+    .filter:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* 筛选后的隐藏与空状态 */
+    .book.is-hidden {
+      display: none;
+    }
+
+    .shelf-empty {
+      display: none;
+      padding: 44px 0 12px;
+      text-align: center;
+      color: var(--ink-3);
+      font-family: var(--sans);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .shelf-empty.is-on {
+      display: block;
+    }
+
     .shelf {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -348,6 +429,19 @@
       letter-spacing: 2px;
       color: var(--bacc, var(--accent));
       margin-bottom: 10px;
+    }
+
+    .book .cat {
+      align-self: flex-start;
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      color: var(--bacc, var(--accent));
+      background: var(--paper);
+      border: 1px solid var(--rule-soft);
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin: 0 0 14px;
     }
 
     .book h3 {
@@ -584,16 +678,33 @@
       <div class="eyebrow2" data-page-node-id="LmxFRfh3ZMYCUdPIJwzNOU"><span class="num"
           data-page-node-id="Da4fAXpVEjEX1Ap0lQ5fHl">01 /</span>THE SHELF</div>
       <h2 id="shelf-h" data-page-node-id="fEOKBToTRAVevI7ag3ODaC">书架上，目前有 <b class="tail"
-          data-page-node-id="x1A3UiOJ2rPCOvFc8OrrRF">两卷</b></h2>
-      <p class="sub" data-page-node-id="Qw5jIr0SKoY6XmnCVxPvgV">每一卷都是独立的单文件读书笔记，点开即读。卷次以编号与主色区分，但共享同一套视觉语言。</p>
+          data-page-node-id="x1A3UiOJ2rPCOvFc8OrrRF">十四卷</b></h2>
+      <p class="sub" data-page-node-id="Qw5jIr0SKoY6XmnCVxPvgV">每一卷都是独立的单文件读书笔记，点开即读。卷次以编号与主色区分，但共享同一套视觉语言；也可以按下面的分类筛选。</p>
+
+      <div class="filters" role="group" aria-label="按分类筛选卷次">
+        <span class="flabel">分类</span>
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">全部 <span
+            class="cnt">14</span></button>
+        <button type="button" class="filter" data-filter="wealth" aria-pressed="false">财富投资 <span
+            class="cnt">6</span></button>
+        <button type="button" class="filter" data-filter="mind" aria-pressed="false">心智认知 <span
+            class="cnt">3</span></button>
+        <button type="button" class="filter" data-filter="people" aria-pressed="false">人际自我 <span
+            class="cnt">2</span></button>
+        <button type="button" class="filter" data-filter="method" aria-pressed="false">方法效能 <span
+            class="cnt">2</span></button>
+        <button type="button" class="filter" data-filter="society" aria-pressed="false">社会观察 <span
+            class="cnt">1</span></button>
+      </div>
 
       <div class="shelf" data-page-node-id="EXvevijOQjDwkaehAp0mTG">
 
         <!-- NO.01 -->
-        <a class="book" href="thinking-fast-and-slow.html" style="--bacc:#8a4a2a"
+        <a class="book" href="thinking-fast-and-slow.html" style="--bacc:#8a4a2a" data-cat="mind"
           data-page-node-id="Shug9nDxrHyfoBGSbvqbUn">
           <div class="ribbon-no" data-page-node-id="k4AIN7FyPHoVix0Xmsh34u">NO. 01</div>
           <div class="kicker" data-page-node-id="77gMvXR1ifMh5iN6LOpLYS">行为决策 · 认知心理学</div>
+          <div class="cat">心智认知</div>
           <h3 data-page-node-id="cg39AvyVXyVGsnt2mqpDYQ">思考，快与慢</h3>
           <div class="author" data-page-node-id="fUoV9RVAYrEHBJfU8tHRjo">丹尼尔·卡尼曼（Daniel Kahneman）</div>
           <p class="desc" data-page-node-id="DgRlkwxgHtDHOUcAmHanQV">一部关于"我们究竟如何思考"的大书：系统 1 与系统
@@ -610,10 +721,11 @@
         </a>
 
         <!-- NO.02 -->
-        <a class="book" href="the-courage-to-be-disliked.html" style="--bacc:#2c4a63"
+        <a class="book" href="the-courage-to-be-disliked.html" style="--bacc:#2c4a63" data-cat="people"
           data-page-node-id="BABeujYefBjM7HBTnviCVK">
           <div class="ribbon-no" data-page-node-id="VkrTfWhq5Dz1nxx556khGK">NO. 02</div>
           <div class="kicker" data-page-node-id="KuHnEGi1MCnN84vipfvva0">阿德勒 · 实践哲学</div>
+          <div class="cat">人际自我</div>
           <h3 data-page-node-id="HqYfIrlU2FzUC2cGBRk3rm">被讨厌的勇气</h3>
           <div class="author" data-page-node-id="zQzVigG22r3sYTG3lF3Msw">岸見一郎 · 古賀史健</div>
           <p class="desc" data-page-node-id="KNucV86rNasCC4YlFqmHp9">
@@ -630,10 +742,11 @@
         </a>
 
         <!-- NO.03 -->
-        <a class="book" href="the-almanack-of-naval-ravikant.html" style="--bacc:#2f6b54"
+        <a class="book" href="the-almanack-of-naval-ravikant.html" style="--bacc:#2f6b54" data-cat="wealth"
           data-page-node-id="NavalBookCard">
           <div class="ribbon-no" data-page-node-id="NavalRibbon">NO. 03</div>
           <div class="kicker" data-page-node-id="NavalKicker">财富哲学 · 幸福 · 自我成长</div>
+          <div class="cat">财富投资</div>
           <h3 data-page-node-id="NavalTitle">纳瓦尔宝典</h3>
           <div class="author" data-page-node-id="NavalAuthor">纳瓦尔·拉维坎特 / 埃里克·乔根森 编</div>
           <p class="desc" data-page-node-id="NavalDesc">一位天使投资人的现代箴言集：财富是睡觉时也在赚的资产，幸福是出厂设置。特定知识、杠杆、责任、股权、复利，以及放下欲望的当下。</p>
@@ -649,9 +762,10 @@
         </a>
 
         <!-- NO.04 -->
-        <a class="book" href="the-psychology-of-money.html" style="--bacc:#9a6b1c">
+        <a class="book" href="the-psychology-of-money.html" style="--bacc:#9a6b1c" data-cat="wealth">
           <div class="ribbon-no">NO. 04</div>
           <div class="kicker">个人理财 · 行为金融 · 投资</div>
+          <div class="cat">财富投资</div>
           <h3>金钱心理学</h3>
           <div class="author">摩根·豪泽尔 · Morgan Housel</div>
           <p class="desc">财经作家用 20 个故事说明：财务结果更多由行为决定，而非金融智商。运气与风险、知足、复利、守富、自由，以及看不见的财富。</p>
@@ -666,9 +780,10 @@
         </a>
 
         <!-- NO.05 -->
-        <a class="book" href="the-weakness-of-human-nature.html" style="--bacc:#7a3d55">
+        <a class="book" href="the-weakness-of-human-nature.html" style="--bacc:#7a3d55" data-cat="people">
           <div class="ribbon-no">NO. 05</div>
           <div class="kicker">人际交往 · 沟通 · 影响力</div>
+          <div class="cat">人际自我</div>
           <h3>人性的弱点</h3>
           <div class="author">戴尔·卡耐基 · Dale Carnegie</div>
           <p class="desc">近百年不过时的"人际说明书"：让人喜欢你、说服他人、做领导者，靠的是原则而非天赋——不批评、真诚赞赏、关心他人、倾听、记住名字。</p>
@@ -683,9 +798,10 @@
         </a>
 
         <!-- NO.06 -->
-        <a class="book" href="awareness-of-cognition.html" style="--bacc:#1f6f8b">
+        <a class="book" href="awareness-of-cognition.html" style="--bacc:#1f6f8b" data-cat="mind">
           <div class="ribbon-no">NO. 06</div>
           <div class="kicker">自我成长 · 认知科学 · 习惯</div>
+          <div class="cat">心智认知</div>
           <h3>认知觉醒</h3>
           <div class="author">周岭</div>
           <p class="desc">把"知道却做不到"讲明白的成长书：用元认知跳出本能脑与情绪脑的控制，让理智脑觉醒，再以早冥读写跑把成长变成可复利的慢功夫。</p>
@@ -700,9 +816,10 @@
         </a>
 
         <!-- NO.07 -->
-        <a class="book" href="finance-made-simple.html" style="--bacc:#b0432a">
+        <a class="book" href="finance-made-simple.html" style="--bacc:#b0432a" data-cat="wealth">
           <div class="ribbon-no">NO. 07</div>
           <div class="kicker">金融通识 · 货币 · 投资理财</div>
+          <div class="cat">财富投资</div>
           <h3>秒懂金融</h3>
           <div class="author">陈材杰</div>
           <p class="desc">把"金融小白"补上理财必修课：从货币、银行到基金股票与个人投资，用生活现象讲清钱怎么流动、风险从哪来、普通人如何看懂金融并持有优质资产。</p>
@@ -717,9 +834,10 @@
         </a>
 
         <!-- NO.08 投资最重要的事 -->
-        <a class="book" href="the-most-important-thing.html" style="--bacc:#6b7233">
+        <a class="book" href="the-most-important-thing.html" style="--bacc:#6b7233" data-cat="wealth">
           <div class="ribbon-no">NO. 08</div>
           <div class="kicker">价值投资 · 逆向策略 · 风险管理</div>
+          <div class="cat">财富投资</div>
           <h3>投资最重要的事</h3>
           <div class="author">霍华德·马克斯</div>
           <p class="desc">橡树资本创始人的实战信条：投资最重要的不是"买好的"，而是"买得好"；不是冒进求胜，而是先学会控制风险。巴菲特连读两遍的必读经典。</p>
@@ -734,9 +852,10 @@
         </a>
 
         <!-- NO.09 穷查理宝典 -->
-        <a class="book" href="poor-charlies-almanack.html" style="--bacc:#6a4a93">
+        <a class="book" href="poor-charlies-almanack.html" style="--bacc:#6a4a93" data-cat="wealth">
           <div class="ribbon-no">NO. 09</div>
           <div class="kicker">投资 · 思维 · 人生智慧</div>
+          <div class="cat">财富投资</div>
           <h3>穷查理宝典</h3>
           <div class="author">查理·芒格</div>
           <p class="desc">巴菲特人生合伙人的智慧箴言录：多元思维模型、能力圈、逆向思考、人类误判心理学与终身学习。"反过来想，总是反过来想。"</p>
@@ -751,9 +870,10 @@
         </a>
 
         <!-- NO.10 刻意练习 -->
-        <a class="book" href="peak-secrets-expertise.html" style="--bacc:#16756b">
+        <a class="book" href="peak-secrets-expertise.html" style="--bacc:#16756b" data-cat="mind">
           <div class="ribbon-no">NO. 10</div>
           <div class="kicker">学习方法 · 专业特长 · 技能训练</div>
+          <div class="cat">心智认知</div>
           <h3>刻意练习</h3>
           <div class="author">安德斯·艾利克森 / 罗伯特·普尔</div>
           <p class="desc">"专业特长科学"奠基人的研究结晶：杰出不是天赋，而是正确的练习。有目的、出舒适区、有反馈、够专注——以及被误传的"一万小时定律"真相。</p>
@@ -768,9 +888,10 @@
         </a>
 
         <!-- NO.11 以终为始 -->
-        <a class="book" href="begin-with-the-end-in-mind.html" style="--bacc:#45596b">
+        <a class="book" href="begin-with-the-end-in-mind.html" style="--bacc:#45596b" data-cat="method">
           <div class="ribbon-no">NO. 11</div>
           <div class="kicker">个人成长 · 领导力 · 目标管理</div>
+          <div class="cat">方法效能</div>
           <h3>以终为始</h3>
           <div class="author">史蒂芬·柯维</div>
           <p class="desc">《高效能人士的七个习惯》第二习惯的深度展开：所有事物都经过两次创造。写下一份个人使命宣言，让你的梯子搭在正确的墙上。</p>
@@ -785,9 +906,10 @@
         </a>
 
         <!-- NO.12 高效能人士的七个习惯 -->
-        <a class="book" href="seven-habits-of-highly-effective-people.html" style="--bacc:#38488c">
+        <a class="book" href="seven-habits-of-highly-effective-people.html" style="--bacc:#38488c" data-cat="method">
           <div class="ribbon-no">NO. 12</div>
           <div class="kicker">自我管理 · 领导力 · 人际效能</div>
+          <div class="cat">方法效能</div>
           <h3>高效能人士的七个习惯</h3>
           <div class="author">史蒂芬·柯维</div>
           <p class="desc">从依赖到独立、再从独立到互赖：七个习惯串成一条由内而外的成长主线。品格先于技巧，效能在于产出与产能的平衡。</p>
@@ -802,9 +924,10 @@
         </a>
 
         <!-- NO.13 工作、消费主义和新穷人 -->
-        <a class="book" href="work-consumerism-and-the-new-poor.html" style="--bacc:#54463c">
+        <a class="book" href="work-consumerism-and-the-new-poor.html" style="--bacc:#54463c" data-cat="society">
           <div class="ribbon-no">NO. 13</div>
           <div class="kicker">社会学 · 消费文化 · 贫困研究</div>
+          <div class="cat">社会观察</div>
           <h3>工作、消费主义<br/>和新穷人</h3>
           <div class="author">齐格蒙特·鲍曼</div>
           <p class="desc">从生产者社会到消费者社会：贫穷曾经来自失业，如今来自"买不起"。工作伦理如何被发明、又如何变成审判穷人的锤子。</p>
@@ -819,9 +942,10 @@
         </a>
 
         <!-- NO.14 邻家的百万富翁 -->
-        <a class="book" href="the-millionaire-next-door.html" style="--bacc:#39605c">
+        <a class="book" href="the-millionaire-next-door.html" style="--bacc:#39605c" data-cat="wealth">
           <div class="ribbon-no">NO. 14</div>
           <div class="kicker">财富研究 · 个人理财 · 消费行为</div>
+          <div class="cat">财富投资</div>
           <h3>邻家的<br/>百万富翁</h3>
           <div class="author">托马斯·斯坦利 · 威廉·丹科</div>
           <p class="desc">访谈 14000 位白手起家的富人后得到的反直觉结论：真正的富人不住高端社区，就住在普通人隔壁。财富是攒下来的净资产，不是赚出来的高收入。</p>
@@ -836,6 +960,7 @@
         </a>
 
       </div>
+      <div class="shelf-empty">这一分类下暂时还没有卷次——换一个分类看看。</div>
     </div>
   </section>
 
@@ -873,6 +998,41 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    /* 书架分类筛选：无依赖，禁用 JS 时默认展示全部卷次 */
+    (function () {
+      var filters = document.querySelectorAll('.filter');
+      var books = document.querySelectorAll('.shelf .book');
+      var empty = document.querySelector('.shelf-empty');
+      if (!filters.length || !books.length) return;
+
+      function apply(cat) {
+        var shown = 0;
+        books.forEach(function (b) {
+          var hit = (cat === 'all') || (b.getAttribute('data-cat') === cat);
+          b.classList.toggle('is-hidden', !hit);
+          if (hit) shown++;
+        });
+        if (empty) empty.classList.toggle('is-on', shown === 0);
+        filters.forEach(function (f) {
+          var on = f.getAttribute('data-filter') === cat;
+          f.classList.toggle('is-active', on);
+          f.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      }
+
+      filters.forEach(function (f) {
+        f.addEventListener('click', function () {
+          apply(f.getAttribute('data-filter'));
+        });
+      });
+
+      /* 支持 #cat=wealth 这类深链直达 */
+      var m = /cat=([a-z]+)/.exec(window.location.hash || '');
+      if (m) apply(m[1]);
+    })();
+  </script>
 
 </body>
 
