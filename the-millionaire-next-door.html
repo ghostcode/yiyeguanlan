@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>《邻家的百万富翁》读书笔记 · by WorkBuddy</title>
+<meta name="description" content="托马斯·斯坦利《邻家的百万富翁》：财富不等于收入，真正的富人住在你隔壁——节俭、自律、净资产积累与白手起家的七个共同特征。" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为苍青，呼应"低调不炫富"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #39605c;   /* 主书签色：苍青 */
+  --accent-2:     #b08a3a;   /* 暖金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(57,96,92,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(57,96,92,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#0f2624 url("https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#0f2624;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(15,38,36,.20) 0%, rgba(15,38,36,.06) 35%, rgba(15,38,36,.82) 100%),
+    linear-gradient(90deg, rgba(15,38,36,.62) 0%, rgba(15,38,36,.20) 55%, rgba(15,38,36,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f0e9db;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }   /* 对照项 A */
+.dual .sys.b .tag{ background:var(--accent) }    /* 对照项 B */
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 八章脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="index.html" class="home" aria-label="返回系列首页">一页观澜</a>
+    <div class="brand"><span class="dot"></span> 阅读笔记 · 邻家的百万富翁</div>
+    <nav aria-label="目录">
+      <a href="#info">书籍</a>
+      <a href="#one">总览</a>
+      <a href="#dual">两组对照</a>
+      <a href="#bias">关键概念</a>
+      <a href="#map">八章脉络</a>
+      <a href="#quotes">金句</a>
+      <a href="#action">行动</a>
+      <a href="#who">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0">
+  <div class="hero-img" role="img" aria-label="一栋朴素普通的郊区住宅，象征住在隔壁的百万富翁"></div>
+  <div class="ribbon">NO. 14 · 财富心理</div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="line"></span>READING NOTES</div>
+    <h1>
+      邻家的<br/>百万富翁
+      <span class="sub">THE MILLIONAIRE NEXT DOOR · STANLEY &amp; DANKO</span>
+    </h1>
+    <p class="lede">
+      两位研究者花了 16 年、访谈超过 14000 位白手起家的富人，得到一个反直觉的结论：
+      真正的富人<b>不住在高端社区，就住在普通人隔壁</b>；他们开二手车、穿平价衣服、量入为出——
+      财富不是赚出来的，是<b>攒下来的</b>。
+    </p>
+    <div class="byline">
+      <span><b>作者</b> 托马斯·斯坦利 · 威廉·丹科</span>
+      <span><b>身份</b> 市场营销学教授 · 富人研究专家</span>
+      <span><b>首版</b> 1996 · 中文版 2023 南海出版公司</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">01 /</span>关于这本书</div>
+    <h2 id="info-h">一部用<b class="tail">一万四千份问卷</b>写成的财富真相</h2>
+    <p class="sub">托马斯·J·斯坦利（Thomas J. Stanley，1944—2015），佐治亚大学（曾任职佐治亚州立大学）市场营销学教授、社会调查研究家，研究美国富裕阶层逾 30 年；威廉·D·丹科（William D. Danko），纽约州立大学奥尔巴尼分校市场营销学副教授。二人自 1973 年起合作研究富人。本书英文原版 1996 年由 Longstreet Press 出版，踞《纽约时报》畅销书榜 179 周，全球销量逾 400 万册；中文版由南海出版公司 2023 年 10 月推出（译者朱鸿飞，271 页），全书 8 章 + 2 个附录。</p>
+
+    <div class="bookinfo">
+      <div class="meta-card">
+        <dl>
+          <dt>书名</dt><dd>邻家的百万富翁 <span class="small">/ The Millionaire Next Door</span></dd>
+          <dt>作者</dt><dd>托马斯·J·斯坦利 · 威廉·D·丹科 <span class="small">Stanley &amp; Danko</span></dd>
+          <dt>身份</dt><dd>市场营销学教授 · 富裕阶层研究学者</dd>
+          <dt>领域</dt><dd>财富研究 · 个人理财 · 消费行为</dd>
+          <dt>首版</dt><dd>1996 <span class="small">（中文版 2023，译者朱鸿飞）</span></dd>
+          <dt>结构</dt><dd>8 章 + 2 附录 · 271 页</dd>
+          <dt>样本</dt><dd>访谈 14000+ 位 <b>白手起家</b>富人</dd>
+          <dt>影响</dt><dd>纽约时报畅销书榜 179 周 · 全球 400 万册</dd>
+        </dl>
+      </div>
+
+      <div class="right">
+        <p class="thesis">
+          全书的核心主张：<b>财富 ≠ 收入。</b>
+          财富是<b>净资产</b>（你积累下来的），收入只是<b>现金流</b>（你赚进来的）。
+          高收入而高消费的人，可能一贫如洗；收入普通但持续积累的人，才是真正的富人。
+          <b>书中总结了白手起家富人的七个共同特征，几乎全部与"克制"有关，与"赚得多"无关。</b>
+        </p>
+        <div>
+          <span class="chip">#财富≠收入</span>
+          <span class="chip">#节俭</span>
+          <span class="chip">#七个共同特征</span>
+          <span class="chip">#财富积累能手</span>
+          <span class="chip">#经济门诊关怀</span>
+          <span class="chip">#净资产</span>
+          <span class="chip">#细分市场</span>
+          <span class="chip">#财务自由</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="eyebrow2" style="justify-content:center"><span class="num">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center">一句话总览</h2>
+    <blockquote>
+      变富比炫富更重要——<br/>真正的富人，<br/>住在你隔壁。
+    </blockquote>
+    <div class="src">— WEALTH IS WHAT YOU ACCUMULATE, NOT WHAT YOU SPEND</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h">两组核心对照<b class="tail">·</b>富的两种样子</h2>
+    <p class="sub">全书最锋利的两处：一是"富裕"的两种形态——靠高消费撑起来的，与靠资产负债表攒起来的；二是积累能力的两种人——规划自律的财富积累能手，与收入不低却所剩无几的低级财富积累者。</p>
+
+    <div class="dualset">
+
+      <!-- 对照 A -->
+      <div class="setlabel">A · 富裕的两种形态：收入表型，还是资产负债表型？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="收入表型富裕">
+          <div class="tag">INCOME</div>
+          <h3>收入表型富裕 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（赚得多、花得多）</span></h3>
+          <div class="sub">高薪 · 高消费 · 低净资产</div>
+          <p>钱主要从<b>工资流进来，又从消费流出去</b>。生活方式随着收入同步升级：更大的房子、更贵的车、更讲究的圈子——看起来很体面，资产负债表上却几乎没有资产。</p>
+          <ul>
+            <li><b>重心</b><span>收入与消费（利润表）</span></li>
+            <li><b>信号</b><span>靠消费品展示社会地位</span></li>
+            <li><b>风险</b><span>停工即断供，抗风险能力弱</span></li>
+          </ul>
+          <div class="quote">"高收入从来不等于高财富——它只是让高消费变得更容易。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="资产负债表型富裕">
+          <div class="tag">BALANCE</div>
+          <h3>资产负债表型富裕 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（赚得普通、攒得住）</span></h3>
+          <div class="sub">中等收入 · 低消费 · 高净资产</div>
+          <p>钱主要留在<b>资产一侧</b>：房产、股权、自营生意、长期投资。生活方式长期低于收入水平，每一笔没花掉的钱，都变成了会下蛋的资产。</p>
+          <ul>
+            <li><b>重心</b><span>资产与负债（资产负债表）</span></li>
+            <li><b>信号</b><span>低调，不需要被看见</span></li>
+            <li><b>优势</b><span>复利与选择权，抗风险能力强</span></li>
+          </ul>
+          <div class="quote">"节俭是财富大厦的基石——它不体面，但它承重。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel">B · 积累的两种人：财富积累能手，还是低级财富积累者？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="低级财富积累者">
+          <div class="tag">UAW</div>
+          <h3>低级财富积累者 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（Under Accumulator of Wealth）</span></h3>
+          <div class="sub">收入不低 · 净资产远低于应有水平</div>
+          <p>实际净资产<b>不足同龄同收入者应有水平的一半</b>。收入越高，消费升级越快；钱花在"看起来成功"的地方，而不是"真的能生钱"的地方。</p>
+          <ul>
+            <li><b>习惯</b><span>先花后存，剩余才储蓄</span></li>
+            <li><b>时间</b><span>几乎不花时间做财务规划</span></li>
+            <li><b>结果</b><span>收入涨了，自由没来</span></li>
+          </ul>
+          <div class="quote">"他们把收入的相当一部分，花在了维持'我有钱'这个形象上。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="财富积累能手">
+          <div class="tag">PAW</div>
+          <h3>财富积累能手 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（Prodigious Accumulator of Wealth）</span></h3>
+          <div class="sub">净资产达到或超过应有水平的两倍</div>
+          <p>把<b>时间、精力与金钱</b>系统性地分配给财富积累：做预算、定目标、研究投资、控制消费。收入未必最高，但每一块钱都有去处。</p>
+          <ul>
+            <li><b>习惯</b><span>先储蓄，再消费</span></li>
+            <li><b>时间</b><span>每月固定投入规划与研究</span></li>
+            <li><b>结果</b><span>财富随年龄稳步增长</span></li>
+          </ul>
+          <div class="quote">"预期净资产 ≈ 年龄 × 税前年收入 ÷ 10——你落在区间的哪一端？"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h">十张<b class="tail">书签</b>，重画"富人"的样子</h2>
+    <p class="sub">这十个概念串起全书：先纠正"财富"的定义（财富是净资产），再给出积累的方法（节俭、规划、时间分配），最后落到家庭与事业（别补贴、找利基、选对职业）。</p>
+
+    <div class="biases">
+
+      <article class="bias c1">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 01</div>
+        <h3>财富 ≠ 收入 <span class="en">Net Worth, Not Income</span></h3>
+        <p class="mech">全书的地基：<b>财富是你积累下来的净资产，收入只是你赚进来的现金流。</b>评估一个人富不富，看他资产负债表，不看他的薪水条。</p>
+        <div class="example"><b>例子</b>年薪百万、月月清零的人，净资产可能低于年薪二十万、年年存下三分之一的人。</div>
+      </article>
+
+      <article class="bias c2">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 02</div>
+        <h3>节俭、节俭、节俭 <span class="en">Frugal, Frugal, Frugal</span></h3>
+        <p class="mech">财富大厦的基石。真正的富人<b>长期生活在收入水平之下</b>：买实用的东西、修而不是换、住普通社区、不追新款。节俭不是吝啬，是把钱留在自己这边。</p>
+        <div class="example"><b>例子</b>书中大量百万富翁穿平价西装、开二手车，且从不觉得这是牺牲。</div>
+      </article>
+
+      <article class="bias c3">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 03</div>
+        <h3>PAW 与 UAW <span class="en">Accumulator Types</span></h3>
+        <p class="mech">书中把人分成两类：<b>财富积累能手（PAW）</b>与<b>低级财富积累者（UAW）</b>。判据是实际净资产与同龄同收入者"应有水平"的比值——达到两倍以上为 PAW，不足一半为 UAW。</p>
+        <div class="example"><b>例子</b>粗略参照：预期净资产 ≈ 年龄 × 税前年收入 ÷ 10。</div>
+      </article>
+
+      <article class="bias c4">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 04</div>
+        <h3>你的物品不代表你的身份 <span class="en">You Aren't What You Drive</span></h3>
+        <p class="mech">多数百万富翁<b>不买豪车</b>，偏好二手车与本国品牌。消费品是用来"证明身份"的，而证明身份恰恰是 UAW 的典型支出——真正的富人不需要这笔开销。</p>
+        <div class="example"><b>例子</b>调查显示，相当比例的百万富翁从未买过新车中的豪华品牌。</div>
+      </article>
+
+      <article class="bias c5">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 05</div>
+        <h3>经济门诊关怀 <span class="en">Economic Outpatient Care</span></h3>
+        <p class="mech">父母对成年子女的持续现金补贴。书中发现：<b>收到的补贴越多，子女自己积累的财富反而越少</b>；而那些被"断奶"的子女，往往积累得更多。</p>
+        <div class="example"><b>例子</b>替孩子付首付、还月供、补贴生活——钱给了，积累能力没给。</div>
+      </article>
+
+      <article class="bias c6">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 06</div>
+        <h3>家庭风格的平权运动 <span class="en">Family-Style Affirmative Action</span></h3>
+        <p class="mech">财富传承不是<b>平均分钱</b>，而是分给<b>能力与责任</b>。书中建议：把资源投向教育、机会与训练，让子女成为能自己积累的人，而不是等着分钱的人。</p>
+        <div class="example"><b>例子</b>与其替孩子买车，不如资助他学一门能变现的本事。</div>
+      </article>
+
+      <article class="bias c7">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 07</div>
+        <h3>找到你的细分市场 <span class="en">Find Your Niche</span></h3>
+        <p class="mech">多数白手起家的富人从事<b>不起眼但利润可观</b>的细分生意： Welding 承包、废品回收、专业配件、小众服务。<b>选对赛道，比在拥挤赛道上更努力更重要。</b></p>
+        <div class="example"><b>例子</b>附录 2 列出大量"不体面"却高利润的自营行业。</div>
+      </article>
+
+      <article class="bias c8">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 08</div>
+        <h3>时间、精力和金钱 <span class="en">Time, Energy, and Money</span></h3>
+        <p class="mech">PAW 把这三样资源<b>系统性地分配给财富积累</b>：每月固定做预算、研究投资、设定目标；UAW 则几乎不花时间在这些事上，只在消费上花心思。</p>
+        <div class="example"><b>例子</b>同样是研究，前者研究一只基金，后者研究一辆车。</div>
+      </article>
+
+      <article class="bias c9">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 09</div>
+        <h3>财务自由 &gt; 展示地位 <span class="en">Freedom over Status</span></h3>
+        <p class="mech">富人最看重的是<b>不必工作的自由</b>，而不是别人的目光。他们从"建自己的财富大厦"中获得满足，而不是从"被看见"中获得满足。</p>
+        <div class="example"><b>例子</b>他们津津乐道的是通往财务自由的道路，而不是刚买的东西。</div>
+      </article>
+
+      <article class="bias c10">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 10</div>
+        <h3>白手起家是常态 <span class="en">Mostly First-Generation</span></h3>
+        <p class="mech">调查显示，百万富翁中<b>约 80%–85% 是第一代富人</b>——财富来自长期积累，而非继承。学历、智商与财富也没有人们以为的那么强的相关性。</p>
+        <div class="example"><b>例子</b>很多富人在校成绩平平，真正起作用的是自律、节俭与选对赛道。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 八章脉络图 ============ -->
+<section id="map" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h">全书<b class="tail">八章五脉</b> · 脉络</h2>
+    <p class="sub">八章可归为五条主线：先画出邻家百万富翁的画像（一），再讲积累的方法——节俭与时间分配（二）与消费观（三），然后是家庭内部的财富传承（四），最后落在事业与职业选择（五）。</p>
+
+    <div class="chaptermap" role="list">
+      <article class="part p1" role="listitem">
+        <div class="pin">画像 · 一</div>
+        <h3>认识邻家的百万富翁</h3>
+        <div class="range">第 1 章</div>
+        <ul class="chapters">
+          <li>超过半数百万富翁不住高端社区</li>
+          <li>"富"的定义：净资产而非收入</li>
+          <li>白手起家占 80%–85%</li>
+          <li>七个共同特征速览</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem">
+        <div class="pin">方法 · 二</div>
+        <h3>节俭 · 时间精力金钱</h3>
+        <div class="range">第 2–3 章</div>
+        <ul class="chapters">
+          <li>节俭是财富大厦的基石</li>
+          <li>财富积累能手 vs 低级财富积累者</li>
+          <li>计划、预算与控制</li>
+          <li>把时间分配给财富积累</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem">
+        <div class="pin">消费 · 三</div>
+        <h3>你的物品不代表你的身份</h3>
+        <div class="range">第 4 章</div>
+        <ul class="chapters">
+          <li>百万富翁的购车风格</li>
+          <li>多为本国品牌与二手车</li>
+          <li>消费品与社会地位</li>
+          <li>高消费群体的心理</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem">
+        <div class="pin">家庭 · 四</div>
+        <h3>经济门诊关怀 · 家庭平权</h3>
+        <div class="range">第 5–6 章</div>
+        <ul class="chapters">
+          <li>父母补贴与子女财富的负相关</li>
+          <li>赠与越多，积累越少</li>
+          <li>把资源投向能力与机会</li>
+          <li>成年子女的经济自立</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem">
+        <div class="pin">事业 · 五</div>
+        <h3>细分市场 · 工作与继承人</h3>
+        <div class="range">第 7–8 章 + 附录</div>
+        <ul class="chapters">
+          <li>找到你的利基市场</li>
+          <li>自主经营的财富效应</li>
+          <li>百万富翁与继承人的差异</li>
+          <li>附录：如何找到百万富翁 / 自营行业清单</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">06 /</span>QUOTES</div>
+    <h2 id="quotes-h">五句值得抄在笔记本上的话</h2>
+    <p class="sub">这些句子（以下为原书观点的中文转述）几乎覆盖了全书的核心：财富的定义、积累的方法，以及"别把消费当成身份"。</p>
+
+    <div class="quotes">
+
+      <article class="quote-card qc1">
+        <span class="qmark">“</span>
+        <p>变富<br/>比炫富<br/>更重要。</p>
+        <div class="src">— 全书立场</div>
+      </article>
+
+      <article class="quote-card qc2">
+        <span class="qmark">“</span>
+        <p>财富是你<br/>没有花掉的收入，<br/>不是你花出去的样子。</p>
+        <div class="src">— 财富 ≠ 收入</div>
+      </article>
+
+      <article class="quote-card qc3">
+        <span class="qmark">“</span>
+        <p>节俭是<br/>财富大厦的基石——<br/>它不体面，但它承重。</p>
+        <div class="src">— 节俭、节俭、节俭</div>
+      </article>
+
+      <article class="quote-card qc4">
+        <span class="qmark">“</span>
+        <p>给成年子女越多<br/>经济补贴，<br/>他们积累的财富反而越少。</p>
+        <div class="src">— 经济门诊关怀</div>
+      </article>
+
+      <article class="quote-card qc5">
+        <span class="qmark">“</span>
+        <p>你把时间<br/>花在研究基金，还是研究新车？<br/>答案决定了你是 PAW 还是 UAW。</p>
+        <div class="src">— 时间、精力和金钱</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h">可以立刻落地的<b class="tail">八条</b>练习</h2>
+    <p class="sub">这是一本用数据说话的书，但每一条结论都能直接换成动作——尤其是"先存后花"和"把消费升级按暂停键"这两条。括号里标注了它来自哪一张书签。</p>
+
+    <div class="actions">
+
+      <div class="action">
+        <div class="ic">01</div>
+        <div>
+          <h4>算一次真正的净资产</h4>
+          <p>列出全部资产与负债，算出净值。别再问"我一年赚多少"，改问"我留下多少"。</p>
+          <span class="tag">↳ 财富 ≠ 收入</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">02</div>
+        <div>
+          <h4>对照"预期净资产"区间</h4>
+          <p>用"年龄 × 税前年收入 ÷ 10"粗略估算应有水平，看看自己落在哪一端——这是最诚实的一次自检。</p>
+          <span class="tag">↳ PAW 与 UAW</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">03</div>
+        <div>
+          <h4>记账一个月，找出"漏水的桶"</h4>
+          <p>不必永远记账，但至少记满 30 天，把最大的三项非必需支出圈出来——它们就是财富流走的地方。</p>
+          <span class="tag">↳ 节俭</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">04</div>
+        <div>
+          <h4>改成"先存后花"</h4>
+          <p>发薪日当天先转走固定比例（哪怕 10%）到不动账户，剩下的才是可花的钱。顺序一换，结果完全不同。</p>
+          <span class="tag">↳ 财富积累能手</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">05</div>
+        <div>
+          <h4>给大额消费设 30 天冷静期</h4>
+          <p>任何非必需的大额支出，先写下来等 30 天。多数"必须买"会在这一个月里自己消失。</p>
+          <span class="tag">↳ 你的物品不代表你的身份</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">06</div>
+        <div>
+          <h4>检查"身份支出"</h4>
+          <p>问自己：车、表、包、衣服里，有哪几件是为了"被看见"而买的？把它们从预算里单独标出来。</p>
+          <span class="tag">↳ 财务自由 &gt; 展示地位</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">07</div>
+        <div>
+          <h4>把"给钱"换成"给能力"</h4>
+          <p>对子女或家人，优先资助教育、技能与试错机会，而不是直接补贴消费——经济门诊关怀会削弱积累能力。</p>
+          <span class="tag">↳ 经济门诊关怀</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">08</div>
+        <div>
+          <h4>找一门"不起眼但赚钱"的副业</h4>
+          <p>列出三个你熟悉、别人嫌麻烦、且有人愿意付费的细分需求，选一个先做 90 天——利基市场比加薪更可控。</p>
+          <span class="tag">↳ 找到你的细分市场</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">08 /</span>FOR WHOM</div>
+    <h2 id="who-h">适合谁读 / 不适合谁读</h2>
+    <p class="sub">这是一本"财富认知"的入门经典——它不教你选股，而是先把"什么才算有钱"这件事讲清楚。读之前，先确认你想要的是哪一种。</p>
+
+    <div class="readers">
+      <article class="who yes">
+        <h3><span class="swatch"></span>尤其推荐</h3>
+        <ul>
+          <li>想搞清楚"<b>为什么我收入不低却存不下钱</b>"的人</li>
+          <li>刚工作、想建立<b>储蓄纪律</b>的年轻人</li>
+          <li>父母：想避免"<b>经济门诊关怀</b>"陷阱，教孩子自立</li>
+          <li>自主经营、想找<b>利基市场</b>的人</li>
+          <li>对消费主义有警觉的人——与 NO.13《工作、消费主义和新穷人》<b>互补阅读</b></li>
+          <li>想戒掉"靠消费品证明自己"的人</li>
+        </ul>
+      </article>
+
+      <article class="who no">
+        <h3><span class="swatch"></span>不推荐 / 慎读</h3>
+        <ul>
+          <li>想要<b>具体投资标的或选股技巧</b>的人：本书不谈这些（可转向本系列 NO.08《投资最重要的事》）</li>
+          <li>期待<b>复杂金融模型</b>的人：核心工具就是净资产、比值与预算</li>
+          <li>已在高净值<b>财富管理/税务规划</b>阶段的人：内容过于基础</li>
+          <li>不喜欢<b>问卷统计式写作</b>的人：全书由大量数据与访谈构成，故事性弱</li>
+          <li>期待本土化数据的人：样本为 1990 年代美国，需自行换算语境</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="mark">
+      "变富比炫富更重要——真正的富人，住在你隔壁。"
+    </div>
+    <div class="rule"></div>
+    <div class="meta">
+      读书笔记 · 《邻家的百万富翁》· 斯坦利 &amp; 丹科<br/>
+      整理 by WorkBuddy · 2026 · 本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="CVpT2MWkTd4SDstRGyamMJ">
+<head data-page-node-id="fMLtRFkIK5346jx4Bc9I8t">
+<meta charset="utf-8" data-page-node-id="MPH8qEcRPal3UpWcnrA5pV" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="1lVA7iGeNdc5AQSggE8LpF" />
+<title>《高效能人士的七个习惯》读书笔记 · by WorkBuddy</title>
+<meta name="description" content="史蒂芬·柯维《高效能人士的七个习惯》：由内而外的改变、成熟模式图、七个习惯全解、产出与产能平衡——品格先于技巧，原则先于方法。" data-page-node-id="JLOwB9NqehPqmUHGc1nIJT" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为靛蓝，呼应"原则与效能"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #38488c;   /* 主书签色：靛蓝 */
+  --accent-2:     #b08a3a;   /* 暖金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(56,72,140,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d5d8ee;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(56,72,140,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#16193a url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#16193a;
+  filter:saturate(1.05) contrast(1.02);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(22,25,58,.18) 0%, rgba(22,25,58,.05) 35%, rgba(22,25,58,.80) 100%),
+    linear-gradient(90deg, rgba(22,25,58,.58) 0%, rgba(22,25,58,.16) 55%, rgba(22,25,58,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#ced4f5; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#ced4f5;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(38px, 7.2vw, 88px);
+  line-height:1.06; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.30em; font-weight:400; letter-spacing:5px; color:#ced4f5; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e0e4f7; max-width: 56ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#ced4f5; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#eaecfa}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#eaecfa;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }   /* 对照项 A */
+.dual .sys.b .tag{ background:var(--accent) }    /* 对照项 B */
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 五篇脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body data-page-node-id="LA0NSOiBIsRIQmRQxVXQHk">
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner" data-page-node-id="b9SHlGcx1o0EbLqYhhlwTx">
+  <div class="topbar-inner" data-page-node-id="vvuvC7P8EZtbgijTxrAx61">
+    <a href="index.html" class="home" aria-label="返回系列首页" data-page-node-id="OCx2HOGvGGFCG4FxLHHcQD">一页观澜</a>
+    <div class="brand" data-page-node-id="9H1WKTI4Qn57FwcSBL2NzH"><span class="dot" data-page-node-id="5WtpFpta9wrKOqKOYSuXtt"></span> 阅读笔记 · 七个习惯</div>
+    <nav aria-label="目录" data-page-node-id="B7EPAFCGo8rpCSNwDLHkpF">
+      <a href="#info" data-page-node-id="kjw9EmoUYWXKCDlpTjYh1v">书籍</a>
+      <a href="#one" data-page-node-id="tOEdiCWt4fxgvcj9zyjsQv">总览</a>
+      <a href="#dual" data-page-node-id="mCZcziRlBpa6Uw1AsnreD7">两组对照</a>
+      <a href="#bias" data-page-node-id="P2jcGUEnkgAhqRK3zCD6fc">关键概念</a>
+      <a href="#map" data-page-node-id="8gjBwTC6HfAxEHAeOUyjh1">五篇脉络</a>
+      <a href="#quotes" data-page-node-id="3Owu8lMrez0lHRZrbIJVlD">金句</a>
+      <a href="#action" data-page-node-id="JzCn9h3JcCtabQ5VizYO1e">行动</a>
+      <a href="#who" data-page-node-id="n1XHhhNzketNVqEh0N0FDA">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="aEjJatDnraFqs82M72cxo5">
+  <div class="hero-img" role="img" aria-label="团队协作讨论，象征从独立走向互赖" data-page-node-id="7MFWfa6GefJlDxhvw9eqTe"></div>
+  <div class="ribbon" data-page-node-id="2euPOx65UMbUXoTde9FyZr">NO. 12 · 效能基石</div>
+  <div class="hero-inner" data-page-node-id="KuTZsagFsByT1JkanNFr28">
+    <div class="eyebrow" data-page-node-id="KsMbGQOg9jVgRonOAYPka8"><span class="line" data-page-node-id="HWi0MkctvIupg7YGK2SpQu"></span>READING NOTES</div>
+    <h1 data-page-node-id="ErQdaGTMwrlaArBDt9tRoc">
+      高效能人士<br data-page-node-id="I77I2HOTtlGiEGmut7obIu"/>的七个习惯
+      <span class="sub" data-page-node-id="KzF6v7n7cF2aGcDGjIkwOV">THE 7 HABITS OF HIGHLY EFFECTIVE PEOPLE · STEPHEN R. COVEY</span>
+    </h1>
+    <p class="lede" data-page-node-id="qnOnUNGZlSrF93ACZuQ7RI">
+      被《福布斯》评为"有史以来最具影响力的十大管理类书籍之一"。柯维用七个习惯串起一条成长主线：从依赖到独立，再从独立到互赖——由内而外，以原则为中心。
+    </p>
+    <div class="byline" data-page-node-id="InpDAKongcJGRm0cqJQBeu">
+      <span data-page-node-id="HsUcm25gBUPHlXQlXBgBHB"><b data-page-node-id="KgrqK8NGtoD7HShtQ31EDc">作者</b> 史蒂芬·柯维</span>
+      <span data-page-node-id="D3s6kQqMCtN2PWzvgR8cBF"><b data-page-node-id="VEpz7XM6qY4lrQSKzLaifG">身份</b> 富兰克林柯维联合主席 · "人类潜能导师"</span>
+      <span data-page-node-id="iUoMJQ2tWRrB5QljvZIee1"><b data-page-node-id="ZDyWgBz91FTblngbGQ36dQ">首版</b> 1989 · 中国青年出版社</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h" data-page-node-id="FCTsKP2kyLsliL90xJrmY9">
+  <div class="wrap" data-page-node-id="EHKXdqsHJ4Ihe9ZOm2oGVb">
+    <div class="eyebrow2" data-page-node-id="m3kIS4BTmfgxGIpx9M72D2"><span class="num" data-page-node-id="3ywSAKXByyujTq4YUCAwf0">01 /</span>关于这本书</div>
+    <h2 id="info-h" data-page-node-id="oK4D4FkEc6Y9h7GhzXMB6V">一部关于<b class="tail" data-page-node-id="DdURHT46xNdrGTgCbwoCDW">原则</b>而非技巧的经典</h2>
+    <p class="sub" data-page-node-id="mpqNOzh0sW78TUmjn9AykC">史蒂芬·柯维（Stephen R. Covey，1932—2012），哈佛商学院硕士、杨百翰大学博士，富兰克林柯维公司联合主席。本书 1989 年出版后长居畅销榜七年，译成 40 余种语言、在全球 140 多个国家发行。全书分四部分：重新探索自我 → 个人领域的成功（依赖到独立）→ 公众领域的成功（独立到互赖）→ 自我提升和完善。</p>
+
+    <div class="bookinfo" data-page-node-id="WNtH6V2WyoqE25uBaxFo9T">
+      <div class="meta-card" data-page-node-id="jEHICUGARvPYvph9haTe4r">
+        <dl data-page-node-id="86kyidYexZkOrgUDjcFGa4">
+          <dt data-page-node-id="JnN0OhqRZQKFtYAMd6P6F9">书名</dt><dd data-page-node-id="FVi0W6R5RS1f6X4NRSIhDB">高效能人士的七个习惯 <span class="small" data-page-node-id="SKIQVrJCsDeswZqZAF35ZZ">/ The 7 Habits of Highly Effective People</span></dd>
+          <dt data-page-node-id="CgFFF8PA0jrTWt65JzubGD">作者</dt><dd data-page-node-id="0CCmJdbpZ3ZXayEKs3mJIc">史蒂芬·柯维 <span class="small" data-page-node-id="CQZLDFA1upszZAe0OIBfER">Stephen R. Covey</span></dd>
+          <dt data-page-node-id="v4srxOaygRVsG9SAY0opV5">身份</dt><dd data-page-node-id="8EVlDLm3dANigmGi6R6u31">富兰克林柯维公司联合主席</dd>
+          <dt data-page-node-id="qDNr8BI1bPKau7h5TZ4uAX">领域</dt><dd data-page-node-id="Ey4vHRd5JPiA4xDgkHAtid">自我管理 · 领导力 · 人际效能</dd>
+          <dt data-page-node-id="pygn5ir4RGfccyqDaZ3Shy">首版</dt><dd data-page-node-id="V0r5P6HZplCrl3CuDjEdTY">1989 <span class="small" data-page-node-id="91WUEbOHzJrOlYlwfvsOW8">（30 周年纪念版 2020）</span></dd>
+          <dt data-page-node-id="H5qsEaNVHLGvJdPwwWCXHA">结构</dt><dd data-page-node-id="V7U4ytxyD9lrtL3l052erm">四部分 · 11 章 + 附录</dd>
+          <dt data-page-node-id="E9NxJ0xKjw7kLNf1goXXDC">核心</dt><dd data-page-node-id="eV9iYUylaqmEtYfmSIw8x3">由内而外 · <b data-page-node-id="i02fZhbvZpDGDlSWtxapxP">以原则为中心</b></dd>
+          <dt data-page-node-id="HWAT8Sq8QfsbPsteVWFAIV">影响</dt><dd data-page-node-id="kC3dEDI27TABbQXtlCFmGE">全球销量超一亿册的管理经典</dd>
+        </dl>
+      </div>
+
+      <div class="right" data-page-node-id="FFRuCY10tKVcbcSQgo2yHX">
+        <p class="thesis" data-page-node-id="UqoWfCC78F2BlkNPntuzys">
+          柯维的核心主张：<b data-page-node-id="UsIe2XBn0YTZBL0g46Hrro">真正的效能来自"品格"而非"技巧"——光有技巧远远不够。</b>
+          七个习惯不是零散的处世术，而是一条连续成长路径：
+          <b data-page-node-id="ntp6UJoWp8fZ5FTJFrZmad">前三个习惯让你从依赖走向独立（个人的成功），后三个习惯让你从独立走向互赖（公众的成功），第七个习惯让这条路径能持续运转。</b>
+        </p>
+        <div data-page-node-id="bZWvceqF9iOfRR1wKwJqxh">
+          <span class="chip" data-page-node-id="GS2X5djykd9kqwcKDIbSr0">#由内而外</span>
+          <span class="chip" data-page-node-id="AHepuFQEFCmVHIe8kfhbEM">#积极主动</span>
+          <span class="chip" data-page-node-id="gpWtga4nCYLwVAVq4LRFOi">#要事第一</span>
+          <span class="chip" data-page-node-id="9vOLmpQlAJhZTSXvzLxDne">#双赢思维</span>
+          <span class="chip" data-page-node-id="l1H3B7XRXrFBAhDJTvS4Sq">#统合综效</span>
+          <span class="chip" data-page-node-id="GB7jUrzzE5qAqwGyJ8c1pL">#不断更新</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h" data-page-node-id="YxUhp3nqDC1vxqbUEUhNWV">
+  <div class="wrap" style="padding-top:0;padding-bottom:0" data-page-node-id="OFcXdFTwADKehnxLSvuo3D">
+    <div class="eyebrow2" style="justify-content:center" data-page-node-id="ub8XOD5TYiDpMZcwnPvoyi"><span class="num" data-page-node-id="p4TbQymm3rBw5umH9CO9uS">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center" data-page-node-id="pgpfrBz2Ht1MwYBR26AJAO">一句话总览</h2>
+    <blockquote data-page-node-id="xxNFuyAprABrFk9b19Fvvo">
+      由内而外：<br data-page-node-id="o5o70HJKLx5VtqIEno3DWe"/>想改变现状，<br data-page-node-id="1frEW32RmxD7N0UOhho1SL"/>先改变自己。
+    </blockquote>
+    <div class="src" data-page-node-id="WU1c3PwJ9oAKVTQd2M5GtX">— INSIDE-OUT · PRINCIPLE-CENTERED</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h" data-page-node-id="zYMAVS7CCF3dFKHNLm2imd">
+  <div class="wrap" data-page-node-id="X5TV9Zso3G3pAx7bTShzGD">
+    <div class="eyebrow2" data-page-node-id="9sAxmxZfzjyOrZUD9CCH3e"><span class="num" data-page-node-id="YsLW4laOKDXWs48p3ySTdj">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h" data-page-node-id="lah3GwyUxTjjDhRZVKGtZV">两组核心对照<b class="tail" data-page-node-id="Qy9so0CeWKcRFDYFrYOXPS">·</b>成功观与路径</h2>
+    <p class="sub" data-page-node-id="T1qHDq69IqZGqf1lyXAG1E">全书最有力的两处：近两百年来成功学从"品格论"滑向"个人魅力论"，柯维要把重心扳回来；而七个习惯不是并列清单，而是两个阶段的接力——先赢了自己，才赢得起关系。</p>
+
+    <div class="dualset" data-page-node-id="xSUjkjHGB6J8fUCPJFfIva">
+
+      <!-- 对照 A -->
+      <div class="setlabel" data-page-node-id="WuYe0Z3QmH9dzDf3sSZkqb">A · 成功观：个人魅力论，还是品格论？</div>
+      <div class="dual" data-page-node-id="aG1PCUq3mkyUS5S1lV88CS">
+        <div class="sys a" aria-label="个人魅力论" data-page-node-id="5tKPUoD4bRg2LektJXHYuj">
+          <div class="tag" data-page-node-id="HxBrsHlyIP2dcyTS2klm0M">PERSONALITY</div>
+          <h3 data-page-node-id="iNAEHyCdPDg6dVt7D2332h">个人魅力论 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="BaMAcamXaG9qg2V7TGCb7P">（技巧取胜）</span></h3>
+          <div class="sub" data-page-node-id="134vwOAAzHXgVK8JjASJhJ">速成 · 话术 · 印象管理</div>
+          <p data-page-node-id="WnjkKEeVpNnv3HdwGOZAN3">相信成功取决于<b data-page-node-id="GNCUYKegoxuI7z59en5XdU">性格魅力、社会形象与公关技巧</b>。柯维指出：短期关系里或许管用，但<b data-page-node-id="2ZqqWkUgcUFKQ62vA8492x">光有技巧远远不够</b>——没有品格托底，技巧终会露馅。</p>
+          <ul data-page-node-id="YTtx3kRRoZYcc2HFjBvjtr">
+            <li data-page-node-id="XwETKEklTPG6Kqhuc4kyIa"><b data-page-node-id="Y7oMAi5pI8GYaqe7ycOUZ6">问题</b><span data-page-node-id="nYEj87ztFHYbziCEdCgXFb">重表面、轻根基</span></li>
+            <li data-page-node-id="XBn8zW5i9EHO26gdVDAcl2"><b data-page-node-id="0aVPTWIyKPm8HaAWV2ZsWi">盲区</b><span data-page-node-id="3AKfg7WyHwLjYxxgPtUCHL">为达目的可不择手段</span></li>
+            <li data-page-node-id="8woE7ynuVjDxlx2sxaQeFd"><b data-page-node-id="RZKDFG9loHueg4IYFMWttm">后果</b><span data-page-node-id="AwsINGDvSkvDfjyNBMFgRO">关系脆弱，难以持久</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="8H7wT4vWRJtAwSDMs9VbCn">"光有技巧还不够——内在的本质比外在的言行更有说服力。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="rtMS1JbpaNPPElbAEeT0Ah">vs</div>
+
+        <div class="sys b" aria-label="品格论" data-page-node-id="h1yGQrhRelVYb1cudRpaBU">
+          <div class="tag" data-page-node-id="EQA2tB2IPsZ9J5j9PcGwl3">CHARACTER</div>
+          <h3 data-page-node-id="z72yfvcim33dOSJpFmzNLB">品格论 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="P7bGxAAU2qFlkWXk89Oy2k">（原则取胜）</span></h3>
+          <div class="sub" data-page-node-id="2WUJQTukcMCTfYy9gRLU0d">诚信 · 谦逊 · 勇气 · 公正</div>
+          <p data-page-node-id="lC0FhAb2pC3AXBTaQ4SpV8">成功植根于<b data-page-node-id="UTUnU5aW6zQpLQsbh0Dq77">基本品格与恒久原则</b>：诚信、谦逊、勇气、正义、耐心。这些原则像灯塔，<b data-page-node-id="F5kBUpH3ctt1mJwcfcAL7Z">不随潮流改变，也不因场合失效</b>。</p>
+          <ul data-page-node-id="60UgZkKtSp2wA5HS0tZgJF">
+            <li data-page-node-id="uGSQYt4De9KtffZKf0GqF7"><b data-page-node-id="9QDK0ClBPIj8HgyhgGisB4">关键</b><span data-page-node-id="1qxuh6nh6sGE23efZmoa85">以原则为中心</span></li>
+            <li data-page-node-id="4jHROMy1pH8XCPeFQAlXAj"><b data-page-node-id="CCwhcYSB5C0YSZcbe4v5RV">方法</b><span data-page-node-id="b61TQBvtXogm1FALJREROc">由内而外的修炼</span></li>
+            <li data-page-node-id="svn9ven5JMiLAGcl28gAnc"><b data-page-node-id="FGLTvRfOgk9IGWtAHt4MSl">回报</b><span data-page-node-id="XRHebs5TY49kZP0zpcxcHW">真正的成功与恒久的快乐</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="932uiF2MqbI9bSyHme3eEe">"唯有修养自己的品德，才能享受真正的成功和恒久的快乐。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel" data-page-node-id="Kf5n13rEHAGUUq5w1hRHdC">B · 路径段：个人的成功，还是公众的成功？</div>
+      <div class="dual" data-page-node-id="LmRRU6SN6heQJROOYOlB5M">
+        <div class="sys a" aria-label="个人的成功" data-page-node-id="qLd4xuoAi1FKrOCDNfHT0b">
+          <div class="tag" data-page-node-id="N0BRbKMlsHt6kuzdeeIF2v">PRIVATE</div>
+          <h3 data-page-node-id="w3dAT95GbVUhCLr9F7MXZY">个人的成功 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="OSowHWo5IYhDyWCL5WP13J">（依赖 → 独立）</span></h3>
+          <div class="sub" data-page-node-id="GLFfbSF18aMfYq00FuqcOV">习惯一 / 二 / 三</div>
+          <p data-page-node-id="7iSZFENrRZD5rzqAh4agox">积极主动、以终为始、要事第一——<b data-page-node-id="qMBtbffr6KuddzbZ9mqaOs">先把自己从"依赖他人"里解放出来</b>。这是"自我掌控"的胜利，也是互赖的前提。</p>
+          <ul data-page-node-id="nPRHiDFWZ2ebSKZAS3XzFq">
+            <li data-page-node-id="oSwni6gY4SWjEEoBzLAueO"><b data-page-node-id="OK2HXaFQIF81kHT069lOwF">关键</b><span data-page-node-id="KLIXGlQczIrHZAE5OZ0iHE">我是我行为的主人</span></li>
+            <li data-page-node-id="fOBHN6pbNvtHpK7BRjtxHs"><b data-page-node-id="nYgQjHzDtRFlBmmtg8KdFa">标志</b><span data-page-node-id="OwJkVZKsTukx48S9R7CZZr">能对自己负责、守承诺</span></li>
+            <li data-page-node-id="9cfnLbD7ByjCQkPTNIXZuo"><b data-page-node-id="CCq7CtiCP13hVWeHUDH08d">局限</b><span data-page-node-id="5zVVGYZsFXFVUypqnSAJw8">独善其身，止步于此</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="vZGxahYiZSkerdwVlihzjg">"独立是互赖的基础——你无法跳过它。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="yXt2SIrUT5rhWbITH7uVRp">vs</div>
+
+        <div class="sys b" aria-label="公众的成功" data-page-node-id="Dj9nqSorwH9kl0lLDs5qrR">
+          <h3 data-page-node-id="lO9K1THdhompwLhQD4zjWK">公众的成功 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="nM1Jy5cCH7regLVfaLeP2x">（独立 → 互赖）</span></h3>
+          <div class="sub" data-page-node-id="eAG4KgGTfwXjQI1F38ON3B">习惯四 / 五 / 六</div>
+          <p data-page-node-id="a8oEOUHcxq8tElOb0FFKcQ">双赢思维、知彼解己、统合综效——<b data-page-node-id="X3UvxYy0xSNaX8bP7qoH27">在与他人的深度合作中创造单打独斗拿不到的成果</b>。互赖比独立更成熟，也更需要底气。</p>
+          <ul data-page-node-id="qZ3meA7mFKZvlFttuFxEYs">
+            <li data-page-node-id="oWhwXsZbuLQtgorixDlglv"><b data-page-node-id="AAj0mdw4iHU9pvmAqSSJWA">关键</b><span data-page-node-id="DV9sczAtDyHd96oDbwRXPz">从"我"到"我们"</span></li>
+            <li data-page-node-id="ehFjyur0yGnRSHV5x3rvq2"><b data-page-node-id="5WoNVGdRopXZuxTuABcHHL">方法</b><span data-page-node-id="cdDgPmkI3xkGBN15k8wRto">先理解别人，再被理解</span></li>
+            <li data-page-node-id="EwyuSGlddukNmaCqQ8Foe3"><b data-page-node-id="fjo09YEmWH1XdgeiLmoujH">回报</b><span data-page-node-id="OBMF82V7KiV0MpiDHAXkmd">1 + 1 &gt; 2 的统合综效</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="ZCrxQlegh4MvTybilPv6Kr">"只有独立的人，才能真正选择互赖。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h" data-page-node-id="Jt2ItwSW5qO6qDMFwzR9MX">
+  <div class="wrap" data-page-node-id="k9Fxvi5UbxxrlqtxD1WI20">
+    <div class="eyebrow2" data-page-node-id="5zqwA3t4vU2R7ajLeGe9Ls"><span class="num" data-page-node-id="NHfHKowWo0t2eKTvt6gGO0">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h" data-page-node-id="hOVhCPmfJJzB0BDaN0ntyJ">十张<b class="tail" data-page-node-id="y0dxZw9gP4scz5xySEpn9C">书签</b>，理解七个习惯</h2>
+    <p class="sub" data-page-node-id="kYPRsTsbSjQEbzb8phVFAM">这些不是术语，而是十个"由内而外改变"的抓手。每一张都对应一个让你从"被动等待"转向"主动创造"的瞬间。</p>
+
+    <div class="biases" data-page-node-id="tzGJZITPl24KQPN7pZ15XU">
+
+      <article class="bias c1" data-page-node-id="rx4UUnbGILfU2MylSwcA9g">
+        <div class="ribbon-top" data-page-node-id="TdrqCrAo4VqXHDqODHhL5X"></div>
+        <div class="num" data-page-node-id="Rh7I03Yp9yjNIfFY8SNGD6">N° 01</div>
+        <h3 data-page-node-id="Zm8MXd9S6DF2yieg3NKGjH">成熟模式图 <span class="en" data-page-node-id="f1zXgVEtP2wxdJnwh9A9Zm">Maturity Continuum</span></h3>
+        <p class="mech" data-page-node-id="cD13i3hJhdW6e4chyPGeRF">成长的三个阶段：<b data-page-node-id="k5qOcC49cKib71XceKa5cV">依赖（你说）→ 独立（我说）→ 互赖（我们说）</b>。独立是个人胜利的终点，互赖才是公众胜利的起点。</p>
+        <div class="example" data-page-node-id="qVxyUyCMqwVtMGSLbL1fFk"><b data-page-node-id="LPaiTLwzjKfe6tDzkMz31u">例子</b>孩子依赖父母；成年人独立负责；成熟的人选择深度合作。</div>
+      </article>
+
+      <article class="bias c2" data-page-node-id="VsbKCHSphfsiWxED47Wokr">
+        <div class="ribbon-top" data-page-node-id="0N5HCzjMjBlSu6bp8gl5LW"></div>
+        <div class="num" data-page-node-id="uRmM6Q67KNXcGj28EHYLik">N° 02</div>
+        <h3 data-page-node-id="QFF7ED6CMPiQHEltdpEFXz">积极主动 <span class="en" data-page-node-id="rNA66xXPwwJcFMggRQMz6G">Habit 1 · Be Proactive</span></h3>
+        <p class="mech" data-page-node-id="7g0AuspNp2QAW9hHjr1WrI">在刺激与回应之间，人有<b data-page-node-id="Gnp7IhiAJd0oxKzDKazU7G">选择的自由</b>。主动的人依据原则和价值观做决定，而不是依据情绪或环境。</p>
+        <div class="example" data-page-node-id="RmdHSXuyontjXoO8RRC47T"><b data-page-node-id="gbbtW5TSAD8QmvZsVzf0UZ">例子</b>被客户投诉，先想"我能怎么解决"，而不是"都怪谁"。</div>
+      </article>
+
+      <article class="bias c3" data-page-node-id="l3jqswhJaGHjXsQoVPOctJ">
+        <div class="ribbon-top" data-page-node-id="93oykNVP5njMjqlt7P9LWo"></div>
+        <div class="num" data-page-node-id="t9YiWj5mHKJr1x9HZIjFJq">N° 03</div>
+        <h3 data-page-node-id="3Qf8pbzqDTlmOCfEL7EVl3">以终为始 <span class="en" data-page-node-id="nDLBH6kq9S1O73dPh0AmBN">Habit 2 · Begin with the End</span></h3>
+        <p class="mech" data-page-node-id="Lh8HyTdrE5jp5xKoiA2tbc">所有事物都经过<b data-page-node-id="B80P4fRPTk2GNmGVHNRDuz">两次创造</b>：先有心智上的创造，后有实际的创造。领导（Leadership）先于管理（Management）。</p>
+        <div class="example" data-page-node-id="Rm8L5fJELxfrwio948Lk27"><b data-page-node-id="Wt2f36PPegf8wgJfABeBo6">例子</b>先画出"完成时是什么样"，再决定第一步怎么走。</div>
+      </article>
+
+      <article class="bias c4" data-page-node-id="zOuxdKzkuFxxCLvSzYhSEV">
+        <div class="ribbon-top" data-page-node-id="CoDL6EjpHOyJzoV1alWPTq"></div>
+        <div class="num" data-page-node-id="A3EaMriDfna8z0OdsI1HXy">N° 04</div>
+        <h3 data-page-node-id="UEp9RRHB1U575BeEl6jZJW">要事第一 <span class="en" data-page-node-id="KR0yBXUtkmlLiiDaCkxWQx">Habit 3 · Put First Things First</span></h3>
+        <p class="mech" data-page-node-id="cIKCFc9zvVYrA9Z5RpKPPr">按<b data-page-node-id="EjHKRLCV5pDgQlRwnk5c1t">重要/紧急</b>分四象限。高效能者把时间押在<b data-page-node-id="bR3VOHtVCZW0nhNE8IuM4o">第二象限：重要但不紧急</b>（建立关系、规划、学习、预防）。</p>
+        <div class="example" data-page-node-id="nPQeODLM2IvjAbF1zBjNQX"><b data-page-node-id="SA2OmBAqUFELXroZxeSXuq">例子</b>每天留出的第一小时，用来做"重要不紧急"的事，而不是回消息。</div>
+      </article>
+
+      <article class="bias c5" data-page-node-id="29WUIski1UgfLmxPkc8QMz">
+        <div class="ribbon-top" data-page-node-id="QcWKs3n96hJOBotzWa9TrG"></div>
+        <div class="num" data-page-node-id="woQsNj6G29AWbYLWhwCf3p">N° 05</div>
+        <h3 data-page-node-id="R22F5sM3xQTSsH5Od5cIDn">双赢思维 <span class="en" data-page-node-id="nLHCD1JDpG5aHr2FsYYKBP">Habit 4 · Think Win-Win</span></h3>
+        <p class="mech" data-page-node-id="SvC8IQ4A7v95sjXr9HkhHp">人际领导的六种模式里，只有<b data-page-node-id="AVjdzAgQewCGUfxvPXcpZq">双赢（利人利己）</b>能长期成立。它不是技巧，而是一种<b data-page-node-id="HgmlWqq8Zck5hQYGElMCFy">富足心态</b>——相信资源足够分。</p>
+        <div class="example" data-page-node-id="QaOCKOA6r82y2vxijBgFgr"><b data-page-node-id="7cdQlrNXXcH6ZTvCWm67I6">例子</b>谈合作时先问"怎样让双方都赚到"，而不是"我能多拿多少"。</div>
+      </article>
+
+      <article class="bias c6" data-page-node-id="aKqZSYDPC5mqPOlbfFWweE">
+        <div class="ribbon-top" data-page-node-id="5uHDQS8QjREluPZrKwVVW9"></div>
+        <div class="num" data-page-node-id="DnOpAou1Re1SDVlw8GghtD">N° 06</div>
+        <h3 data-page-node-id="AHASt5Ivw0QG4vrtlhB1JI">知彼解己 <span class="en" data-page-node-id="k7QDhPuPYC5MHlBMdWvXsX">Habit 5 · Seek First to Understand</span></h3>
+        <p class="mech" data-page-node-id="fGDzL65pwc5vCqQpNHZRl3">大部分人倾听是为了回答，而不是为了理解。<b data-page-node-id="YRINDHQhchf68F595hk5uC">先听懂对方，再争取被理解</b>——顺序一换，沟通立刻不同。</p>
+        <div class="example" data-page-node-id="4WzCth1tY56pk1BnNQipSD"><b data-page-node-id="FEfDDsIkXf0cExvSnfOjU6">例子</b>复述对方的意思直到他点头："所以你真正担心的是……对吗？"</div>
+      </article>
+
+      <article class="bias c7" data-page-node-id="XF7gSQgLlEwnLJpCNgFb99">
+        <div class="ribbon-top" data-page-node-id="e8FbfnI4CALIkmArT7DnTF"></div>
+        <div class="num" data-page-node-id="T0mCpUKw6NhFxxDb8li7nr">N° 07</div>
+        <h3 data-page-node-id="IRSegq7vbsdDvO7X97bAgc">统合综效 <span class="en" data-page-node-id="05uJfV9DN9Vfunyt4BcCGY">Habit 6 · Synergize</span></h3>
+        <p class="mech" data-page-node-id="myF3QfWcrowEV0RgMMEC5U">创造<b data-page-node-id="7JNC7DczdmByLtgvziamPB">第三种选择</b>——不是照我的、也不是照你的，而是比两个人各自的方案都更好的那个。1 + 1 可以大于 2。</p>
+        <div class="example" data-page-node-id="mHICwgdDrPuvdwDZEBdykY"><b data-page-node-id="POPRC5KjLaEBQaRbBzRTP2">例子</b>分歧越大，越值得找"第三方案"；差异本身就是增量。</div>
+      </article>
+
+      <article class="bias c8" data-page-node-id="zbo4Xfy0AgjSHfhD4dbW6K">
+        <div class="ribbon-top" data-page-node-id="G7LFHCBwZXgXyeowlXZnk1"></div>
+        <div class="num" data-page-node-id="XAh4rU1woEcHxKVed4QRFK">N° 08</div>
+        <h3 data-page-node-id="wBODT4HIDXmSShjaqHnk48">不断更新 <span class="en" data-page-node-id="iXKKqnUuYmg19wypmoyrEi">Habit 7 · Sharpen the Saw</span></h3>
+        <p class="mech" data-page-node-id="SrKAy3twqxlNW3EeDcadHU">在<b data-page-node-id="XCCwnUJ88PmEeUwPmmliqi">身体、精神、智力、社会/情感</b>四个维度持续磨刀。这个习惯提升其他六个习惯的效率，是"产能"的保养。</p>
+        <div class="example" data-page-node-id="luXvEbut8r1eIGuhEZT20I"><b data-page-node-id="YIGBQTWUXtJxKiY9p6NoSV">例子</b>每周固定的运动、阅读、独处与重要关系——都是在磨自己的锯。</div>
+      </article>
+
+      <article class="bias c9" data-page-node-id="dGtEp0h94zNE73EI9aMhrl">
+        <div class="ribbon-top" data-page-node-id="y6NoUIhHXRKoGy7RXB7jrG"></div>
+        <div class="num" data-page-node-id="zeR5LKPuS9xiHCq4zCOcSz">N° 09</div>
+        <h3 data-page-node-id="ok2Ld1GF69avamBTzJeXZ6">产出/产能平衡 <span class="en" data-page-node-id="6Uwr4mrwAmpv8gTwCjAIsG">P/PC Balance</span></h3>
+        <p class="mech" data-page-node-id="M8lwvVPaPci45uMabZaViA">真正的效能，是<b data-page-node-id="8bkUdNyQ1UPdKrYVGCFbPt">产出（金蛋）与产能（下金蛋的鹅）之间的平衡</b>。只重结果会杀掉产能，只重保养则拿不到结果。</p>
+        <div class="example" data-page-node-id="O5jdSSgQzyhK5Po7xOtNrD"><b data-page-node-id="FAW0wBD1mEV1DQVflQL8qW">例子</b>为了交差连续熬夜，是在杀鹅；只学习不产出，是在空养鹅。</div>
+      </article>
+
+      <article class="bias c10" data-page-node-id="6CSVU5a31yw91Zz203LFDi">
+        <div class="ribbon-top" data-page-node-id="rJwmQNAeaRkzyHsIXd9KqX"></div>
+        <div class="num" data-page-node-id="ZpCeU8bf53MGrX9cb4HjyI">N° 10</div>
+        <h3 data-page-node-id="StwrJXyu8GwmbIz17wY1YY">习惯是什么 <span class="en" data-page-node-id="sJ4oHLess1VxNTfEeoTJZJ">Knowledge · Skill · Desire</span></h3>
+        <p class="mech" data-page-node-id="bxJbNoKEqRo1ovnu5Fx0xr">习惯是<b data-page-node-id="GeDKIScZA8aAZedk3gSI2F">知识（做什么、为何做）× 技巧（怎么做）× 意愿（想做）</b>三者的交集。缺哪一样，习惯都立不住。</p>
+        <div class="example" data-page-node-id="8w8OcjNbHPAWKHKOhTAVH3"><b data-page-node-id="1NGQPjEjAwFa53zfRE2CK9">例子</b>"知道该锻炼"不够，还得会安排、并且真的想做——三样齐了才成习惯。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 五篇脉络图 ============ -->
+<section id="map" aria-labelledby="map-h" data-page-node-id="HU0Eta7nyUyPqMr1L6TU22">
+  <div class="wrap" data-page-node-id="vfAyApGLp7fBqsZV3BzPpB">
+    <div class="eyebrow2" data-page-node-id="FDMcOqP3NUcH19iG7F75Ep"><span class="num" data-page-node-id="xRomxvCHegyL3hMtWZ00Mt">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h" data-page-node-id="XqepFfpQP9cT332OA2MT3S">全书<b class="tail" data-page-node-id="wFXwJJFVuLuqgatiVGRR8b">思维·独立·互赖·更新·实践五脉</b> · 脉络</h2>
+    <p class="sub" data-page-node-id="EGQBNYW8YIRjlUJlZxu87x">全书四部分 11 章可归为五条主线：先换"看世界的镜头"，再走个人成功（依赖→独立），接着走公众成功（独立→互赖），然后用"不断更新"给整套系统充电，最后落到时间管理与周计划的实操。</p>
+
+    <div class="chaptermap" role="list" data-page-node-id="1wLiO0yrUaKwYChdLeWnyU">
+      <article class="part p1" role="listitem" data-page-node-id="DUDheFtYprhvV4nHf1xMDW">
+        <div class="pin" data-page-node-id="Dl5CO7XPgMWtaHxrMrvokE">思维 · 一</div>
+        <h3 data-page-node-id="UbOylbwAAUPxa5v2qyDEa0">重新探索自我</h3>
+        <div class="range" data-page-node-id="lTavt4CPk1ceQeTk8GTvye">第 1–2 章</div>
+        <ul class="chapters" data-page-node-id="P92NZEZWlpWVpj5NeLRaUS">
+          <li data-page-node-id="yfz28WA6UFfcXocbxSNhrN">由内而外全面造就自己</li>
+          <li data-page-node-id="HJ0IQubTRdLa3ojn4ydti0">思维定式与"心灵地图"</li>
+          <li data-page-node-id="F0Y1tFrws6Sg5ABe0BsmxP">七个习惯——概论</li>
+          <li data-page-node-id="YyBSbJ2cJ8Gixus1S8DQPg">品格论 vs 个人魅力论</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem" data-page-node-id="LU0N7QB8kCE2xKf0jZq0rj">
+        <div class="pin" data-page-node-id="KTt9tUGIA91K6FJNIe4ssb">独立 · 二</div>
+        <h3 data-page-node-id="wCjIzyKUUv1dDbDpB23WmV">个人领域的成功</h3>
+        <div class="range" data-page-node-id="Oxod8HEoYa1hF4f1XM1BDg">第 3–5 章</div>
+        <ul class="chapters" data-page-node-id="fyckQBr1FuFwrIpGNHjNBO">
+          <li data-page-node-id="yQS8wA3W91osP7rndvio9n">习惯一：积极主动</li>
+          <li data-page-node-id="0PTUXcE0UKurHMHEctEWi7">习惯二：以终为始</li>
+          <li data-page-node-id="sYGtyPGF1KHIDzbbHpl2oc">习惯三：要事第一</li>
+          <li data-page-node-id="E2PHIqUDJJbW0wHd2Xdw7m">从依赖到独立</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem" data-page-node-id="BYOWugzHpCFtLAZSb7KIoj">
+        <div class="pin" data-page-node-id="Lz05p0dt6VBLKHBZRfrpes">互赖 · 三</div>
+        <h3 data-page-node-id="6PtY7oDiyCkEDKoWIv89Ov">公众领域的成功</h3>
+        <div class="range" data-page-node-id="Atu4Y1oOVYWMj1QNJdfPd7">第 6–9 章</div>
+        <ul class="chapters" data-page-node-id="rq3R8TBQYZfhjRFeBXaEY1">
+          <li data-page-node-id="rHEQRwThx3jU7caby1VskX">人际关系的本质 / 情感账户</li>
+          <li data-page-node-id="0SbEaFj8JE9Bdw6SUc0SzH">习惯四：双赢思维</li>
+          <li data-page-node-id="WGmsbGmYE87EYasUFCekwQ">习惯五：知彼解己</li>
+          <li data-page-node-id="GYGzcZWyNEaEC77GHStjNt">习惯六：统合综效</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem" data-page-node-id="EeoAC4F5IMiGjWI6MO85hu">
+        <div class="pin" data-page-node-id="CKaN9rYWNSiykGJbVUceMS">更新 · 四</div>
+        <h3 data-page-node-id="lyvs3HOpCDgPLcwp6yxFoF">自我提升和完善</h3>
+        <div class="range" data-page-node-id="TwsZqNtsSF9d8CijPvjAqj">第 10–11 章</div>
+        <ul class="chapters" data-page-node-id="R0FzCvCodlxTtEN86u5avJ">
+          <li data-page-node-id="P7geVrQ8ze2EsU7vZZe00B">习惯七：不断更新</li>
+          <li data-page-node-id="52C9FGkSyosWakeJsyusAo">身体 / 精神 / 智力 / 社会情感</li>
+          <li data-page-node-id="d9SlrmxeqfJxNsaNlaYxQO">再次由内而外造就自己</li>
+          <li data-page-node-id="pFfE8kkrHCj3kx6DQ11ZsT">平衡的自我更新</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem" data-page-node-id="czBseoIyGwaE62padita6x">
+        <div class="pin" data-page-node-id="H0yvcOBirxc3nflaFAhp4z">实践 · 五</div>
+        <h3 data-page-node-id="AyBhPgNf8etihV4HZw5Yfz">工具与落地</h3>
+        <div class="range" data-page-node-id="J6yaBNl2q6CAFW0779x2GA">附录</div>
+        <ul class="chapters" data-page-node-id="OrlICeX29ni9Cee23X8hPd">
+          <li data-page-node-id="7BCYIgFwETe26yeHb0raSV">你是哪种类型的人（生活中心）</li>
+          <li data-page-node-id="qE56KnIPeB8uYM2sgxLLBa">第四代时间管理</li>
+          <li data-page-node-id="jy7Uz39GWdNp8w9MgZ5lz5">高效能人士的一天</li>
+          <li data-page-node-id="HEWwf31JIvA5poZXgAtPOS">制订你的周计划</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h" data-page-node-id="UoexNGnb15xqHZorao1MGh">
+  <div class="wrap" data-page-node-id="OVzwlBdahUfIUA0leVBHLD">
+    <div class="eyebrow2" data-page-node-id="Bc14EfCBayuqgFrEYIPRwp"><span class="num" data-page-node-id="bCRkhy7bqrxNi0Tbm7tRat">06 /</span>QUOTES</div>
+    <h2 id="quotes-h" data-page-node-id="2HNGyxPNpsnU0BPbqpsdSW">五句值得抄在笔记本上的话</h2>
+    <p class="sub" data-page-node-id="DEmf2nXHn4iCSV4Sh8TarL">柯维的话朴素而有力。这几句，几乎覆盖了"如何由内而外地提升效能"的全部底层逻辑。</p>
+
+    <div class="quotes" data-page-node-id="rN7ljBqaqgGMfBMwkHQw82">
+
+      <article class="quote-card qc1" data-page-node-id="t1fvY3d0c79CfHwt80B66G">
+        <span class="qmark" data-page-node-id="rMoVHy3vs9i1aoG2GCXE80">“</span>
+        <p data-page-node-id="mK8QCGY5YVHkQMKlErxgL6">想改变现状，<br data-page-node-id="NJJMzGqYDFO9aUwVG69Ose"/>先改变自己；<br data-page-node-id="AQgTQZysfgKBuCV5yxHi8y"/>想改变自己，先改变看法。</p>
+        <div class="src" data-page-node-id="MMIZDNWKx1Y0zrAjIhCFUx">— 由内而外</div>
+      </article>
+
+      <article class="quote-card qc2" data-page-node-id="dIPEpvw2RpEXcHvMyTaHGa">
+        <span class="qmark" data-page-node-id="lVuak7BBh1caSAY2T2mqf1">“</span>
+        <p data-page-node-id="vcwrEF9sUdZiMX4nFj0Bw2">真正的效能，<br data-page-node-id="cCWWiNZZF4gAA9CIdDpNpE"/>在于产出（金蛋）<br data-page-node-id="1yjJIfL7mrP1S5t9JxzUTz"/>与产能（鹅）之间的平衡。</p>
+        <div class="src" data-page-node-id="b6NAiQcbSMhba5uoDE266v">— P/PC 平衡</div>
+      </article>
+
+      <article class="quote-card qc3" data-page-node-id="b7aH8g9VE9TbKNAGmibjyc">
+        <span class="qmark" data-page-node-id="FYO54LQw7bPG4qPYHVbBfO">“</span>
+        <p data-page-node-id="gkni5FzmH8SXp80UNWV54G">主动的人把精力放在影响圈，<br data-page-node-id="OA6DTU0n447DcgXdquGSOz"/>被动的人盯着关注圈。</p>
+        <div class="src" data-page-node-id="xJ05N23WtFE132Uuerj1JA">— 积极主动</div>
+      </article>
+
+      <article class="quote-card qc4" data-page-node-id="ztojPMslNk2g1ttCe2eZDu">
+        <span class="qmark" data-page-node-id="QtBTmq8FdXy0HQaxUFYTVl">“</span>
+        <p data-page-node-id="DOaLAAVwvN4okhZR29XkU8">要事第一：<br data-page-node-id="E97A8OAHu9LG0cjxCsaR4m"/>次要的事不必摆在第一，<br data-page-node-id="3S5rwJawFL3MnQD4zx31PC"/>要事也不能放在第二。</p>
+        <div class="src" data-page-node-id="ADOodbXd65KG4QEr2QVR1o">— 要事第一</div>
+      </article>
+
+      <article class="quote-card qc5" data-page-node-id="Cn7fZaFqiijcCCDN4S5CtF">
+        <span class="qmark" data-page-node-id="eGhzXyzB5yH5i0F9Lh2ycO">“</span>
+        <p data-page-node-id="cMICsy2MPRG6fERV4TMvoV">习惯，是知识、技巧<br data-page-node-id="H6bP7KnfgROUBOaGg40KS5"/>与意愿三者的交集。</p>
+        <div class="src" data-page-node-id="CUZ5ZF4lpf7wIJIwEM4zaj">— 七个习惯概论</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h" data-page-node-id="TqCj8YFHHDCTh8jZOY6Fah">
+  <div class="wrap" data-page-node-id="XyDwCqPB2arwpDiWRICXZq">
+    <div class="eyebrow2" data-page-node-id="gUBFf9b8mIxYckpFg1jMVF"><span class="num" data-page-node-id="5kLozAZUWCus3CIGDsFHjp">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h" data-page-node-id="dixceBTFHws34k3g7sH0od">可以立刻落地的<b class="tail" data-page-node-id="ihJf2nNcIdCTP0bsv8oyEY">八条</b>练习</h2>
+    <p class="sub" data-page-node-id="tRZ1NAyhCyklKP1eAoOBe3">七个习惯不玄乎——每条都能直接上手。括号里标注了它来自哪一张书签。</p>
+
+    <div class="actions" data-page-node-id="e8sHr3pO1DevWTdnPQ6BYw">
+
+      <div class="action" data-page-node-id="j6UGKubPCe8qC73ZKA7hUm">
+        <div class="ic" data-page-node-id="1dPOCYBpEEO3c41xZaNkYU">01</div>
+        <div data-page-node-id="8X9w9Dl6vB6RoyTka2GBwb">
+          <h4 data-page-node-id="ZpA3G5GvFKssJFV3Dq9jDk">画两个圈：关注圈与影响圈</h4>
+          <p data-page-node-id="6kCFGzYQdA8pX3qpLZFNPL">列出本周烦恼的事，分成"我能改变"和"我改变不了"，把精力全押在前者。</p>
+          <span class="tag" data-page-node-id="Ce18IV4RJioEBHm3e4Cdpq">↳ 积极主动</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="Iyv0HBJ6ZOabPLl3gvGQfp">
+        <div class="ic" data-page-node-id="mNwqpGe1dK3cLkumHO1aBu">02</div>
+        <div data-page-node-id="CGgSLVgt0lCFB1qswa6gNG">
+          <h4 data-page-node-id="vUPm9V6WXRU44mmmhtZdQa">把语言换成主动句</h4>
+          <p data-page-node-id="hjyQce1FIHIxXGQzOQvyX4">把"我不得不""如果……就好了"，换成"我选择""我可以"。语言会反向塑造心态。</p>
+          <span class="tag" data-page-node-id="9YOitpOe8qWTwwX5pEcwFH">↳ 积极主动</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="iNpfuAyXSuQ6L2Qiboa5K4">
+        <div class="ic" data-page-node-id="ehhkNUirpl0BKxe4awygpW">03</div>
+        <div data-page-node-id="RwoqhUtc3CoZDOpDIHcMFX">
+          <h4 data-page-node-id="2rqLbUJbspwWeq8T483HNs">写下你的使命宣言</h4>
+          <p data-page-node-id="YoHk8rsfkwzdYo2M2YiDSb">你是谁、你要什么、你按什么原则活。写完贴出来，重大决策拿它对照。</p>
+          <span class="tag" data-page-node-id="77MnwZmUcoGjM4gesHYahS">↳ 以终为始</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="i1pu8C2YTNXawR1TuJqTYS">
+        <div class="ic" data-page-node-id="9Ga7zAeRlFF64QVNAwO8Lj">04</div>
+        <div data-page-node-id="mLHl9wBzfhoHrgjDSUaSFG">
+          <h4 data-page-node-id="u4iXDUAO8v7N6chxjprYQZ">做一次周计划</h4>
+          <p data-page-node-id="RPZZrE1SMJZdhk7HSXBfZH">先定角色（自己/家人/职业者/学习者），再为每个角色定一件"重要不紧急"的事，排进日历。</p>
+          <span class="tag" data-page-node-id="BbikED3Dy6FSvNBcVGUjxw">↳ 要事第一</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="7ziaNV7EG2RAylSvFZqb8u">
+        <div class="ic" data-page-node-id="j4iRpXd90gKFnNikLLlFEw">05</div>
+        <div data-page-node-id="LmJKLRbqUSx3b1GOQAGzEX">
+          <h4 data-page-node-id="p9Ogrnl5r5X7FRcV2pG0sD">给四象限做统计</h4>
+          <p data-page-node-id="oxQdHEAKaOVbPooHF91q3c">记录一周时间去向：第二象限（重要不紧急）占比多少？不足 20% 就该重排。</p>
+          <span class="tag" data-page-node-id="WrLPzNR9SZlVPobwqT8dwZ">↳ 要事第一</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="qOPWX2PkyzogzTzG4HzDIH">
+        <div class="ic" data-page-node-id="xQJG8RBtVpq50YtRk9zWZl">06</div>
+        <div data-page-node-id="NVbReeZOgXvrt2tyhHNYK6">
+          <h4 data-page-node-id="bqDMJCM6ZAIhaJMmNVJRXO">先复述，再表达</h4>
+          <p data-page-node-id="nQSY3sABXx2jb6lDo5ltsy">下次有分歧时，先复述对方观点直到他点头，再说你的看法——顺序一换，结果大不同。</p>
+          <span class="tag" data-page-node-id="MERXVpdmCGwAnwnD1Ae9Pu">↳ 知彼解己</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="7lw9ummfGAYeBTqt3ISiLg">
+        <div class="ic" data-page-node-id="Lz7WBy72wEUROYxYKXsUpG">07</div>
+        <div data-page-node-id="FNxadf6OQDsbmZ6RjhekQ8">
+          <h4 data-page-node-id="yIFf0LHSCdmwC2flh1ARhK">主动找"第三种选择"</h4>
+          <p data-page-node-id="pVsxEPsTrgI10KKYFWZAYf">僵持时问一句："有没有比我们俩的方案都好的做法？"把差异当增量，而非威胁。</p>
+          <span class="tag" data-page-node-id="3LXTIGYjGDyVtc78syQpRL">↳ 统合综效</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="6D3kQPikBAETH4jY28y9RQ">
+        <div class="ic" data-page-node-id="aaDTnEbK3wpGqKa4LxjfXn">08</div>
+        <div data-page-node-id="zDIXXlCtpU7tW5zdhufhwu">
+          <h4 data-page-node-id="fNhqlTEZrSU3ZM5NOE3O5P">每周磨一次"锯"</h4>
+          <p data-page-node-id="rcJNrP2JixUOrKkXUlO7jZ">身体（运动）、精神（独处）、智力（阅读）、社会情感（重要关系），四样各留固定时段。</p>
+          <span class="tag" data-page-node-id="p1S6DFFuknXiecKoIPx6OW">↳ 不断更新</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h" data-page-node-id="BJS3oFEo21wG45JUzpE24s">
+  <div class="wrap" data-page-node-id="4KUtfIdHMjkgTe6rsFogqY">
+    <div class="eyebrow2" data-page-node-id="H5j9votUSoHa5Y62vbbxMM"><span class="num" data-page-node-id="pd1JRVWWlXAfjL9m6yIiXV">08 /</span>FOR WHOM</div>
+    <h2 id="who-h" data-page-node-id="6MXQyxqFx3AAQFxT8672sh">适合谁读 / 不适合谁读</h2>
+    <p class="sub" data-page-node-id="eOMaEeaP5sZ82CgiAlXXc4">这是一本"以原则为骨架、以习惯为路径"的效能经典——它不教话术，而要你由内而外地重建自己。读之前，先确认你想要的是哪一种。</p>
+
+    <div class="readers" data-page-node-id="IlR97H8xeDxxU2yptPsPVi">
+      <article class="who yes" data-page-node-id="HOaN8TO3PJnyFvjMEo4XSG">
+        <h3 data-page-node-id="puEbJ6B13bNlv6dQ6O0FVJ"><span class="swatch" data-page-node-id="fXczLoWVIicsadbeTi2XGR"></span>尤其推荐</h3>
+        <ul data-page-node-id="cZ9yXB8RaW2hNSRdvFacPH">
+          <li data-page-node-id="MaqK3tnvQeeRXqurW006tD">忙到停不下来、却总在<b data-page-node-id="OfcH1UCHwI7IzU2hX06Yxo">救火</b>的人</li>
+          <li data-page-node-id="BtE7mbSbtHUWsFPAVNgS7A">想建立<b data-page-node-id="oJ2n9ATNWDSoVSpXxorutc">长期原则与价值观</b>的职场人</li>
+          <li data-page-node-id="984fWLFd6Oj4NdejNRBRXA">带团队、需要<b data-page-node-id="0Jr8bSVu7QeDO1BXmAmRQu">人际效能</b>的管理者</li>
+          <li data-page-node-id="zirEj6JYPPNybMlvVmnCeQ">处于<b data-page-node-id="vglyG92vdGWNndm1SJvqMX">成长转型期</b>（升学/跳槽/创业）的人</li>
+          <li data-page-node-id="VQgtsAridZc2xeSRO3hslg">愿意长期践行、慢慢长出<b data-page-node-id="yw6ScAE8f8xijJBg9qkHSd">习惯</b>的人</li>
+        </ul>
+      </article>
+
+      <article class="who no" data-page-node-id="F3g8s9X1dA1MxoN6GMFLJJ">
+        <h3 data-page-node-id="7I994b2sQRjQbngFCVWX8k"><span class="swatch" data-page-node-id="0i2TUSsdnL0Ac7OnsSypBQ"></span>不推荐 / 慎读</h3>
+        <ul data-page-node-id="jtELzWPeOTT490Lu3F1onu">
+          <li data-page-node-id="M1EafnR6t9OxR5wULJVIHH">想要<b data-page-node-id="GEe2YdgDYO1b0C22WW41dm">速成话术</b>的人：本书明确反对个人魅力论</li>
+          <li data-page-node-id="2EMSGjl7YHrsWTIrBg9vt5">期待<b data-page-node-id="CPJzNrKN5zT5cFxDSnDXIW">读完就改变</b>的人：七个习惯需要长期践行</li>
+          <li data-page-node-id="T79GX8W3htcSkZAkW8uWuJ">只关心<b data-page-node-id="qZlOjOc5VpGtqAm8qHqbCG">个人效率工具</b>的人：本书重心在品格与关系</li>
+          <li data-page-node-id="sp6tYWIuzqgdpGLspKImg5">排斥"原则/品格"这类<b data-page-node-id="woc1wbrJeDmgCHnGBz9pkH">价值词汇</b>的人：本书以它们为地基</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot" data-page-node-id="To03SpFm0UTnmDW6eAg7o2">
+  <div class="wrap" data-page-node-id="El5G54pC8RwY7Z7sCN9JRx">
+    <div class="mark" data-page-node-id="MMbHXPRavUYy3pZfC7jiDP">
+      "想改变现状，先改变自己；<br data-page-node-id="3mWAjpfT8ZfSpVliOG9AHC"/>想改变自己，先改变对问题的看法。"
+    </div>
+    <div class="rule" data-page-node-id="1llajoR9NcXDDMb2sA9lBv"></div>
+    <div class="meta" data-page-node-id="CI3FteIUUaAZIQUg5a0sV2">
+      读书笔记 · 《高效能人士的七个习惯》· 史蒂芬·柯维<br data-page-node-id="Jss8i8LwY3cgfY0Q5qn2kc"/>
+      整理 by WorkBuddy · 2026 · 本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -18,7 +18,16 @@ yiyeguanlan/
 ├── the-weakness-of-human-nature.html # NO.05《人性的弱点》· 主色 梅紫 #7a3d55
 ├── awareness-of-cognition.html       # NO.06《认知觉醒》· 主色 湖蓝 #1f6f8b
 ├── finance-made-simple.html           # NO.07《秒懂金融》· 主色 朱红 #b0432a
-└── the-most-important-thing.html      # NO.08《投资最重要的事》· 主色 橄榄绿 #6b7233
+├── the-most-important-thing.html      # NO.08《投资最重要的事》· 主色 橄榄绿 #6b7233
+├── poor-charlies-almanack.html        # NO.09《穷查理宝典》· 主色 紫水晶 #6a4a93
+├── peak-secrets-expertise.html        # NO.10《刻意练习》· 主色 青碧 #16756b
+├── begin-with-the-end-in-mind.html    # NO.11《以终为始》· 主色 石墨蓝 #45596b
+├── seven-habits-of-highly-effective-people.html
+│                                     # NO.12《高效能人士的七个习惯》· 主色 靛蓝 #38488c
+├── work-consumerism-and-the-new-poor.html
+│                                     # NO.13《工作、消费主义和新穷人》· 主色 炭褐 #54463c
+└── the-millionaire-next-door.html
+                                      # NO.14《邻家的百万富翁》· 主色 苍青 #39605c
 ```
 
 - `index.html`：系列入口。展示书架（书卡直链到各卷）、系列说明、页脚。
