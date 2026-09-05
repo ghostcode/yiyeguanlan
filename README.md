@@ -12,7 +12,13 @@
 yiyeguanlan/
 ├── index.html                        # 系列书架首页（导航 + 卷次总览）
 ├── thinking-fast-and-slow.html       # NO.01《思考，快与慢》· 主色 铁锈红 #8a4a2a
-└── the-courage-to-be-disliked.html   # NO.02《被讨厌的勇气》· 主色 蓝染 #2c4a63
+├── the-courage-to-be-disliked.html   # NO.02《被讨厌的勇气》· 主色 蓝染 #2c4a63
+├── the-almanack-of-naval-ravikant.html # NO.03《纳瓦尔宝典》· 主色 松绿 #2f6b54
+├── the-psychology-of-money.html      # NO.04《金钱心理学》· 主色 暗琥珀金 #9a6b1c
+├── the-weakness-of-human-nature.html # NO.05《人性的弱点》· 主色 梅紫 #7a3d55
+├── awareness-of-cognition.html       # NO.06《认知觉醒》· 主色 湖蓝 #1f6f8b
+├── finance-made-simple.html           # NO.07《秒懂金融》· 主色 朱红 #b0432a
+└── the-most-important-thing.html      # NO.08《投资最重要的事》· 主色 橄榄绿 #6b7233
 ```
 
 - `index.html`：系列入口。展示书架（书卡直链到各卷）、系列说明、页脚。

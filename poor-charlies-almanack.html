@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>《穷查理宝典》读书笔记 · by WorkBuddy</title>
+<meta name="description" content="查理·芒格《穷查理宝典》：多元思维模型、能力圈、逆向思考、人类误判心理学与终身学习的智慧箴言——'反过来想，总是反过来想'。" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为紫水晶，呼应"智慧宝典"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #6a4a93;   /* 主书签色：紫水晶 */
+  --accent-2:     #b08a3a;   /* 暖金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(106,74,147,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#e2d8ee;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(106,74,147,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#1a1226 url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#1a1226;
+  filter:saturate(1.05) contrast(1.02);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(26,18,38,.18) 0%, rgba(26,18,38,.05) 35%, rgba(26,18,38,.80) 100%),
+    linear-gradient(90deg, rgba(26,18,38,.58) 0%, rgba(26,18,38,.16) 55%, rgba(26,18,38,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#e4d6f2; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#e4d6f2;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(38px, 7.2vw, 88px);
+  line-height:1.06; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.30em; font-weight:400; letter-spacing:5px; color:#e4d6f2; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6dcef; max-width: 56ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#e4d6f2; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f1eaf8}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f1eaf8;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }   /* 对照项 A */
+.dual .sys.b .tag{ background:var(--accent) }    /* 对照项 B */
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 五篇脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="index.html" class="home" aria-label="返回系列首页">一页观澜</a>
+    <div class="brand"><span class="dot"></span> 阅读笔记 · 穷查理宝典</div>
+    <nav aria-label="目录">
+      <a href="#info">书籍</a>
+      <a href="#one">总览</a>
+      <a href="#dual">两组对照</a>
+      <a href="#bias">关键概念</a>
+      <a href="#map">五篇脉络</a>
+      <a href="#quotes">金句</a>
+      <a href="#action">行动</a>
+      <a href="#who">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0">
+  <div class="hero-img" role="img" aria-label="古老图书馆与书架，象征跨学科智慧与终身学习"></div>
+  <div class="ribbon">NO. 09 · 智慧宝典</div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="line"></span>READING NOTES</div>
+    <h1>
+      穷查理宝典
+      <span class="sub">POOR CHARLIE'S ALMANACK · CHARLIE MUNGER</span>
+    </h1>
+    <p class="lede">
+      巴菲特的人生合伙人查理·芒格，用毕生演讲与访谈写下的智慧箴言录：多元思维模型、能力圈、逆向思考、人类误判心理学——"反过来想，总是反过来想"。
+    </p>
+    <div class="byline">
+      <span><b>作者</b> 查理·芒格</span>
+      <span><b>身份</b> 伯克希尔副主席 · 投资思想家</span>
+      <span><b>首版</b> 2005 · 中信 2016/2021</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">01 /</span>关于这本书</div>
+    <h2 id="info-h">一部<b class="tail">行走的百科全书</b>的箴言录</h2>
+    <p class="sub">查理·芒格（Charlie Munger，1924—2023）是巴菲特长达数十年的合伙人，被尊为"行走的百科全书"。本书由友人彼得·考夫曼汇编，收录芒格的传记、决策方法与十一场经典演讲，核心是：用跨学科的"多元思维模型"看世界，靠"逆向思考"与"人类误判心理学"避开愚蠢，以终身学习换得清醒与富足。</p>
+
+    <div class="bookinfo">
+      <div class="meta-card">
+        <dl>
+          <dt>书名</dt><dd>穷查理宝典 <span class="small">/ Poor Charlie's Almanack</span></dd>
+          <dt>作者</dt><dd>查理·芒格 <span class="small">Charlie Munger</span></dd>
+          <dt>编者</dt><dd>彼得·考夫曼 <span class="small">Peter D. Kaufman</span></dd>
+          <dt>领域</dt><dd>投资 · 思维 · 人生智慧</dd>
+          <dt>首版</dt><dd>2005 <span class="small">（中信 2016 / 全新增订 2021）</span></dd>
+          <dt>结构</dt><dd>传记 + 决策方法 + 十一讲 + 误判心理</dd>
+          <dt>核心</dt><dd>多元思维 · <b>反过来想</b></dd>
+          <dt>影响</dt><dd>巴菲特推崇的"智慧圣经"</dd>
+        </dl>
+      </div>
+
+      <div class="right">
+        <p class="thesis">
+          芒格的核心主张：<b>真正可靠的不是"更聪明"，而是"不犯傻"——用多学科的格栅看问题，反过来想避开失败，并在能力圈内耐心等待。</b>
+          财富的尽头是智慧，智慧的尽头是理性与谦逊。
+        </p>
+        <div>
+          <span class="chip">#多元思维</span>
+          <span class="chip">#能力圈</span>
+          <span class="chip">#逆向思考</span>
+          <span class="chip">#误判心理</span>
+          <span class="chip">#终身学习</span>
+          <span class="chip">#理性</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="eyebrow2" style="justify-content:center"><span class="num">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center">一句话总览</h2>
+    <blockquote>
+      反过来想，<br/>总是反过来想。
+    </blockquote>
+    <div class="src">— INVERT, ALWAYS INVERT</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h">两组核心对照<b class="tail">·</b>视角与方法</h2>
+    <p class="sub">全书最反直觉的两处：多数人只有一把锤子，看什么都像钉子；而芒格要你建一座多学科的"思维格栅"。以及，与其正面强攻成功，不如先想清楚如何稳稳地避开失败。</p>
+
+    <div class="dualset">
+
+      <!-- 对照 A -->
+      <div class="setlabel">A · 看世界：单一学科，还是多元思维模型？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="单一学科">
+          <div class="tag">SINGLE</div>
+          <h3>单一学科思维 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（锤子病）</span></h3>
+          <div class="sub">一把锤子 · 看啥都像钉子</div>
+          <p>"我学的是 X，所以一切问题都用 X 解释。"——<b>只用一个学科的框架，会系统性地误读复杂世界</b>。芒格称之为"拿锤子的人"陷阱。</p>
+          <ul>
+            <li><b>问题</b><span>解释力单一</span></li>
+            <li><b>盲区</b><span>忽视其他学科的力量</span></li>
+            <li><b>后果</b><span>决策偏差、重复犯错</span></li>
+          </ul>
+          <div class="quote">"如果你只有一把锤子，看什么都像钉子。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="多元思维">
+          <div class="tag">GRID</div>
+          <h3>多元思维模型 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（格栅）</span></h3>
+          <div class="sub">跨学科 · 多模型互校</div>
+          <p>"掌握重要学科的核心模型，并会组合使用。"——<b>用数学、物理、生物、心理、经济等多把'锤子'交叉验证</b>，才更接近真相。</p>
+          <ul>
+            <li><b>关键</b><span>几个大模型的复利</span></li>
+            <li><b>方法</b><span>跨学科 + 互相印证</span></li>
+            <li><b>回报</b><span>更稳的判断，少踩坑</span></li>
+          </ul>
+          <div class="quote">"手里拿着锤子的人，看什么都像钉子——所以要建思维的格栅。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel">B · 求成功：正面强攻，还是逆向避开失败？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="正面强攻">
+          <div class="tag">FORWARD</div>
+          <h3>正面追求成功 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（强攻）</span></h3>
+          <div class="sub">问"怎样能赢"</div>
+          <p>大多数人的思路是"我该怎么做才能成功？"<b>答案往往模糊、难以穷尽</b>，且容易被幸存者偏差误导。</p>
+          <ul>
+            <li><b>诱惑</b><span>直接、符合直觉</span></li>
+            <li><b>代价</b><span>路径模糊，易盲动</span></li>
+            <li><b>盲区</b><span>忽略失败的清单</span></li>
+          </ul>
+          <div class="quote">"想知道怎么活得幸福？先研究怎样会痛苦。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="逆向思考">
+          <h3>逆向思考 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（反过来想）</span></h3>
+          <div class="sub">问"怎样会失败"</div>
+          <p>芒格的招牌方法：<b>"反过来想，总是反过来想。"</b>先列出所有会让事情搞砸的因素，逐一规避——避开失败，成功自然来。</p>
+          <ul>
+            <li><b>关键</b><span>列出失败清单</span></li>
+            <li><b>方法</b><span>排除愚蠢，而非追逐高明</span></li>
+            <li><b>回报</b><span>少犯错，长期胜出</span></li>
+          </ul>
+          <div class="quote">"要得到 X，先弄清楚怎样会失去 X，然后永远不去做。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h">十张<b class="tail">书签</b>，理解芒格</h2>
+    <p class="sub">这些不是术语，而是十种"在复杂世界里保持清醒"的工具。每一张都对应一个让你更理性、更不容易犯傻的决策瞬间。</p>
+
+    <div class="biases">
+
+      <article class="bias c1">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 01</div>
+        <h3>多元思维模型 <span class="en">Mental Models</span></h3>
+        <p class="mech">掌握数学、会计、工程、心理、生物等<b>重要学科的核心模型</b>，并会组合使用。单一模型会让你"拿锤子看钉子"。</p>
+        <div class="example"><b>例子</b>评估一家企业，既看财报（会计），也看竞争格局（经济）、人性（心理）。</div>
+      </article>
+
+      <article class="bias c2">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 02</div>
+        <h3>能力圈 <span class="en">Circle of Competence</span></h3>
+        <p class="mech">清楚自己真正懂什么、<b>边界在哪里</b>。重要的不是圈有多大，而是你知不知道圈的边界。</p>
+        <div class="example"><b>例子</b>不懂的赛道不投；承认"我不知道"，比假装懂安全得多。</div>
+      </article>
+
+      <article class="bias c3">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 03</div>
+        <h3>反过来想 <span class="en">Invert</span></h3>
+        <p class="mech">想成功，先想<b>如何彻底搞砸</b>，然后永远不去做。规避愚蠢，比追求高明更可靠。</p>
+        <div class="example"><b>例子</b>想知道怎样长寿？先列"怎样会短命"，然后逐条避开。</div>
+      </article>
+
+      <article class="bias c4">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 04</div>
+        <h3>人类误判心理学 <span class="en">Misjudgment</span></h3>
+        <p class="mech">芒格系统梳理了约 <b>25 种认知偏差</b>（激励、嫉妒、社会认同、确认偏误……）。认识它们，才能不被它们劫持。</p>
+        <div class="example"><b>例子</b>"激励导致的偏见"：先看对方因何受激励，再听他说的每一句话。</div>
+      </article>
+
+      <article class="bias c5">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 05</div>
+        <h3>复利 <span class="en">Compounding</span></h3>
+        <p class="mech">不只是金钱，<b>知识、声誉、人际关系都靠复利</b>。持续积累、不中断，时间会给你惊喜。</p>
+        <div class="example"><b>例子</b>每天读一点、长期不中断，几十年后积累远超一时爆发。</div>
+      </article>
+
+      <article class="bias c6">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 06</div>
+        <h3>耐心与长期 <span class="en">Patience</span></h3>
+        <p class="mech">"坐等投资法"：<b>少即是多，大部分时间只研究、不出手</b>。等绝佳机会，一击即中。</p>
+        <div class="example"><b>例子</b>好球不常来；宁可空等，也不挥棒勉强。</div>
+      </article>
+
+      <article class="bias c7">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 07</div>
+        <h3>终身学习 <span class="en">Lifelong Learning</span></h3>
+        <p class="mech">芒格自称"长着两条腿的书"。<b>每天阅读、跨学科输入</b>，是思维格栅不断生长的养分。</p>
+        <div class="example"><b>例子</b>把阅读当日常，而非任务；读得杂，联系才多。</div>
+      </article>
+
+      <article class="bias c8">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 08</div>
+        <h3>理性与客观 <span class="en">Rationality</span></h3>
+        <p class="mech">理性是道德，也是能力。<b>情绪稳定、客观、不被认同驱动</b>，才能看清现实。</p>
+        <div class="example"><b>例子</b>与持相反意见者辩论前，先能更有力地陈述对方观点。</div>
+      </article>
+
+      <article class="bias c9">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 09</div>
+        <h3>避免愚蠢 <span class="en">Avoid Stupidity</span></h3>
+        <p class="mech">不求比谁聪明，<b>只求不犯傻</b>。芒格说，很多成功只是"比别人少犯了一些错误"。</p>
+        <div class="example"><b>例子</b>不为证明自己高明而冒险；守住底线，笨办法最稳。</div>
+      </article>
+
+      <article class="bias c10">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 10</div>
+        <h3>坐等投资法 <span class="en">Sit &amp; Wait</span></h3>
+        <p class="mech">把时间花在"找到少数绝佳机会"上，<b>重仓、长期持有、极少交易</b>。频繁操作是收益的天敌。</p>
+        <div class="example"><b>例子</b>一生只需少数大决定；在能力圈内等那记好球。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 五篇脉络图 ============ -->
+<section id="map" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h">全书<b class="tail">生平·方法·演讲·心理·智慧五脉</b> · 脉络</h2>
+    <p class="sub">原书由传记、决策方法、十一场演讲、误判心理学与芒格主义串成五条主线：从"他是谁"，到"他怎么想"，再到"他怎么活"——每一脉，都是可被复用的智慧。</p>
+
+    <div class="chaptermap" role="list">
+      <article class="part p1" role="listitem">
+        <div class="pin">生平 · 一</div>
+        <h3>芒格传略</h3>
+        <div class="range">他是谁</div>
+        <ul class="chapters">
+          <li>从律师到投资人</li>
+          <li>与巴菲特的黄金搭档</li>
+          <li>晚年与友人评价</li>
+          <li>价值观底色</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem">
+        <div class="pin">方法 · 二</div>
+        <h3>生活·学习·决策</h3>
+        <div class="range">怎么想</div>
+        <ul class="chapters">
+          <li>多元思维格栅</li>
+          <li>能力圈原则</li>
+          <li>逆向与清单</li>
+          <li>理性决策方法</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem">
+        <div class="pin">演讲 · 三</div>
+        <h3>查理十一讲</h3>
+        <div class="range">怎么说</div>
+        <ul class="chapters">
+          <li>普世智慧</li>
+          <li>现实思维</li>
+          <li>跨学科技能</li>
+          <li>毕业典礼演讲</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem">
+        <div class="pin">心理 · 四</div>
+        <h3>人类误判心理</h3>
+        <div class="range">防什么</div>
+        <ul class="chapters">
+          <li>约 25 种偏差</li>
+          <li>激励导致的偏见</li>
+          <li>社会认同与嫉妒</li>
+          <li>规避偏差的方法</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem">
+        <div class="pin">智慧 · 五</div>
+        <h3>芒格主义</h3>
+        <div class="range">怎么活</div>
+        <ul class="chapters">
+          <li>即席谈话精选</li>
+          <li>终身学习信条</li>
+          <li>推荐书目</li>
+          <li>人生年谱</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">06 /</span>QUOTES</div>
+    <h2 id="quotes-h">五句值得抄在笔记本上的话</h2>
+    <p class="sub">芒格的话克制而锋利。这几句，几乎覆盖了"如何清醒地活着、理性地决策"的全部底层逻辑。</p>
+
+    <div class="quotes">
+
+      <article class="quote-card qc1">
+        <span class="qmark">“</span>
+        <p>反过来想，<br/>总是反过来想。</p>
+        <div class="src">— 逆向思考</div>
+      </article>
+
+      <article class="quote-card qc2">
+        <span class="qmark">“</span>
+        <p>想得到某样东西，<br/>最可靠的方法是<br/>让自己配得上它。</p>
+        <div class="src">— 配得定律</div>
+      </article>
+
+      <article class="quote-card qc3">
+        <span class="qmark">“</span>
+        <p>如果你只有一把锤子，<br/>看什么都像钉子。</p>
+        <div class="src">— 多元思维</div>
+      </article>
+
+      <article class="quote-card qc4">
+        <span class="qmark">“</span>
+        <p>承认自己的无知，<br/>是智慧的开端。</p>
+        <div class="src">— 理性与谦逊</div>
+      </article>
+
+      <article class="quote-card qc5">
+        <span class="qmark">“</span>
+        <p>耐心是有回报的，<br/>复利也偏爱<br/>活得久的人。</p>
+        <div class="src">— 长期主义</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h">可以立刻落地的<b class="tail">八条</b>练习</h2>
+    <p class="sub">芒格的智慧不玄乎——每条都能直接上手。括号里标注了它来自哪一张书签。</p>
+
+    <div class="actions">
+
+      <div class="action">
+        <div class="ic">01</div>
+        <div>
+          <h4>建一张思维格栅</h4>
+          <p>挑 3 个非本专业的学科（如心理、概率、生物），各学一个核心模型，遇到问题时强制套用。</p>
+          <span class="tag">↳ 多元思维</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">02</div>
+        <div>
+          <h4>写下你的能力圈</h4>
+          <p>在一张纸上列出"我真正懂"和"我只是以为我懂"的领域，重大决策只在前者的边界内做。</p>
+          <span class="tag">↳ 能力圈</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">03</div>
+        <div>
+          <h4>列一份"失败清单"</h4>
+          <p>对任何重要决定，先写"怎样会搞砸它"，逐条排查。避错优先于求胜。</p>
+          <span class="tag">↳ 反过来想</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">04</div>
+        <div>
+          <h4>给每个观点找对手</h4>
+          <p>对自己认同的判断，试着更有力地陈述反方观点。做不到，说明你还没真懂。</p>
+          <span class="tag">↳ 误判心理</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">05</div>
+        <div>
+          <h4>每天读 30 分钟</h4>
+          <p>把阅读当日常而非任务，跨领域输入。芒格说，书是"长着两条腿的"。</p>
+          <span class="tag">↳ 终身学习</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">06</div>
+        <div>
+          <h4>看激励，再听结论</h4>
+          <p>听到任何建议，先问"对方因何受激励"。激励驱动的偏见，会悄悄扭曲一切说辞。</p>
+          <span class="tag">↳ 误判心理</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">07</div>
+        <div>
+          <h4>只等那一记好球</h4>
+          <p>投资与决策上都"少即是多"：多数时间只研究，等真正懂、真正便宜时才出手。</p>
+          <span class="tag">↳ 耐心 / 坐等</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">08</div>
+        <div>
+          <h4>先求"不犯傻"</h4>
+          <p>不为证明自己高明而冒险。守住底线、承认局限，长期看笨办法最稳。</p>
+          <span class="tag">↳ 避免愚蠢</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">08 /</span>FOR WHOM</div>
+    <h2 id="who-h">适合谁读 / 不适合谁读</h2>
+    <p class="sub">这是一本"以常识为据、以理性为纲"的智慧箴言录——它不荐股，而给你穿越复杂世界的底层操作系统。读之前，先确认你想要的是哪一种。</p>
+
+    <div class="readers">
+      <article class="who yes">
+        <h3><span class="swatch"></span>尤其推荐</h3>
+        <ul>
+          <li>想要<b>思维升级</b>的投资者与终身学习者</li>
+          <li>常被情绪、从众带偏、想更<b>理性决策</b>的人</li>
+          <li>认可"<b>跨学科看世界</b>"的通识爱好者</li>
+          <li>想在投资与人生里<b>少犯傻、活得久</b>的长期主义者</li>
+          <li>把阅读当日常、愿意慢工出细活的人</li>
+        </ul>
+      </article>
+
+      <article class="who no">
+        <h3><span class="swatch"></span>不推荐 / 慎读</h3>
+        <ul>
+          <li>想找"<b>稳赚代码、内幕消息</b>"的人：本书讲思维，不荐股</li>
+          <li>期待<b>速成秘籍</b>的人：本书强调慢变量与复利</li>
+          <li>只信单一专业、<b>排斥跨学科</b>的人：本书要你建格栅</li>
+          <li>不愿承认"<b>我不知道</b>"、强求高明的人：本书先求不犯傻</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="mark">
+      "反过来想，<br/>总是反过来想。"
+    </div>
+    <div class="rule"></div>
+    <div class="meta">
+      读书笔记 · 《穷查理宝典》· 查理·芒格<br/>
+      整理 by WorkBuddy · 2026 · 本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

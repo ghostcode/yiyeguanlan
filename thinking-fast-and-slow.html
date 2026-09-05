@@ -87,6 +87,13 @@ a{color:inherit}
   transition:border-color .2s, color .2s;
 }
 .topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
 
 /* =========================================================
    HERO
@@ -505,6 +512,7 @@ h3{
 <!-- ============ 顶部细条 ============ -->
 <header class="topbar" role="banner" data-page-node-id="zLj7rHibavIPKTAMWorfwA">
   <div class="topbar-inner" data-page-node-id="sLVjU3wfrLdh8bi5CDiAuO">
+    <a href="index.html" class="home" aria-label="返回系列首页">一页观澜</a>
     <div class="brand" data-page-node-id="LpmHIgd4R9y0BsQjpQBniM"><span class="dot" data-page-node-id="BNiYOAUM1L15GYXGtBRCZ9"></span> 阅读笔记 · Thinking, Fast &amp; Slow</div>
     <nav aria-label="目录" data-page-node-id="4wEfAblRlUuUG6FvXvGAoC">
       <a href="#info" data-page-node-id="Fn9pDFMVsdeXmPfMdBBwAg">书籍</a>

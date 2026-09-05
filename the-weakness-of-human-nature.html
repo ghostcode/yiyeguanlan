@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>《人性的弱点》读书笔记 · by WorkBuddy</title>
+<meta name="description" content="戴尔·卡耐基《人性的弱点》：人际成功的原则而非天赋——不批评、真诚赞赏、激发他人渴望、关心他人、倾听、记住名字、让人觉得重要。" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与《思考，快与慢》《被讨厌的勇气》《纳瓦尔宝典》《金钱心理学》同一套系统，主色换为梅紫）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #7a3d55;   /* 主书签色：梅紫 */
+  --accent-2:     #b07840;   /* 赭金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(122,61,85,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#efd9e2;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(122,61,85,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#1d2226 url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#1d2226;
+  filter:saturate(1.05) contrast(1.02);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(14,20,26,.18) 0%, rgba(14,20,26,.05) 35%, rgba(14,20,26,.80) 100%),
+    linear-gradient(90deg, rgba(14,20,26,.58) 0%, rgba(14,20,26,.16) 55%, rgba(14,20,26,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#c6d4dd; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#c6d4dd;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(38px, 7.2vw, 88px);
+  line-height:1.06; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.30em; font-weight:400; letter-spacing:5px; color:#c6d4dd; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#d7dfe4; max-width: 56ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#c6d4dd; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#e7eef2}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#eaf1f5;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }   /* 旧做法 */
+.dual .sys.b .tag{ background:var(--accent) }    /* 卡耐基的原则 */
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+.bias.c11{ --rib: var(--olive) }
+.bias.c12{ --rib: var(--plum) }
+
+/* =========================================================
+   4. 五篇脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="index.html" class="home" aria-label="返回系列首页">一页观澜</a>
+    <div class="brand"><span class="dot"></span> 阅读笔记 · How to Win Friends</div>
+    <nav aria-label="目录">
+      <a href="#info">书籍</a>
+      <a href="#one">总览</a>
+      <a href="#dual">两组对照</a>
+      <a href="#bias">关键概念</a>
+      <a href="#map">五篇脉络</a>
+      <a href="#quotes">金句</a>
+      <a href="#action">行动</a>
+      <a href="#who">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0">
+  <div class="hero-img" role="img" aria-label="围坐交谈的人群，象征沟通与人际"></div>
+  <div class="ribbon">NO. 05 · 人际沟通</div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="line"></span>READING NOTES</div>
+    <h1>
+      人性的弱点
+      <span class="sub">HOW TO WIN FRIENDS &amp; INFLUENCE PEOPLE</span>
+    </h1>
+    <p class="lede">
+      一本写了近百年仍不过时的"人际说明书"：让人喜欢你、说服他人、做领导者，靠的不是天赋，而是可以练习的原则。
+    </p>
+    <div class="byline">
+      <span><b>作者</b> 戴尔·卡耐基 · Dale Carnegie</span>
+      <span><b>身份</b> 演讲口才导师 · 成人教育先驱</span>
+      <span><b>首版</b> 1936 · 四篇人际原则</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">01 /</span>关于这本书</div>
+    <h2 id="info-h">一本把"<b class="tail">人际能力</b>"讲成原则的书</h2>
+    <p class="sub">戴尔·卡耐基（Dale Carnegie, 1888–1955）是美国成人教育先驱，其课程影响数代人。《人性的弱点》不是心理学专著，而是把"如何与人相处"提炼成一套可执行的原则——核心洞见是：技术决定下限，让人顺畅相处的软技能，决定上限。</p>
+
+    <div class="bookinfo">
+      <div class="meta-card">
+        <dl>
+          <dt>书名</dt><dd>人性的弱点 <span class="small">/ How to Win Friends &amp; Influence People</span></dd>
+          <dt>作者</dt><dd>戴尔·卡耐基 <span class="small">Dale Carnegie, 1888–1955</span></dd>
+          <dt>身份</dt><dd>演讲与口才导师 · 卡耐基训练创办人</dd>
+          <dt>领域</dt><dd>人际交往 · 沟通 · 自我提升 · 影响力</dd>
+          <dt>首版</dt><dd>1936 年 <span class="small">（四篇原则 · 案例驱动）</span></dd>
+          <dt>结构</dt><dd>四篇 · 待人的技巧 / 让人喜欢 / 赢得认同 / 领导他人</dd>
+          <dt>核心</dt><dd>改变人，先改变你<b>对待人的方式</b></dd>
+          <dt>影响</dt><dd>全球销量逾数千万，被誉为"人际圣经"</dd>
+        </dl>
+      </div>
+
+      <div class="right">
+        <p class="thesis">
+          卡耐基的核心主张：<b>人渴望被重视、被理解、被真诚地看见。</b>
+          想赢得朋友与影响他人，先放下批评与自我中心，转而<b>真诚关心对方、给予赞赏、激发其渴望</b>——
+          这不是圆滑，而是把"以对方为重心"变成一种稳定的习惯。
+        </p>
+        <div>
+          <span class="chip">#人际交往</span>
+          <span class="chip">#真诚赞赏</span>
+          <span class="chip">#倾听</span>
+          <span class="chip">#影响力</span>
+          <span class="chip">#共情</span>
+          <span class="chip">#领导</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="eyebrow2" style="justify-content:center"><span class="num">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center">一句话总览</h2>
+    <blockquote>
+      让人觉得自己重要，<br/>是世界上最稀缺——<br/>也最被低估的能力。
+    </blockquote>
+    <div class="src">— MAKE OTHERS FEEL IMPORTANT</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h">两组核心对照<b class="tail">·</b>换一种相处方式</h2>
+    <p class="sub">全书最反直觉的两处：我们本能地想"纠正别人、展示自己"，而卡耐基说反了——先理解、先关心，才是影响力真正的开关。</p>
+
+    <div class="dualset">
+
+      <!-- 对照 A -->
+      <div class="setlabel">A · 想改变别人时：指责，还是理解？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="批评与指责">
+          <div class="tag">CRITICIZE</div>
+          <h3>批评与指责 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（激起防卫）</span></h3>
+          <div class="sub">指出错 · 证明我对 · 让他改</div>
+          <p>我们总以为指出错误能让人改正。但批评只会<b>激起防卫与怨恨</b>——对方忙着 defending 自己，根本听不进你的道理，关系也一并受损。</p>
+          <ul>
+            <li><b>后果</b><span>怨恨长期积累，对方更抗拒改变</span></li>
+            <li><b>盲区</b><span>把"我对"凌驾于"关系"之上</span></li>
+            <li><b>陷阱</b><span>批评看似在解决问题，实则制造对立</span></li>
+          </ul>
+          <div class="quote">"批评是无用的——它激起防卫，让人急于辩解，伤害自尊，却极少带来改变。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="理解与共情">
+          <div class="tag">EMPATHIZE</div>
+          <h3>理解与共情 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（先肯定）</span></h3>
+          <div class="sub">看立场 · 先肯定 · 再引导</div>
+          <p>改变别人的前提，是先<b>理解他为什么这样</b>。先肯定对方的合理之处，再温和引导——人只有在"被接住"时，才愿意动。</p>
+          <ul>
+            <li><b>关键</b><span>先共情，意见才进得去</span></li>
+            <li><b>方法</b><span>从对方立场出发，而非你的正确</span></li>
+            <li><b>回报</b><span>关系不破，改变才可能发生</span></li>
+          </ul>
+          <div class="quote">"与其指责，不如试着真诚地问：如果我是他，我会怎么想、怎么感受？"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel">B · 想让人喜欢你：谈自己，还是谈对方？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="聚焦自己">
+          <div class="tag">ABOUT ME</div>
+          <h3>聚焦自己 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（求关注）</span></h3>
+          <div class="sub">谈我 · 秀我 · 争目光</div>
+          <p>我们天生爱谈自己、秀成就。但<b>越聚焦自己，别人越觉得无聊</b>——没人会对"你的精彩"比"自己的事"更上心。</p>
+          <ul>
+            <li><b>错觉</b><span>以为表现自己能赢得好感</span></li>
+            <li><b>代价</b><span>对方感到被忽视，悄悄远离</span></li>
+            <li><b>盲区</b><span>把"表达"误当成"连接"</span></li>
+          </ul>
+          <div class="quote">"成天谈自己的人，永远交不到真正的朋友——因为没人爱听。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="聚焦对方">
+          <div class="tag">ABOUT THEM</div>
+          <h3>聚焦对方 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（真关心）</span></h3>
+          <div class="sub">倾听 · 记名 · 谈他关心的事</div>
+          <p>让人喜欢你的诀窍，是<b>真诚地关心对方</b>：记住名字、认真倾听、谈他感兴趣的事。当一个人觉得"你真的看见我"，好感自然发生。</p>
+          <ul>
+            <li><b>关键</b><span>把聚光灯从自己移开，打在对方身上</span></li>
+            <li><b>方法</b><span>多问、多听、少抢话</span></li>
+            <li><b>回报</b><span>被重视的感觉，是最强的粘合剂</span></li>
+          </ul>
+          <div class="quote">"谈论对方感兴趣的事，是通往他心里的捷径——比任何口才都管用。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h">十张<b class="tail">书签</b>，读懂卡耐基</h2>
+    <p class="sub">这些不是话术，而是十种把"以对方为重心"变成习惯的方式。每一张都对应一个今天就能用上的动作。</p>
+
+    <div class="biases">
+
+      <article class="bias c1">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 01</div>
+        <h3>不批评、不指责 <span class="en">Don't Criticize</span></h3>
+        <p class="mech">批评激起防卫与怨恨，几乎从不带来真正的改变。想让人改，先放下"我对你错"的姿态，换一种不伤关系的方式。</p>
+        <div class="example"><b>例子</b>下属出错，先问"发生了什么"，而非"你怎么搞的"——态度一变，对方才听得进。</div>
+      </article>
+
+      <article class="bias c2">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 02</div>
+        <h3>真诚地给予赞赏 <span class="en">Appreciation</span></h3>
+        <p class="mech">人深处渴望被看见、被肯定。<b>真诚</b>的赞赏（不是奉承）像氧气——稀缺、珍贵，且极少被给够。</p>
+        <div class="example"><b>例子</b>具体地说"你那段处理得很漂亮"，比泛泛的"你真棒"有力十倍。</div>
+      </article>
+
+      <article class="bias c3">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 03</div>
+        <h3>激发他人的渴望 <span class="en">Arouse an Eager Want</span></h3>
+        <p class="mech">说服的钥匙，是回答"<b>这对他有什么好处</b>"。没人真的在乎你的目标，只在乎自己的。从对方渴望出发，他才会主动想做。</p>
+        <div class="example"><b>例子</b>想让人配合，先讲清"你能得到什么"，而不是"我需要你做"。</div>
+      </article>
+
+      <article class="bias c4">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 04</div>
+        <h3>真诚地关心他人 <span class="en">Genuine Interest</span></h3>
+        <p class="mech">关心是最硬的社交货币。<b>真心</b>对人感兴趣，比任何技巧都更快建立连接——人们能嗅出敷衍。</p>
+        <div class="example"><b>例子</b>记住对方上次的烦恼并主动问一句近况，关系的温度立刻不同。</div>
+      </article>
+
+      <article class="bias c5">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 05</div>
+        <h3>微笑 <span class="en">Smile</span></h3>
+        <p class="mech">微笑是成本最低的好感开关。它无声地说"我欢迎你"，瞬间拉近距离，且对方会不自觉地回以善意。</p>
+        <div class="example"><b>例子</b>接起电话先笑一下，声音里的温度对方听得出来。</div>
+      </article>
+
+      <article class="bias c6">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 06</div>
+        <h3>记住别人的名字 <span class="en">Remember Names</span></h3>
+        <p class="mech">对任何人，自己的名字都是世上<b>最悦耳的声音</b>。记住并准确叫出，是"你被我重视"最直接的证明。</p>
+        <div class="example"><b>例子</b>第二次见面就叫对名字，好感几乎立刻建立。</div>
+      </article>
+
+      <article class="bias c7">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 07</div>
+        <h3>做一个好的倾听者 <span class="en">Listen</span></h3>
+        <p class="mech">多数人都想被倾听，而非被教育。<b>专注地听</b>，并鼓励对方多谈自己——这是最高级的恭维。</p>
+        <div class="example"><b>例子</b>对方说话时不看手机、不抢话，他会对你产生"你真懂我"的错觉（其实是被听）。</div>
+      </article>
+
+      <article class="bias c8">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 08</div>
+        <h3>谈对方关心的事 <span class="en">Talk Their Interest</span></h3>
+        <p class="mech">想抓住一个人的心，就谈<b>他最在意</b>的事。你关心他的世界，他才会向你敞开自己的世界。</p>
+        <div class="example"><b>例子</b>对方爱养猫，就聊聊猫，而不是硬聊你擅长的股票。</div>
+      </article>
+
+      <article class="bias c9">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 09</div>
+        <h3>让人觉得自己重要 <span class="en">Make Them Feel Important</span></h3>
+        <p class="mech">每个人都渴望"我很重要"。<b>真心</b>地让对方感受到价值——这是全书最被低估、也最稀缺的能力。</p>
+        <div class="example"><b>例子</b>认真征求对方意见："这事你怎么看？"——一句话就给了对方分量。</div>
+      </article>
+
+      <article class="bias c10">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 10</div>
+        <h3>尊重观点，别说"你错了" <span class="en">Never Say "You're Wrong"</span></h3>
+        <p class="mech">当众说"你错了"伤的是面子，人会用尽全力捍卫。<b>先承认对方有道理之处</b>，再温和带出不同看法，他才听得进。</p>
+        <div class="example"><b>例子</b>换成"这个角度有意思，我补充一个看法"——保全面子，分歧才好谈。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 五篇脉络图 ============ -->
+<section id="map" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h">全书<b class="tail">四篇五脉</b> · 原则脉络</h2>
+    <p class="sub">原书分四篇，我们依主题归为五脉：从"不伤关系地待人"，走到"让人喜欢你、赢得认同、做领导者"，是一条由克制到主动的完整路径。</p>
+
+    <div class="chaptermap" role="list">
+      <article class="part p1" role="listitem">
+        <div class="pin">待人之道 · 一</div>
+        <h3>基本技巧</h3>
+        <div class="range">PART 1</div>
+        <ul class="chapters">
+          <li>不批评、不指责、不抱怨</li>
+          <li>给予真诚、由衷的赞赏</li>
+          <li>激发他人强烈的渴望</li>
+          <li>原则的总开关：以对方为重心</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem">
+        <div class="pin">让人喜欢 · 二</div>
+        <h3>六种方法</h3>
+        <div class="range">PART 2</div>
+        <ul class="chapters">
+          <li>真诚地关心他人</li>
+          <li>微笑，记住名字</li>
+          <li>做一个好的倾听者</li>
+          <li>谈对方关心的事</li>
+          <li>让对方觉得自己重要</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem">
+        <div class="pin">赢得认同 · 三</div>
+        <h3>影响他人</h3>
+        <div class="range">PART 3</div>
+        <ul class="chapters">
+          <li>争论永远没赢家</li>
+          <li>尊重对方观点，不说"你错了"</li>
+          <li>勇于认错，以柔克刚</li>
+          <li>先肯定，再引导</li>
+          <li>让对方多说、共情其立场</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem">
+        <div class="pin">领导他人 · 四</div>
+        <h3>改变而不惹恼</h3>
+        <div class="range">PART 4</div>
+        <ul class="chapters">
+          <li>从真诚的赞美切入</li>
+          <li>委婉地指出错处</li>
+          <li>先谈自己的错</li>
+          <li>用提问代替命令</li>
+          <li>保全面子，给人留台阶</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem">
+        <div class="pin">长期主义 · 五</div>
+        <h3>跨越时间的影响</h3>
+        <div class="range">PRINCIPLE</div>
+        <ul class="chapters">
+          <li>原则不是话术，是习惯</li>
+          <li>真诚是无法伪装的底色</li>
+          <li>关系靠一次次"被看见"积累</li>
+          <li>影响力 = 长期让人舒服</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">06 /</span>QUOTES</div>
+    <h2 id="quotes-h">五句值得抄在笔记本上的话</h2>
+    <p class="sub">卡耐基的话朴素却直击要害。这几句，几乎覆盖了"与人相处"的全部底层逻辑。</p>
+
+    <div class="quotes">
+
+      <article class="quote-card qc1">
+        <span class="qmark">“</span>
+        <p>批评是无用的——<br/>它只激起防卫，却极少带来改变。</p>
+        <div class="src">— 待人的基本技巧</div>
+      </article>
+
+      <article class="quote-card qc2">
+        <span class="qmark">“</span>
+        <p>对任何人而言，<br/>自己的名字都是世上最悦耳的声音。</p>
+        <div class="src">— 记住别人的名字</div>
+      </article>
+
+      <article class="quote-card qc3">
+        <span class="qmark">“</span>
+        <p>想说服一个人，<br/>先回答：这对他有什么好处？</p>
+        <div class="src">— 激发他人的渴望</div>
+      </article>
+
+      <article class="quote-card qc4">
+        <span class="qmark">“</span>
+        <p>让人觉得自己重要，<br/>是世界上最稀缺也最被低估的能力。</p>
+        <div class="src">— 让人觉得自己重要</div>
+      </article>
+
+      <article class="quote-card qc5">
+        <span class="qmark">“</span>
+        <p>争论里没有赢家——<br/>你赢了对错，往往输了关系。</p>
+        <div class="src">— 赢得他人认同</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h">可以立刻落地的<b class="tail">八条</b>练习</h2>
+    <p class="sub">卡耐基的原则不抽象——每条都能直接上手。括号里标注了它来自哪一张书签。</p>
+
+    <div class="actions">
+
+      <div class="action">
+        <div class="ic">01</div>
+        <div>
+          <h4>把"你错了"换成"有意思"</h4>
+          <p>今天起，凡想说"你错了"，先改成"这个角度有意思"。保全面子，分歧才谈得下去。</p>
+          <span class="tag">↳ 尊重观点</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">02</div>
+        <div>
+          <h4>每天给一句具体赞赏</h4>
+          <p>找一个人，说出一件他做得好的具体小事。真诚、具体，比"你真棒"有力得多。</p>
+          <span class="tag">↳ 真诚赞赏</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">03</div>
+        <div>
+          <h4>记住三个新名字</h4>
+          <p>本周认识新的人，刻意记住并准确叫出名字。它是"你被我重视"最直接的证据。</p>
+          <span class="tag">↳ 记住名字</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">04</div>
+        <div>
+          <h4>把聚光灯移向对方</h4>
+          <p>下一次聊天，克制谈自己的冲动，多问"你怎么看"。让对方多说，你就是最好的倾听者。</p>
+          <span class="tag">↳ 倾听 / 谈对方关心的事</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">05</div>
+        <div>
+          <h4>先问"这对他有什么好处"</h4>
+          <p>任何想请人配合的事，先想清楚对方的渴望，再开口。从他的利益出发，他才主动。</p>
+          <span class="tag">↳ 激发渴望</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">06</div>
+        <div>
+          <h4>用提问代替命令</h4>
+          <p>想让人做事，改成"你觉得这样行不行？"给人选择权与面子，执行意愿反而更高。</p>
+          <span class="tag">↳ 领导他人</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">07</div>
+        <div>
+          <h4>主动记住别人的"小事"</h4>
+          <p>记下对方提过的烦恼或心愿，下次见面主动问一句。被记住，是关系最强的温度。</p>
+          <span class="tag">↳ 真诚关心</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">08</div>
+        <div>
+          <h4>先认自己的错</h4>
+          <p>合作出岔子，先说"这里我也有责任"。你一低头，对方的防卫就松了，问题才好解决。</p>
+          <span class="tag">↳ 领导他人 / 不指责</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">08 /</span>FOR WHOM</div>
+    <h2 id="who-h">适合谁读 / 不适合谁读</h2>
+    <p class="sub">这是一本"以人为本"的经典——它不教你赢，而教你如何让人愿意和你在一起。读之前，先确认你想要的是哪一种。</p>
+
+    <div class="readers">
+      <article class="who yes">
+        <h3><span class="swatch"></span>尤其推荐</h3>
+        <ul>
+          <li>想在<b>职场、销售、管理</b>中提升影响力的人</li>
+          <li>常陷在"<b>关系紧张、沟通卡顿</b>"里的人</li>
+          <li>希望<b>被喜欢、被信任、被记住</b>的社交者</li>
+          <li>带团队、需要"<b>改变他人而不惹恼</b>"的领导者</li>
+          <li>想把手"软技能"练成习惯的终身学习者</li>
+        </ul>
+      </article>
+
+      <article class="who no">
+        <h3><span class="swatch"></span>不推荐 / 慎读</h3>
+        <ul>
+          <li>只想学"<b>套路操控他人</b>"的人：本书前提是真诚，伪装有反效果</li>
+          <li>坚信"<b>实力至上、关系无用</b>"的人：本书恰恰相反</li>
+          <li>期待<b>严密学术论证</b>的人：这是案例驱动的原则书，非研究著作</li>
+          <li>把"讨好"当目标的读者：书中是尊重，不是卑微</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="mark">
+      "让人觉得自己重要，<br/>是世界上最稀缺、也最被低估的能力。"
+    </div>
+    <div class="rule"></div>
+    <div class="meta">
+      读书笔记 · 《HOW TO WIN FRIENDS &amp; INFLUENCE PEOPLE》 · 戴尔·卡耐基<br/>
+      整理 by WorkBuddy · 2026 · 本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
