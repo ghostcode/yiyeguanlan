@@ -1,408 +1,689 @@
 <!doctype html>
 <html lang="zh-CN" data-page-node-id="UxiGUZUBCBd7pvCDV1LsMP">
+
 <head data-page-node-id="mpQbjgorJgssSUhLFOArfM">
-<meta charset="utf-8" data-page-node-id="LLMWzaOa1lVEGsQ5uzY5Sv" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="f5m96HV8ctSmE7GHEg7K54" />
-<title>经典书籍读书笔记 · 系列书架 · by WorkBuddy</title>
-<meta name="description" content="一个经典书籍读书笔记系列的书架首页：单文件 HTML、米色纸感、读书笔记风格。目前收录《思考，快与慢》《被讨厌的勇气》。" data-page-node-id="Lql57ak3jFcLpG65GnU95s" />
-<style>
-/* =========================================================
+  <meta charset="utf-8" data-page-node-id="LLMWzaOa1lVEGsQ5uzY5Sv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"
+    data-page-node-id="f5m96HV8ctSmE7GHEg7K54" />
+  <title>经典书籍读书笔记 · 系列书架 · by WorkBuddy</title>
+  <meta name="description" content="一个经典书籍读书笔记系列的书架首页：单文件 HTML、米色纸感、读书笔记风格。目前收录《思考，快与慢》《被讨厌的勇气》。"
+    data-page-node-id="Lql57ak3jFcLpG65GnU95s" />
+  <style>
+    /* =========================================================
    基础与排印：与读书笔记同款米色纸感 + 衬线主导
    系列首页品牌色取中性古铜，各卷以自身主色区分
    ========================================================= */
-:root{
-  --paper:        #f4ecd8;
-  --paper-2:      #faf4e1;
-  --paper-deep:   #ece2c6;
-  --ink:          #1f1a14;
-  --ink-2:        #4a4035;
-  --ink-3:        #7a6e5d;
-  --rule:         #c9b993;
-  --rule-soft:    #d9cba6;
-  --accent:       #7a4a2a;   /* 系列品牌色：古铜 */
-  --accent-2:     #b8893a;
-  --teal:         #2e6a6a;
-  --indigo:       #394867;
-  --olive:        #6a7a3c;
-  --plum:         #6c3a52;
-  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
-  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
-  --max:          1080px;
-  --gutter:       clamp(20px, 4vw, 56px);
-  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
-  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
-}
+    :root {
+      --paper: #f4ecd8;
+      --paper-2: #faf4e1;
+      --paper-deep: #ece2c6;
+      --ink: #1f1a14;
+      --ink-2: #4a4035;
+      --ink-3: #7a6e5d;
+      --rule: #c9b993;
+      --rule-soft: #d9cba6;
+      --accent: #7a4a2a;
+      /* 系列品牌色：古铜 */
+      --accent-2: #b8893a;
+      --teal: #2e6a6a;
+      --indigo: #394867;
+      --olive: #6a7a3c;
+      --plum: #6c3a52;
+      --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+      --sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      --max: 1080px;
+      --gutter: clamp(20px, 4vw, 56px);
+      --shadow-1: 0 1px 0 rgba(31, 26, 20, .06), 0 8px 24px -16px rgba(31, 26, 20, .18);
+      --shadow-2: 0 2px 0 rgba(31, 26, 20, .06), 0 18px 40px -22px rgba(31, 26, 20, .28);
+    }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{
-  font-family:var(--serif);
-  color:var(--ink);
-  background:var(--paper);
-  line-height:1.75;
-  font-size:17px;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  background-image:
-    radial-gradient(1200px 600px at 50% -10%, rgba(122,90,40,.10), transparent 60%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  background-attachment: fixed, fixed;
-}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-::selection{background:#e8d4a8;color:var(--ink)}
+    * {
+      box-sizing: border-box
+    }
 
-/* =========================================================
+    html,
+    body {
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      font-family: var(--serif);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.75;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      background-image:
+        radial-gradient(1200px 600px at 50% -10%, rgba(122, 90, 40, .10), transparent 60%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-attachment: fixed, fixed;
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    ::selection {
+      background: #e8d4a8;
+      color: var(--ink)
+    }
+
+    /* =========================================================
    顶部细条导航
    ========================================================= */
-.topbar{
-  position:sticky; top:0; z-index:50;
-  background:rgba(244,236,216,.80);
-  backdrop-filter: saturate(140%) blur(8px);
-  -webkit-backdrop-filter: saturate(140%) blur(8px);
-  border-bottom:1px solid var(--rule-soft);
-  font-family:var(--sans);
-  font-size:13.5px;
-  color:var(--ink-2);
-}
-.topbar-inner{
-  max-width:var(--max); margin:0 auto;
-  padding:10px var(--gutter);
-  display:flex; align-items:center; gap:18px;
-}
-.topbar .brand{
-  display:flex; align-items:center; gap:8px;
-  font-family:var(--serif); font-weight:600; color:var(--ink);
-  letter-spacing:.5px;
-}
-.topbar .brand .dot{
-  width:8px;height:8px;border-radius:50%; background:var(--accent);
-  box-shadow:0 0 0 3px rgba(122,74,42,.18);
-}
-.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
-.topbar nav a{
-  padding:4px 2px;
-  border-bottom:1px solid transparent;
-  transition:border-color .2s, color .2s;
-}
-.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 236, 216, .80);
+      backdrop-filter: saturate(140%) blur(8px);
+      -webkit-backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 1px solid var(--rule-soft);
+      font-family: var(--sans);
+      font-size: 13.5px;
+      color: var(--ink-2);
+    }
 
-/* =========================================================
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px var(--gutter);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .topbar .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--serif);
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: .5px;
+    }
+
+    .topbar .brand .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(122, 74, 42, .18);
+    }
+
+    .topbar nav {
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .topbar nav a {
+      padding: 4px 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s, color .2s;
+    }
+
+    .topbar nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent)
+    }
+
+    /* =========================================================
    HERO
    ========================================================= */
-.hero{
-  position:relative; overflow:hidden;
-  min-height: min(74svh, 560px);
-  display:flex; align-items:center;
-  isolation:isolate;
-}
-.hero-img{
-  position:absolute; inset:0; z-index:-2;
-  background:#27211a url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
-  background-color:#27211a;
-  filter:saturate(1.05) contrast(1.02);
-  transform: scale(1.02);
-}
-.hero::before{
-  content:""; position:absolute; inset:0; z-index:-1;
-  background:
-    linear-gradient(180deg, rgba(20,14,8,.35) 0%, rgba(20,14,8,.55) 100%),
-    linear-gradient(90deg, rgba(20,14,8,.60) 0%, rgba(20,14,8,.20) 60%, rgba(20,14,8,0) 100%);
-}
-.hero-inner{
-  position:relative; z-index:1;
-  width:100%;
-  max-width:var(--max); margin:0 auto;
-  padding: clamp(40px, 7vw, 88px) var(--gutter);
-  color:#f4ecd8;
-}
-.hero .eyebrow{
-  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
-  color:#e8d3a3; opacity:.92; margin-bottom:18px;
-  display:flex; align-items:center; gap:10px;
-}
-.hero .eyebrow .line{width:36px;height:1px;background:#e8d3a3;opacity:.6}
-.hero h1{
-  font-family:var(--serif); font-weight:700;
-  font-size: clamp(34px, 6vw, 68px);
-  line-height:1.1; letter-spacing:2px;
-  margin:0 0 16px;
-  text-shadow: 0 2px 16px rgba(0,0,0,.5);
-}
-.hero h1 .sub{
-  display:block; font-size:.34em; font-weight:400; letter-spacing:5px; color:#e8d3a3; margin-top:14px;
-}
-.hero .lede{
-  font-size: clamp(15px, 1.5vw, 18px);
-  color:#e6d6ab; max-width: 60ch; line-height:1.7;
-  text-shadow: 0 1px 6px rgba(0,0,0,.5);
-}
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: min(74svh, 560px);
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+    }
 
-/* =========================================================
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: #27211a url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+      background-color: #27211a;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(20, 14, 8, .35) 0%, rgba(20, 14, 8, .55) 100%),
+        linear-gradient(90deg, rgba(20, 14, 8, .60) 0%, rgba(20, 14, 8, .20) 60%, rgba(20, 14, 8, 0) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(40px, 7vw, 88px) var(--gutter);
+      color: #f4ecd8;
+    }
+
+    .hero .eyebrow {
+      font-family: var(--sans);
+      font-size: 12.5px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #e8d3a3;
+      opacity: .92;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero .eyebrow .line {
+      width: 36px;
+      height: 1px;
+      background: #e8d3a3;
+      opacity: .6
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(34px, 6vw, 68px);
+      line-height: 1.1;
+      letter-spacing: 2px;
+      margin: 0 0 16px;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, .5);
+    }
+
+    .hero h1 .sub {
+      display: block;
+      font-size: .34em;
+      font-weight: 400;
+      letter-spacing: 5px;
+      color: #e8d3a3;
+      margin-top: 14px;
+    }
+
+    .hero .lede {
+      font-size: clamp(15px, 1.5vw, 18px);
+      color: #e6d6ab;
+      max-width: 60ch;
+      line-height: 1.7;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+    }
+
+    /* =========================================================
    通用容器与标题
    ========================================================= */
-.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
-section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
-section + section{ border-top:1px dashed var(--rule-soft); }
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter)
+    }
 
-.eyebrow2{
-  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
-  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
-}
-.eyebrow2 .num{
-  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
-  color:var(--ink-2); letter-spacing:1px;
-}
-h2{
-  font-family:var(--serif); font-weight:700;
-  font-size: clamp(28px, 3.6vw, 40px);
-  line-height:1.2; letter-spacing:.5px;
-  margin: 0 0 8px;
-}
-h2 .tail{ color:var(--accent); }
-h2 + .sub{ color:var(--ink-2); margin: 0 0 44px; max-width:64ch; font-size:16px }
+    section {
+      padding: clamp(56px, 8vw, 96px) 0;
+      position: relative;
+    }
 
-/* =========================================================
+    section+section {
+      border-top: 1px dashed var(--rule-soft);
+    }
+
+    .eyebrow2 {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow2 .num {
+      display: inline-block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink-2);
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(28px, 3.6vw, 40px);
+      line-height: 1.2;
+      letter-spacing: .5px;
+      margin: 0 0 8px;
+    }
+
+    h2 .tail {
+      color: var(--accent);
+    }
+
+    h2+.sub {
+      color: var(--ink-2);
+      margin: 0 0 44px;
+      max-width: 64ch;
+      font-size: 16px
+    }
+
+    /* =========================================================
    书架 / 书卡
    ========================================================= */
-.shelf{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-  align-items:stretch;
-}
-.book{
-  position:relative;
-  display:flex; flex-direction:column;
-  background: var(--paper-2);
-  border:1px solid var(--rule);
-  border-radius:6px;
-  padding: 30px 26px 26px 34px;
-  box-shadow: var(--shadow-1);
-  overflow:hidden;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.book::before{ /* 书脊 */
-  content:""; position:absolute; left:0; top:0; bottom:0; width:10px;
-  background: var(--bacc, var(--accent));
-}
-.book:hover{ transform: translateY(-3px); box-shadow: var(--shadow-2) }
-.book .ribbon-no{
-  position:absolute; top:16px; right:-30px;
-  background: var(--bacc, var(--accent)); color:#f6ecd6;
-  padding:5px 38px; transform:rotate(36deg);
-  font-family:var(--sans); font-size:11px; letter-spacing:2.5px;
-  box-shadow: 0 4px 14px rgba(0,0,0,.18);
-}
-.book .kicker{
-  font-family:var(--sans); font-size:11.5px; letter-spacing:2px;
-  color:var(--bacc, var(--accent)); margin-bottom:10px;
-}
-.book h3{
-  font-family:var(--serif); font-weight:700;
-  font-size:25px; line-height:1.25; margin:0 0 4px; color:var(--ink);
-}
-.book .author{
-  font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:.5px;
-  margin-bottom:16px;
-}
-.book .desc{
-  font-size:14.5px; color:var(--ink-2); line-height:1.7; margin:0 0 16px;
-}
-.book .chips{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px }
-.book .chips span{
-  font-family:var(--sans); font-size:11px; letter-spacing:1px;
-  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper);
-  padding:3px 9px; border-radius:999px;
-}
-.book .read{
-  margin-top:auto;
-  display:inline-flex; align-items:center; gap:8px;
-  font-family:var(--sans); font-size:13px; letter-spacing:1.5px;
-  color:var(--bacc, var(--accent)); font-weight:600;
-  transition: gap .2s ease;
-}
-.book .read .arrow{ transition: transform .2s ease; }
-.book:hover .read .arrow{ transform: translateX(4px) }
-.book .meta-line{
-  margin-top:14px; padding-top:12px; border-top:1px dashed var(--rule-soft);
-  font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1px;
-}
+    .shelf {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      align-items: stretch;
+    }
 
-/* 筹备中的幽灵卡片 */
-.book.ghost{ opacity:.72; border-style:dashed; }
-.book.ghost::before{ background: var(--rule); }
-.book.ghost h3{ color:var(--ink-3) }
-.book.ghost .read{ color:var(--ink-3); pointer-events:none }
-.book.ghost .soon{
-  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
-  color:var(--ink-3); background:var(--paper-deep);
-  padding:3px 9px; border-radius:999px; margin-top:auto;
-}
+    .book {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 30px 26px 26px 34px;
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
 
-/* =========================================================
+    .book::before {
+      /* 书脊 */
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: var(--bacc, var(--accent));
+    }
+
+    .book:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-2)
+    }
+
+    .book .ribbon-no {
+      position: absolute;
+      top: 16px;
+      right: -30px;
+      background: var(--bacc, var(--accent));
+      color: #f6ecd6;
+      padding: 5px 38px;
+      transform: rotate(36deg);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+    }
+
+    .book .kicker {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 2px;
+      color: var(--bacc, var(--accent));
+      margin-bottom: 10px;
+    }
+
+    .book h3 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.25;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+
+    .book .author {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--ink-3);
+      letter-spacing: .5px;
+      margin-bottom: 16px;
+    }
+
+    .book .desc {
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+
+    .book .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px
+    }
+
+    .book .chips span {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--ink-2);
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .book .read {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: var(--bacc, var(--accent));
+      font-weight: 600;
+      transition: gap .2s ease;
+    }
+
+    .book .read .arrow {
+      transition: transform .2s ease;
+    }
+
+    .book:hover .read .arrow {
+      transform: translateX(4px)
+    }
+
+    .book .meta-line {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--rule-soft);
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--ink-3);
+      letter-spacing: 1px;
+    }
+
+    /* 筹备中的幽灵卡片 */
+    .book.ghost {
+      opacity: .72;
+      border-style: dashed;
+    }
+
+    .book.ghost::before {
+      background: var(--rule);
+    }
+
+    .book.ghost h3 {
+      color: var(--ink-3)
+    }
+
+    .book.ghost .read {
+      color: var(--ink-3);
+      pointer-events: none
+    }
+
+    .book.ghost .soon {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--ink-3);
+      background: var(--paper-deep);
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-top: auto;
+    }
+
+    /* =========================================================
    关于系列
    ========================================================= */
-.about{
-  display:grid; grid-template-columns: 1fr; gap: 40px; align-items:start;
-}
-.about .lead{
-  font-family:var(--serif); font-size:19px; line-height:1.9; color:var(--ink);
-  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0;
-  max-width: 64ch;
-}
-.about .lead b{ color:var(--accent) }
+    .about {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: start;
+    }
 
-/* =========================================================
+    .about .lead {
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.9;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 18px;
+      margin: 0;
+      max-width: 64ch;
+    }
+
+    .about .lead b {
+      color: var(--accent)
+    }
+
+    /* =========================================================
    页脚
    ========================================================= */
-.foot{
-  padding: 56px 0 72px;
-  text-align:center;
-  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
-  border-top: 1px solid var(--rule);
-  font-family:var(--sans);
-  color:var(--ink-3);
-}
-.foot .mark{
-  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
-  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
-}
-.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
-.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+    .foot {
+      padding: 56px 0 72px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+      border-top: 1px solid var(--rule);
+      font-family: var(--sans);
+      color: var(--ink-3);
+    }
 
-/* =========================================================
+    .foot .mark {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 20px;
+      color: var(--ink-2);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      line-height: 1.9;
+      max-width: 44ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .foot .rule {
+      width: 64px;
+      height: 1px;
+      background: var(--rule);
+      margin: 14px auto
+    }
+
+    .foot .meta {
+      font-size: 12.5px;
+      letter-spacing: 1.5px
+    }
+
+    /* =========================================================
    响应式
    ========================================================= */
-@media (max-width: 920px){
-  .shelf{ grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px){
-  body{ font-size:16px }
-  .topbar nav{ display:none }
-  .topbar-inner{ justify-content:space-between }
-  .shelf{ grid-template-columns: 1fr; }
-}
-</style>
+    @media (max-width: 920px) {
+      .shelf {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px
+      }
+
+      .topbar nav {
+        display: none
+      }
+
+      .topbar-inner {
+        justify-content: space-between
+      }
+
+      .shelf {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body data-page-node-id="OQZG5EqArdJ4L25gVLyowT">
 
-<!-- ============ 顶部细条 ============ -->
-<header class="topbar" role="banner" data-page-node-id="zJdG7BPfRQcGdD1o2WS8qN">
-  <div class="topbar-inner" data-page-node-id="rOcGr1U3pDDQ5pOn3EO2t0">
-    <div class="brand" data-page-node-id="LoiN8YmcF10DeGESSrG2J1"><span class="dot" data-page-node-id="sHdSF3NVoNvIhnjDtbSCbj"></span> 经典书籍读书笔记 · 系列书架</div>
-    <nav aria-label="目录" data-page-node-id="Mi6fSzl26Gwr86ia6vpl9Q">
-      <a href="#shelf" data-page-node-id="RrEwA6PguE7VbmdWKXRPHO">书架</a>
-      <a href="#about" data-page-node-id="hqbyV42JchFb7Y3BaIxy47">关于系列</a>
-      <a href="thinking-fast-and-slow.html" data-page-node-id="vFXzU8vccIKhGAEePIAFYS">思考，快与慢</a>
-      <a href="the-courage-to-be-disliked.html" data-page-node-id="5H4e1TgBuFb8QclOJ4abBc">被讨厌的勇气</a>
-    </nav>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="aGnrtzNNUM1xk4FVzEWlev">
-  <div class="hero-img" role="img" aria-label="暖光下的图书馆书架" data-page-node-id="VHVeCLyIh1XWtSnMybyjio"></div>
-  <div class="hero-inner" data-page-node-id="aHWBZylU62eYE6XiYlEoaC">
-    <div class="eyebrow" data-page-node-id="aB0U6XLAFZbyfCtxu1i7sv"><span class="line" data-page-node-id="5m1xHt13rSo1P8woc7yB7D"></span>READING NOTES SERIES</div>
-    <h1 data-page-node-id="IfmTCtc2jOLFLIf0c0cpCM">
-      经典书籍读书笔记
-      <span class="sub" data-page-node-id="f5M8UOC8IEehH59SUTobjt">A BOOKNOTE SHELF · 单文件 HTML · 米色纸感</span>
-    </h1>
-    <p class="lede" data-page-node-id="V2MVWgVIwFAe1yBQWcHk27">
-      把一整本书，读成一张可以反复翻阅的纸。同一套设计系统、换一种主色，就是一卷新的笔记——
-      这里收着已经上架的书，也留着即将到来的卷次。
-    </p>
-  </div>
-</section>
-
-<!-- ============ 书架 ============ -->
-<section id="shelf" aria-labelledby="shelf-h" data-page-node-id="8imut9ecQMWM5hOXlfDVYl">
-  <div class="wrap" data-page-node-id="NfBqy2OkX9jvkcu5RaB2n3">
-    <div class="eyebrow2" data-page-node-id="LmxFRfh3ZMYCUdPIJwzNOU"><span class="num" data-page-node-id="Da4fAXpVEjEX1Ap0lQ5fHl">01 /</span>THE SHELF</div>
-    <h2 id="shelf-h" data-page-node-id="fEOKBToTRAVevI7ag3ODaC">书架上，目前有 <b class="tail" data-page-node-id="x1A3UiOJ2rPCOvFc8OrrRF">两卷</b></h2>
-    <p class="sub" data-page-node-id="Qw5jIr0SKoY6XmnCVxPvgV">每一卷都是独立的单文件读书笔记，点开即读。卷次以编号与主色区分，但共享同一套视觉语言。</p>
-
-    <div class="shelf" data-page-node-id="EXvevijOQjDwkaehAp0mTG">
-
-      <!-- NO.01 -->
-      <a class="book" href="thinking-fast-and-slow.html" style="--bacc:#8a4a2a" data-page-node-id="Shug9nDxrHyfoBGSbvqbUn">
-        <div class="ribbon-no" data-page-node-id="k4AIN7FyPHoVix0Xmsh34u">NO. 01</div>
-        <div class="kicker" data-page-node-id="77gMvXR1ifMh5iN6LOpLYS">行为决策 · 认知心理学</div>
-        <h3 data-page-node-id="cg39AvyVXyVGsnt2mqpDYQ">思考，快与慢</h3>
-        <div class="author" data-page-node-id="fUoV9RVAYrEHBJfU8tHRjo">丹尼尔·卡尼曼（Daniel Kahneman）</div>
-        <p class="desc" data-page-node-id="DgRlkwxgHtDHOUcAmHanQV">一部关于"我们究竟如何思考"的大书：系统 1 与系统 2、十种可预测的认知偏误，以及怎样在关键决策上少出错。</p>
-        <div class="chips" data-page-node-id="D4Tf2dFJExVsecfiZC9EMW">
-          <span data-page-node-id="ttGbmctFl9bDUIIAKUn2KG">#双系统</span><span data-page-node-id="pRDGnKq8rC8J8DwvYzKEvu">#启发法与偏差</span><span data-page-node-id="Lee9K4SXFFbn0DN9Nlv3XC">#前景理论</span><span data-page-node-id="YHFEcgOaJzDFwFvwXXw8hO">#峰终定律</span>
-        </div>
-        <div class="read" data-page-node-id="0sofMBMDFvpFBusBvno4OV">阅读笔记 <span class="arrow" data-page-node-id="RQQTuDmygqNgdp1nAwa3YH">→</span></div>
-        <div class="meta-line" data-page-node-id="DQf5xuNny57RrcABQsae10">38 章 / 5 部分 · 2002 诺贝尔经济学奖</div>
-      </a>
-
-      <!-- NO.02 -->
-      <a class="book" href="the-courage-to-be-disliked.html" style="--bacc:#2c4a63" data-page-node-id="BABeujYefBjM7HBTnviCVK">
-        <div class="ribbon-no" data-page-node-id="VkrTfWhq5Dz1nxx556khGK">NO. 02</div>
-        <div class="kicker" data-page-node-id="KuHnEGi1MCnN84vipfvva0">阿德勒 · 实践哲学</div>
-        <h3 data-page-node-id="HqYfIrlU2FzUC2cGBRk3rm">被讨厌的勇气</h3>
-        <div class="author" data-page-node-id="zQzVigG22r3sYTG3lF3Msw">岸見一郎 · 古賀史健</div>
-        <p class="desc" data-page-node-id="KNucV86rNasCC4YlFqmHp9">青年与哲人的五个夜晚论辩。目的论、课题分离、共同体感觉——它不温柔，但锋利地指出：你的不幸，是你自己"选择"的。</p>
-        <div class="chips" data-page-node-id="Kd1yJF4NDtHknSZ95BSz9E">
-          <span data-page-node-id="Ws63p07yucKpHGzGefMhgk">#目的论</span><span data-page-node-id="65oA0RPGGAHuMMPNcUzxSL">#课题分离</span><span data-page-node-id="KIOuYDoH7dnazRho7NVHfl">#共同体感觉</span><span data-page-node-id="WAOEYq4ZyVbRsgFGNsGHei">#活在当下</span>
-        </div>
-        <div class="read" data-page-node-id="tLG06ysUoZtoZODAunRiue">阅读笔记 <span class="arrow" data-page-node-id="JVsP5eDHfem8cK2EqsnEm4">→</span></div>
-        <div class="meta-line" data-page-node-id="xVV3ECnwdcYs9c9bGrJKld">对话体 · 共五夜 · 阿德勒心理学</div>
-      </a>
-
-      <!-- NO.03 筹备中 -->
-      <div class="book ghost" style="--bacc:var(--rule)" data-page-node-id="RtjYL9qkHI8u9X5InOpxOA">
-        <div class="ribbon-no" data-page-node-id="fZskwO5ikxCjSXUVWSajxv">NO. 03</div>
-        <div class="kicker" data-page-node-id="rJRp5cai9qttoxHfGQZAA7">即将上架</div>
-        <h3 data-page-node-id="KVFV3F8MFAqxiRFi0FoXzB">下一卷，筹备中</h3>
-        <div class="author" data-page-node-id="qJBy8Upe7a94J8tQQup07w">同系列 · 待定</div>
-        <p class="desc" data-page-node-id="1weTrvuhdXLFiAdSUJslJy">同一套设计系统、换一种主色，就是一卷新的笔记。欢迎点题——哪一本书，想被读成这样一张纸？</p>
-        <div class="chips" data-page-node-id="apwUCdzsMI6w47MaqRbpgX">
-          <span data-page-node-id="4tAPrpm5mWIyFRrvgeOjBw">#同系列</span><span data-page-node-id="wH12mDbvhSwxrjO6MJfdxn">#换主色</span><span data-page-node-id="H10SXkTihH5j64oOWd9cEr">#可拓展</span>
-        </div>
-        <div class="soon" data-page-node-id="6kr5ys5bE4wUAnIDbpdMvn">敬请期待</div>
-        <div class="meta-line" data-page-node-id="CZChh8FZjGgUV5ekyRC9Mt">卷次持续更新中</div>
-      </div>
-
+  <!-- ============ 顶部细条 ============ -->
+  <header class="topbar" role="banner" data-page-node-id="zJdG7BPfRQcGdD1o2WS8qN">
+    <div class="topbar-inner" data-page-node-id="rOcGr1U3pDDQ5pOn3EO2t0">
+      <div class="brand" data-page-node-id="LoiN8YmcF10DeGESSrG2J1"><span class="dot"
+          data-page-node-id="sHdSF3NVoNvIhnjDtbSCbj"></span>一页观澜 · 经典书籍读书笔记 · 系列书架</div>
+      <nav aria-label="目录" data-page-node-id="Mi6fSzl26Gwr86ia6vpl9Q">
+        <a href="#shelf" data-page-node-id="RrEwA6PguE7VbmdWKXRPHO">书架</a>
+        <a href="#about" data-page-node-id="hqbyV42JchFb7Y3BaIxy47">关于系列</a>
+        <a href="thinking-fast-and-slow.html" data-page-node-id="vFXzU8vccIKhGAEePIAFYS">思考，快与慢</a>
+        <a href="the-courage-to-be-disliked.html" data-page-node-id="5H4e1TgBuFb8QclOJ4abBc">被讨厌的勇气</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ============ 关于系列 ============ -->
-<section id="about" aria-labelledby="about-h" data-page-node-id="wKD1V1QFQF7NRiGqIiVRBf">
-  <div class="wrap" data-page-node-id="8QEzWcC51zRsrjpwNOseAh">
-    <div class="eyebrow2" data-page-node-id="lpk3nzhkofMDuqZysLh7BR"><span class="num" data-page-node-id="jfXC0kBnJ6zIl9U9z7lTcl">02 /</span>ABOUT THE SERIES</div>
-    <h2 id="about-h" data-page-node-id="6HSLg7Roc1CUfElSOutUev">关于这个<b class="tail" data-page-node-id="gnwTZu7eGjp9QclKKaxwN5">系列</b></h2>
-    <p class="sub" data-page-node-id="jNIjcj3KPl1WgIt8t05CA5">它不是书评，也不是摘抄。每一卷都按固定的八段式骨架重写：信息卡 → 一句话总览 → 核心对照 → 关键概念书签 → 脉络图 → 金句 → 行动启发 → 适合谁读。</p>
-
-    <div class="about" data-page-node-id="wTqpVSnS2K1x7qeeLJhFxA">
-      <p class="lead" data-page-node-id="SXk1zACdGx1iFYQsFyYVUn">
-        设计哲学很简单：<b data-page-node-id="x6YfFe9phjH4PqdTOrEBij">米色纸感、衬线主导、中性配色</b>。
-        每一卷是独立的单文件 HTML，<b data-page-node-id="3RKdjV5PRtMO2U7bhAyGEu">零依赖、可离线</b>；
-        换一本书，只需要换主色与内容——骨架始终如一，
-        于是整面书架看起来像一套书。
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="aGnrtzNNUM1xk4FVzEWlev">
+    <div class="hero-img" role="img" aria-label="暖光下的图书馆书架" data-page-node-id="VHVeCLyIh1XWtSnMybyjio"></div>
+    <div class="hero-inner" data-page-node-id="aHWBZylU62eYE6XiYlEoaC">
+      <div class="eyebrow" data-page-node-id="aB0U6XLAFZbyfCtxu1i7sv"><span class="line"
+          data-page-node-id="5m1xHt13rSo1P8woc7yB7D"></span>READING NOTES SERIES</div>
+      <h1 data-page-node-id="IfmTCtc2jOLFLIf0c0cpCM">
+        经典书籍读书笔记
+        <span class="sub" data-page-node-id="f5M8UOC8IEehH59SUTobjt">A BOOKNOTE SHELF · 米色纸感</span>
+      </h1>
+      <p class="lede" data-page-node-id="V2MVWgVIwFAe1yBQWcHk27">
+        把一整本书，读成一张可以反复翻阅的纸。同一套设计系统、换一种主色，就是一卷新的笔记——
+        这里收着已经上架的书，也留着即将到来的卷次。
       </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ 页脚 ============ -->
-<footer class="foot" data-page-node-id="WDfhwW2U6KjMJgQhWZrW50">
-  <div class="wrap" data-page-node-id="BHNZRs0As5f3pS4brVXF95">
-    <div class="mark" data-page-node-id="sUnWyECBXvDHp2IxjkOv9F">
-      "把一整本书，读成一张可以反复翻阅的纸。"
+  <!-- ============ 书架 ============ -->
+  <section id="shelf" aria-labelledby="shelf-h" data-page-node-id="8imut9ecQMWM5hOXlfDVYl">
+    <div class="wrap" data-page-node-id="NfBqy2OkX9jvkcu5RaB2n3">
+      <div class="eyebrow2" data-page-node-id="LmxFRfh3ZMYCUdPIJwzNOU"><span class="num"
+          data-page-node-id="Da4fAXpVEjEX1Ap0lQ5fHl">01 /</span>THE SHELF</div>
+      <h2 id="shelf-h" data-page-node-id="fEOKBToTRAVevI7ag3ODaC">书架上，目前有 <b class="tail"
+          data-page-node-id="x1A3UiOJ2rPCOvFc8OrrRF">两卷</b></h2>
+      <p class="sub" data-page-node-id="Qw5jIr0SKoY6XmnCVxPvgV">每一卷都是独立的单文件读书笔记，点开即读。卷次以编号与主色区分，但共享同一套视觉语言。</p>
+
+      <div class="shelf" data-page-node-id="EXvevijOQjDwkaehAp0mTG">
+
+        <!-- NO.01 -->
+        <a class="book" href="thinking-fast-and-slow.html" style="--bacc:#8a4a2a"
+          data-page-node-id="Shug9nDxrHyfoBGSbvqbUn">
+          <div class="ribbon-no" data-page-node-id="k4AIN7FyPHoVix0Xmsh34u">NO. 01</div>
+          <div class="kicker" data-page-node-id="77gMvXR1ifMh5iN6LOpLYS">行为决策 · 认知心理学</div>
+          <h3 data-page-node-id="cg39AvyVXyVGsnt2mqpDYQ">思考，快与慢</h3>
+          <div class="author" data-page-node-id="fUoV9RVAYrEHBJfU8tHRjo">丹尼尔·卡尼曼（Daniel Kahneman）</div>
+          <p class="desc" data-page-node-id="DgRlkwxgHtDHOUcAmHanQV">一部关于"我们究竟如何思考"的大书：系统 1 与系统
+            2、十种可预测的认知偏误，以及怎样在关键决策上少出错。</p>
+          <div class="chips" data-page-node-id="D4Tf2dFJExVsecfiZC9EMW">
+            <span data-page-node-id="ttGbmctFl9bDUIIAKUn2KG">#双系统</span><span
+              data-page-node-id="pRDGnKq8rC8J8DwvYzKEvu">#启发法与偏差</span><span
+              data-page-node-id="Lee9K4SXFFbn0DN9Nlv3XC">#前景理论</span><span
+              data-page-node-id="YHFEcgOaJzDFwFvwXXw8hO">#峰终定律</span>
+          </div>
+          <div class="read" data-page-node-id="0sofMBMDFvpFBusBvno4OV">阅读笔记 <span class="arrow"
+              data-page-node-id="RQQTuDmygqNgdp1nAwa3YH">→</span></div>
+          <div class="meta-line" data-page-node-id="DQf5xuNny57RrcABQsae10">38 章 / 5 部分 · 2002 诺贝尔经济学奖</div>
+        </a>
+
+        <!-- NO.02 -->
+        <a class="book" href="the-courage-to-be-disliked.html" style="--bacc:#2c4a63"
+          data-page-node-id="BABeujYefBjM7HBTnviCVK">
+          <div class="ribbon-no" data-page-node-id="VkrTfWhq5Dz1nxx556khGK">NO. 02</div>
+          <div class="kicker" data-page-node-id="KuHnEGi1MCnN84vipfvva0">阿德勒 · 实践哲学</div>
+          <h3 data-page-node-id="HqYfIrlU2FzUC2cGBRk3rm">被讨厌的勇气</h3>
+          <div class="author" data-page-node-id="zQzVigG22r3sYTG3lF3Msw">岸見一郎 · 古賀史健</div>
+          <p class="desc" data-page-node-id="KNucV86rNasCC4YlFqmHp9">
+            青年与哲人的五个夜晚论辩。目的论、课题分离、共同体感觉——它不温柔，但锋利地指出：你的不幸，是你自己"选择"的。</p>
+          <div class="chips" data-page-node-id="Kd1yJF4NDtHknSZ95BSz9E">
+            <span data-page-node-id="Ws63p07yucKpHGzGefMhgk">#目的论</span><span
+              data-page-node-id="65oA0RPGGAHuMMPNcUzxSL">#课题分离</span><span
+              data-page-node-id="KIOuYDoH7dnazRho7NVHfl">#共同体感觉</span><span
+              data-page-node-id="WAOEYq4ZyVbRsgFGNsGHei">#活在当下</span>
+          </div>
+          <div class="read" data-page-node-id="tLG06ysUoZtoZODAunRiue">阅读笔记 <span class="arrow"
+              data-page-node-id="JVsP5eDHfem8cK2EqsnEm4">→</span></div>
+          <div class="meta-line" data-page-node-id="xVV3ECnwdcYs9c9bGrJKld">对话体 · 共五夜 · 阿德勒心理学</div>
+        </a>
+
+        <!-- NO.03 筹备中 -->
+        <div class="book ghost" style="--bacc:var(--rule)" data-page-node-id="RtjYL9qkHI8u9X5InOpxOA">
+          <div class="ribbon-no" data-page-node-id="fZskwO5ikxCjSXUVWSajxv">NO. 03</div>
+          <div class="kicker" data-page-node-id="rJRp5cai9qttoxHfGQZAA7">即将上架</div>
+          <h3 data-page-node-id="KVFV3F8MFAqxiRFi0FoXzB">下一卷，筹备中</h3>
+          <div class="author" data-page-node-id="qJBy8Upe7a94J8tQQup07w">同系列 · 待定</div>
+          <p class="desc" data-page-node-id="1weTrvuhdXLFiAdSUJslJy">同一套设计系统、换一种主色，就是一卷新的笔记。欢迎点题——哪一本书，想被读成这样一张纸？</p>
+          <div class="chips" data-page-node-id="apwUCdzsMI6w47MaqRbpgX">
+            <span data-page-node-id="4tAPrpm5mWIyFRrvgeOjBw">#同系列</span><span
+              data-page-node-id="wH12mDbvhSwxrjO6MJfdxn">#换主色</span><span
+              data-page-node-id="H10SXkTihH5j64oOWd9cEr">#可拓展</span>
+          </div>
+          <div class="soon" data-page-node-id="6kr5ys5bE4wUAnIDbpdMvn">敬请期待</div>
+          <div class="meta-line" data-page-node-id="CZChh8FZjGgUV5ekyRC9Mt">卷次持续更新中</div>
+        </div>
+
+      </div>
     </div>
-    <div class="rule" data-page-node-id="UQEvS8pat0IEvn9wXtoD7j"></div>
-    <div class="meta" data-page-node-id="dVYurlEAd3Z8mHYVCHemgM">
-      经典书籍读书笔记系列 · 整理 by WorkBuddy · 2026<br data-page-node-id="ztMiueyjX4Ji9sg9Ilo0uC"/>
-      本系列用于个人学习，请勿商用
+  </section>
+
+  <!-- ============ 关于系列 ============ -->
+  <section id="about" aria-labelledby="about-h" data-page-node-id="wKD1V1QFQF7NRiGqIiVRBf">
+    <div class="wrap" data-page-node-id="8QEzWcC51zRsrjpwNOseAh">
+      <div class="eyebrow2" data-page-node-id="lpk3nzhkofMDuqZysLh7BR"><span class="num"
+          data-page-node-id="jfXC0kBnJ6zIl9U9z7lTcl">02 /</span>ABOUT THE SERIES</div>
+      <h2 id="about-h" data-page-node-id="6HSLg7Roc1CUfElSOutUev">关于这个<b class="tail"
+          data-page-node-id="gnwTZu7eGjp9QclKKaxwN5">系列</b></h2>
+      <p class="sub" data-page-node-id="jNIjcj3KPl1WgIt8t05CA5">它不是书评，也不是摘抄。每一卷都按固定的八段式骨架重写：信息卡 → 一句话总览 → 核心对照 → 关键概念书签
+        → 脉络图 → 金句 → 行动启发 → 适合谁读。</p>
+
+      <div class="about" data-page-node-id="wTqpVSnS2K1x7qeeLJhFxA">
+        <p class="lead" data-page-node-id="SXk1zACdGx1iFYQsFyYVUn">
+          设计哲学很简单：<b data-page-node-id="x6YfFe9phjH4PqdTOrEBij">米色纸感、衬线主导、中性配色</b>。
+          每一卷是独立的单文件 HTML，<b data-page-node-id="3RKdjV5PRtMO2U7bhAyGEu">零依赖、可离线</b>；
+          换一本书，只需要换主色与内容——骨架始终如一，
+          于是整面书架看起来像一套书。
+        </p>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="foot" data-page-node-id="WDfhwW2U6KjMJgQhWZrW50">
+    <div class="wrap" data-page-node-id="BHNZRs0As5f3pS4brVXF95">
+      <div class="mark" data-page-node-id="sUnWyECBXvDHp2IxjkOv9F">
+        "把一整本书，读成一张可以反复翻阅的纸。"
+      </div>
+      <div class="rule" data-page-node-id="UQEvS8pat0IEvn9wXtoD7j"></div>
+      <div class="meta" data-page-node-id="dVYurlEAd3Z8mHYVCHemgM">
+        经典书籍读书笔记系列 · 整理 by WorkBuddy · 2026<br data-page-node-id="ztMiueyjX4Ji9sg9Ilo0uC" />
+        本系列用于个人学习，请勿商用
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
