@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="zCVCeLGKlY6AQQs7TfCNsS">
+
+<head data-page-node-id="EsryouBL6v4u9aGWTZO4ib">
+<meta charset="utf-8" data-page-node-id="tjdqwjSIPgJ5uZ7Z4C5MkO" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="a3GzFFg7wccgUnCXd2AhpZ" />
+<title>《哈萨比斯：谷歌AI之脑》读书笔记</title>
+<meta name="description" content="塞巴斯蒂安·马拉比《哈萨比斯：谷歌AI之脑》：从 4 岁学棋的伦敦男孩，到凭 AlphaFold 摘得诺贝尔化学奖。DeepMind 的创立、谷歌 6.5 亿美元收购、AlphaGo 时刻、低估 Transformer 的代价——一个关于"先解决智能，再用智能解决一切"的故事。" data-page-node-id="eOPqbkOaVld78BCjYjocHd" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为紫棠，呼应 DeepMind）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #8e2f7b;   /* 主书签色：紫棠 */
+  --accent-2:     #b0903f;   /* 古金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #6b4f2a;   /* 赭褐 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(142,47,123,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(142,47,123,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#1a0a16 url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#1a0a16;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(26,10,22,.22) 0%, rgba(26,10,22,.06) 35%, rgba(26,10,22,.84) 100%),
+    linear-gradient(90deg, rgba(26,10,22,.64) 0%, rgba(26,10,22,.20) 55%, rgba(26,10,22,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f2efdf;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }
+.dual .sys.b .tag{ background:var(--accent) }
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body data-page-node-id="YsgWajWFiC2GiZy9wNrjHb">
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner" data-page-node-id="jVMBfWa8EmEguV9isjuU7l">
+  <div class="topbar-inner" data-page-node-id="sGBym3UPjB4yYNwFkj9sVv">
+    <a href="index.html" class="home" aria-label="返回系列首页" data-page-node-id="pHAtFHGmbjnj7Lfuq8tI3R">一页观澜</a>
+    <div class="brand" data-page-node-id="uCjyHMjzsJkhdSeMFQdyVb"><span class="dot" data-page-node-id="w58HUhKkzBlnMEf6XGQlUJ"></span> 阅读笔记 · 哈萨比斯：谷歌AI之脑</div>
+    <nav aria-label="目录" data-page-node-id="NjHvW5VIq0MNlCk4XuEEtb">
+      <a href="#info" data-page-node-id="8yDV9CIDi72kszwL5QFbSu">书籍</a>
+      <a href="#one" data-page-node-id="Ixd4Lu57IWML8EpyYlnvHj">总览</a>
+      <a href="#dual" data-page-node-id="7CNzxdMd7FNdtK0wFtLYVh">两组对照</a>
+      <a href="#bias" data-page-node-id="KBowefBU8G2LztWsgY5bwA">关键概念</a>
+      <a href="#map" data-page-node-id="xyiQvTFzGtRnPKq2DKAk7w">脉络</a>
+      <a href="#quotes" data-page-node-id="RrNg35jISNqMwgfEKFtgdJ">金句</a>
+      <a href="#action" data-page-node-id="xZrZA5IyQtESlHX2yhNwuc">行动</a>
+      <a href="#who" data-page-node-id="wYIhzivqXLHxIqhp18o2Pd">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="bCsPMQdFmGXCMcTOFeqCIS">
+  <div class="hero-img" role="img" aria-label="发光的神经网络与数字化大脑，象征通用智能" data-page-node-id="ExC88yPLdnofKQx3VltUKI"></div>
+  <div class="ribbon" data-page-node-id="IagwAmxKKbcBpQBXYukluS">NO. 21 · 人物传记</div>
+  <div class="hero-inner" data-page-node-id="AfxA0nkzYDQsHsYFQ7bQv1">
+    <div class="eyebrow" data-page-node-id="Etq6iGxdsgHu3MvdmBi2zi"><span class="line" data-page-node-id="gP2nNOHjaGraPvuyDl24yq"></span>READING NOTES</div>
+    <h1 data-page-node-id="LwstYpXsfQWfaRh4YSOqaD">
+      哈萨比斯：谷歌AI之脑
+      <span class="sub" data-page-node-id="hLvGd8RqiFLmGY7wnZehPM">THE INFINITY MACHINE · SEBASTIAN MALLABY</span>
+    </h1>
+    <p class="lede" data-page-node-id="Hfb8jqVtFmGAFSbwlF8A2D">
+      4 岁学棋，13 岁达到大师水准；17 岁做出销量百万的游戏；38 岁让 AlphaGo 击败李世石；
+      48 岁凭 <b data-page-node-id="8t2uDx5oewQnmNwmvH34LC">AlphaFold</b> 摘下诺贝尔化学奖。
+      这本全球唯一官方授权传记，写的是一个更简单也更难的问题——<b data-page-node-id="yd1g0QlR99K6lLfaAaeas1">先解决智能，再用智能解决一切</b>。
+    </p>
+    <div class="byline" data-page-node-id="LCdfYvRJJviSUGtQEtIRJR">
+      <span data-page-node-id="ZdWWa0xPD1rles9lN2AID8"><b data-page-node-id="2PQre0vwb7quSUbE26i5eP">作者</b> 塞巴斯蒂安·马拉比（Sebastian Mallaby）</span>
+      <span data-page-node-id="LBtGEoIlWKzb8PJiQ0Loy6"><b data-page-node-id="vSXDUKQVwAmEsR2B4x6fPv">译者</b> 周健工</span>
+      <span data-page-node-id="C1x9KqS3IyDMwjuoamWba2"><b data-page-node-id="EVGuDeB2bOgOGXtvj9Iztd">中文版</b> 2026 · 浙江科学技术出版社 / 湛庐文化</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h" data-page-node-id="DrHCOOyBjPPRhQqJPcp1iD">
+  <div class="wrap" data-page-node-id="VytzfTTeplgQlc6lzKWuEB">
+    <div class="eyebrow2" data-page-node-id="K4ia7DjnrGdJCwFKI1Ucat"><span class="num" data-page-node-id="XSPr2pJAFPC8zWPEM2LG7s">01 /</span>关于这本书</div>
+    <h2 id="info-h" data-page-node-id="V08orAG6jeM3OwDAILhQvS">先把智能这道题解出来，<b class="tail" data-page-node-id="UQOSTw9vZHyLbugtVLPUxp">再拿它去解所有别的题</b></h2>
+    <p class="sub" data-page-node-id="eHzgsrxDjwcwzauXJmwlYp">《哈萨比斯：谷歌AI之脑》是两度入围普利策奖的作家、历史学家塞巴斯蒂安·马拉比（Sebastian Mallaby，著有《风险投资史》）写的官方授权传记，原作名为 <i data-page-node-id="wAipiIZ7U3CfIjdcpICvxf">The Infinity Machine: Demis Hassabis, DeepMind, and the Quest for Superintelligence</i>。中文版由周健工翻译，浙江科学技术出版社 / 湛庐文化 2026 年 2 月出版（ISBN 978-7-5739-2227-4，447 页），中文版先于英文版全球首发。作者耗时三年嵌入式调研，对哈萨比斯做了 <b data-page-node-id="0erOH5hzVEy63EwogTiGdy">30 多小时面对面深访</b>，并访谈 <b data-page-node-id="6z4gf86MKAFYYkxiAC65rK">100 多位关键人物</b>——包括联合创始人苏莱曼、苏茨克维、辛顿等——掌握了大量连谷歌高层都未必完全掌握的一手材料。全书结构为<b data-page-node-id="iBISqaxjtwcebLojUX35uE">引言 + 三部分（第 1–20 章）+ 后记</b>。</p>
+
+    <div class="bookinfo" data-page-node-id="ZWCHmB2qCJbdUh5GD1RPS1">
+      <div class="meta-card" data-page-node-id="yx47EU3mTUaVuYmREaK2eo">
+        <dl data-page-node-id="TSccNGbfuxcvlHIDDHe2XE">
+          <dt data-page-node-id="FR74rTZTqGVOezVPuWYi9J">书名</dt><dd data-page-node-id="ZZ4yZZ0F39yqG8sKAkxuF8">哈萨比斯：谷歌AI之脑 <span class="small" data-page-node-id="QZdbH7RkleMKC4gYpn81AO">/ The Infinity Machine</span></dd>
+          <dt data-page-node-id="irRFB2GLA0yZOWUdG2nTBd">副标题</dt><dd data-page-node-id="giakumwaHL14k3GB5pK1zQ">诺贝尔奖得主、DeepMind 掌门人唯一官方授权传记</dd>
+          <dt data-page-node-id="ntyEmqInVTsKrqsZi6YfL1">作者</dt><dd data-page-node-id="gFENZul5OKt8N96xqFb4l5">塞巴斯蒂安·马拉比 <span class="small" data-page-node-id="fdZWHX4ARqg1ah5CL81JaT">Sebastian Mallaby</span></dd>
+          <dt data-page-node-id="mRj3R5xsx8KAVGH19dZYbm">译者</dt><dd data-page-node-id="88uoIitZHe5MLu6DKdayG6">周健工 <span class="small" data-page-node-id="HjC5PRTg02BLFu2IXoZMGx">（浙江科学技术出版社，2026）</span></dd>
+          <dt data-page-node-id="pD5QPFBCzgwyxh4kIFVa0M">传主</dt><dd data-page-node-id="vQz4pvaF4u7Dis1KTgHtge">德米斯·哈萨比斯（Demis Hassabis）· Google DeepMind CEO</dd>
+          <dt data-page-node-id="z7vEdQ7kQPBWIfBJtcxT0G">领域</dt><dd data-page-node-id="rTo8PwCG1bbj0KdHHZz6vN">人工智能 · 科技商业 · 人物传记 · AI 治理</dd>
+          <dt data-page-node-id="iGAHXe74R3qajiZSk86HvM">素材</dt><dd data-page-node-id="eEO4B9F18isD6XAoLkmsCb">30+ 小时深访 + 100+ 位关键人物</dd>
+          <dt data-page-node-id="KL4qsAuSjuzsbBdhPZS6lG">结构</dt><dd data-page-node-id="v9KpZNVRuMFaomIJyWb8Gw">引言 + 三部分 20 章 + 后记</dd>
+          <dt data-page-node-id="j7oJnNhrVt4D9j7cwr3HqD">起点</dt><dd data-page-node-id="3ZViqCVjYcZTZpKghOhNzD">2010 年，伦敦，DeepMind 成立</dd>
+          <dt data-page-node-id="YW2jKbUiaPiu87nn5hNe0C">关键词</dt><dd data-page-node-id="lHxynOT2x7nGcreKzy20fB">AGI · 强化学习 · AlphaGo · AlphaFold · 无限机器</dd>
+        </dl>
+      </div>
+
+      <div class="right" data-page-node-id="rhyvrR27bXnVV7jVtpNASr">
+        <p class="thesis" data-page-node-id="LGc4KZvZ9G2B7azhQz3WoP">
+          这本书最反直觉的地方在于：<b data-page-node-id="fe7amKQ5uyWAZ0Y78ArTB3">AlphaGo 从来不是目的，它只是一个够难、够干净的试验场。</b>
+          哈萨比斯真正的目标是通用智能——一个能自己学会"如何学习"的系统；
+          而围棋之所以被选中，是因为它既有明确胜负、又无法靠规则穷举。
+          想通这一点，你就懂了后面所有事：<b data-page-node-id="U2Izi24YshIbLHZIfhwZZS">AlphaFold 不是"转行做生物"，而是同一台机器换了一道更重要的题。</b>
+        </p>
+        <div data-page-node-id="sS5ghnTM7JGEXaDzzi8TGk">
+          <span class="chip" data-page-node-id="NokdkCIVf4najacTtUV0qG">#AGI</span>
+          <span class="chip" data-page-node-id="PVsEptAM5C29TaFiAg3g7m">#强化学习</span>
+          <span class="chip" data-page-node-id="Io09qFibtBrQvFDqHaeG9m">#AlphaGo</span>
+          <span class="chip" data-page-node-id="WEmP9cc7UxD2aB5FLFtWd6">#AlphaFold</span>
+          <span class="chip" data-page-node-id="XLRNXJ22YCxuox9H1C8QVR">#无限机器</span>
+          <span class="chip" data-page-node-id="KpnPTfw8aDclDv1YUlHgRb">#AI for Science</span>
+          <span class="chip" data-page-node-id="EP3vca9B0Lo035JKU9FnOK">#马里奥计划</span>
+          <span class="chip" data-page-node-id="YYN3w5gIZFxdhKkQyseMDB">#诺贝尔化学奖</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h" data-page-node-id="Pi7Bew2O1e8zVhmA2yJcXM">
+  <div class="wrap" style="padding-top:0;padding-bottom:0" data-page-node-id="0KuSE4bZea3GmxjXzjRgT4">
+    <div class="eyebrow2" style="justify-content:center" data-page-node-id="Wj259cXcsaXKW3jO8EQTFC"><span class="num" data-page-node-id="euS7R32tNYU1yZdCA8ziIa">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center" data-page-node-id="92NjCDI0jL4WiphiEMmdp1">一句话总览</h2>
+    <blockquote data-page-node-id="ubctEHYsNenQbCYqmiryOm">
+      先解决智能，<br data-page-node-id="waxXo36b1t36oPPAK2byK5"/>再用智能<br data-page-node-id="Jo7sUl8W4MBN4710986GO0"/>解决其他一切。
+    </blockquote>
+    <div class="src" data-page-node-id="SymocW9qfWiWXNldm2evnC">— SOLVE INTELLIGENCE, THEN USE IT TO SOLVE EVERYTHING ELSE</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h" data-page-node-id="EEMrydaJRXVYLlY0ccR6p0">
+  <div class="wrap" data-page-node-id="Q2Pzlkg4SVyVsditK86IKC">
+    <div class="eyebrow2" data-page-node-id="e2LEcCyDwc3zLwq3R14y0D"><span class="num" data-page-node-id="NY7CZiO8VXsPpXlzFhnxKT">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h" data-page-node-id="QXSNJ9qQ2iYBQboBFCfoQ0">两组核心对照<b class="tail" data-page-node-id="ezEpe0z0bYLKydOdZHZFMc">·</b>路线与动机</h2>
+    <p class="sub" data-page-node-id="PDzuYKZfEmc3h3lIdelYfL">第一组是技术路线的根本分歧：智能到底该由人写进去，还是由机器自己学出来。第二组是动机上的取舍：做这件事，究竟是为了赢下一盘棋，还是为了把智能本身弄明白。</p>
+
+    <div class="dualset" data-page-node-id="CMoMO8koYtsiF1Zj3i8shK">
+
+      <!-- 对照 A -->
+      <div class="setlabel" data-page-node-id="lQNmv5eQVraJFbPIyIdJNE">A · 规则驱动 vs 学习驱动：智能该被写进去，还是长出来</div>
+      <div class="dual" data-page-node-id="oIe7GfV06Tyb4MS6KVLK4c">
+        <div class="sys a" aria-label="规则驱动" data-page-node-id="OEH6rB5PE7YQc6ATAVBhWi">
+          <div class="tag" data-page-node-id="nq2sH6TuHCKpmDjrN4kzMw">RULES</div>
+          <h3 data-page-node-id="NE9iE0nRNBtHs7bJbAcI5m">把人类的知识写进程序 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="7eViM7mHmTq3nLDhY9uMHh">（符号 AI · 专家系统）</span></h3>
+          <div class="sub" data-page-node-id="DLGq3L1ZYxwGrjKtoxxp1P">人负责思考，机器负责执行</div>
+          <p data-page-node-id="G13mGA85dL0vO7LJDJsWZs">早期 AI 的主流思路是：把人类专家的经验总结成规则，让机器照着做。这条路线在<b data-page-node-id="8dpjOiaJUZH5YJUxeBdELQ">规则清晰、边界封闭</b>的问题上很有效，但它有一个致命前提——<b data-page-node-id="yaT0dHNVS20TeGnDUkQi1R">你必须先知道答案长什么样</b>。一旦问题复杂到无法被语言描述（比如"什么是好的棋形"），规则就失效了。</p>
+          <ul data-page-node-id="ztDIpdHrSmDahcdYXFmqwa">
+            <li data-page-node-id="CXYkUsas5nUyp3zrsNnWjX"><b data-page-node-id="oCWHgG1HcxB5T8H1icNWcc">强项</b><span data-page-node-id="jW2DC590hljOR0IDq5LAmz">可解释、可控，边界内表现稳定</span></li>
+            <li data-page-node-id="8YCgJO7aUpGji15KU7zPlE"><b data-page-node-id="oRpAWnsR0Q3euALSGaKwxM">瓶颈</b><span data-page-node-id="jcwCzzHfnQIspfST7dcYrB">无法处理未被写进规则的情况</span></li>
+            <li data-page-node-id="aHsGViE2oTwmSYdgtqyFBy"><b data-page-node-id="tXwpwOc9xZNHNRIKfRMLCe">结果</b><span data-page-node-id="Z5PTgxAtAAigYn6qEc65m3">遇到开放世界问题时迅速触顶</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="6Z97LkaUpvSkrb9GmyjJ46">"能被写清楚的，通常不是最难的那部分。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="fkZ3YCuT77GhIhiGTFJsR7">vs</div>
+
+        <div class="sys b" aria-label="学习驱动" data-page-node-id="MKiKcJ5eVVfOjhpOulwLfE">
+          <div class="tag" data-page-node-id="dQfCHxJH7cwiwgj96nKpXF">LEARNING</div>
+          <h3 data-page-node-id="SOWTZCKZ0bXK9S11jk1W7k">让机器从经验中自己长出来 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="fomKtY7hLEtSyY3OCJqtbh">（神经网络 + 强化学习）</span></h3>
+          <div class="sub" data-page-node-id="HLCQrKW7FkLUcnE0jxhABE">人负责设计学习方式，机器负责获得能力</div>
+          <p data-page-node-id="yvCGmEk78LgaxQnTGRgpWl">DeepMind 的赌注是：<b data-page-node-id="JxHpACpBUID2O4P6WgJTuy">不教它答案，只给它目标、环境与反馈</b>。智能体通过无数次试错，自己总结出一套人类说不清、但确实有用的判断。雅达利的 DQN 用同一个网络学会了 49 款游戏，AlphaGo 则在围棋上<b data-page-node-id="XhTOYZs9wL9dlguLmerGZH">下出了人类几千年从没下过的棋</b>。</p>
+          <ul data-page-node-id="FAScqgoKJFjOmDlmAjjBsE">
+            <li data-page-node-id="oPMklBBhLgdRORLpWrCvbe"><b data-page-node-id="T3RM46mLWuiRrsZOWU6WYo">强项</b><span data-page-node-id="9jW3Tz4mxKcheJ1EW1qWtD">能处理规则说不清、只能靠直觉的领域</span></li>
+            <li data-page-node-id="2xjhCVcyqNoEOQFXItYWgq"><b data-page-node-id="TtJ0s3JVB9KErnVepPrKaA">代价</b><span data-page-node-id="OFJOq1By6jEkcJpHsosNBs">需要海量算力与数据，过程难以解释</span></li>
+            <li data-page-node-id="Gw09uXc6IV6pNfIvYKgQl3"><b data-page-node-id="SJqquAlv22DVGsvNhsMhoe">结果</b><span data-page-node-id="ZFntC0UVFKRnY3PhIP8c7S">一种方法可迁移到完全不同的任务上</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="4hZPKSKcTZvyFUUsJarkCQ">"它下出的那步棋，人类要再过一千年才会想到。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel" data-page-node-id="sceOw1weGK4qXLb0Fn5m8W">B · 赢下一盘棋 vs 弄明白智能：做这件事到底为了什么</div>
+      <div class="dual" data-page-node-id="W2q4vFDBbgftJ0EBKxP1ch">
+        <div class="sys a" aria-label="产品优先" data-page-node-id="3Ul8ARQYbq2F2XmLQkKsZL">
+          <div class="tag" data-page-node-id="Rmg0uCUPevfxaruZ9mc8im">PRODUCT</div>
+          <h3 data-page-node-id="UedqAUNBJA5ivEt2bsXrnl">为产品与竞争工作 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="ya11MxMp2zpXwEeXZ9151b">（商业的逻辑）</span></h3>
+          <div class="sub" data-page-node-id="4C2FG8fLm365A63ie5DrYQ">做出能卖、能赢、能上头条的东西</div>
+          <p data-page-node-id="O8LfKTd9C8H3ZFJ1Td3IKS">从外部看，DeepMind 的每一步都像商业竞争：抢人才、抢算力、抢发布节奏，与 OpenAI 贴身缠斗。谷歌买下它花了约 <b data-page-node-id="29ruwANnNyGN5zC1c6ax9o">6.5 亿美元</b>，自然会期待回报。这条逻辑并不错——<b data-page-node-id="DJMydpV6df4QZOAIYXZ1Zd">没有算力与资源，什么科学都做不了</b>。但它也不断把研究拉向"能演示、能发布"的方向。</p>
+          <ul data-page-node-id="IcW2BKPfqS8D8HAtB0DB9w">
+            <li data-page-node-id="Rm6shqxGVo8XMpAd8GjVij"><b data-page-node-id="hzYeX6aos1yzFItXFZP365">优点</b><span data-page-node-id="lhajUf3hFY4oN6tN8q5lyE">资源充足、节奏快、能快速验证</span></li>
+            <li data-page-node-id="qWwJXyVvBEQ7jtEa5M80BI"><b data-page-node-id="p2ry2np9jQGIUovFdTz0cR">代价</b><span data-page-node-id="TswHMA9XrAVvu2Rsg2pSPP">容易把"能展示"错当成"已解决"</span></li>
+            <li data-page-node-id="n9o3fmozr3M51lXzLO1RNq"><b data-page-node-id="lTAh8WrXZiBs9UO0yd3Rv4">风险</b><span data-page-node-id="43h10T49kRmO8mdGjoNUMi">被竞争对手的发布节奏牵着走</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="0ecB48z6KrmxVtw7HvuOC7">"这是战时。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="odClDvxI8dGAwQrOXUqOkK">vs</div>
+
+        <div class="sys b" aria-label="科学优先" data-page-node-id="L4DyO6ttqlC2Se4Q6hBt1i">
+          <div class="tag" data-page-node-id="DFW3EGoYAGTfOauUM7HeiU">SCIENCE</div>
+          <h3 data-page-node-id="tLE8DKQhz0Hz9OQ9wR7alI">为科学工作 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="FzlvS3jUQEtxyFK13TDM30">（哈萨比斯的逻辑）</span></h3>
+          <div class="sub" data-page-node-id="08NhEbpLOZE9v9p8ZUdBMC">先解决智能，别的以后再说</div>
+          <p data-page-node-id="ufRGHJZGONfRPpXg9bD1zW">哈萨比斯反复强调的顺序是：<b data-page-node-id="CYIOYgWCKei3vZ5Qa1M0Aw">先解决智能，再用智能解决其他一切</b>。所以围棋只是一次公开验证，真正的目标从一开始就是科学——AlphaFold 解掉困扰生物学半个世纪的蛋白质折叠问题，并把成果<b data-page-node-id="CrQsz0UKXXRpDO0CPsh02b">向全世界开源</b>。他对财富的态度也是这套逻辑的延伸：<b data-page-node-id="Y0yQzSbC2IsjMMFxK631J8">钱和权力不是目的，是拿到做科学的资格</b>。</p>
+          <ul data-page-node-id="yO0arDeLBJKYCFnrAHjFQ7">
+            <li data-page-node-id="TRlxx2J5RFqbOPQOmFdkTc"><b data-page-node-id="Ncmn54PXAlttqv4nEKBC4m">优点</b><span data-page-node-id="jXBC9zD3N8UslDel9VeYHk">目标稳定，不随风口摆动</span></li>
+            <li data-page-node-id="Mt00LjtOnGFMVBFOR9AFZE"><b data-page-node-id="teGl7ALSE41M3BFZ31Fpzy">代价</b><span data-page-node-id="FPvxlxcbkpAMrrrnKkbVTS">需要长期忍受"看不出用处"的质疑</span></li>
+            <li data-page-node-id="Gg7iFGuAAdDaMQoh4mYH9F"><b data-page-node-id="fVVAxqKoUaWhr9b31ShIez">前提</b><span data-page-node-id="ihr064hvJAwFzLwPpq3NN7">必须依附于一个愿意长期供血的组织</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="YPsF7UTCk92oJbqZzQEFDX">"金钱和权力本身并非目的，而是获取科学知识的手段。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h" data-page-node-id="l78m9zTu01CmFKRXQTINPY">
+  <div class="wrap" data-page-node-id="s2PHZA1M8b43Xf3O2oE8Ik">
+    <div class="eyebrow2" data-page-node-id="JfFQ9yy7RYjdVH9iErmzOO"><span class="num" data-page-node-id="kbsGs4GIjnX8nbWpqU7R9y">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h" data-page-node-id="g4epK1Khjh8hlGUDmLtzdO">十张<b class="tail" data-page-node-id="iSH6umdkBXol3En4I8juy9">书签</b>，把三十年压成一张纸</h2>
+    <p class="sub" data-page-node-id="1ipB7bx3iaUrMGugnng5Uh">前三张是"这个人怎么长成的"（棋童、游戏、神经科学），中间四张是"机器怎么学会的"（雅达利、DQN、AlphaGo、直觉与搜索），最后三张是"代价与回报"（惜败 Transformer、马里奥计划、AlphaFold）。</p>
+
+    <div class="biases" data-page-node-id="wXqD8XzH0b4bLEnVC9wZmS">
+
+      <article class="bias c1" data-page-node-id="mSzs5PnXZGBGsg3ziVgu9c">
+        <div class="ribbon-top" data-page-node-id="6cpsEL4HId2VJrTcExysmp"></div>
+        <div class="num" data-page-node-id="QgImLbAMQvw3OEqOQLmcOH">N° 01</div>
+        <h3 data-page-node-id="IcEOPdEJXkzCswU2kP5vYm">先解决智能，再用智能解决一切 <span class="en" data-page-node-id="xxhlFhFfStkAhGQYrGDA1n">The Mission</span></h3>
+        <p class="mech" data-page-node-id="SQXnwIm7wejH5gmmtswqm3">DeepMind 成立时就写下的顺序：<b data-page-node-id="AtSO0dO1eyS2GwesdPLzmw">智能不是众多问题中的一个，它是解题的工具本身</b>。先造出会学习的机器，再把它指向癌症、材料、气候、聚变。这句话既是使命，也是优先级排序——当科学价值与商业价值冲突时，它被用来做决定。</p>
+        <div class="example" data-page-node-id="YZEWefOdhcR8ocPWxCm1I3"><b data-page-node-id="gbLfKZuQ8URyzSPKRRFdV5">例子</b>AlphaGo 之后不是"继续做游戏"，而是转身去做蛋白质折叠。</div>
+      </article>
+
+      <article class="bias c2" data-page-node-id="BpPWPqbMk3vtpMcezWfnMK">
+        <div class="ribbon-top" data-page-node-id="RY3frcvCIGM4ZPdTRCCtY2"></div>
+        <div class="num" data-page-node-id="mQCw3MW9mvyQJNjzpnQJnN">N° 02</div>
+        <h3 data-page-node-id="htKhX4jgwwaEN0bwfCx4Zy">"我们在浪费智力" <span class="en" data-page-node-id="VHYc2rHXMaMZa40zMGCql6">The Awakening</span></h3>
+        <p class="mech" data-page-node-id="1Wto9z1iNDEjKGjYqVHJ4u">4 岁学棋、8 岁拿冠军、13 岁达到大师水准的哈萨比斯，在一次长达 10 小时的残局后意识到一件可怕的事：<b data-page-node-id="3neMo5dQmveagP8sEnNEl8">世界上最聪明的一群人，把一生耗在了一盘棋上</b>。这个念头让他从游戏转向科学，也让"智能"成为他此后唯一的问题。</p>
+        <div class="example" data-page-node-id="EsafPz7584e8GxD1dsWzls"><b data-page-node-id="xZhXJa8JuZvDREwT42sesE">例子</b>《哥德尔、艾舍尔、巴赫》是他意识觉醒的关键读物。</div>
+      </article>
+
+      <article class="bias c3" data-page-node-id="6UJ2QtPlgiL90sDW4rCUjK">
+        <div class="ribbon-top" data-page-node-id="pw34TLFEnu1QSCOgMS9SzP"></div>
+        <div class="num" data-page-node-id="XZjW2bR1AU0BAEfEE7HgsB">N° 03</div>
+        <h3 data-page-node-id="RjxdEWILEgfAyAcYB6dRDj">神经科学送来的礼物 <span class="en" data-page-node-id="FOjmFIHoJLmNUuJOXA0Dpn">Memory & Imagination</span></h3>
+        <p class="mech" data-page-node-id="0dOgqomeDGpagLtBxWZkQA">在游戏事业巅峰时，他关掉公司去伦敦大学读认知神经科学博士，研究记忆与想象——发现<b data-page-node-id="d0MESAeEQR8EiSQ6DfYC4v">回忆过去与想象未来共用同一套脑机制</b>（海马体的场景构建）。这不只是学术兴趣：它直接启发了 AI 里的经验回放、规划与模型学习。</p>
+        <div class="example" data-page-node-id="4izNGlEqnxuXMYbh80Rpy7"><b data-page-node-id="WmTAKuiGtL7Svuff3LLAMD">例子</b>想理解智能，先去研究唯一已知的智能样本——人脑。</div>
+      </article>
+
+      <article class="bias c4" data-page-node-id="7kM2srb8cDXTGBz95L7DLE">
+        <div class="ribbon-top" data-page-node-id="CCA827FAADZ38jkS8scTzb"></div>
+        <div class="num" data-page-node-id="HkSkvG0syLqHPmdJo2TI0h">N° 04</div>
+        <h3 data-page-node-id="vtDhtMaxIwxF384WyTCHjq">AI 三人组 <span class="en" data-page-node-id="PDTZI3NW0H3fO09bXISO85">The Founders</span></h3>
+        <p class="mech" data-page-node-id="CEYc6mBH9RvCq0HtkNvh5O">沙恩·莱格（理论执着，泥浆池里泡出来的天才）、哈萨比斯（科学与产品之间）、穆斯塔法·苏莱曼（牛津神学背景，负责伦理与外部）。三人性格与能力互补，才凑出一个既能做研究、又能拿钱、还能守住边界的组织。那句万圣节预言——<b data-page-node-id="aHMbjIvU9SqTjPeFrS6qrI">"如果它成功了，我们就完蛋了"</b>——也出自这个圈子。</p>
+        <div class="example" data-page-node-id="CdqEKKZW9T9YThCruON9lh"><b data-page-node-id="VHr1VuFmvDJPzmbp2IeUje">例子</b>创始人组合决定了公司能做什么，也决定了它不肯做什么。</div>
+      </article>
+
+      <article class="bias c5" data-page-node-id="G3YCFFke0wVzL9Z4iiCFJm">
+        <div class="ribbon-top" data-page-node-id="16DDfLqGNnFe2uq9XNFdW0"></div>
+        <div class="num" data-page-node-id="A3xMbpLDerA7GL07sDC2lO">N° 05</div>
+        <h3 data-page-node-id="wY3j46DoC0OICG5wppLRKe">雅达利启示录 <span class="en" data-page-node-id="tsG7lQvYUf7D40Jv2gsi3r">DQN</span></h3>
+        <p class="mech" data-page-node-id="KQsVP6BR8wKpYAqpCbPYbZ">DeepMind 的第一次公开亮相不是围棋，而是让一个神经网络<b data-page-node-id="BJW65xO0jrrGCthoxZMzdD">只看着屏幕像素、只拿到分数反馈，自己学会玩雅达利的 49 款游戏</b>。它没有任何游戏规则知识，却在多款游戏上超过人类。这证明了一件事：<b data-page-node-id="dD1bwND2qO4GL0qYu8Owyu">同一个学习机制，可以迁移到完全不同的任务上</b>。</p>
+        <div class="example" data-page-node-id="9WQvY5wfwciEm6108TCGl0"><b data-page-node-id="ww1xV1Anebr7h2OBE6NYhu">例子</b>通用性的第一个证据，来自一堆像素和一个分数。</div>
+      </article>
+
+      <article class="bias c6" data-page-node-id="Y6Fufn0hlVSGmn9AXXnGgj">
+        <div class="ribbon-top" data-page-node-id="ibWBH3VCzsIUxeONgJ93Ll"></div>
+        <div class="num" data-page-node-id="cXGHt42Vi5KLXgf508XdrF">N° 06</div>
+        <h3 data-page-node-id="BtpLH3tWZF2Kno7E9KZg70">直觉 + 搜索 <span class="en" data-page-node-id="zTBDFNpMtYPmkr7ASJHzU3">AlphaGo</span></h3>
+        <p class="mech" data-page-node-id="5Pni2tKnfaFGaLskYTNTKQ">围棋一度被认为"机器还要十年"：它的状态空间太大，无法穷举。AlphaGo 的解法是两块拼图——<b data-page-node-id="C6tXUIUS1856th6Qy5G4GG">策略网络负责"这一步看起来好不好"（直觉），价值网络负责"这个局面赢面多大"（判断）</b>，再用蒙特卡洛树搜索把二者组织起来。2016 年，它以 4:1 击败李世石。</p>
+        <div class="example" data-page-node-id="A4PFP28zNTP2DgjMnugDLq"><b data-page-node-id="4KIg9CZ4pKWf0wE78QTCPW">例子</b>真正有效的方法，往往是"直觉缩小范围 + 理性验证"的组合。</div>
+      </article>
+
+      <article class="bias c7" data-page-node-id="Eo9iCDeeoAZzDNiIzUuE0v">
+        <div class="ribbon-top" data-page-node-id="C7BGhCrsS7reBxMzrDe6Hq"></div>
+        <div class="num" data-page-node-id="IA2SgBKzrtPmH7NnQvaLKd">N° 07</div>
+        <h3 data-page-node-id="ZIPFlD9FmKLci8PVQgPsaf">把大事变成可评分的游戏 <span class="en" data-page-node-id="gf7TdHZygPuIT5ZIY9K4Z2">Fold It</span></h3>
+        <p class="mech" data-page-node-id="5KdfvcJqvLXqmd1EYsFXHJ">生物学界被蛋白质折叠问题困了半个世纪。DeepMind 的做法是：<b data-page-node-id="CYGAig9CFSasLmcu2i1BF5">先找到一个公开的、可量化的评分场（CASP），再把它当成一场需要赢的比赛</b>。AlphaFold 2 在 CASP 上取得的成绩，被同行认为是"生物学界的费马大定理"被解开。</p>
+        <div class="example" data-page-node-id="4yaNqDeHTeSRWD9SkcPU48"><b data-page-node-id="nzMRrc5J6AlSwc9wCA1IsA">例子</b>想解决模糊的大问题，先为它找到一个诚实的计分板。</div>
+      </article>
+
+      <article class="bias c8" data-page-node-id="irnXdhG9JkSSjielrYPNFf">
+        <div class="ribbon-top" data-page-node-id="A7Ah5Le9OHK4kBvAzlx7JO"></div>
+        <div class="num" data-page-node-id="5g2NS1rYuPfXfsENJYf3N7">N° 08</div>
+        <h3 data-page-node-id="apKwypjJajARHbhO7FRTeE">低估 Transformer 的代价 <span class="en" data-page-node-id="SJsdHF8pgpLChmCN35oE2X">The Miss</span></h3>
+        <p class="mech" data-page-node-id="eKgRoHhW2FyYl8lR1ZGjuT">书里不回避失败：2019 年前后，DeepMind 执着于 <b data-page-node-id="dKyUwQTXQVaAWyN95EGUbd">AlphaZero 式的纯强化学习路线</b>，低估了 Transformer 与规模法则的意义，把语言模型的先手让给了 OpenAI。哈萨比斯后来承认，<b data-page-node-id="6kdZ56Zhq6DdDYB7C5tO5R">试图把一切都做成纯 AlphaZero 类型，是一种不必要的阻碍</b>。</p>
+        <div class="example" data-page-node-id="IA69CexUB5i06HiHerZJX1"><b data-page-node-id="vOTfKmHitsKDkXGDxdNa6a">例子</b>最危险的不是走错路，而是把自己的方法论当成信仰。</div>
+      </article>
+
+      <article class="bias c9" data-page-node-id="Vaxt5L87dYTH2vF1rmdkcC">
+        <div class="ribbon-top" data-page-node-id="hFJjQb0uwSfXlHjSzir8eq"></div>
+        <div class="num" data-page-node-id="VwwfqAZvJu7VA2tVmCmHI5">N° 09</div>
+        <h3 data-page-node-id="12E3CinAPspClOcY6rKddW">马里奥计划 <span class="en" data-page-node-id="yCFrAdSCdu1BU9CY9GaE8Z">Project Mario</span></h3>
+        <p class="mech" data-page-node-id="QxGEyEzwNef90FkHNJgzAl">为守住 AGI 的独立性与安全边界，哈萨比斯曾策划让 DeepMind <b data-page-node-id="t22v0LM1DKkUXfVPubDyHC">从谷歌"赎身"</b>——设计新的董事会结构、拉外部资金、准备分裂方案。2016 年 11 月，这个计划被谷歌否决。这一段是全书最像政治惊悚的部分，也暴露了一个结构性问题：<b data-page-node-id="f7CySZLD1ABmnRFGXCDnhq">最关心 AGI 安全的人，并不掌握最终决定权</b>。</p>
+        <div class="example" data-page-node-id="ZFIfjBC7QDlHz1xnlcGOF7"><b data-page-node-id="5JS2olRFmnXpljCxnmQky5">例子</b>理想与资源的绑定，往往以妥协收场——只是妥协多少的问题。</div>
+      </article>
+
+      <article class="bias c10" data-page-node-id="mjZy5mPYt6U8rHe0wgy1zm">
+        <div class="ribbon-top" data-page-node-id="FCvYs1O8w8YkYkC4BGEJBY"></div>
+        <div class="num" data-page-node-id="Ubx5CErAYCl1eH5EmYHJpx">N° 10</div>
+        <h3 data-page-node-id="L2Tt6f4ZXCn0bC1dAr3uZn">无限机器与造物者的不安 <span class="en" data-page-node-id="Wi24DkihG9hx43uasccaqX">The Infinity Machine</span></h3>
+        <p class="mech" data-page-node-id="aiAlXemZTUEcu9VfKgr5aE">书名取自一个设想：<b data-page-node-id="KmLtvLsovGwW5P8XzN3DYd">如果智能可以无限扩展，那么它就不再是一种工具，而是一种新的自然力量</b>。哈萨比斯是全球最早呼吁为 AI 立法的人之一，也在首届人工智能安全峰会上坚持邀请中国代表参加。他既在加速，又在刹车——这种"悖论脑"是全书没有解开的张力。</p>
+        <div class="example" data-page-node-id="exzvEeXuTCB3sXXYzCv4yJ"><b data-page-node-id="0asaFcBGHb6C7tAoZ1SZFp">例子</b>凌晨两点，他说感觉"现实正在凝视着我，向我尖叫"。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h" data-page-node-id="617mxkDsvQp7GhOlyislH4">
+  <div class="wrap" data-page-node-id="BG2P3BHDM9YDx3aJIHTg68">
+    <div class="eyebrow2" data-page-node-id="o3e9oIs3YCudcGTeuNE8Dx"><span class="num" data-page-node-id="2xHSpllkzmxuOKeMq5wfKb">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h" data-page-node-id="5qhhQCBnaQUad9MVON73JH">二十章<b class="tail" data-page-node-id="MjXVJUKdu3HspRaqPQIJxL">五条脉</b> · 脉络</h2>
+    <p class="sub" data-page-node-id="YbjqQ4fjiLU2Ze5YxBxTpV">第一部分讲"成为秘密武器"（从棋童到被谷歌买下），第二部分讲"双雄竞逐"（AlphaGo 之后被 OpenAI 反超的那几年），第三部分讲"超越极限"（AlphaFold、Gemini 与最后的追问）。</p>
+
+    <div class="chaptermap" role="list" data-page-node-id="zolXVzTE5BkD01gZFz4d83">
+      <article class="part p1" role="listitem" data-page-node-id="Xy6XXxGSAGXKpa2FUmGZSl">
+        <div class="pin" data-page-node-id="D3u8ITy9Co87N6KKRWl6Xo">起点 · 一</div>
+        <h3 data-page-node-id="IlHKhN8oF7Oo2s5EYn3urG">一个棋童的转向</h3>
+        <div class="range" data-page-node-id="wQyt4EIyHqHV0GX3PJuKhc">引言 + 第 1–3 章</div>
+        <ul class="chapters" data-page-node-id="LYjtxj4mcsBsAHPzwR6paW">
+          <li data-page-node-id="iCDhyvMn4yKjqljb1xHfsI">引言：普罗米修斯的回声，点燃智能之火</li>
+          <li data-page-node-id="GhBLe8cnKuszNArOJzZmQ0">4 岁学棋、13 岁大师、10 小时残局后的觉醒</li>
+          <li data-page-node-id="2ZQEt6YcoQs6cnk6UH0yAb">《哥德尔、艾舍尔、巴赫》与"意识"问题</li>
+          <li data-page-node-id="z80YAVGijktMmSy2sGrc4b">从游戏设计师到"电脑已装不下我的野心"</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem" data-page-node-id="TTWUOSZMazDOxt3gm3EeBC">
+        <div class="pin" data-page-node-id="97OSI3yRhBTlMLfiCEg24Z">结盟 · 二</div>
+        <h3 data-page-node-id="lbcH1CiDkCih2W834ELaZo">DeepMind 如何被买下</h3>
+        <div class="range" data-page-node-id="fyUkCES6hc2TysrOgjM6q8">第 4–8 章</div>
+        <ul class="chapters" data-page-node-id="RxszYiXq0EKCk9m6DY9I8r">
+          <li data-page-node-id="Vj8Kpoo1V4S86i0myZHL2f">AI 三人组：莱格、哈萨比斯、苏莱曼</li>
+          <li data-page-node-id="HXhEg0UJAEMuHawFDNg6Cg">与彼得·蒂尔的交汇、790 万美元的赌注</li>
+          <li data-page-node-id="SFv3JdOusOuqZKsxOHq9Hc">雅达利启示录：DQN 与智能体的诞生</li>
+          <li data-page-node-id="cBN3OXEhp7d4CMTTQQXMM3">马斯克、蒂尔、谷歌的争夺战与 6.5 亿美元</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem" data-page-node-id="XULYSXS629TPsUnkE3UXNi">
+        <div class="pin" data-page-node-id="vuJicM5YbyrHBja3XeQJn9">围棋 · 三</div>
+        <h3 data-page-node-id="SAGvLwxULmQwvtJGrWGfjQ">攻占最后的直觉高地</h3>
+        <div class="range" data-page-node-id="9PuPyxMQvjxCFmAfQUvRPb">第 9–11 章</div>
+        <ul class="chapters" data-page-node-id="VDK6xC4FMlBcNkODjZCndC">
+          <li data-page-node-id="dqjoW2IGPWErkGT8KTiDmX">AlphaGo：价值网络成为关键拼图</li>
+          <li data-page-node-id="D6IjZ3OndVE21D3EoQRsIH">首尔五日：李世石与 AlphaGo 的对局</li>
+          <li data-page-node-id="kDQB8yRAHfQHF3BaQAQCQT">OpenAI 横空出世：顾问其实是竞争对手</li>
+          <li data-page-node-id="NPaD5ZUZy4ZItS2XlmFUXy">医院里的 AI 革命与随之而来的信任危机</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem" data-page-node-id="swpGEY3K4zU36QgtZsCnmU">
+        <div class="pin" data-page-node-id="46S1jpCgZGZVAtaRDXmegI">博弈 · 四</div>
+        <h3 data-page-node-id="QJDBo4bCGmtUBcT8vAqcbz">被 Transformer 反超的那几年</h3>
+        <div class="range" data-page-node-id="jtWzbnlup8OslQmQECVHyG">第 12–14 章</div>
+        <ul class="chapters" data-page-node-id="C9uehZFiaM7nDPg2I0b0zF">
+          <li data-page-node-id="OpPa608wz7Z0NurFJn1Gek">Transformer 降临，从"随机鹦鹉"到世界模型</li>
+          <li data-page-node-id="xL7oe4DCbCSoz3ZZu8l4Q3">第一次惜败：为纯 AlphaZero 路线付出的代价</li>
+          <li data-page-node-id="E2RufejkqWw9LOm1OLXf1a">阿西洛马密谈与脱离谷歌的 B 计划</li>
+          <li data-page-node-id="Ojyu8im4cHO4exGeH4uM1m">马里奥计划失败，苏莱曼成为没有权力的"王子"</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem" data-page-node-id="9FszxudsvMj9CI8MLFt5nK">
+        <div class="pin" data-page-node-id="zVYctdnRD2fPBzhlTgB2tR">算赢 · 五</div>
+        <h3 data-page-node-id="ZqmkYywq8hoQ7TYCqJfF48">AlphaFold、Gemini 与最后之问</h3>
+        <div class="range" data-page-node-id="9HZHEgvuFWQZ88wFvZkU1P">第 15–20 章 + 后记</div>
+        <ul class="chapters" data-page-node-id="dRIlPKnCEsf591T1Gvx8vV">
+          <li data-page-node-id="DWxHCJ5YK4pdYF0QF2ZYZu">生物学界的费马大定理：AlphaFold 与诺奖</li>
+          <li data-page-node-id="tsyrMljBUrvucZc0W00Wji">GPT-3 时刻与 DeepMind 的追赶（Flamingo→Sparrow）</li>
+          <li data-page-node-id="AhPmT1wQ0OTLCbq2Ldo0EI">Gemini 重新定义战局；辛顿与本吉奥的警告</li>
+          <li data-page-node-id="ttHjn4CbP69HUsazBs58xI">o1、DeepSeek 与后记：图灵的使命之眼</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h" data-page-node-id="TCsmG3C7PfjF8JkyifhIrI">
+  <div class="wrap" data-page-node-id="t75XfmDLJzxQ9kBQGCOTXS">
+    <div class="eyebrow2" data-page-node-id="PDxrBje8mdLooXJeDT008m"><span class="num" data-page-node-id="jluXmGza2U6tmcXVwqOM5R">06 /</span>QUOTES</div>
+    <h2 id="quotes-h" data-page-node-id="Q65Ycvp1TCoI5ThlSp1iBu">五句值得抄在笔记本上的话</h2>
+    <p class="sub" data-page-node-id="R3x4CFdHAGCsGjLLN9D6ua">以下为书中观点的中文转述（部分为哈萨比斯原话的通行译法），尽量保留原意，未逐字照搬。</p>
+
+    <div class="quotes" data-page-node-id="8ASQlYTmIT0Ek1N7DizlGt">
+
+      <article class="quote-card qc1" data-page-node-id="KnC41cXF04TL0kPccajcen">
+        <span class="qmark" data-page-node-id="ippr50jQiMYNn7qSnuiIry">“</span>
+        <p data-page-node-id="ACkVbG4f4kaaM5Z206TaFF">先解决智能，<br data-page-node-id="8Zg6suTGwDpBN44iC3T4sb"/>再用智能<br data-page-node-id="geh1OXhA3iaCQZr2Z3dD5e"/>解决其他一切。</p>
+        <div class="src" data-page-node-id="PovsOXKoby2LYz6pXr2zZc">— 关于使命</div>
+      </article>
+
+      <article class="quote-card qc2" data-page-node-id="4LLSljv0P3T6pXNcxajevw">
+        <span class="qmark" data-page-node-id="VvzBRq4UkM1WbMUNDHY6Lq">“</span>
+        <p data-page-node-id="R8Oi5RyXA0wwxJ9w1Subw5">最聪明的人<br data-page-node-id="BuHsGTnppsvCmRkCaCNdGk"/>把一生耗在一盘棋上，<br data-page-node-id="V65YEP4RUf0e7t9Db4KBnj"/>这是巨大的浪费。</p>
+        <div class="src" data-page-node-id="75t7Ezj1TNjaFv565JSkE3">— 关于转向</div>
+      </article>
+
+      <article class="quote-card qc3" data-page-node-id="t6hriVmu1XYekZy7QwEj9F">
+        <span class="qmark" data-page-node-id="pVccKJqW4uz5InQcTJSSwT">“</span>
+        <p data-page-node-id="xfq1YSj65xK1UXkUBTio64">如果它成功了，<br data-page-node-id="oCHhheXvECc6Or0X7mQsqK"/>我们就完蛋了。</p>
+        <div class="src" data-page-node-id="YaAyb3YApulNuS8H4DtN76">— 关于风险（万圣节预言）</div>
+      </article>
+
+      <article class="quote-card qc4" data-page-node-id="MwmmXpya0e3wL7cjgl0eTO">
+        <span class="qmark" data-page-node-id="F2ASRTmFC2c42BDorOpJaa">“</span>
+        <p data-page-node-id="9RaAOIHPDFM01xiEsMKQfU">金钱和权力本身并非目的，<br data-page-node-id="u9cm5AYAmfXTRnoDKiqmHK"/>而是获取科学知识的手段。</p>
+        <div class="src" data-page-node-id="ppjLaBANMxLs97pkLRMH3S">— 关于财富与权力</div>
+      </article>
+
+      <article class="quote-card qc5" data-page-node-id="HQZCFEk0vVMWobV72mUX2L">
+        <span class="qmark" data-page-node-id="ECOtQhlF6EfEDcDIYHP5Wk">“</span>
+        <p data-page-node-id="aqXHlFfkd5YHfY0th1hbkf">凌晨两点，<br data-page-node-id="FeA8ptJS6g4EmjshjXj3Kx"/>我感觉现实正在凝视着我，<br data-page-node-id="uMaLbyDIPE3w5f0Fn6zMlg"/>向我尖叫。</p>
+        <div class="src" data-page-node-id="QTqwtEEJWO3LhVJJln4DVw">— 关于科学的直觉</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h" data-page-node-id="luTiUYob3E0nv5xZsfyHML">
+  <div class="wrap" data-page-node-id="yJDHFTEgpQb5mv81gQKIhv">
+    <div class="eyebrow2" data-page-node-id="46OdUF8T6feXiHKXGoLC0Z"><span class="num" data-page-node-id="I3GguufoPZCQJwQyGeAsiy">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h" data-page-node-id="q1zfCwY2SGB52LCv2Prtuh">可以立刻落地的<b class="tail" data-page-node-id="2UwClTHBntMtyIX3lyBKLc">八条</b>练习</h2>
+    <p class="sub" data-page-node-id="KmAwH2y9A4erSti7RIWneR">这是一本传记，不是方法书。但它里面有几件事，是可以拆成个人动作的——尤其是关于"选什么样的题"和"怎么对待自己的方法论"。（括号里标注了它来自哪一张书签。）</p>
+
+    <div class="actions" data-page-node-id="ZwS5wxUQRiiWNJjFNqFoTR">
+
+      <div class="action" data-page-node-id="NV0quUlJzKZHudgBxRdO9e">
+        <div class="ic" data-page-node-id="Y4O0qF2YngrS3pGH90Xyek">01</div>
+        <div data-page-node-id="n2PUMCEE2CQH3kHXyMWOD8">
+          <h4 data-page-node-id="2BdJ5SvEO1aFvH8viuPknd">写下你的"先解决 X，再用 X 解决一切"</h4>
+          <p data-page-node-id="rdOXSaByKw3O7SiMYg8CVG">你所在的领域里，有没有那样一件事——一旦做成，其他所有问题都会变简单？把它写下来，然后检查你这周的时间有多少投在了它上面。</p>
+          <span class="tag" data-page-node-id="V9PNaR64lHRAE9vv3migXE">↳ 先解决智能，再用智能解决一切</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="EyBEoSPHTqHWyHL2tEiyFO">
+        <div class="ic" data-page-node-id="ZFeHDc0dLDjmqTJfQhFClC">02</div>
+        <div data-page-node-id="ZTnbcOkEl7Jx4X0RXzxjCU">
+          <h4 data-page-node-id="tFwJX8inKRXakENV2v3aHK">找一个"够难但能评分"的试验场</h4>
+          <p data-page-node-id="wCjaDO0Bc5IgBOowJ4jUVS">AlphaGo 的价值不在围棋，而在于选对了题：足够难、反馈明确、无法作弊。给你的学习目标找一个类似的场子——有公开评分、有客观结果，而不是自己给自己打分。</p>
+          <span class="tag" data-page-node-id="IX0CaF7Nj3k7Ta2ofqAhRm">↳ 把大事变成可评分的游戏</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="zt7ZSdLgX7RosfgETANGPR">
+        <div class="ic" data-page-node-id="fn7OkT0Hc8EJS0SfBB9ACJ">03</div>
+        <div data-page-node-id="hx8qwCNwMfWtyxW6EOKyuo">
+          <h4 data-page-node-id="4G3J4xdGWpxz3Gop0Gywwv">用"直觉 + 搜索"做一次重要决策</h4>
+          <p data-page-node-id="5TeNrHKYd9K94E8KD3wH1D">先用直觉把候选范围缩到 3 个以内，再对每个做一次认真的证据搜索与反向验证。别只用直觉，也别在 30 个选项里做纯理性分析。</p>
+          <span class="tag" data-page-node-id="iaW7TMMBEFnkCq1QFn9zDQ">↳ 直觉 + 搜索</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="X6B80WGUcfuEvDVyHLF4zK">
+        <div class="ic" data-page-node-id="ockkt3EOGwds507b8IFJQX">04</div>
+        <div data-page-node-id="zKbcEW4BcgEkzWJG2R7hAY">
+          <h4 data-page-node-id="Pa7cOc9LloM4tQcFLVW1KX">定期做一次"我可能在赌错什么"检查</h4>
+          <p data-page-node-id="TxXO6XWywqIzeBFm9JRS9R">DeepMind 曾执着于纯 AlphaZero 路线，代价是让出了语言模型的先手。每季度问自己：我最坚信的那个方法，有没有可能只是因为它是我熟悉的？</p>
+          <span class="tag" data-page-node-id="cbgOFcwDJ4JiVMWKBveOsD">↳ 低估 Transformer 的代价</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="a4tvnnljtRAnuYhrOwBSYY">
+        <div class="ic" data-page-node-id="PW9TBoSlyyqfCw4fNh4kAO">05</div>
+        <div data-page-node-id="41r9xuHiqhlxCf75EmmphE">
+          <h4 data-page-node-id="sKf9dZt9b0Z72BjvzIcmnX">给自己的项目写一份"禁止事项清单"</h4>
+          <p data-page-node-id="uM7s65u958BCE83BWfl1f6">DeepMind 被收购时争取到了禁军用、独立监督等约束条款。你可以也给自己的长期项目写三条"即使有利也不做"的事——它会在最难的时刻替你做决定。</p>
+          <span class="tag" data-page-node-id="YflRFWZmwoR1zCXZicuuzH">↳ 马里奥计划与边界</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="G3ByJhWE8OaNWok0iiPd1O">
+        <div class="ic" data-page-node-id="E2ndA0GhfpLEV4PkjI6mU5">06</div>
+        <div data-page-node-id="nemaTAexH8p5CdZ5x83gWG">
+          <h4 data-page-node-id="BK2qWGRjQhZOkTeQy7Qzmr">安排一次跨领域的输入</h4>
+          <p data-page-node-id="Af0g26FFJlHAjM5V6yAkoV">哈萨比斯的转折点是跑去读神经科学博士。给自己定一个"主业之外的一门课"：一年读一个陌生领域的经典，重点不是学会，而是借来一套新比喻。</p>
+          <span class="tag" data-page-node-id="jxCWG8CeXAKqeEi0F9CaLG">↳ 神经科学送来的礼物</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="RR53no4cIwwnHpCDrv8szA">
+        <div class="ic" data-page-node-id="A1bCOJNM89iZD9NrGOmfyd">07</div>
+        <div data-page-node-id="tXGOgDFoOFUFIPOhVFym4J">
+          <h4 data-page-node-id="9oJk8MFBjlHDrjUvMA9yDh">算一次"我在浪费什么智力"</h4>
+          <p data-page-node-id="fqSwJmB9nO4XFS164R6KsZ">他是在一盘下了 10 小时的残局后醒悟的。你也找一件花时间最多的事，问：如果这件事做到世界第一，对世界有什么改变？如果答案很薄，那就是该转向的信号。</p>
+          <span class="tag" data-page-node-id="qKixo2pnOZXlkfQ3nHFxAG">↳ 我们在浪费智力</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="VWgEeJsQrp4bHU8lmpt85r">
+        <div class="ic" data-page-node-id="EYtQzQ6DS1owVIY8HXHHXx">08</div>
+        <div data-page-node-id="YUCWbfW49kuTXxkWYhskwM">
+          <h4 data-page-node-id="xNiHWkvxyOe1TwbqhdeP1Q">分清你的"手段"和"目的"</h4>
+          <p data-page-node-id="yrCkxHbIbBMeAwZ4Ddia2m">钱、职位、影响力在他那里都是手段，科学才是目的。写下你真正在追的那个东西，再看一眼手上的忙碌——它们是通向它的路，还是已经悄悄变成了终点？</p>
+          <span class="tag" data-page-node-id="gfWaK4Nhd8k7YHX3Woyc3A">↳ 金钱和权力只是手段</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h" data-page-node-id="2nvbFgglREGRb2VcI5hKgd">
+  <div class="wrap" data-page-node-id="mH4Be76go3W98AVj16XN0P">
+    <div class="eyebrow2" data-page-node-id="8XtN5DJ290T26sTYbH8qlF"><span class="num" data-page-node-id="uxduETpzqn2P0dPdqZdOe0">08 /</span>FOR WHOM</div>
+    <h2 id="who-h" data-page-node-id="AeBWTZAa8l2e2p3qX51mr6">适合谁读 / 不适合谁读</h2>
+    <p class="sub" data-page-node-id="oBWBgyHCDTY1hhG9WHeMXK">它解决的是"AGI 这十年到底是怎么打过来的，以及打这场仗的人在想什么"。如果你想要的是投资建议或技术教材，这本书都不是——它是一份关于使命、权力与妥协的现场记录。</p>
+
+    <div class="readers" data-page-node-id="jatzy99poNuIj7Mxy4DpC9">
+      <article class="who yes" data-page-node-id="luAOTPUPMfLYoGQCGFyWrt">
+        <h3 data-page-node-id="g3RhPiWEj9HAKKMgqoJAUR"><span class="swatch" data-page-node-id="RYZ1K5LiYhHm7hUYxG7BwC"></span>尤其推荐</h3>
+        <ul data-page-node-id="aCgWxdYVbmjynJ3tXSGyg6">
+          <li data-page-node-id="CgOn3UoDi5u4KuRZag5Efd">想理解<b data-page-node-id="Gt3HGnzZdbME0DA2RdnYGn">AGI 竞争格局的真实来龙去脉</b>的人（不是新闻层面的理解）</li>
+          <li data-page-node-id="JjdjB7o2cbLQXUlQVhDhrZ">AI 从业者与研究者，想看清<b data-page-node-id="N9QHQVFb2WyJdIiMekF8gL">路线之争背后的判断与误判</b></li>
+          <li data-page-node-id="gXm7HCAFiBvxxBCIOt2D4o">关心<b data-page-node-id="Y8TQYC2gGhge6RpylbMSop">AI 安全与治理</b>的人：马里奥计划与安全条款那几章信息量极大</li>
+          <li data-page-node-id="NPFRHsKcykVn8U0ZlM8JpM">对<b data-page-node-id="KUdGEZtQmlyGMhZEumOFQO">科学家如何与资本、大公司共处</b>感兴趣的人</li>
+          <li data-page-node-id="xikes4ezWjqX25wBI3Bprw">读过 NO.17《硅谷钢铁侠》、NO.20《黄仁勋：英伟达之芯》，想凑齐<b data-page-node-id="cSg2fyjB0lltnekPeRPoWp">"AI 三巨头"视角</b>的人</li>
+          <li data-page-node-id="Ml2yq4jgmrbUENwccksujB">正在选"自己要解哪道题"的学生与研究者</li>
+        </ul>
+      </article>
+
+      <article class="who no" data-page-node-id="2WFljLI8RnLu3azlGjx56q">
+        <h3 data-page-node-id="mmi7RuAjMq6pyhb9p77tZQ"><span class="swatch" data-page-node-id="X7hgrw3CGEb8ZXAqgzhNVB"></span>不推荐 / 慎读</h3>
+        <ul data-page-node-id="GRT8ghS8kC9ZgpOgHDBowe">
+          <li data-page-node-id="MYbfna0TLuUB6bO0iAPaag">想要<b data-page-node-id="EpGEKj8pvDclXBEVJ9Dunq">投资建议与行业选股</b>的人：本书是叙事，不提供估值与操作框架（可看 NO.08《投资最重要的事》）</li>
+          <li data-page-node-id="t8AtXMhY0Ry5IdoZrFXJtr">想要<b data-page-node-id="BM6Wn8J3xTX5Bq6NDmDoHg">技术教材</b>的人：它讲清了思路与取舍，但不给公式、代码与复现细节</li>
+          <li data-page-node-id="lElk03iqn67QvPhotTxyyS">期待<b data-page-node-id="1cDnBqsDgQC0gEpUb9ZTjw">批判性中立视角</b>的人：这是官方授权传记，作者掌握一手材料，但基调偏理解、偏正面</li>
+          <li data-page-node-id="qLdSpBOKuEKzN5DAngm1fx">对 AI 叙事已感到疲劳的人：本书几乎覆盖近十年所有 AI 大事，读起来并不轻松</li>
+          <li data-page-node-id="BSPBp5SyDZaJkV2q2spiOX">想找"如何成为哈萨比斯"答案的人：他的天赋、时机与组织位置都极难复制</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot" data-page-node-id="5mkCWWcjfJpxZ5j1enMnE2">
+  <div class="wrap" data-page-node-id="I72XFdhmFEGmOfqhBmv8BE">
+    <div class="mark" data-page-node-id="ZsS00mtCn7IPsJjy7kav8F">
+      "先解决智能，再用智能解决其他一切。"
+    </div>
+    <div class="rule" data-page-node-id="LArQQz7bIKxMM8aHYjrdBb"></div>
+    <div class="meta" data-page-node-id="qv2QKbm3OwR5EtyiVKJhZG">
+      读书笔记 · 《哈萨比斯：谷歌AI之脑》· 塞巴斯蒂安·马拉比 著 / 周健工 译<br data-page-node-id="Hp4UIBq6BitdpZihqqpyuO"/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="keLjZtBqlu4HArEUkWxLgy">
+
+<head data-page-node-id="piO14ZqSSWES5HjhlRqTEp">
+<meta charset="utf-8" data-page-node-id="v1KgOg2xKyumK6TcJNrEa0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="TXBDonS31CTsFBLJlKgHOM" />
+<title>《黄仁勋：英伟达之芯》读书笔记</title>
+<meta name="description" content="斯蒂芬·威特《黄仁勋：英伟达之芯》：从餐厅里起步的显卡公司，到全球市值登顶。离破产只有 30 天、秘密押注 CUDA 十年、AlexNet 时刻、周五决定周一转型 AI 公司——一个关于长期押注与极限执行的故事。" data-page-node-id="OuLrdBKZPgWgxTX3AYhZT3" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为新绿，呼应"算力与生长"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #3f6f29;   /* 主书签色：新绿 */
+  --accent-2:     #b0903f;   /* 古金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(63,111,41,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(63,111,41,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#0f1f0c url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#0f1f0c;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(15,31,12,.22) 0%, rgba(15,31,12,.06) 35%, rgba(15,31,12,.84) 100%),
+    linear-gradient(90deg, rgba(15,31,12,.64) 0%, rgba(15,31,12,.20) 55%, rgba(15,31,12,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f2efdf;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }
+.dual .sys.b .tag{ background:var(--accent) }
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body data-page-node-id="lDIceHzr0CmAtIsi2HUllT">
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner" data-page-node-id="GvXVkP2wA4EUtWL6uSQ5wt">
+  <div class="topbar-inner" data-page-node-id="q01RaXmJM4UpEMXBAEMMU1">
+    <a href="index.html" class="home" aria-label="返回系列首页" data-page-node-id="K5GTu4BZGmDKr5saIWKX7p">一页观澜</a>
+    <div class="brand" data-page-node-id="4Z1tQaLHCZdEiPY4muybtv"><span class="dot" data-page-node-id="vow0tIWuTReUa8aOxd9fBY"></span> 阅读笔记 · 黄仁勋：英伟达之芯</div>
+    <nav aria-label="目录" data-page-node-id="8BCVP8ZFFhkapkEvjnARhp">
+      <a href="#info" data-page-node-id="xhRVp3PKCi6NSYFMHRG0qS">书籍</a>
+      <a href="#one" data-page-node-id="2oH7eN2fbdovjDIY8w0KSF">总览</a>
+      <a href="#dual" data-page-node-id="uNMSVQR6BJhhmQgxkYGYQP">两组对照</a>
+      <a href="#bias" data-page-node-id="Dg6yfRHm5ZJhQbp8kpChX7">关键概念</a>
+      <a href="#map" data-page-node-id="mzVYvkKrwCUz0hWQ82HaoD">脉络</a>
+      <a href="#quotes" data-page-node-id="y9k77NlGG3nTYNGfyeVL4g">金句</a>
+      <a href="#action" data-page-node-id="C8CPrqsgQMhZOvpCl1GMWS">行动</a>
+      <a href="#who" data-page-node-id="GDxM1xhbyQqjjOWOvRm2Mc">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="R3Kb8JEaYGfGEiTg7PITMM">
+  <div class="hero-img" role="img" aria-label="电路板与芯片的深色微距特写，象征算力底层" data-page-node-id="q1Cr4k5NCJgBsWcP1VSlRP"></div>
+  <div class="ribbon" data-page-node-id="KDOqOCyKGMTQK1jT9bhZnt">NO. 20 · 人物传记</div>
+  <div class="hero-inner" data-page-node-id="iadaQGg3DCq7swFvnZinF9">
+    <div class="eyebrow" data-page-node-id="wG4dAFt0xIRlFgzbjdTQrX"><span class="line" data-page-node-id="fBB1jfyE8J1yhoTd2r7rec"></span>READING NOTES</div>
+    <h1 data-page-node-id="mjDtXDqDnb6J0Mze9i6vLo">
+      黄仁勋：英伟达之芯
+      <span class="sub" data-page-node-id="SivnmJwKktWQoNwXSp8Umu">THE THINKING MACHINE · STEPHEN WITT</span>
+    </h1>
+    <p class="lede" data-page-node-id="O4a14CWb8Y43rYGZpGwO1t">
+      一家在餐厅里起步、专做游戏显卡的小公司，三十一年后成为地球上市值最高的企业。
+      这中间隔着<b data-page-node-id="A3xQItEO9H10RoyeGBVYSK">离破产只有 30 天</b>、<b data-page-node-id="RL9PMgpIdHxCdKDVwVFFpl">秘密押注 CUDA 的十年亏损</b>、
+      以及一个周五做出的决定——<b data-page-node-id="ZqHz8wvyojqPAfJ79EzPlV">周一，我们转型成 AI 公司</b>。
+    </p>
+    <div class="byline" data-page-node-id="BDTfejyyGILeRS8Ad7WNvm">
+      <span data-page-node-id="L4PuPeYJ2TH6Pi2cq2YpUp"><b data-page-node-id="8RYPDu6kyx0u4SRXdkNSJ7">作者</b> 斯蒂芬·威特（Stephen Witt）</span>
+      <span data-page-node-id="Y4uznEe5mQi1gy0IbseGEF"><b data-page-node-id="iRuKyuAd7KM3gjlRDxzr4B">译者</b> 周健工</span>
+      <span data-page-node-id="i6iDKdSUagqrFmZPttxFz9"><b data-page-node-id="JLUE4CtyYK1gbjqXFVNrA4">中文版</b> 2024 · 中国财政经济出版社</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h" data-page-node-id="XcxCsEwNuZ1j1gR2EQhqTR">
+  <div class="wrap" data-page-node-id="jNxCn9XQlyo4EP8jd3PUBW">
+    <div class="eyebrow2" data-page-node-id="CDsiFvsNBnSUHKIKPYZ2Um"><span class="num" data-page-node-id="jBzel78umhl0WD6mIWbT3E">01 /</span>关于这本书</div>
+    <h2 id="info-h" data-page-node-id="HtGset6ExAswwQWxB9pQyD">看清十年后的世界，<b class="tail" data-page-node-id="71aTVlz5GaV4yMUM5qwXgj">然后今天就把公司押上去</b></h2>
+    <p class="sub" data-page-node-id="TRiVGnv0N6k6WKTfH66n55">《黄仁勋：英伟达之芯》是科技记者斯蒂芬·威特（Stephen Witt）写的人物访谈传记，原作名为 <i data-page-node-id="j69QCz2RjZ3JW7bfsuw4DQ">The Thinking Machine: Jensen Huang, Nvidia, and the World's Most Coveted Microchip</i>（Viking，2025），获 FT／施罗德年度商业图书奖，并入选《经济学人》2025 年度最佳图书。中文版由周健工翻译，中国财政经济出版社 2024 年 12 月出版（湛庐文化出品，ISBN 9787522335568，396 页），卷首有沈向洋的推荐序《从摩尔定律到黄氏定律》。作者获得英伟达极高的访问权限，多次面对面深访黄仁勋，并采访了其家人、朋友、联合创始人、合作伙伴与员工<b data-page-node-id="36k1ojMaanxuFMkWr8sFQY">近 200 人</b>。全书结构为<b data-page-node-id="8mcEuqzR1oB06YgFDIWGKo">引言 + 两部分（第 1–12 章 / 第 13–23 章）+ 后记 + 附录（人物关系表与数据来源）</b>。</p>
+
+    <div class="bookinfo" data-page-node-id="eZ9w0E9GHvSb9WQIyRvvtv">
+      <div class="meta-card" data-page-node-id="UZauuPcBNCziT9OT4dfSgI">
+        <dl data-page-node-id="DWXzL6jWcxDpHBx9J4JdgF">
+          <dt data-page-node-id="CaWAPKJTOcGlAIovnkQYPt">书名</dt><dd data-page-node-id="xQmdMZDll0sIdYOY98wo9E">黄仁勋：英伟达之芯 <span class="small" data-page-node-id="L37dGBncYMINvK6FCSTtbv">/ The Thinking Machine</span></dd>
+          <dt data-page-node-id="cfCF6zdJpXjNsKkFqlDkHk">副标题</dt><dd data-page-node-id="15WcRrmabcvGqKsuWQ5mff">英伟达创始人黄仁勋权威采访传记</dd>
+          <dt data-page-node-id="x6kQPEfemG0tT3c19pj66c">作者</dt><dd data-page-node-id="bFa6cZEg4QdLFCabDmwlhy">斯蒂芬·威特 <span class="small" data-page-node-id="yfZfO6hcoPMuoGbaM36r96">Stephen Witt</span></dd>
+          <dt data-page-node-id="HAfqXKsKiNT7g0d3xOWfoC">译者</dt><dd data-page-node-id="bvvcGNJWuM0CPK87A0yovr">周健工 <span class="small" data-page-node-id="5TXgwtejrT9qoA5IJ7hNKF">（中国财政经济出版社，2024）</span></dd>
+          <dt data-page-node-id="j6gxswevRcDi6tNpEGh8wm">传主</dt><dd data-page-node-id="xDCJXMtFZFDM5e8ytnuziV">黄仁勋（Jensen Huang）· 英伟达创始人兼 CEO</dd>
+          <dt data-page-node-id="EX2IibiDGWjdTMyumvdinV">领域</dt><dd data-page-node-id="SJkWl2jJyEkAM9ICYc73F8">科技商业 · 半导体 · 人工智能 · 企业家传记</dd>
+          <dt data-page-node-id="6yGtVC8Mooyfn9lEKKr3GF">素材</dt><dd data-page-node-id="egs2vSCXtgNBP8fkBDhESK">深访黄仁勋 + 采访近 200 人</dd>
+          <dt data-page-node-id="8MjsHRMePc2elWu9ltt9oS">结构</dt><dd data-page-node-id="jJt7z8Wu1XsHgb6XeEQHMe">引言 + 两部分 23 章 + 后记</dd>
+          <dt data-page-node-id="PF73fcMHemJkMD12WhXfkI">起点</dt><dd data-page-node-id="wpWalMSrievYxRRmVsEBae">1993 年，一家餐厅里的创业</dd>
+          <dt data-page-node-id="DafM3jQ5hW0CPfv0BmIu7j">关键词</dt><dd data-page-node-id="QYDAs55yTzBZVWtlwO1hNZ">加速计算 · CUDA · 长期押注 · 光速</dd>
+        </dl>
+      </div>
+
+      <div class="right" data-page-node-id="5hePyynfrT5Ponb6ExphyA">
+        <p class="thesis" data-page-node-id="6cfmq5uHo2D6ZIGPjVrsX9">
+          这本书最反直觉的地方在于：<b data-page-node-id="bdIWSYcAdwf8W9q0C59MnF">英伟达并不是"押中了 AI 风口"，而是提前十几年为它修好了路。</b>
+          为了让图形计算更快，他们把芯片做成<b data-page-node-id="5vNXj2hV31ax4eEWVdJ2LI">大规模并行</b>；为了让并行有用，他们做了 <b data-page-node-id="YCqEhkBgRNEPd1Enx1NDYO">CUDA</b>；
+          CUDA 让研究者第一次能用便宜的显卡训练神经网络，于是有了 AlexNet，有了 Transformer，有了今天这一切。
+          <b data-page-node-id="GZApzyouXCw2cOrgFLRHxK">风口来的时候，他们已经在那儿等了十年。</b>
+        </p>
+        <div data-page-node-id="Bg7ZvIes2zcHh98SrO4LqY">
+          <span class="chip" data-page-node-id="a7d5Qh2uclwiYEmqXmfWvp">#加速计算</span>
+          <span class="chip" data-page-node-id="Ves3U6g72dtgerrsOSbuHV">#CUDA</span>
+          <span class="chip" data-page-node-id="9Oi7Q4R3HmtzdHn3CfmLAC">#离破产30天</span>
+          <span class="chip" data-page-node-id="MDk07vO8du1vvPE4s9hEPe">#AlexNet 时刻</span>
+          <span class="chip" data-page-node-id="1D4mGsGb75CUZQsjH80U7t">#黄氏定律</span>
+          <span class="chip" data-page-node-id="sfCLPEjXC70UZvAxSvyEuV">#AI 工厂</span>
+          <span class="chip" data-page-node-id="LGtnrF7zgo3eA45bcTsS1u">#公开失败</span>
+          <span class="chip" data-page-node-id="UCiWy5AI5xrDcB4Nbf7xTT">#长期押注</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h" data-page-node-id="uB9PvH0uDIcXlOtzF5PZfs">
+  <div class="wrap" style="padding-top:0;padding-bottom:0" data-page-node-id="f5glBwk1wshyKZqD33z2PO">
+    <div class="eyebrow2" style="justify-content:center" data-page-node-id="KHNl3BftmLe2pBTl3N93Fy"><span class="num" data-page-node-id="SQwDZnGhM4r3J0YgW6V6cK">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center" data-page-node-id="fPtOrbG7xdC7T3rFl3q3Zf">一句话总览</h2>
+    <blockquote data-page-node-id="KL2Rk73shemPrPcF4Fv9Bh">
+      押注一个<br data-page-node-id="8IAXDtiAX48HVPlcEF0DGQ"/>还没发生的未来，<br data-page-node-id="36LdPBpkjM7EBJzO1dDZnC"/>再用十年把它做出来。
+    </blockquote>
+    <div class="src" data-page-node-id="9M2U0gRN35CO2y6iTlCCIf">— BET EARLY, EXECUTE RELENTLESSLY</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h" data-page-node-id="49GN6RKdR4MIkEIqtcHmzJ">
+  <div class="wrap" data-page-node-id="erYYoctYz20IxTzRTdBvSU">
+    <div class="eyebrow2" data-page-node-id="aOj1GN4q6px4kWxi8TJo10"><span class="num" data-page-node-id="TZYV1qKGYD2bIixgvyVXif">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h" data-page-node-id="66C6JDN8TzCNY60RFPeIH1">两组核心对照<b class="tail" data-page-node-id="HT3Ikz6rT9kXYxC70xKkDO">·</b>路线与时间</h2>
+    <p class="sub" data-page-node-id="nBJ5ypedWAnWMfVnHn9qVD">第一组是技术路线的根本分歧：计算机到底该怎么算。第二组是商业上的取舍：要不要为了一个十年后才兑现的愿景，忍受眼前的长期亏损。</p>
+
+    <div class="dualset" data-page-node-id="O9BZk1M4FYFJ8fpIHqeoi6">
+
+      <!-- 对照 A -->
+      <div class="setlabel" data-page-node-id="haOiQp2BoFlJ3ddzuKmHPw">A · 通用计算 vs 加速计算：算力的两条路</div>
+      <div class="dual" data-page-node-id="FVFDc82tvH5YWohK4nSJYx">
+        <div class="sys a" aria-label="通用计算" data-page-node-id="zTUGfpfewt2hKg4ZNaQ5Vo">
+          <div class="tag" data-page-node-id="4vHYQiD3YXS0HjnkvVHDux">GENERAL</div>
+          <h3 data-page-node-id="AARUSPQk5k3HFA1ENlsBQ6">通用计算 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="pyswfyvKSV9LHJSht1w4sj">（CPU · 串行 · 一个一个来）</span></h3>
+          <div class="sub" data-page-node-id="tlukngVeyVbkvXbB2ezYgy">万能，但在特定任务上很慢</div>
+          <p data-page-node-id="xC7wuY4paXolVoFYRyEqIk">传统 CPU 追求<b data-page-node-id="Q3tYjAWK4TE445A4TJ6H5E">什么都能干</b>：少数几个强大的核心，把任务一条一条做完。这条路线统治了计算史几十年，靠<b data-page-node-id="T5yggIzfmxEKWj3AsC44dR">摩尔定律</b>不断变快。但当任务变成"把同一件事重复几百万次"（图形渲染、矩阵运算）时，串行结构就成了天花板。</p>
+          <ul data-page-node-id="1i8yneYGtV4hNgmiCfk9F8">
+            <li data-page-node-id="HIak4KBvLTT2ziEIcpGB9D"><b data-page-node-id="ZhNlE4vL3XcTkdkuO89Fch">强项</b><span data-page-node-id="DmtXMFCzRwc4kvoEcT87gN">逻辑复杂、分支多的通用任务</span></li>
+            <li data-page-node-id="xGBvNGyPlxrS2xZ48jEptn"><b data-page-node-id="jqUiXng53sT5h8otWbgZiP">瓶颈</b><span data-page-node-id="GdxstgbEOKb5YaUYtJj5Mq">摩尔定律放缓，单核性能提升见顶</span></li>
+            <li data-page-node-id="B1ggi7puI4H9k3NeFiYeYE"><b data-page-node-id="TcuiONBk1ammWXo6Dq7TFa">结果</b><span data-page-node-id="0CBU0fUvctaDIViSHDsWjP">遇到大规模并行任务时效率极低</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="WMNXVOgzHGHgXNff3bNJrj">"摩尔定律走到尽头，而算力的需求才刚刚开始。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="IYtLW9jcXyz8k3tDhQB5JP">vs</div>
+
+        <div class="sys b" aria-label="加速计算" data-page-node-id="YpXGLjzxVtACGac7V5mtnW">
+          <div class="tag" data-page-node-id="3MvXavLMCGajdo0brG4wpn">ACCELERATED</div>
+          <h3 data-page-node-id="c81z6zPbCWc1oCOSh1OwQ6">加速计算 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="MHJXKkys5r4evJ1HMFC8Ag">（GPU · 并行 · 一起上）</span></h3>
+          <div class="sub" data-page-node-id="dEJKcTNTNmmvVoeKg7ZkY9">把一件事做到极致地快</div>
+          <p data-page-node-id="q8q2RxID5rxs2FDrCT481M">英伟达的赌注是：<b data-page-node-id="HppVHEpoDfE0xfzyCRLoiP">用成千上万个简单核心同时干活</b>，专攻可以并行的那部分计算，剩下的交给 CPU。这在当时被主流视为"只能打游戏的小玩具"，直到神经网络证明——<b data-page-node-id="TOMf7AIWWmECrdNHc5BawJ">训练 AI 恰好就是一场巨大的并行矩阵运算</b>。</p>
+          <ul data-page-node-id="RfZS8OCSH1HNbt3lHFVPEI">
+            <li data-page-node-id="S7rLe1RerCRR4l8MHtIwsb"><b data-page-node-id="hw25mZyBBZWqshnNH2blUD">强项</b><span data-page-node-id="Fim5O1Nd516Ff84pApdSsq">图形渲染、矩阵运算、神经网络训练</span></li>
+            <li data-page-node-id="coMkCoVLHEysBYKAACgEj0"><b data-page-node-id="3lf7iAfYQNaktFuTcAHxIo">代价</b><span data-page-node-id="Aai6DTsStiYWwF4SEJ5vOE">必须有软件生态（CUDA）才用得上</span></li>
+            <li data-page-node-id="uY8hGZHBNvWtAHPIbz2H2d"><b data-page-node-id="JYfGqsTROaFLFGmkVt5nGN">结果</b><span data-page-node-id="9Bqg2clLC8lZtkJsRGwnTg">催生了"黄氏定律"：性能提升远超摩尔定律</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="ElBCDeVZYDECO3ZKGASERQ">"我们把造出来打怪兽的芯片，用来造大脑。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel" data-page-node-id="NXowGHNewVLv5wDHBR7jhd">B · 短期财报 vs 长期愿景：要不要为十年后的事付账</div>
+      <div class="dual" data-page-node-id="fvz41N5LnP8DwUTtvy3Jbx">
+        <div class="sys a" aria-label="短期财报视角" data-page-node-id="UQkQfAfdL0RWwcpKi9CJIg">
+          <div class="tag" data-page-node-id="vCyHSzGI2Sd0rWA7D9RVZK">QUARTERLY</div>
+          <h3 data-page-node-id="HfU4TnJOlzP40sUoHuC54P">为季度财报工作 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="ZcWNWWUiJEbylDA2yNOnYJ">（华尔街的逻辑）</span></h3>
+          <div class="sub" data-page-node-id="kDCczeze7L475Rl5tRt0JF">每一笔投入都要看见回报</div>
+          <p data-page-node-id="xWuAMkJn4fZtspSMlovZ6l">CUDA 在诞生后的很多年里，是一笔<b data-page-node-id="pAg0x1WM061i4cEkeDrPeA">只烧钱、不赚钱</b>的投入：它让每块显卡成本更高，却没有直接带来销量。华尔街反复质疑，股价两次暴跌九成（"凸点门"、加密货币退潮）。从季度视角看，这就是纯粹的浪费。</p>
+          <ul data-page-node-id="hnFUYs6XpqHJG3wklmTXUq">
+            <li data-page-node-id="xDOMo6Zhx2NyOLafsg0P90"><b data-page-node-id="l72XGey2JuI6md3Zkl1tii">优点</b><span data-page-node-id="OmWMYOFPuTAy2v7UrRZOLB">账目清晰、可解释、风险可控</span></li>
+            <li data-page-node-id="8PTxcwdMrS0P6jGQspE58F"><b data-page-node-id="jGR33A177C5AGZvG8jqejD">代价</b><span data-page-node-id="VHqozr1TaIhxBF2fFhOGga">砍掉所有回报周期长的项目</span></li>
+            <li data-page-node-id="qiC4u5VXOsuOTfVK33NqJW"><b data-page-node-id="PXMBiG46JAJyYbCeuTxnL6">风险</b><span data-page-node-id="Cl2pU4tvPowQOrP5uf3Q3E">永远在优化当下，错过范式转变</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="AF0R940xm2FI2BrAfUzRzE">"如果他们不能从我这里买，他们会自己制造。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="xXU7CTUOoeQkMM5JPqNL4z">vs</div>
+
+        <div class="sys b" aria-label="长期愿景视角" data-page-node-id="x3BLr5r7PxWdgFxpmruynE">
+          <div class="tag" data-page-node-id="JtlwHSfR1ve0GCLJWCH71R">VISIONARY</div>
+          <h3 data-page-node-id="zy48VcCJYNQzw4kliuQ5qS">为十年后的世界工作 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="BEnhZKxKt6rgN2LdcaUSmP">（黄仁勋的逻辑）</span></h3>
+          <div class="sub" data-page-node-id="wrXd68AttBjkPSYQeE20cr">先在还没有市场的地方修好路</div>
+          <p data-page-node-id="TtHmrbjhUlxyob99aXoVtA">黄仁勋的做法是<b data-page-node-id="52Nu5wBdioWIep7wVa71d3">先在想象中的未来里定好位置，再倒推今天要建什么</b>：为了并行计算有人用，就先做 CUDA；为了让开发者留下来，就把它免费、做成生态、养十年。等到 AI 需求爆发，全世界只有英伟达<b data-page-node-id="qGHajGq2P49TBWT3UZS6ZS">软硬件都现成</b>。</p>
+          <ul data-page-node-id="ajWN8VjwWSQMlnBP0esXpb">
+            <li data-page-node-id="JOQga2XHWNGkfDZxCgsvwk"><b data-page-node-id="eLw5UO6rsFe5LoJ1zofpVW">优点</b><span data-page-node-id="JAc6QaPhR5vvFItC3AKroc">风口来时已在场，竞争者要追十年</span></li>
+            <li data-page-node-id="JvOM1HOIw1BPPHnhY9W9c3"><b data-page-node-id="ZIazbSZ8AtGWNmVBoLrU8N">代价</b><span data-page-node-id="pfpHGWr0JQrEES6tRHF3F1">长期不被理解，股价与舆论压力极大</span></li>
+            <li data-page-node-id="cbEwdJIuISmXClJYBAagyk"><b data-page-node-id="KtvkQzrLIKdkfOkIWxErce">前提</b><span data-page-node-id="qprzwCAAY1Y6M8UkShhPwU">必须真的看清趋势，不是自我感动</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="9LtKnGJQvs9cHlJR9G8rH7">"不勇于冒险，才是最大的冒险。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h" data-page-node-id="h3y94NuTUzDnUD9MOL3r3G">
+  <div class="wrap" data-page-node-id="SVZOu3SzSubPnpCs7u8WHH">
+    <div class="eyebrow2" data-page-node-id="YHPfnZLwogeAce3V1dzSi2"><span class="num" data-page-node-id="f5KxrunnTdgTeFQEbjzGpz">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h" data-page-node-id="AS4IEGGppASGelQEtpxahc">十张<b class="tail" data-page-node-id="5AUelyjvy1GimurpCB098s">书签</b>，把三十年压成一张纸</h2>
+    <p class="sub" data-page-node-id="v654fMc7k7qAkwFC2EagFL">前四张是"活下来"（早期、NV1 失败、三十天、公开失败），中间四张是"修路"（光速执行、CUDA、AlexNet、转型），最后两张是"想清楚"（加速计算与 AI 工厂、恐惧）。</p>
+
+    <div class="biases" data-page-node-id="93U3BMQQw0mIECFSLHyDmA">
+
+      <article class="bias c1" data-page-node-id="sx9xR1L6sEFZwjTAdOxqJd">
+        <div class="ribbon-top" data-page-node-id="8MgSTMejBa1rFiLiEpVrtm"></div>
+        <div class="num" data-page-node-id="Xl6hOBHS8RoHcYePVU3Uje">N° 01</div>
+        <h3 data-page-node-id="MxDAEU15ECXsHcje5T5rvU">从被霸凌的小孩到工程师 <span class="en" data-page-node-id="pEDLTuDcV6dbQQgF0oX1Az">Beginnings</span></h3>
+        <p class="mech" data-page-node-id="KrQfK9hIRfVjtJSBfal9DX">黄仁勋的起点并不光鲜：小时候是被霸凌的对象，只能选择坚强；打球极富攻击性、永远在进攻；20 岁起薪 28700 美元，先后在 AMD、LSI 与太阳微系统工作。这段经历塑造了他的底色——<b data-page-node-id="U0qMJJqKpPjbppJ8zvox3y">进攻型人格 + 把商业当成另一个工程问题来解</b>。</p>
+        <div class="example" data-page-node-id="hckyTufMK6JoBnfAL9CCep"><b data-page-node-id="cSs49d5qhX0TGLzg5mpZCo">例子</b>"每当他说要做什么时，最终都很有可能做成"——同事对他的早期评价。</div>
+      </article>
+
+      <article class="bias c2" data-page-node-id="Fmxuq9P8lRvmHxjKB82EpB">
+        <div class="ribbon-top" data-page-node-id="XY5SZnB3CDviCmNDhW99mE"></div>
+        <div class="num" data-page-node-id="YTUXA55wphhR9ccyYCSCKB">N° 02</div>
+        <h3 data-page-node-id="XamCmItQxhAIwn7VptNSf4">我们做出的每一个决定都是错误的 <span class="en" data-page-node-id="nnJXnCXW5vdcN4hZLDlMsr">NV1</span></h3>
+        <p class="mech" data-page-node-id="QfP7D5DJumyuibzXz6d397">创业初期，英伟达押注了一种后来被市场淘汰的技术标准，第一款产品 NV1 精心策划却一无所获。<b data-page-node-id="F2wTwIfZ8zALUanIq4xgqP">公司差点就此结束</b>。这一章的价值在于它承认：伟大公司的开局同样是一连串错误判断，区别只在于<b data-page-node-id="X1uQ6yMLAzRx1Dzeubt3iq">纠错速度</b>。</p>
+        <div class="example" data-page-node-id="S5Nx8wtFieGk2vo5bfdloK"><b data-page-node-id="wki54NlaWFStCA4GvqqqJF">例子</b>技术路线押错不是致命的，押错还不肯认才是。</div>
+      </article>
+
+      <article class="bias c3" data-page-node-id="Grw5SxY4qqhjK8xVg84c3t">
+        <div class="ribbon-top" data-page-node-id="7grawjcKloLCrdmmFDkpKQ"></div>
+        <div class="num" data-page-node-id="Gqlaa5LOCtHUw0VASKqJ6t">N° 03</div>
+        <h3 data-page-node-id="QU3QD0kIzOiOk9l6WHDkt3">离破产只有 30 天 <span class="en" data-page-node-id="FdALsvFwcZQKUrFQweEJAn">Thirty Days</span></h3>
+        <p class="mech" data-page-node-id="Vl3NCoXMKre6Vhp2NnHqGw">NV1 失败后，公司现金只够撑一个月，<b data-page-node-id="lQMTpIhUTcQ41nlvio9F05">必须靠下一代产品 NV3／RIVA 128 一举成功</b>。他们用软件模拟器抢在流片前验证、与台积电建立跨越太平洋的合作，硬是在绝境里把产品做对了。这一段是全书最紧张的部分。</p>
+        <div class="example" data-page-node-id="GAVhYKt7We77uygFSjbYAh"><b data-page-node-id="UFFGlAoWdWUAAZ3RPAHp3I">例子</b>"别无他法，这一步必须成功"——把退路堵死，有时是唯一的路。</div>
+      </article>
+
+      <article class="bias c4" data-page-node-id="8qYSknIMDjwmWeCt12NZ6e">
+        <div class="ribbon-top" data-page-node-id="mMvIZ51HMIN0FhdFTqXonC"></div>
+        <div class="num" data-page-node-id="8oHgElOo8pZ5BWOGQjGdmv">N° 04</div>
+        <h3 data-page-node-id="87f1n12lEi7p4ky353A6z8">失败必须被公开 <span class="en" data-page-node-id="NEW0uW5WAf99xRe9CiM7eL">Public Failure</span></h3>
+        <p class="mech" data-page-node-id="mugT69SlSLVIau7Jrb5EUU">黄仁勋的一条管理铁律：<b data-page-node-id="vsK4A1J8W9DGsfF8Rb9Iom">失败要公开讲，让所有人一起学到</b>。他不遮掩、不找替罪羊，也不允许组织把错误藏起来。这带来高压，但也让信息在公司内部高速流动——<b data-page-node-id="NEXMYkgdLPfDJyDH3o4EYI">错误只犯一次，而不是每个团队各犯一遍</b>。</p>
+        <div class="example" data-page-node-id="Mk57nuc7RT2PZUh4oPJojm"><b data-page-node-id="hwiXseRxuLNfqyufL0aVUn">例子</b>把复盘写成公开材料，比私下批评更能改变组织行为。</div>
+      </article>
+
+      <article class="bias c5" data-page-node-id="YU0uw7FpsnsOci18mRCZwQ">
+        <div class="ribbon-top" data-page-node-id="gMh44p5WArS5j8FbcSLkmZ"></div>
+        <div class="num" data-page-node-id="7I7sofZdhyMEFhAaf8fuRY">N° 05</div>
+        <h3 data-page-node-id="etBg3V4a7WPoEFVI5edVN2">死亡竞赛与"光速" <span class="en" data-page-node-id="N8Iqj3LtMFNskArJoX2oK1">Deathmatch</span></h3>
+        <p class="mech" data-page-node-id="yF858HsfdR2CADgHF705m6">英伟达的节奏是<b data-page-node-id="MM1skYJ5DVeZkB17B6KDZC">迭代、迭代、再迭代；执行、执行、再执行</b>。黄仁勋会给团队设定一个看似不可能的目标——他称之为<b data-page-node-id="zkNWkHuikmuY21MycgNFm7">"光速"</b>：先算出物理极限上的最快可能，再倒推排期。TNT2 时代他们创下过"13 天"的纪录。</p>
+        <div class="example" data-page-node-id="opgps4uZkgAtaXAiBBDzFo"><b data-page-node-id="bArOK38UUmBMuEfLUyX40R">例子</b>先问"理论极限是多少"，再问"我们为什么做不到"。</div>
+      </article>
+
+      <article class="bias c6" data-page-node-id="Bkj4XvOHcrjwcRxB9uovtH">
+        <div class="ribbon-top" data-page-node-id="td3PB0np5ljQBjveD5Y4zX"></div>
+        <div class="num" data-page-node-id="LxqSlqHrd14ZMlP32NoFOq">N° 06</div>
+        <h3 data-page-node-id="awijt3YgThwEKtTvhCVssV">秘密押注 CUDA <span class="en" data-page-node-id="cAHxjHZewApbt8jFBjTPSP">CUDA</span></h3>
+        <p class="mech" data-page-node-id="0Z6h0rVhuDbMHnbuvYWefN">为了让 GPU 能被科学家与研究者使用，英伟达秘密开发了 CUDA 平台——<b data-page-node-id="slHsDQJpqhnydfAumbtA1D">本质上，是让游戏玩家为科学研发买了单</b>。这个项目长期亏损、不被看好，却成了后来一切的根：它把硬件优势变成了<b data-page-node-id="snNIXUP63Wdvd9r4ebOweX">软件生态与开发者习惯</b>。</p>
+        <div class="example" data-page-node-id="sLDBDO81zx86b9nzHaQGXF"><b data-page-node-id="OarwPzfwR4vNlbJPZoal4A">例子</b>护城河不是一块芯片，是数百万已经写好的程序与熟练的开发者。</div>
+      </article>
+
+      <article class="bias c7" data-page-node-id="Oqvv4PfRgZ0YO7DQvthp7I">
+        <div class="ribbon-top" data-page-node-id="vNCO57eV1C2NRXfluA6mje"></div>
+        <div class="num" data-page-node-id="4XwPoxpW6ROU3FO3sH5AS9">N° 07</div>
+        <h3 data-page-node-id="7cb8HxU2CJHCbb7dtS6VoS">AlexNet 时刻 <span class="en" data-page-node-id="HU8GrtLTRanc6CpA6waGq5">AlexNet</span></h3>
+        <p class="mech" data-page-node-id="mgvaBSP11DF0mBcwRSXg9s">2012 年，几个研究者用<b data-page-node-id="76ZavPMeeoRamy4H4cYGIU">两块游戏显卡</b>训练出的神经网络，在图像识别比赛中碾压式胜出。这个"范式转变的时刻"证明了：GPU 不只是画图的工具，它是 AI 的引擎。而英伟达，恰好已经把路修好了十年。</p>
+        <div class="example" data-page-node-id="mmxp88XZHRidYpJrMEJsTV"><b data-page-node-id="8Ol8HLm6d5XB2DBF6si0WA">例子</b>真正的机会往往来自"别人用你的东西做出了你没想到的用途"。</div>
+      </article>
+
+      <article class="bias c8" data-page-node-id="pkYJBl9YuCUwpWHhOEJS4T">
+        <div class="ribbon-top" data-page-node-id="RTTCKbvin8MSTU8EIO4jKO"></div>
+        <div class="num" data-page-node-id="6qw6AlJpewY470ZSxzL4xl">N° 08</div>
+        <h3 data-page-node-id="Jo7wF1MufUdIRHrHqs5T4R">周五决定，周一转型 <span class="en" data-page-node-id="2hJFT9ueJIy6He4OBZgHBa">O.I.A.L.O.</span></h3>
+        <p class="mech" data-page-node-id="FSTEDDHh21vDAiGY2fsS4m">看到深度学习的潜力后，黄仁勋在一个周五做出决断：<b data-page-node-id="8Rpj6ef6GAmRFdJ1XtscIq">周一，公司转型成一家 AI 芯片公司</b>。这不是一次渐进调整，而是把全部资源重新投向一个当时还很小的市场——内部最重要的项目代号 "OIALO"（once in a lifetime opportunity，一生一次的机会）。</p>
+        <div class="example" data-page-node-id="asQUuNcIi90i1DQfNOQIRe"><b data-page-node-id="r8Bc5Q5EP9z9hg4IGliCEz">例子</b>识别"一生一次的机会"，然后敢于为它放弃已经到手的舒适区。</div>
+      </article>
+
+      <article class="bias c9" data-page-node-id="mgmmltSG4CVFML87nTFWZG">
+        <div class="ribbon-top" data-page-node-id="554fW8P0U2EDXpP3xeOGVe"></div>
+        <div class="num" data-page-node-id="ixXvHmQpn5J8JwUDSxIu4n">N° 09</div>
+        <h3 data-page-node-id="9h8yOW4RvfMMq8ychnuGd2">从摩尔定律到黄氏定律 <span class="en" data-page-node-id="T3gD6u1qDamZklAsu1UPAj">Huang's Law</span></h3>
+        <p class="mech" data-page-node-id="KOAbvGwMpZj3sfG71P3G8B">沈向洋在推荐序里点出：芯片性能的传统增长曲线（摩尔定律）已经放缓，而英伟达靠<b data-page-node-id="dZaa8eR7WZvbISgfAhXG6v">架构 + 软件 + 系统</b>的协同，跑出了一条远快于前者的新曲线。由此延伸出"AI 工厂"的思路——<b data-page-node-id="1ZJARrn4YQp2SVQAEcdYKx">数据中心不再是一堆服务器，而是一条生产智能的流水线</b>。</p>
+        <div class="example" data-page-node-id="1HoPuyCUK2fGTmNUjGOX9T"><b data-page-node-id="2EWRnrn1GUkZYOEA0Ga2as">例子</b>"我们其实是一家软件公司"——价值越来越多地来自软件与系统，而不是单颗芯片。</div>
+      </article>
+
+      <article class="bias c10" data-page-node-id="jSMntwTplyzz0HG3BTvBvP">
+        <div class="ribbon-top" data-page-node-id="PRbJbxEhIVtE2yab5ek7UE"></div>
+        <div class="num" data-page-node-id="vzWNO4CQ2WznPFYvvWpyYV">N° 10</div>
+        <h3 data-page-node-id="fdCjJbaNnuVbTMv1pcCG41">深不见底的恐惧 <span class="en" data-page-node-id="hrNJcVCCtjFcgKgtZzg4g2">The Fear</span></h3>
+        <p class="mech" data-page-node-id="eK8qLodT1PO9DM5zoZEixE">全书没有在狂欢中收尾。最后一章直面那个问题：<b data-page-node-id="6nGWWMEIXqZ44zSJp9wDnY">AI 会是人类的终结者吗？</b>书里呈现了 99 与 1 的分歧、本吉奥等人的担忧，以及黄仁勋本人的乐观。更值得注意的是他一贯的姿态——<b data-page-node-id="QqX184PWWAAI8XsDFKftdF">即使已经成为地球上最重要的公司，他仍然每天担心失败</b>。</p>
+        <div class="example" data-page-node-id="o4MDKbQpbGZuUp3UNobzeG"><b data-page-node-id="5pIAPi2vC3fxb4QvIUnuXb">例子</b>"我们公司离破产只有 30 天"——这句话他一直在说，不是一次。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h" data-page-node-id="2iDWv9FC4NOqtvKaEcWokZ">
+  <div class="wrap" data-page-node-id="Bpz6l4ahfzACIluFAVKQgj">
+    <div class="eyebrow2" data-page-node-id="lvPnKqAcRULfNajmDElcTt"><span class="num" data-page-node-id="xiWWQFDtwwaeppENFx5a0M">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h" data-page-node-id="kUAnUUaVzV2jMqQrCLOmhR">二十三章<b class="tail" data-page-node-id="gO0CSF9EotD16LQZZ6ovyC">五条脉</b> · 脉络</h2>
+    <p class="sub" data-page-node-id="kPQR7Mevjrd7DctaHWPknV">第一部分讲"活下来并修路"（从洗碗工到 CUDA 与 AlexNet），第二部分讲"登顶与反思"（从 AI 工厂到地球上最重要的股票，再到对 AI 的恐惧）。</p>
+
+    <div class="chaptermap" role="list" data-page-node-id="631zTq2XdVFaNiEE4EDHQF">
+      <article class="part p1" role="listitem" data-page-node-id="zkQF0Md9TYtHN80yvJ2cE9">
+        <div class="pin" data-page-node-id="DZVEOVEQdHpfa5UdAIW8gR">起点 · 一</div>
+        <h3 data-page-node-id="p4AfKsXljzBsiaMNKhJ1hO">成为黄仁勋</h3>
+        <div class="range" data-page-node-id="AkFHiRNmkazOEyC5OESxyc">引言 + 第 1–2 章</div>
+        <ul class="chapters" data-page-node-id="sKNIFv8DzTjREk3wJQDrPP">
+          <li data-page-node-id="TUVtqQaq6Hm12xSsI5UJPA">引言：他并非总是赢家，可一旦赢了就是大手笔</li>
+          <li data-page-node-id="nacft6ywywevOwmLMiGmz8">求学生涯：从被霸凌的小学生到优秀毕业生</li>
+          <li data-page-node-id="nJywf3U0SZgrSmYLBXJ6wh">职涯早期：AMD、LSI 和太阳微系统</li>
+          <li data-page-node-id="lh9Z0A3sJlP2RTnNfi1XST">"商业不过是另一个工程问题"</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem" data-page-node-id="3Q6YekAABejVBDQYcMK4xv">
+        <div class="pin" data-page-node-id="bhzZBgGsDrUAlQ9cjztR86">绝境 · 二</div>
+        <h3 data-page-node-id="C2Q1uwRzZtVC0B06BKADvF">离破产三十天</h3>
+        <div class="range" data-page-node-id="zr6ntIOtqdnUq62ZMpQoS4">第 3–5 章</div>
+        <ul class="chapters" data-page-node-id="BdFjrCgCVCAgyF6z5k23EN">
+          <li data-page-node-id="FLv1dpUDYy4QkPsHpz296v">从餐厅里起步的 Nvidia：每一个决定都是错的</li>
+          <li data-page-node-id="PeS6HDX8e8qvOB1RROdMaq">NV1：精心策划却一无所获</li>
+          <li data-page-node-id="M0qQgaFoPmqABXriTjGk3Z">遭遇绝境：公司离破产只有 30 天</li>
+          <li data-page-node-id="KwLOGfeGVp4ZRNCrTt4JvT">咸鱼翻身：TNT 与台积电的合作蓝图</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem" data-page-node-id="rxA4ys1GdwdUhI9AHWxlAf">
+        <div class="pin" data-page-node-id="EnEhnHWvggvg1ORTv2ArIJ">光速 · 三</div>
+        <h3 data-page-node-id="QQnMDE3V2q58QNCzblB9nN">把执行做到极限</h3>
+        <div class="range" data-page-node-id="x5y2Q5aFCKqEJq9LCvRh9W">第 6–9 章</div>
+        <ul class="chapters" data-page-node-id="E7XStBC3ZTVQUu0rHZNnT1">
+          <li data-page-node-id="TsMWBagh5RyEk3GGnA6uTb">"水母"：首个在游戏中超越人类的神经网络</li>
+          <li data-page-node-id="o4hXtEBX2vvYhsTIMtiv56">死亡竞赛：迭代、执行、光速目标</li>
+          <li data-page-node-id="IHNgYbtQaO8x3kIOH17Ybx">游戏玩家拯救英伟达</li>
+          <li data-page-node-id="B7GUMROiFA9vGgsp6qrZ5R">秘密开发 CUDA：让游戏玩家为科研买单</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem" data-page-node-id="77wpUmn89hlINy6x0dDPaV">
+        <div class="pin" data-page-node-id="JgdANun8dGmcAE8QNUHNNz">共振 · 四</div>
+        <h3 data-page-node-id="hAys1DXsBAAU5VhPjmeTIf">范式转变降临</h3>
+        <div class="range" data-page-node-id="nNceyCHadh6XKKCzmaVOfC">第 10–12 章</div>
+        <ul class="chapters" data-page-node-id="sowE6kZpaV7pEFD1yghsHV">
+          <li data-page-node-id="K9PJlQEpzh6CB3BO2wCh9D">同频共振：比尔·戴利与首席科学家体系</li>
+          <li data-page-node-id="bCCUPryCQ35pjzwAa7m5hs">AlexNet 横空出世</li>
+          <li data-page-node-id="Infa1I29CEBuczhLrbFAu4">"周五晚上做决定，周一早上我们就转型"</li>
+          <li data-page-node-id="jfpomA61QuJs1rdj725nrW">漫长的 AI 寒冬终于露出曙光</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem" data-page-node-id="lKJCZ7V8SUodnB2jNY9ys2">
+        <div class="pin" data-page-node-id="4aPRXJqRbMb7k7YnwqfRCy">算赢 · 五</div>
+        <h3 data-page-node-id="KaMEZy8BuVhsrBjPfN9rjQ">从 AI 工厂到终极之问</h3>
+        <div class="range" data-page-node-id="SU4nPqFCj98qmEiN5ATKaK">第 13–23 章 + 后记</div>
+        <ul class="chapters" data-page-node-id="5xBmd0cu9UmlHCSe2lfEeC">
+          <li data-page-node-id="b8y639Tq6TVEMINpaQycEW">AI 工厂、Transformer、超大规模集群</li>
+          <li data-page-node-id="YXZjispSqibIcvNDfN3l5R">全球最具价值的半导体企业：我们其实是软件公司</li>
+          <li data-page-node-id="GGvAWo2r3KeEJwbxNHIrMd">唯一的"军火供应商"、更多电力更大算力</li>
+          <li data-page-node-id="Stz1nK37WCNMmFzkAUds7y">地球上最重要的股票 / 深不见底的恐惧 / 思维机器</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h" data-page-node-id="Jl2Qe0T3G2ThPMLdMcI7vo">
+  <div class="wrap" data-page-node-id="DUAHCf2goiH3HhHuodfYq3">
+    <div class="eyebrow2" data-page-node-id="zHt4oGadO08uVgqT52r3zC"><span class="num" data-page-node-id="efC9rxwEf1qbAVFMO4t7OW">06 /</span>QUOTES</div>
+    <h2 id="quotes-h" data-page-node-id="TDb4tDRFzt1Z740xlcSwWb">五句值得抄在笔记本上的话</h2>
+    <p class="sub" data-page-node-id="qPOW3faBrNm8J39MbvFiXN">以下为书中观点的中文转述（部分为黄仁勋原话的通行译法），尽量保留原意，未逐字照搬。</p>
+
+    <div class="quotes" data-page-node-id="HnG3EPF4z5skpfDfxc2xGd">
+
+      <article class="quote-card qc1" data-page-node-id="WasBGJqIUBbcT1OWMWo0DN">
+        <span class="qmark" data-page-node-id="2SiPfWp0mUi4q6phz5FQDc">“</span>
+        <p data-page-node-id="RzEWitDQaV4bNCS5k4DbVL">我们公司<br data-page-node-id="k4OOLTUGMjVO64SG6XwsUP"/>离破产只有 30 天。</p>
+        <div class="src" data-page-node-id="FbIG06oouqxTCdJxzRKx1F">— 关于生存焦虑</div>
+      </article>
+
+      <article class="quote-card qc2" data-page-node-id="SGza5kzf8CGljDuKrAgdPP">
+        <span class="qmark" data-page-node-id="lTafhZRhHmK2OrcjSELhbn">“</span>
+        <p data-page-node-id="OMY4C3syGbweF88TRUI1sq">不勇于冒险，<br data-page-node-id="1mOwpa00jmsSccPDuWzYvE"/>才是最大的冒险。</p>
+        <div class="src" data-page-node-id="W6hwaSi9BYdClM1HaIRnB2">— 关于下注</div>
+      </article>
+
+      <article class="quote-card qc3" data-page-node-id="YskkRQHcIXFFk6w7eJWVpP">
+        <span class="qmark" data-page-node-id="NSHkdf243KNarmGqB91F1H">“</span>
+        <p data-page-node-id="tqlEGlL6R0SbVUMHMrxzBi">造芯片原本是为了<br data-page-node-id="Ilytf3CAy9MVONx3RIJjEP"/>打怪兽，<br data-page-node-id="RDLka2OJvfcFQsC5A4byoO"/>我们却用它来造大脑。</p>
+        <div class="src" data-page-node-id="oJg8nbCY5uQ4io1kJfh037">— 关于 GPU 与 AI</div>
+      </article>
+
+      <article class="quote-card qc4" data-page-node-id="69oE9CW2dRFjRp3B9fiekl">
+        <span class="qmark" data-page-node-id="EfhuHPhbpZTbMZzpJaGoOV">“</span>
+        <p data-page-node-id="HC6LlhiQuJCJWyg5i4bpkb">我们其实<br data-page-node-id="Bqei5RfBOW3EiNXCmF3u2J"/>是一家软件公司。</p>
+        <div class="src" data-page-node-id="7lKvXYJ9Egw3wuxCx3UlJP">— 关于 CUDA 与护城河</div>
+      </article>
+
+      <article class="quote-card qc5" data-page-node-id="k09jGYkm3lHabSo7MxNoZV">
+        <span class="qmark" data-page-node-id="2B3E3GSLD04jsi1OGUZPlx">“</span>
+        <p data-page-node-id="P0UHTf9USCIsA5epwV4mDn">失败必须被公开——<br data-page-node-id="JCvz1o8tYQvmXTlDbqqoFt"/>它属于所有人。</p>
+        <div class="src" data-page-node-id="FXCCpyY12w5HGlpBI74LM8">— 关于复盘文化</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h" data-page-node-id="4CzNeFEK7ftRQfcvSOd4wV">
+  <div class="wrap" data-page-node-id="kAUq3qGqrWwU8iJ6e330D5">
+    <div class="eyebrow2" data-page-node-id="rixiaGHbYrCDYf70A15jnC"><span class="num" data-page-node-id="QKCx0R8246PlaAc3Oc0Lmh">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h" data-page-node-id="Vui0c5yNvjbgUD2SLB00Vs">可以立刻落地的<b class="tail" data-page-node-id="aQNAs9UpBIr2C4Hy4NxuUA">八条</b>练习</h2>
+    <p class="sub" data-page-node-id="AR9FsydQFyHtuGkjoXdyTX">这是一本传记，不是方法书。但它的很多做法可以拆成个人能用的动作——尤其是关于"极限执行"和"长期押注"这两件事。（括号里标注了它来自哪一张书签。）</p>
+
+    <div class="actions" data-page-node-id="zgDo5pzq5gOakvnFJiC3DH">
+
+      <div class="action" data-page-node-id="F2W2SxPgGVAa5QbvJdm5nS">
+        <div class="ic" data-page-node-id="Iu46g7rC9cWUK4mZlL8Uxa">01</div>
+        <div data-page-node-id="YH2sfwYhSsFn6qlG8bcBFD">
+          <h4 data-page-node-id="0baAFY4T9wBTx0tamy6lrf">写下你的"离破产 30 天"清单</h4>
+          <p data-page-node-id="z5YcDF2utGkdF2k0v4Ud6e">如果现在的收入/主业突然中断，你还能撑多久？把数字算出来。适度焦虑是有用的，它能挡住大部分自我感觉良好。</p>
+          <span class="tag" data-page-node-id="j4SYAV7kWxo3FHDdJxleHh">↳ 离破产只有 30 天</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="kAwzUIf0MvwYXlDGm5FLlF">
+        <div class="ic" data-page-node-id="571CYB7hL9Fin8DoBl4sH7">02</div>
+        <div data-page-node-id="2jue3OvgD30uOIbnLKaXkn">
+          <h4 data-page-node-id="gPSMLzYomMLrDbl9GXxXv6">给手上的项目算一次"光速"</h4>
+          <p data-page-node-id="VGjIJeCkR8llqgdJxBhEvS">先算理论极限：这件事最快能多快完成？再对比你现在的排期，把差距拆成"能做到"和"结构性做不到"两类，只攻前者。</p>
+          <span class="tag" data-page-node-id="l1A1drK7qhWGXPkLUbulqD">↳ 死亡竞赛与光速</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="WFYvjZ6BwUIH9uifSVHEpS">
+        <div class="ic" data-page-node-id="KFWzpZuNqCW1mBfLCVFskD">03</div>
+        <div data-page-node-id="h0LRbPJisqC7vYHmcn7XYP">
+          <h4 data-page-node-id="mFYe2ArymHB71IEbFaUe6B">划出一块"CUDA 式"的十年时间</h4>
+          <p data-page-node-id="I5fsHg3PPJ2NAazf1j9h7W">每周固定留出一段不被季度考核的时间/预算，投向一个现在看不到回报、但你相信十年后有价值的方向。关键是<b data-page-node-id="ePxUhBD1g4YhXO1MZ8a11G">不许中途拿它救急</b>。</p>
+          <span class="tag" data-page-node-id="0MtbIZNo2oKuElXwakJcUr">↳ 秘密押注 CUDA</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="lnXxURQ0cCCyzD0tHoMm6b">
+        <div class="ic" data-page-node-id="P38cta8A8eO7ChTciGALjc">04</div>
+        <div data-page-node-id="SWNuTEVDmz3aWnfT0VGNOk">
+          <h4 data-page-node-id="p5FHflGt4F5hgY34Hi2m3a">把最近一次失败写成公开复盘</h4>
+          <p data-page-node-id="kqp1sR3Xw9Ks2hoAw6cCo6">写清：做错了什么、为什么当时没发现、下次怎么提前识别。发给会因此受益的人。公开，会逼你把原因写到真正有用为止。</p>
+          <span class="tag" data-page-node-id="Hvy8UPSTUiVhLJSFVMqv3D">↳ 失败必须被公开</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="h69g5MrUrGtEJGNecPhoQW">
+        <div class="ic" data-page-node-id="YVIc5vF0lzgcJZhq2YyY91">05</div>
+        <div data-page-node-id="qqLO7X4a6kOfQaqcMxEkr7">
+          <h4 data-page-node-id="OuB4rqbn4yAfLOpwA2FzFq">在你的领域找出可被"并行化"的环节</h4>
+          <p data-page-node-id="ACuGFtq8W5VaCzDcvbgoFA">哪些事是串行、必须一件件做的？哪些其实可以同时推进、或一次投入反复复用？找出来，那是你的加速空间。</p>
+          <span class="tag" data-page-node-id="tLrLmUbABUVUpaf9QSQt3k">↳ 通用计算 vs 加速计算</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="YhTrdpUoZ8zvAIIo8Tuu07">
+        <div class="ic" data-page-node-id="nUp3E12cGj4pMY3EPChUKU">06</div>
+        <div data-page-node-id="nVkk1EjkM5puAWzX5FtpLZ">
+          <h4 data-page-node-id="kjVg9nE9zwD9hUbbwqFWUD">关注"别人用你的东西做出意外用途"</h4>
+          <p data-page-node-id="Ln3FKT7KScIAAaOuYZc5W8">AlexNet 式的信号往往不在你的目标客户里。定期看看谁在用它做你没想过的事——那可能就是下一个范式转变的入口。</p>
+          <span class="tag" data-page-node-id="yk2fWMCOFzDzCDifpkwrFB">↳ AlexNet 时刻</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="YuaUMMNmJf0ZxwSsi0s9jv">
+        <div class="ic" data-page-node-id="Tp5vFyQjUsAppRbtPuKdcB">07</div>
+        <div data-page-node-id="vfrSdUIs8FmT8Wp9WUwgHU">
+          <h4 data-page-node-id="mSCnhy28b3D2fW0wQuZMPu">检查你的护城河是不是生态，而不是单品</h4>
+          <p data-page-node-id="0WwitmibqRGOcZZDysE5is">问一句：别人复制你的产品后，用户会不会因为习惯、数据、配套而留下？如果不会，你现在领先的部分只是暂时的。</p>
+          <span class="tag" data-page-node-id="FaNnidyw2l6lwff7InYu8V">↳ CUDA 与软件公司</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="iYs0sWrUYu9KmWqQfhfzvd">
+        <div class="ic" data-page-node-id="wSvvAZdw5bP0fIFY4pRmZA">08</div>
+        <div data-page-node-id="apHVuoDBCX3p7hMipNuWdn">
+          <h4 data-page-node-id="wKuG60tmcoPu8bOxOzo03b">做一次"周五决定，周一转型"演练</h4>
+          <p data-page-node-id="ozx6ReyPffNK8uf6qp7XaV">假设你的行业在五年内会被彻底改写，写下你今天会改的三件事。写完后问：既然答案如此，为什么要等到那一天？</p>
+          <span class="tag" data-page-node-id="bPAdTpBkodpPohu4Ukz95y">↳ 周五决定，周一转型</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h" data-page-node-id="GUX9ybjabvHFe9gsk8kLLE">
+  <div class="wrap" data-page-node-id="252D2HUQvq2HgQlAWgkMXD">
+    <div class="eyebrow2" data-page-node-id="dDOP5MEfgUSHKKBXVLsjyT"><span class="num" data-page-node-id="y3XDsVGWjs6MQ6990UhFwz">08 /</span>FOR WHOM</div>
+    <h2 id="who-h" data-page-node-id="ipdTtnGRDIacFYywbrj9qn">适合谁读 / 不适合谁读</h2>
+    <p class="sub" data-page-node-id="BtUu4FIzLH8RJC8x8wNtw1">它解决的是"一家公司如何提前十年修好路，并在绝境中不死"。如果你想要的是投资建议或技术教材，这本书都不是——它是一份关于长期押注与极限执行的案例。</p>
+
+    <div class="readers" data-page-node-id="zrFCMw3y42g45uhkvzAvCy">
+      <article class="who yes" data-page-node-id="jpHRQHrrpD3jmvrD5NS1a3">
+        <h3 data-page-node-id="98Sbp28QFBuqJBHrkpTP4Y"><span class="swatch" data-page-node-id="aB1RnA7s0IJ7HLLxTczKNt"></span>尤其推荐</h3>
+        <ul data-page-node-id="gBxR1zA4KJox7pZWH9xa8D">
+          <li data-page-node-id="0NAOtIS6NUGQeldEXCIAIm">想理解<b data-page-node-id="C3yQnwYeEN9Qj8DBuXP2II">AI 算力这波浪潮到底怎么形成</b>的人（不是新闻层面的理解）</li>
+          <li data-page-node-id="wkCAJvIc7qxpYGlS39yb5y">做硬件、半导体、平台与开发者生态，关心<b data-page-node-id="iJbHA4ZlDKlvXiy8JCE8GT">护城河怎么建</b>的人</li>
+          <li data-page-node-id="qRL1KOjwT1HVhGA43p9Sni">创业者与管理者在<b data-page-node-id="1puu9k31auDrnylL1Xfl10">绝境中求生</b>：离破产 30 天那几章极有参考价值</li>
+          <li data-page-node-id="xDnWt6Regnj47lYAOFh0os">纠结"要不要为一个长期方向忍受短期亏损"的人</li>
+          <li data-page-node-id="Sc1lgGl0wSmAr2ADdniBu6">读过 NO.17《硅谷钢铁侠》想<b data-page-node-id="hkL7d7WaeJ09cLO0yt5NKs">对照两位激进 CEO</b> 的人（书里也有马斯克与黄仁勋之辩）</li>
+          <li data-page-node-id="VYPsTfrhaOjDUwEeUpqmiS">对"光速"式执行感兴趣，想学如何设定极限目标的人</li>
+        </ul>
+      </article>
+
+      <article class="who no" data-page-node-id="Thsexq4CQqtoFl6zo2ywVd">
+        <h3 data-page-node-id="lE2TmEi0tFsEBtW6oZGH3G"><span class="swatch" data-page-node-id="QmCV1e0UsE1i3P4NYGzC3I"></span>不推荐 / 慎读</h3>
+        <ul data-page-node-id="ymCkSuboAPRN8bVQBj52TH">
+          <li data-page-node-id="QlX77fK8EwjTgVNTPpL398">想要<b data-page-node-id="Wp74Mlu4xAoZnK6cDcNCIW">投资建议与股价判断</b>的人：本书是叙事，不提供估值与操作框架（可看 NO.08《投资最重要的事》）</li>
+          <li data-page-node-id="PZHWSuUs864R4Gg7lTMEfN">想要<b data-page-node-id="uvuz4t8BIhhc3NJSDcgEFA">技术教材</b>的人：它讲清了并行计算与 CUDA 的意义，但不教你怎么用</li>
+          <li data-page-node-id="aR5WWc4HDg3qkyDehF1Fsz">期待<b data-page-node-id="7fHjKnHmkJNEVDuoxmsMrz">中立批判视角</b>的人：作者获得极高访问权限，整体基调偏正面、偏理解</li>
+          <li data-page-node-id="DnSNWjrQDpXefjQJNI1ElE">对 AI 叙事已感到疲劳的人：本书对 AI 未来总体乐观，可能让你更累</li>
+          <li data-page-node-id="rMjdHtqnPJZFwzYRF4VrMu">想学"如何成为黄仁勋"的人：他的强度、运气与时代不可复制，照搬易失真</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot" data-page-node-id="Q4OgJitfm34EAVz3SOeubJ">
+  <div class="wrap" data-page-node-id="Py1Fciy2zGQlKqbKW9qHQ1">
+    <div class="mark" data-page-node-id="F53is7Ntd6LsL49BrYeDCj">
+      "不勇于冒险，才是最大的冒险。"
+    </div>
+    <div class="rule" data-page-node-id="orUnPEUc5S4ih93lxr5PVF"></div>
+    <div class="meta" data-page-node-id="3ZGijhLIaR1VcXD5wYiYFp">
+      读书笔记 · 《黄仁勋：英伟达之芯》· 斯蒂芬·威特 著 / 周健工 译<br data-page-node-id="TDpF8QwMmXljp57IPsUnBv"/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
