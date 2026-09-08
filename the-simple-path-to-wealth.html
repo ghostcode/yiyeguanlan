@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>《简单致富》读书笔记</title>
+<meta name="description" content="J.L. 柯林斯《简单致富》：源自写给女儿的信。不负债、提高储蓄率、只买低费宽基指数基金并长期持有；积累期与保住期两套配置，退休后按 4% 取现。复杂只对卖产品的人有利。" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为翠玉，呼应"简单与清爽"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #3f8f7a;   /* 主书签色：翠玉 */
+  --accent-2:     #c0a04a;   /* 麦金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(63,143,122,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(63,143,122,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#0d2420 url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#0d2420;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(13,36,32,.20) 0%, rgba(13,36,32,.06) 35%, rgba(13,36,32,.82) 100%),
+    linear-gradient(90deg, rgba(13,36,32,.62) 0%, rgba(13,36,32,.20) 55%, rgba(13,36,32,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f2efdf;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }
+.dual .sys.b .tag{ background:var(--accent) }
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="index.html" class="home" aria-label="返回系列首页">一页观澜</a>
+    <div class="brand"><span class="dot"></span> 阅读笔记 · 简单致富</div>
+    <nav aria-label="目录">
+      <a href="#info">书籍</a>
+      <a href="#one">总览</a>
+      <a href="#dual">两组对照</a>
+      <a href="#bias">关键概念</a>
+      <a href="#map">脉络</a>
+      <a href="#quotes">金句</a>
+      <a href="#action">行动</a>
+      <a href="#who">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0">
+  <div class="hero-img" role="img" aria-label="晨光中的山间湖泊与远路，象征一条简单漫长的路"></div>
+  <div class="ribbon">NO. 18 · 财富投资</div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="line"></span>READING NOTES</div>
+    <h1>
+      简单致富
+      <span class="sub">THE SIMPLE PATH TO WEALTH · J.L. COLLINS</span>
+    </h1>
+    <p class="lede">
+      一本源自<b>父亲写给女儿的信</b>的投资书：不负债、多存钱、
+      只买一只低费率的宽基指数基金，然后——<b>什么都不做</b>。
+      它的核心判断很锋利：<b>复杂只对卖产品的人有利，对你有害。</b>
+    </p>
+    <div class="byline">
+      <span><b>作者</b> J.L. 柯林斯（J.L. Collins）</span>
+      <span><b>译者</b> 刘建位</span>
+      <span><b>中文版</b> 2025 · 中信出版集团</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">01 /</span>关于这本书</div>
+    <h2 id="info-h">把投资这件事，<b class="tail">删到只剩三条</b></h2>
+    <p class="sub">《简单致富：实现财务自由与富足人生的路线图》（<i>The Simple Path to Wealth: Your Road Map to Financial Independence and a Rich, Free Life</i>）由美国作家、财经博主 J.L. 柯林斯所著，源自他写给女儿的一系列信件——他担心当面说教反而让女儿对金钱敬而远之，于是把该说的都写下来。中文版由刘建位翻译，中信出版集团 2025 年出版，ISBN 978-7-5217-6982-1，约 361 页。全书四部分、35 章，另有开篇三个故事与尾声三个忠告。这本书在 FIRE（财务独立、提早退休）社群中影响极大，被视为入门"圣经"之一。</p>
+
+    <div class="bookinfo">
+      <div class="meta-card">
+        <dl>
+          <dt>书名</dt><dd>简单致富 <span class="small">/ The Simple Path to Wealth</span></dd>
+          <dt>副标题</dt><dd>实现财务自由与富足人生的路线图</dd>
+          <dt>作者</dt><dd>J.L. 柯林斯 <span class="small">J.L. Collins</span></dd>
+          <dt>译者</dt><dd>刘建位 <span class="small">（中信出版集团，2025）</span></dd>
+          <dt>身份</dt><dd>作家 · 财经博主 · 财务自由实践者</dd>
+          <dt>领域</dt><dd>个人理财 · 指数投资 · 财务独立</dd>
+          <dt>缘起</dt><dd>写给女儿的一系列信件</dd>
+          <dt>结构</dt><dd>四部分 35 章 + 开篇 / 尾声</dd>
+          <dt>核心工具</dt><dd>低费率宽基指数基金</dd>
+          <dt>关键词</dt><dd>不负债 · 高储蓄 · 不折腾</dd>
+        </dl>
+      </div>
+
+      <div class="right">
+        <p class="thesis">
+          全书可以浓缩成两句话：<b>积累阶段——不负债、尽量多存、全部买入宽基股票指数基金；
+          保住阶段——按 4% 取现，并适当加入债券。</b>
+          剩下的三十多章，几乎都在回答同一个问题：
+          <b>为什么你不需要更复杂的方法？</b>
+          因为费率、税收和来回折腾，是投资里少数几件"确定会伤害你"的事。
+        </p>
+        <div>
+          <span class="chip">#指数基金</span>
+          <span class="chip">#不负债</span>
+          <span class="chip">#储蓄率</span>
+          <span class="chip">#成本即确定性</span>
+          <span class="chip">#F-You Money</span>
+          <span class="chip">#不择时</span>
+          <span class="chip">#4% 法则</span>
+          <span class="chip">#简单</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="eyebrow2" style="justify-content:center"><span class="num">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center">一句话总览</h2>
+    <blockquote>
+      致富不需要聪明，<br/>只需要简单<br/>并且不动。
+    </blockquote>
+    <div class="src">— SIMPLE, THEN STAY PUT</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h">两组核心对照<b class="tail">·</b>复杂与阶段</h2>
+    <p class="sub">一组是全书最锋利的判断：复杂产品到底对谁有利；另一组是全书的结构主线：人生分为"积累财富"与"保住财富"两个阶段，两阶段的正确做法并不相同。</p>
+
+    <div class="dualset">
+
+      <!-- 对照 A -->
+      <div class="setlabel">A · 复杂 vs 简单：复杂到底对谁有利？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="复杂投资">
+          <div class="tag">COMPLEX</div>
+          <h3>复杂产品 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（主动基金 · 投顾 · 择时）</span></h3>
+          <div class="sub">听起来专业 · 收费也专业</div>
+          <p>主动管理基金、结构化产品、择时服务、投资顾问……它们的共同点是：<b>复杂让它们看起来值那个价钱</b>。书里的判断很直接——复杂的投资产品，只为<b>创造和销售它们的人</b>创造利润；对持有人来说，成本更高，效果更差。</p>
+          <ul>
+            <li><b>费率</b><span>每年固定抽走一块，复利下差距惊人</span></li>
+            <li><b>效果</b><span>长期多数跑不赢简单指数</span></li>
+            <li><b>副作用</b><span>越复杂越需要盯，越盯越容易动</span></li>
+          </ul>
+          <div class="quote">"复杂的投资产品只会为创造和销售它们的人谋取利润。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="简单指数">
+          <div class="tag">SIMPLE</div>
+          <h3>简单指数 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（低费率宽基 · 买入并持有）</span></h3>
+          <div class="sub">一只基金 · 覆盖整个市场</div>
+          <p>只买一只<b>费率极低、覆盖整个市场的宽基股票指数基金</b>（书中最常提到的是全市场股票指数基金），然后长期持有。这样做的结果不是最好，但会稳定地<b>拿到市场平均</b>——而市场平均，长期看已经好过绝大多数专业选手。</p>
+          <ul>
+            <li><b>费率</b><span>低到几乎可以忽略</span></li>
+            <li><b>效果</b><span>拿到市场平均，不折腾</span></li>
+            <li><b>关键</b><span>简单才能长期坚持，坚持才是复利的前提</span></li>
+          </ul>
+          <div class="quote">"你对投资思索得越少，你就会做得越好——因为你越想，就越想动它。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel">B · 两个阶段：积累财富 vs 保住财富</div>
+      <div class="dual">
+        <div class="sys a" aria-label="积累财富阶段">
+          <div class="tag">ACCUMULATE</div>
+          <h3>积累财富阶段 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（还在工作 · 还在存）</span></h3>
+          <div class="sub">不负债 · 高储蓄 · 全股票</div>
+          <p>这个阶段的任务是把雪球滚大：<b>远离债务、把收入的相当大一部分存下来</b>（书中给出的参照是 50%），然后把结余持续买入宽基股票指数基金。<b>债券在这个阶段意义不大</b>——它的作用是降低波动，而你此刻最需要的是增长。</p>
+          <ul>
+            <li><b>重点</b><span>储蓄率比收益率更可控</span></li>
+            <li><b>配置</b><span>以股票指数基金为主</span></li>
+            <li><b>心态</b><span>下跌是打折，不是灾难</span></li>
+          </ul>
+          <div class="quote">"先攒出独立自由保证金——那笔让你敢于说不的钱。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="保住财富阶段">
+          <div class="tag">PRESERVE</div>
+          <h3>保住财富阶段 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（开始取用 · 靠它生活）</span></h3>
+          <div class="sub">按比例取现 · 加入债券</div>
+          <p>钱不再是"存进去"，而是"取出来"。这时规则变成：<b>控制年度取现比例（书中按 4% 讨论），并在股票指数基金之外加入债券指数基金</b>——债券的作用不是提高收益，而是让你在最差的年份也不必卖掉跌得最惨的股票。</p>
+          <ul>
+            <li><b>重点</b><span>控制提取节奏，避免被迫低位卖出</span></li>
+            <li><b>配置</b><span>股票 + 债券，比例按情况调整</span></li>
+            <li><b>心态</b><span>目标从"最大化"转为"不失控"</span></li>
+          </ul>
+          <div class="quote">"富有的定义之一，是不必在意市场今天怎么样。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h">十张<b class="tail">书签</b>，把这条路压成一张纸</h2>
+    <p class="sub">前四张是"入口"（债务、储蓄、成本、自由保证金），中间四张是"怎么投"，最后两张是"投完之后"。</p>
+
+    <div class="biases">
+
+      <article class="bias c1">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 01</div>
+        <h3>债务：不能接受的负担 <span class="en">No Debt</span></h3>
+        <p class="mech">全书第 1 章就把话说死：<b>消费性债务是不可接受的负担</b>，先清掉再谈投资。书里也提醒了"房产陷阱"——<b>自住房是一种生活方式选择，不要把它包装成投资</b>；它可能同时是最大的一笔债。</p>
+        <div class="example"><b>例子</b>信用卡债、车贷先清零；买房前先算清它对你储蓄率的长期挤压。</div>
+      </article>
+
+      <article class="bias c2">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 02</div>
+        <h3>储蓄率决定速度 <span class="en">Savings Rate</span></h3>
+        <p class="mech">与收益率不同，<b>储蓄率是你能直接控制的变量</b>。书中给出的参照是把收入的相当比例存下来（提到 50% 这一"最佳平衡点"），并提醒<b>早开始的优势远大于后来多存</b>——时间比金额更不可逆。</p>
+        <div class="example"><b>例子</b>同样是每月存 2000 元，25 岁开始和 40 岁开始的终点差距，远大于多存 500 元能追回的。</div>
+      </article>
+
+      <article class="bias c3">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 03</div>
+        <h3>成本是唯一确定的事 <span class="en">Costs Are Certain</span></h3>
+        <p class="mech">未来收益不确定，但<b>费率一定会被抽走</b>。这是全书最硬的一条推理：既然无法预测哪个基金会赢，那就选<b>收费最低的那个</b>——这是唯一你能提前锁定的优势。也因此他不推荐投资顾问。</p>
+        <div class="example"><b>例子</b>两只同样的宽基指数基金，费率 0.03% 与 1.5%，三十年后差距会非常大。</div>
+      </article>
+
+      <article class="bias c4">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 04</div>
+        <h3>独立自由保证金 <span class="en">F-You Money</span></h3>
+        <p class="mech">全书最著名的概念：<b>一笔让你敢于说不的钱</b>。有了它，你可以拒绝一份糟糕的工作、一段糟糕的关系、一次糟糕的合作。它的价值不在数字，而在<b>把选择权还给你自己</b>——这也是作者说"我投资从来不是为了早日退休"的原因。</p>
+        <div class="example"><b>例子</b>被要求做违背本心的事时，你可以平静地说"不"——这就是这笔钱买到的东西。</div>
+      </article>
+
+      <article class="bias c5">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 05</div>
+        <h3>只买宽基指数基金 <span class="en">One Fund</span></h3>
+        <p class="mech">三大要素里你真正能控制的只有成本与分散。所以工具要极简：<b>一只覆盖整个市场的宽基股票指数基金</b>就足够了，它天然分散、费率极低、不需要你做任何判断。书里还专门讨论了国际基金与"买不到某只基金怎么办"。</p>
+        <div class="example"><b>例子</b>与其挑十只基金，不如持有一只覆盖全市场的指数基金，然后忘掉它。</div>
+      </article>
+
+      <article class="bias c6">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 06</div>
+        <h3>市场会涨，但会先吓死你 <span class="en">Volatility</span></h3>
+        <p class="mech">作者的立场很鲜明：<b>股票市场长期是向上的，但过程中一定有剧烈下跌</b>（书里有一章就叫"重大股灾即将来临"）。所以他强调的不是预测，而是<b>提前接受</b>：既然大跌必然发生，那就在心理上先为它留好位置。</p>
+        <div class="example"><b>例子</b>把"跌 30% 我会怎么做"写下来，比跌了之后再想要有用得多。</div>
+      </article>
+
+      <article class="bias c7">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 07</div>
+        <h3>不择时，也不挑股 <span class="en">Don't Time, Don't Pick</span></h3>
+        <p class="mech">书里有两章很直白：一章讲<b>为什么大多数人在股票投资上是亏钱的</b>（根源是择时与频繁交易），一章讲<b>为什么你选不到能跑赢市场的股票</b>。结论一致：别做这两件事。<b>至于分批还是一次性，作者的态度是：自动化买入可以，但别把"分批"当成择时的借口。</b></p>
+        <div class="example"><b>例子</b>设置自动扣款买入，然后不看账户——比任何"判断时机"都有效。</div>
+      </article>
+
+      <article class="bias c8">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 08</div>
+        <h3>盯得越少，做得越好 <span class="en">Think Less</span></h3>
+        <p class="mech">这是书里最有意思的一条心理建议：<b>你对投资思索得越少，就做得越好</b>。因为想得越多，就越想调整；调整越多，落入平均以下的概率就越大。<b>简单策略的真正优势，正是它让你不需要天天做决定。</b></p>
+        <div class="example"><b>例子</b>把查看账户的频率从每天降到每季，收益未必变高，但"手痒"造成的损失会变少。</div>
+      </article>
+
+      <article class="bias c9">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 09</div>
+        <h3>资产配置：两阶段不同 <span class="en">Allocation</span></h3>
+        <p class="mech">书里专门有两章讲配置：<b>积累期以股票指数基金为主；进入保住期后，加入债券指数基金，并按自己的情况确定比例</b>。同时提醒<b>消费升级是隐形敌人</b>——收入涨了就把开销一起涨上去，等于储蓄率永远停在原地。</p>
+        <div class="example"><b>例子</b>加薪之后先提高储蓄额，而不是先换车换房——顺序反了，自由就永远晚十年。</div>
+      </article>
+
+      <article class="bias c10">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 10</div>
+        <h3>4% 法则与取现 <span class="en">The 4% Rule</span></h3>
+        <p class="mech">第四部分回答"退休后每年能花多少"：书中围绕<b>把年度支出控制在资产的一个固定比例（4% 作为讨论基准）</b>展开，并讨论社保领取时点、如何做慈善等"钱之外"的问题。核心不是这个数字，而是<b>让支出有纪律、有上限</b>。</p>
+        <div class="example"><b>例子</b>每年只按既定比例提取，市场差年份也不临时加码卖出。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h">三十五章<b class="tail">五条脉</b> · 脉络</h2>
+    <p class="sub">四部分结构清晰：先立规矩（债务与储蓄），再讲工具（指数基金与账户），然后用一整部分拆穿"魔豆"（那些听起来能让你快速致富的东西），最后讲钱够用之后怎么花。</p>
+
+    <div class="chaptermap" role="list">
+      <article class="part p1" role="listitem">
+        <div class="pin">入门 · 一</div>
+        <h3>先把地基打正</h3>
+        <div class="range">开篇 + 第 1–5 章</div>
+        <ul class="chapters">
+          <li>开篇三个故事（女儿 / 穷和尚与富大臣 / 我自己）</li>
+          <li>债务：不能接受的负担</li>
+          <li>独立自由保证金 / 如何看待钱</li>
+          <li>如何在牛市和熊市中投资</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem">
+        <div class="pin">工具 · 二</div>
+        <h3>世界上最强的积累工具</h3>
+        <div class="range">第 6–13 章</div>
+        <ul class="chapters">
+          <li>重大股灾即将来临 / 股市总是会上涨</li>
+          <li>为什么大多数人炒股亏钱</li>
+          <li>只考虑三大要素，只用三大工具</li>
+          <li>指数基金 / 债券 / 配置建议</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem">
+        <div class="pin">账户 · 三</div>
+        <h3>具体去哪儿买</h3>
+        <div class="range">第 14–23 章</div>
+        <ul class="chapters">
+          <li>确定资产配置比例 / 国际基金</li>
+          <li>养老目标基金 / 买不到某只基金怎么办</li>
+          <li>五个篮子（各类退休账户）/ 健康储蓄账户</li>
+          <li>实战案例 / 为什么不喜欢投资顾问</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem">
+        <div class="pin">魔豆 · 四</div>
+        <h3>拆穿"神奇方法"</h3>
+        <div class="range">第 24–28 章</div>
+        <ul class="chapters">
+          <li>约翰·博格与指数基金遭受的非议</li>
+          <li>为什么你选不到能跑赢市场的股票</li>
+          <li>为什么不喜欢定投策略</li>
+          <li>如何成为能上电视的股市专家 / 你可能上当受骗</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem">
+        <div class="pin">之后 · 五</div>
+        <h3>自由之后，以及三个忠告</h3>
+        <div class="range">第 29–35 章 + 尾声</div>
+        <ul class="chapters">
+          <li>取现比例 / 每年如何取现 4%</li>
+          <li>社保什么时候领 / 如何做慈善</li>
+          <li>给女儿的忠告：第一个 10 年怎么走</li>
+          <li>活出自我 / 风险始终存在，勇往直前</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">06 /</span>QUOTES</div>
+    <h2 id="quotes-h">五句值得抄在笔记本上的话</h2>
+    <p class="sub">以下为书中观点的中文转述，尽量保留原意，未逐字照搬。</p>
+
+    <div class="quotes">
+
+      <article class="quote-card qc1">
+        <span class="qmark">“</span>
+        <p>复杂的投资产品<br/>只为创造和销售它们的人<br/>谋取利润。</p>
+        <div class="src">— 关于"简单"的判断</div>
+      </article>
+
+      <article class="quote-card qc2">
+        <span class="qmark">“</span>
+        <p>你对投资思索得越少，<br/>就会做得越好：<br/>越想，就越想动它。</p>
+        <div class="src">— 关于不折腾</div>
+      </article>
+
+      <article class="quote-card qc3">
+        <span class="qmark">“</span>
+        <p>债务<br/>是不能接受的负担。</p>
+        <div class="src">— 全书第 1 章</div>
+      </article>
+
+      <article class="quote-card qc4">
+        <span class="qmark">“</span>
+        <p>独立自由保证金：<br/>那笔让你<br/>敢于说不的钱。</p>
+        <div class="src">— 关于 F-You Money</div>
+      </article>
+
+      <article class="quote-card qc5">
+        <span class="qmark">“</span>
+        <p>不必时刻想着钱——<br/>一次理解一点点，<br/>然后让它自动运转。</p>
+        <div class="src">— 尾声：给女儿的忠告</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h">可以立刻落地的<b class="tail">八条</b>练习</h2>
+    <p class="sub">这本书的可操作性极强，几乎每一条都能直接执行。括号里标注了它来自哪一张书签。</p>
+
+    <div class="actions">
+
+      <div class="action">
+        <div class="ic">01</div>
+        <div>
+          <h4>列一张债务清单，按利率排好</h4>
+          <p>把所有消费性负债写下来，按利率从高到低排序，先还最贵的那一笔。这是全书的第一步，没有例外。</p>
+          <span class="tag">↳ 债务：不能接受的负担</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">02</div>
+        <div>
+          <h4>算出你现在的储蓄率</h4>
+          <p>用去年的实际数字：存下来的钱 ÷ 总收入。先看清这个数，再决定明年要把它提到多少——这是你能控制的最强变量。</p>
+          <span class="tag">↳ 储蓄率决定速度</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">03</div>
+        <div>
+          <h4>查一遍你持有产品的费率</h4>
+          <p>把每只基金的管理费、申购赎回费、账户服务费全部列出来。如果看不懂，先当作红旗——看不懂本身就是成本。</p>
+          <span class="tag">↳ 成本是唯一确定的事</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">04</div>
+        <div>
+          <h4>设一个"说不基金"的目标金额</h4>
+          <p>算一算：如果明天辞职，你需要多少钱才能撑住半年且不动摇？把这个数设为第一个里程碑，优先于任何"收益最大化"。</p>
+          <span class="tag">↳ 独立自由保证金</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">05</div>
+        <div>
+          <h4>建立自动买入，然后减少查看频率</h4>
+          <p>把买入设成每月自动执行，同时把查看账户的频率降到每季度一次。目标不是少知道，而是少动手。</p>
+          <span class="tag">↳ 盯得越少，做得越好</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">06</div>
+        <div>
+          <h4>提前写下"跌 30% 时我会怎么做"</h4>
+          <p>把答案写在纸上（多半是"什么都不做，继续按计划买入"）。写下来的意义在于：真跌的时候，你不需要临时做决定。</p>
+          <span class="tag">↳ 市场会涨，但会先吓死你</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">07</div>
+        <div>
+          <h4>给下一次加薪预先分配好去向</h4>
+          <p>在钱到账之前就决定：多少进入储蓄与投资、多少用于改善生活。默认全部存下，能挡住大部分隐形消费升级。</p>
+          <span class="tag">↳ 资产配置与消费升级</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">08</div>
+        <div>
+          <h4>确定自己处在哪个阶段</h4>
+          <p>积累期还是保住期？写下来，然后确认配置是否与阶段匹配——积累期重增长、保住期控提取与波动，两件事别混着做。</p>
+          <span class="tag">↳ 两阶段不同配置</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">08 /</span>FOR WHOM</div>
+    <h2 id="who-h">适合谁读 / 不适合谁读</h2>
+    <p class="sub">它解决的是"普通人如何靠纪律而不是聪明致富"。如果你想要的是技巧与刺激，这本书会让你失望——但那可能正是它要传达的信息。</p>
+
+    <div class="readers">
+      <article class="who yes">
+        <h3><span class="swatch"></span>尤其推荐</h3>
+        <ul>
+          <li>刚工作、想建立正确金钱观但被各种产品绕晕的人</li>
+          <li>已经尝试过挑股、择时、跟大 V，<b>想彻底简化</b>的人</li>
+          <li>被消费贷、车贷、房贷压住、不知道先还哪个的人</li>
+          <li>想要"设置一次就不用管"的<b>自动化投资方案</b>的人</li>
+          <li>读过 NO.15《持续买入》后，想进一步落到<b>具体买什么</b>的人</li>
+          <li>关心 FIRE / 财务独立，想先看最有代表性的一本的人</li>
+        </ul>
+      </article>
+
+      <article class="who no">
+        <h3><span class="swatch"></span>不推荐 / 慎读</h3>
+        <ul>
+          <li>想学<b>选股、择时、行业轮动</b>的人：本书明确反对这些做法</li>
+          <li>期待中立辩证的人：作者立场鲜明、语气笃定，不是教科书</li>
+          <li>需要中国本土落地细节的人：书中账户与品种以美国市场为主（401(k)、罗斯账户等），需自行换算</li>
+          <li>想要精确学术论证的人：本书是经验与信念，不是论文</li>
+          <li>已经完全执行指数化投资的人：前几章可能略显重复，可直奔第四部分（取现与之后）</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="mark">
+      "你对投资思索得越少，你就会做得越好——因为你思索得越少，就越不会去调整它。"
+    </div>
+    <div class="rule"></div>
+    <div class="meta">
+      读书笔记 · 《简单致富：实现财务自由与富足人生的路线图》· J.L. 柯林斯<br/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

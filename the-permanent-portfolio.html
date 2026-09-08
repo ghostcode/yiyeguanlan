@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="yB2J4bNeA2iU6JAv8HMzPS">
+
+<head data-page-node-id="2JcNMSpy5DhqDzZqg4HyLp">
+<meta charset="utf-8" data-page-node-id="FJPEP2ykx5EGWOEKxJeFIe" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="7YyaWE04VASlOBuo4dQPYJ" />
+<title>《哈利·布朗的永久投资组合》读书笔记</title>
+<meta name="description" content="克雷格·罗兰与 J.M. 劳森《哈利·布朗的永久投资组合》：25% 股票 + 25% 长期国债 + 25% 现金 + 25% 黄金，用四资产覆盖繁荣、衰退、通胀、通缩四种经济季节，不预测未来，只做全天候准备。" data-page-node-id="HyNpoEfDexx7C5WFZVAutn" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为玄石，呼应"永久与稳固"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #414a52;   /* 主书签色：玄石 */
+  --accent-2:     #b0903f;   /* 古金（点缀，呼应黄金资产） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(65,74,82,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(65,74,82,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#14181c url("https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#14181c;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(20,24,28,.20) 0%, rgba(20,24,28,.06) 35%, rgba(20,24,28,.82) 100%),
+    linear-gradient(90deg, rgba(20,24,28,.62) 0%, rgba(20,24,28,.20) 55%, rgba(20,24,28,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f0e9db;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }   /* 对照项 A */
+.dual .sys.b .tag{ background:var(--accent) }    /* 对照项 B */
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body data-page-node-id="2zqDFqYSbZAUGKEzWgAHD6">
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner" data-page-node-id="R4jEFiDn1tSZJkph2g3r66">
+  <div class="topbar-inner" data-page-node-id="jNMZBZCHhrqstkl25tNpEV">
+    <a href="index.html" class="home" aria-label="返回系列首页" data-page-node-id="WHN4dYFw8BKNjeB38hlSOE">一页观澜</a>
+    <div class="brand" data-page-node-id="tJMhoCJ84e84XebWfV2oY6"><span class="dot" data-page-node-id="D4WbUmF47T8e3nFBmJ0SN8"></span> 阅读笔记 · 哈利·布朗的永久投资组合</div>
+    <nav aria-label="目录" data-page-node-id="k7MFIGdyHNBTqZa2hUX88c">
+      <a href="#info" data-page-node-id="ALIHzStdqR3NOOoUWB0FZm">书籍</a>
+      <a href="#one" data-page-node-id="TgmI5S0g4guBFVsEXTaALk">总览</a>
+      <a href="#dual" data-page-node-id="4ACqksaoNFnxF22wgdDbSW">两组对照</a>
+      <a href="#bias" data-page-node-id="i8AcUp3ckeA2DRY1oaxQra">关键概念</a>
+      <a href="#map" data-page-node-id="9CXzphg4J3aobfhynOeDzG">脉络</a>
+      <a href="#quotes" data-page-node-id="nfQFZmtwJfWpxAJncIIbVD">金句</a>
+      <a href="#action" data-page-node-id="i6ULFLsBYdjccvr9kfWumS">行动</a>
+      <a href="#who" data-page-node-id="MaCwGsE3YZDUV7UXECsWdH">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="kvO5dLFbEjeqHrn0fPVz3P">
+  <div class="hero-img" role="img" aria-label="金条与贵金属特写，象征永久投资组合中的黄金资产" data-page-node-id="xXNmGZOSbS9SIbviRbCtNC"></div>
+  <div class="ribbon" data-page-node-id="iu4bM3cUiHjPIT9DviuRuB">NO. 16 · 资产配置</div>
+  <div class="hero-inner" data-page-node-id="M4cVJFp1QTLDSihJxwgkpd">
+    <div class="eyebrow" data-page-node-id="oreUDYE7TJSiatdJvXylqp"><span class="line" data-page-node-id="BWuqFnjw8GKzzpxwQwKt6g"></span>READING NOTES</div>
+    <h1 data-page-node-id="WwL4WMqNdygMOcvc6Cna7y">
+      哈利·布朗的永久投资组合
+      <span class="sub" data-page-node-id="IrWlaJgiGwSpYebU8I0IYV">THE PERMANENT PORTFOLIO · ROWLAND &amp; LAWSON</span>
+    </h1>
+    <p class="lede" data-page-node-id="5ieR47IyT4E5Bl14GhQkkH">
+      一套<b data-page-node-id="WKxXFk24pG0JUkFIQcPQCV">不预测未来</b>的配置法：股票、长期国债、现金、黄金各占四分之一。
+      无论接下来是繁荣、衰退、通胀还是通缩，<b data-page-node-id="blbjEb0Z8fpeDMMfXGD8Q6">总有一样东西在上涨</b>。
+    </p>
+    <div class="byline" data-page-node-id="dlFV9AnwDSBfOmxZvLNt9J">
+      <span data-page-node-id="ELyxcgrgXcmYLH8FAvSaYI"><b data-page-node-id="hGmbrhdRi9HEvSyV9fAmgA">作者</b> 克雷格·罗兰 / J.M. 劳森</span>
+      <span data-page-node-id="kR7nnBLEHXWEeBJAHHfDGK"><b data-page-node-id="6AIBoaLJwOvGSQZEIi9WP7">策略提出</b> 哈利·布朗（Harry Browne）</span>
+      <span data-page-node-id="RuM8pl5APyC0bc27KMwWe0"><b data-page-node-id="DGRmsWOJaOMGQiG0MQq9OS">首版</b> 2012 · 中文版 2017 机械工业出版社</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h" data-page-node-id="AtwqPFJN1NsXtFT7IcYNr7">
+  <div class="wrap" data-page-node-id="JiuKLtpfe3khN0eL5m4nCr">
+    <div class="eyebrow2" data-page-node-id="pixOnIQ9IcdO61AitFXHVk"><span class="num" data-page-node-id="dV44kcCLaPRaUEiIhxprLj">01 /</span>关于这本书</div>
+    <h2 id="info-h" data-page-node-id="xaMCJbqQeDVWAsrIIMTNlV">一本把<b class="tail" data-page-node-id="NmnwJxsrifVAfwjHRkrFqW">"我不知道未来会怎样"</b>写成操作手册的书</h2>
+    <p class="sub" data-page-node-id="iqnQO77P70h5Mf8e8Y59Id">永久投资组合（Permanent Portfolio）由美国投资作家、自由至上主义思想家哈利·布朗（Harry Browne，1933–2006）在 1970 年代提出，主张用四类低相关资产覆盖全部经济季节。本书由克雷格·罗兰（Craig Rowland，罗兰资产管理创始人）与 J.M. 劳森（J.M. Lawson）系统整理、更新并给出完整实施步骤。原作 <i data-page-node-id="4kt0eyqL2GWdDmlQn80JB8">The Permanent Portfolio: Harry Browne's Long-Term Investment Strategy</i>（Wiley, 2012）；中文版《哈利·布朗的永久投资组合：无惧市场波动的不败投资法》，机械工业出版社 2017 年 8 月出版，华章经典·金融投资，译者王晨、贾俊威、李汉军，ISBN 978-7-111-57535-1，XVIII + 321 页，全书 18 章 + 总结。</p>
+
+    <div class="bookinfo" data-page-node-id="Mkg3sKSafj75jexvew5sUs">
+      <div class="meta-card" data-page-node-id="ExpZaXuwG6vGnBgNPzbwaU">
+        <dl data-page-node-id="RZ6BezvP10NyIVcwewyFtc">
+          <dt data-page-node-id="D0YF37bj3ifwmgMlbdm3DH">书名</dt><dd data-page-node-id="BsdTIZVJlaaJXqJ1zKWXVM">哈利·布朗的永久投资组合 <span class="small" data-page-node-id="GC6hrqW4TVuf6Va7HEWXhz">/ The Permanent Portfolio</span></dd>
+          <dt data-page-node-id="DrC2pMlPxWFAAaB3O3IuNM">副标题</dt><dd data-page-node-id="B4wBSA5DyRvBdaOcEyXiuY">无惧市场波动的不败投资法</dd>
+          <dt data-page-node-id="CZTLf1eGwW91ooMGiOYWhP">作者</dt><dd data-page-node-id="acu77CTrkAGki8Cw8JFKfU">克雷格·罗兰、J.M. 劳森 <span class="small" data-page-node-id="AuXAhbWnSUMxdmpxuj4IUO">Craig Rowland &amp; J.M. Lawson</span></dd>
+          <dt data-page-node-id="6iUQV2jPre2xkGstVDiEee">策略</dt><dd data-page-node-id="tmTvbuKMzsZtZiZfEyuZHw">哈利·布朗 <span class="small" data-page-node-id="A5890UP3DSEgW8HUaEurKe">Harry Browne, 1933–2006</span></dd>
+          <dt data-page-node-id="HtvFXU7iBFIMCIO6mjat8R">领域</dt><dd data-page-node-id="XKzLGEsheGsUMOJhXXW8ii">资产配置 · 风险管理 · 全天候策略</dd>
+          <dt data-page-node-id="PosDTuQQo0FQFLjeJqVCsq">首版</dt><dd data-page-node-id="Xv7B2eGWfAATaHJtAyyL3R">2012 <span class="small" data-page-node-id="NBkCn0pYG9Dso6FyVa1PtS">（中文版 2017，机械工业出版社）</span></dd>
+          <dt data-page-node-id="ZZ05miCrZjRKEuTGzPHL9H">结构</dt><dd data-page-node-id="N2tXe8CSFQynKQkvKdg3pI">18 章 + 总结 · 含 16 条黄金法则</dd>
+          <dt data-page-node-id="jLc0aaqSGqZZht9s661HsD">核心</dt><dd data-page-node-id="L2iuDCytOfVwpi2LMlbNNV">25% 股票 + 25% 长债 + 25% 现金 + 25% <b data-page-node-id="kuUGVTSZkXsBYik7OJX23H">黄金</b></dd>
+          <dt data-page-node-id="RoDwjivpNRyCM18DLLjvbO">关键词</dt><dd data-page-node-id="ynybzftFXocjviFq5X1ejW">不预测 · 全覆盖 · 再平衡</dd>
+        </dl>
+      </div>
+
+      <div class="right" data-page-node-id="BBosqzd2HyOvK1dkWgx0AK">
+        <p class="thesis" data-page-node-id="8NEBInn9pvHm2C0EsJMESx">
+          全书的核心主张：<b data-page-node-id="aB3q1NQchDnPIRAtbxDqwD">未来不可预测，所以别把赌注押在任何一个判断上。</b>
+          把资产分成四份——股票吃繁荣、长期国债吃通缩与降息、现金扛衰退、黄金抗通胀——
+          <b data-page-node-id="pqPshOBngiV5sxZeMLaNVh">四种经济季节里，总有一份在保护你</b>。
+          目标不是收益最大化，而是<b data-page-node-id="hb72sbNvWSXpAg86mLLD1i">任何年份都不出大事</b>，让复利得以持续。
+        </p>
+        <div data-page-node-id="4DN3qV6Km0n2DTzUL17Vy9">
+          <span class="chip" data-page-node-id="B0Mgpql2SFMtqOgfwhHmR5">#四等分配置</span>
+          <span class="chip" data-page-node-id="dfDseyp5f2b14pTSz4Obsh">#四种经济状况</span>
+          <span class="chip" data-page-node-id="1EaCHFHEtNJl61DELVazo5">#不预测未来</span>
+          <span class="chip" data-page-node-id="jd4gAQOZrMXCBWRV30tAQX">#再平衡</span>
+          <span class="chip" data-page-node-id="avrAQ3Gr1Bfzr1OGWy27q9">#黄金</span>
+          <span class="chip" data-page-node-id="mx7SkiOMPtUUiJLGSoOCEO">#简单安全稳定</span>
+          <span class="chip" data-page-node-id="OPNGu5XtpaVMVnq7rZ2YaA">#16 条黄金法则</span>
+          <span class="chip" data-page-node-id="kxkGtqxtGboEY9O2mEuuRd">#不用杠杆</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h" data-page-node-id="Hpgk79g0F9HHgtWdJmvvWt">
+  <div class="wrap" style="padding-top:0;padding-bottom:0" data-page-node-id="g3osA9JIe8hrk1KJDBoC8L">
+    <div class="eyebrow2" style="justify-content:center" data-page-node-id="EfR0S7FM9mUMCSVEFmKTcQ"><span class="num" data-page-node-id="oGecORaTAxyvjQJyzaAfdC">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center" data-page-node-id="UCI0jCkdaGYdLYDamtfqrk">一句话总览</h2>
+    <blockquote data-page-node-id="IDNJRIvCFzLXiQjZG3tTvi">
+      不为预测未来下注，<br data-page-node-id="f4tUMRWFYr6Ryh0IjIyOdQ"/>只为四种季节<br data-page-node-id="5D3fFiISCkgWkza4yUTuCk"/>各备一份。
+    </blockquote>
+    <div class="src" data-page-node-id="f4ZQN1HPxKZDe6LBycrzpR">— PREPARE, DON'T PREDICT</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h" data-page-node-id="fzRmpmBJtEcAE17Eqg18IC">
+  <div class="wrap" data-page-node-id="rGww1V22hzALE3x61b8WAo">
+    <div class="eyebrow2" data-page-node-id="sNJ0iofwI4Zv7TKKeChx8o"><span class="num" data-page-node-id="DnbcB2BdEaRv33ojZ4nJ1W">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h" data-page-node-id="6m8VoLP3MNdSlaLKx373tc">两组核心对照<b class="tail" data-page-node-id="EolEc5SdjDT6SeIqT42oZu">·</b>预测与分散</h2>
+    <p class="sub" data-page-node-id="We7EKYHRs6FGq0O3lkVDAH">全书最锋利的两处：一是根本态度——押注自己判断的未来，还是承认未来不可预测、为所有可能做准备；二是分散方式——传统的股债搭配，在两类资产同跌时会一起失效，而永久组合要求四类资产各自对应一种经济环境。</p>
+
+    <div class="dualset" data-page-node-id="kUQCaJLv4SbX0WMIxrx9H8">
+
+      <!-- 对照 A -->
+      <div class="setlabel" data-page-node-id="bQvDprKVjnsL5qt4xvEXPC">A · 根本态度：预测未来，还是为所有可能做准备？</div>
+      <div class="dual" data-page-node-id="YJTjKbjCPOAkVpbNQeN6Kv">
+        <div class="sys a" aria-label="预测未来" data-page-node-id="u3bEk5EejCabvVN98LnVf0">
+          <div class="tag" data-page-node-id="wQH5YzS0YARSogUEJeJffq">PREDICT</div>
+          <h3 data-page-node-id="0sRrHDgdMFPKKGpLf4VJFb">预测未来 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="yqwbWmXp45zfX3Bgorapy1">（押注单一情景）</span></h3>
+          <div class="sub" data-page-node-id="FOvCPcwAwde23SeECCRHVH">判断接下来会怎样 · 重仓下注</div>
+          <p data-page-node-id="HvF2mNDaUTGSXz6r7YHJj8">先判断"明年是通胀还是衰退"，再把大部分仓位押到对应的资产上。问题是：<b data-page-node-id="fQuBUPfSzHiSsLGBidCj5N">预测需要连对很多次</b>，一次严重误判，就可能抹掉此前所有收益——而没有人能持续预测宏观。</p>
+          <ul data-page-node-id="wudXPhyTAfhM1qc3CEfuaz">
+            <li data-page-node-id="17s03gailBVnPEQNm7jCq8"><b data-page-node-id="HnlLjQsIyakFAkUrbm3vmG">前提</b><span data-page-node-id="QAadH4Qjxep0NzCBQOCEaZ">我能比市场更早知道未来</span></li>
+            <li data-page-node-id="rkCqZJ2snCk0lqsT2cNUPY"><b data-page-node-id="GI5wITzEZetwwAFkHg0GoQ">风险</b><span data-page-node-id="tRoiUN7O1zGNilaxvy2Mjc">单点失败：判断错了就是重仓踩空</span></li>
+            <li data-page-node-id="EyeiuFXwBvpSfT3xdUUUfd"><b data-page-node-id="D6vzI7TE10AHSG265y1qCu">结果</b><span data-page-node-id="1lh4vDiK1gKU60Yk0iFI8j">收益弹性大，但极难长期复制</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="Rcg7AtwBJXQo8UUPn3NZOw">"没有人可以预测未来——这是全部投资建议的起点。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="WToCjCbGBpXOYIgPutKhGG">vs</div>
+
+        <div class="sys b" aria-label="为所有可能做准备" data-page-node-id="Qd7J7iTf6FUC9psmrssiBp">
+          <div class="tag" data-page-node-id="UEqp359ZfSVafYN6wYXqWg">PREPARE</div>
+          <h3 data-page-node-id="7QIJ9siHsg9DHNLRm9hAPF">为所有可能做准备 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="QCAipp74gbIzm3YUc9BAvH">（全天候覆盖）</span></h3>
+          <div class="sub" data-page-node-id="P3ZHmKT9X9U0SUfGvtIZis">承认不可知 · 让每种季节都有资产受益</div>
+          <p data-page-node-id="xK9wgRfjB84nbO9hgLrouw">不去猜下一段路是晴是雨，而是<b data-page-node-id="GZZ1iAGZox3HoL7DTcOP60">同时带着伞、墨镜、外套和水</b>：四类资产在四种经济环境中轮流表现，无论发生什么，组合里总有一部分在变好，整体波动因此被压平。</p>
+          <ul data-page-node-id="0gpseAxZyWMGxYKb4dHjNU">
+            <li data-page-node-id="xFXKwG8yn94fzypZ88942g"><b data-page-node-id="5nPnpPAhobFq7aCUT3BUJc">前提</b><span data-page-node-id="bqE3aWsMHKPAIh1JlKwb9x">未来不可预测，但可以分类准备</span></li>
+            <li data-page-node-id="nPFimjhZ7anztI80jr3uzV"><b data-page-node-id="nuFpLu9YJDzUBps3hRqFiZ">优势</b><span data-page-node-id="88hBBiB8bHDDQEJ7G4c4fo">没有"押错"这一说，只有此消彼长</span></li>
+            <li data-page-node-id="r5c6T6Wth51JRy6dF8U1HA"><b data-page-node-id="CyyORoZPeFXbJZWI9i5n71">结果</b><span data-page-node-id="J6u5hvgUT76lNXCmFObhnJ">牺牲部分上限，换取极低的重大亏损概率</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="gcnZgdPSAZp8fwD6yLWEjO">"我们不需要知道接下来会发生什么，我们只需要不为任何一种可能毫无准备。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel" data-page-node-id="DXCrFzyGIFcDEhqhFAK92l">B · 分散方式：传统股债搭配，还是四资产覆盖四种季节？</div>
+      <div class="dual" data-page-node-id="Hu6QzuYiP73YTz5NDsgD6y">
+        <div class="sys a" aria-label="传统股债搭配" data-page-node-id="L19SKcOwOgLifGqHpcHaEP">
+          <div class="tag" data-page-node-id="R3tvG80XtNyMUzxRj3MyFy">60 / 40</div>
+          <h3 data-page-node-id="JUpN5b1f6wi1fYatUucuTO">传统股债搭配 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="X6dAcG79bBYEbfIC0bW6Re">（相关时会一起跌）</span></h3>
+          <div class="sub" data-page-node-id="tUtGwFC8DY10MviwSPKVxv">股票为主 · 债券作缓冲</div>
+          <p data-page-node-id="Kc6ixQnnX2FucNUVvHH02o">股债在多数时候负相关，看似分散。但书中指出：<b data-page-node-id="GLkvfgWF9krMODNAfcE3QM">当通胀来袭、股债双杀时，这种"分散化"会同时失效</b>——两类资产一起下跌，缓冲垫变成第二块砖头。</p>
+          <ul data-page-node-id="82UORljcWWXfghJBBX9EaV">
+            <li data-page-node-id="O0Xg4EyTrILqNQZ2hYQVuu"><b data-page-node-id="WzTB6FdGHX0F7alLwZ9ZRT">覆盖</b><span data-page-node-id="YkWZEtYrmGiolLkqtjmmtd">主要覆盖繁荣与通缩</span></li>
+            <li data-page-node-id="vbuas1qvpE2XiW6dzLfL0R"><b data-page-node-id="AbpaaQ2fxH7GalL4TANGik">缺口</b><span data-page-node-id="WBFoMcdmAUgwtGToXDqhDG">通胀期与滞胀期保护不足</span></li>
+            <li data-page-node-id="e9kaJB4FKuRJMrw7dLIS8U"><b data-page-node-id="PPMP5BqOLNN82IRvHsqmV7">依赖</b><span data-page-node-id="QM5EXbZK3mPQ50TsFAg8qV">股债负相关这一假设持续成立</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="LdtmtSQAFz3mJO9ekrO5gJ">"分散化的假象：当相关性上升时，它恰好在最需要的时候消失。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="T55hGO71tPrfmUUd76F5US">vs</div>
+
+        <div class="sys b" aria-label="四资产覆盖四种季节" data-page-node-id="S7XQ8h8fS4qk8WksHnwEfm">
+          <div class="tag" data-page-node-id="qrkAnEyByiBnXdxRTDSDrJ">4 × 25%</div>
+          <h3 data-page-node-id="C7nD26DQ8mgy1uvVlvUCov">四资产覆盖四种季节 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="gEdoEzQDxXurG2cYzyFJD4">（各自对应一种环境）</span></h3>
+          <div class="sub" data-page-node-id="GG9xh7AoIodF90UCDi2MyQ">股 · 长债 · 现金 · 黄金</div>
+          <p data-page-node-id="bGeYCJu15f3bKVNfzsVl6x">四种经济状况各配一个"受益者"：<b data-page-node-id="c5AkGBpRNEgLE62nmUtVE8">繁荣→股票、通缩→长期国债、衰退→现金、通胀→黄金</b>。四类资产两两之间相关性低甚至为负，因此组合在任何一年都不至于全线崩塌。</p>
+          <ul data-page-node-id="efxmRjZrUjYcwUOLYSF0lS">
+            <li data-page-node-id="RShwCgTEIX188HDsPp4fcv"><b data-page-node-id="5CSOFSj4MbdCxzlBFS0Dia">覆盖</b><span data-page-node-id="fjWzc7iPm1JZi0G2kc6BiU">繁荣 / 衰退 / 通胀 / 通缩，四类齐全</span></li>
+            <li data-page-node-id="GpWuDAdKCcaD5M5yAU3Tz3"><b data-page-node-id="Q0sBuuumPfAXq2fPmEItWO">代价</b><span data-page-node-id="lHvd4w5BzwAFnAMkBKm5fa">牛市里跑不过满仓股票</span></li>
+            <li data-page-node-id="4LfPacn8urhaZpOBxPmHbD"><b data-page-node-id="bskmlT5dc7boN7tAtZbDZA">关键</b><span data-page-node-id="cwMaEyZWjuDmfHIzp5yefo">靠再平衡把涨幅从强者搬到弱者</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="UdfMrq8ayezUSwlOxGYRT1">"四种经济状况 + 四种资产 = 强大的分散化。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h" data-page-node-id="r82xTCG9HqKHf0SM2OGPvn">
+  <div class="wrap" data-page-node-id="hoEJQNRPFaN9hEHIYANXkj">
+    <div class="eyebrow2" data-page-node-id="c09HvQJxwCsEhxDF8TYSgz"><span class="num" data-page-node-id="1P0MRIoSoBIepD5syOTUpV">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h" data-page-node-id="XpYDa8T861eqH2WKREduCe">十张<b class="tail" data-page-node-id="hkD36DbgdkGwr2PLsiD3Il">书签</b>，搭起一套不必预测的配置</h2>
+    <p class="sub" data-page-node-id="HBJnjzO6W8XzMecGXZL35Y">这十个概念串起全书：先确立"不预测"的前提，再讲清四等分的原理与再平衡机制，最后落到税务、地域与"可变投资组合"这些实施细节。</p>
+
+    <div class="biases" data-page-node-id="piyFoXVPBcTtoyJoS2KDOT">
+
+      <article class="bias c1" data-page-node-id="b8lrngC7fQEieELiCyUrvH">
+        <div class="ribbon-top" data-page-node-id="JNQAAPHNeLymUvf2fqr5K4"></div>
+        <div class="num" data-page-node-id="yFRWm21Iwa5F0CSMPUPCjx">N° 01</div>
+        <h3 data-page-node-id="bRPEJHrSbBWwoYvYiZhUPF">四等分配置 <span class="en" data-page-node-id="hPsAPRILZp5GLqSUIj9hwu">25% × 4</span></h3>
+        <p class="mech" data-page-node-id="VnT1yUq5JfSmUGnh7qesPC">全书骨架：<b data-page-node-id="Fk5XI0dEsV9t9sFOL9xSgO">股票 25%、长期国债 25%、现金（短期国债）25%、黄金 25%</b>。四类资产彼此低相关，任何一种经济环境下都至少有一类表现良好，从而把组合的年度波动与最大回撤压到很低。</p>
+        <div class="example" data-page-node-id="pHumO2setpPDTRJ49y3Kli"><b data-page-node-id="o77VyT1qcdJxt9OHXAzcUk">例子</b>100 万分成四份各 25 万，分别买入宽基股票、长期国债、短债/货币、黄金。</div>
+      </article>
+
+      <article class="bias c2" data-page-node-id="6xTlY3OQUyIDQqzOMZ7tSR">
+        <div class="ribbon-top" data-page-node-id="DVVHxv163cvVVX9Bhm7Lb6"></div>
+        <div class="num" data-page-node-id="bdLIjoOTpGLmR9gtyUNVCe">N° 02</div>
+        <h3 data-page-node-id="T9dFvMdoZaiQltZxAUwikr">四种经济状况 <span class="en" data-page-node-id="TSfTevHkpeti9nct7oPp3m">Four Economic Conditions</span></h3>
+        <p class="mech" data-page-node-id="uPG1XjGbLKseoPB7N7fDxx">经济只有四种天气：<b data-page-node-id="UCRo34P0HDt9l1QMGKN8Xp">繁荣、衰退（紧缩）、通胀、通缩</b>。投资的全部难题在于你不知道下一个是什么季节；而永久组合的做法，是让四类资产分别在一种天气里当主角。</p>
+        <div class="example" data-page-node-id="Ib78damy7Bpb8A9E5XKQZH"><b data-page-node-id="Mp5BnJZ8BQFx6NK2BDFfGS">例子</b>通胀来了股票和债券都难受，但黄金大涨，组合整体不至于失控。</div>
+      </article>
+
+      <article class="bias c3" data-page-node-id="MLGvcHktHvzAQandwpTOc9">
+        <div class="ribbon-top" data-page-node-id="BlwGck5JlHISqME8Pzuuhv"></div>
+        <div class="num" data-page-node-id="CECruN8ETdrStP3NyA6oeF">N° 03</div>
+        <h3 data-page-node-id="dygwYefwW5TD5DQBfsII2y">四类资产各司其职 <span class="en" data-page-node-id="ePbOtrSSea1rqs4HENW7EM">One Job Each</span></h3>
+        <p class="mech" data-page-node-id="8PlxbybGYdhoNsatVYA4qi"><b data-page-node-id="kOKft2l8golOkh3s4DCOYE">股票</b>在繁荣期提供增长；<b data-page-node-id="UlEcRnDrcYxPdCPMYEIgEy">长期国债</b>在通缩与降息时大涨；<b data-page-node-id="WSvWllWKqJXNDsP9CLnTo9">现金</b>在衰退、银根紧缩时提供流动性与购买力；<b data-page-node-id="umY4CgQfkNXLdi1mwBJ1gr">黄金</b>在通胀与货币失信时对冲。四类都必须在场，缺任何一类就留下一个季节的缺口。</p>
+        <div class="example" data-page-node-id="4ZQiEZXDGS3uRwofnzkGEZ"><b data-page-node-id="o2RGzGlFswyqCn07ZiV6CS">例子</b>2008 年衰退期股票大跌，但长期国债大涨，抵消了大部分损失。</div>
+      </article>
+
+      <article class="bias c4" data-page-node-id="Be3G6EksFA3lQUtZAUpt8z">
+        <div class="ribbon-top" data-page-node-id="lxa5lFdsCEDLg3dU7Ll1Bo"></div>
+        <div class="num" data-page-node-id="MkaOeeeRA8DQ7mESb8M1QE">N° 04</div>
+        <h3 data-page-node-id="ZFwSxTAAH3m2KCZ5lCoqAb">简单 · 安全 · 稳定 <span class="en" data-page-node-id="DDfUC7O6KPdU9Y9MRSvAxb">Simple, Safe, Stable</span></h3>
+        <p class="mech" data-page-node-id="zu1ITydEMF4G2rqLQxtHtu">这是策略追求的三个目标，<b data-page-node-id="uJQHULyARqc4GiQL7F5giD">排序有先后：先安全，再稳定，最后才是收益</b>。简单意味着能长期执行不丢弃；安全意味着不大亏；稳定意味着年与年之间落差小，人因此拿得住。</p>
+        <div class="example" data-page-node-id="ADSYqikfD2QYtbW7WihhsY"><b data-page-node-id="JpEZyADtdkfx0o2Q0YuQYT">例子</b>一个能让你睡得着、十年不折腾的组合，胜过收益更高但拿不住的方案。</div>
+      </article>
+
+      <article class="bias c5" data-page-node-id="xo7UGEHOhgaScMqa38s17p">
+        <div class="ribbon-top" data-page-node-id="a1n1LREK4S8vAk0m1JLRcb"></div>
+        <div class="num" data-page-node-id="Xt4qwupTkd270Zy4O2lXVh">N° 05</div>
+        <h3 data-page-node-id="Stz1dr8VO0b4rGhUEDt1FC">再平衡 <span class="en" data-page-node-id="L9YzzjVlkEnyLyb3g5PqH8">Rebalancing Bands</span></h3>
+        <p class="mech" data-page-node-id="2PQoUo9RnGJU5LoPf2ovPC">机制的灵魂：<b data-page-node-id="GZObvEJQsUtbPMFzVrmchm">当某类资产占比超出 35% 或跌破 15% 时就调回 25%</b>。再平衡强迫你"卖掉涨得好的、买入跌得多的"，不仅是纪律，更是这套策略的收益来源之一。</p>
+        <div class="example" data-page-node-id="RyNkUsUPlHcGa5kqMrITlt"><b data-page-node-id="weFPyq8PDJihLpTsjWIjBO">例子</b>股票涨到占 35%，卖出超出的部分，补进跌到 18% 的黄金。</div>
+      </article>
+
+      <article class="bias c6" data-page-node-id="wXQ49H2YewvStlv52EoUl5">
+        <div class="ribbon-top" data-page-node-id="GjxIATlTB5b43AxvIzQiED"></div>
+        <div class="num" data-page-node-id="ZZsTZj2hC9jwVGiROBwvkR">N° 06</div>
+        <h3 data-page-node-id="zq7rvOCuBvJ2MuZu573c2I">16 条黄金法则 <span class="en" data-page-node-id="EMQ6BukppMnXLoZL39QFbF">16 Golden Rules</span></h3>
+        <p class="mech" data-page-node-id="U0A5k09CQcadOLiU7x54ne">第 2 章给出的金融安全准则，是全书最可单独撕下来的一页。核心几条：<b data-page-node-id="dgpKHY4ixnV9AQiu9MPLtP">你的职业生涯才是财富来源；不要假定你能回本；分清投资与投机；没人能预测未来或掌握时机；不要用杠杆；不做自己不理解的事；把安全交给结构而非机构</b>。</p>
+        <div class="example" data-page-node-id="QRLVgl74AwvQtpZ344sKNb"><b data-page-node-id="KDlKAuuHp0QgdH8veUNKIH">例子</b>法则 12：只拿你输得起的钱去投机——先有永久组合，再有"可变组合"。</div>
+      </article>
+
+      <article class="bias c7" data-page-node-id="akDLD8Bew6PnoQujq5Ig0z">
+        <div class="ribbon-top" data-page-node-id="KPRvRopXzA2Juvv7IFlF4X"></div>
+        <div class="num" data-page-node-id="g7jtRB0AZVCWRIoBTgMIZ5">N° 07</div>
+        <h3 data-page-node-id="D8V02kgeCeCacNsqDsbaYQ">不用杠杆，不做不懂的事 <span class="en" data-page-node-id="TzG0AgcIBleA6j54szW08J">No Leverage</span></h3>
+        <p class="mech" data-page-node-id="zBjYRKz7cq0F25i0dODz6J">两条硬约束。<b data-page-node-id="HmmgPEuyIWNVVUkqFmTq7h">杠杆会把"波动"变成"归零"</b>——一次追加保证金就可能让你在最不该卖的时候被迫卖出；而<b data-page-node-id="ksxYYuI95PiCFOEjD7vQBL">不理解的东西无法长期持有</b>，一有风吹草动就会怀疑、然后卖在底部。</p>
+        <div class="example" data-page-node-id="HO2tRqBsJQd7RlYZvK2zvz"><b data-page-node-id="oFIMYQQwTpRM8Ykp439hAu">例子</b>不借钱买资产、不用杠杆 ETF；搞不清机制的品种一律不碰。</div>
+      </article>
+
+      <article class="bias c8" data-page-node-id="VYLitwgqQeWfQPw8XfKDvx">
+        <div class="ribbon-top" data-page-node-id="etq8tATpADA9OK69F9zkzH"></div>
+        <div class="num" data-page-node-id="o8mVj5TmFn4EweFDZliv1z">N° 08</div>
+        <h3 data-page-node-id="0qpnXimvMcaY6WxO1LKlcC">可变投资组合 <span class="en" data-page-node-id="KY31cki4jEcoz2EKGNFPDx">The Variable Portfolio</span></h3>
+        <p class="mech" data-page-node-id="1BF2kp4I1FjiQT6WurIAaA">很有意思的设计：在永久组合之外，<b data-page-node-id="ua5gPXwBbDzc4MaITMGkQV">可以另设一小笔"输得起"的钱去投机</b>（个股、加密、任何你想试的东西）。它满足人性里想赌一把的部分，同时把风险隔离在安全资产之外。</p>
+        <div class="example" data-page-node-id="HUaGzvQ52IKwwElIV2Xaox"><b data-page-node-id="N3H39mwGTIrl2UQtG5K6pe">例子</b>90% 放永久组合，10% 放进可变组合随便折腾——亏光也不影响生活。</div>
+      </article>
+
+      <article class="bias c9" data-page-node-id="H3MzC39DwDdZeQUXutmHMR">
+        <div class="ribbon-top" data-page-node-id="3BrnFrmnSPGjPVa3IegO9y"></div>
+        <div class="num" data-page-node-id="LpES28HnbCFsjNNxHLsePe">N° 09</div>
+        <h3 data-page-node-id="fz2zGHRDDd2DbBFlpnmZO6">机构与地域多元化 <span class="en" data-page-node-id="7v1f6fuH7qtZl9necZHahW">Diversify Custody &amp; Country</span></h3>
+        <p class="mech" data-page-node-id="SJKWO9UC0fq2x4dibydfne">分散不只在资产类别上，还要<b data-page-node-id="CNd5Sg8WCLEyD6TidbdaZC">分散在机构与国别上</b>：不要把所有资产放在同一家券商、同一家银行、同一个国家。目的是防住那些概率极低、但一旦发生就无法挽回的"尾部风险"。</p>
+        <div class="example" data-page-node-id="6Fy6ZHRTbjomBl3iHu2mBZ"><b data-page-node-id="6kMW1vxx6q180khTf9kmgq">例子</b>资产分散在至少两家机构；部分资产配置在本国以外，避免单一司法辖区风险。</div>
+      </article>
+
+      <article class="bias c10" data-page-node-id="EHtWAdSPsoOV0osYxqelMu">
+        <div class="ribbon-top" data-page-node-id="AQ7LTlUrEwAd4qe4AOksvu"></div>
+        <div class="num" data-page-node-id="RtLxbjCn6Jacqit19vfwsM">N° 10</div>
+        <h3 data-page-node-id="MgNFLIlDOkSlQBjW7634rM">税与持有成本 <span class="en" data-page-node-id="Jzo0wpDu495FcBTchAyArw">Taxes &amp; Costs</span></h3>
+        <p class="mech" data-page-node-id="rJww8d5My6ePh4WhdgQ9xb">第 13 章专门讲税：<b data-page-node-id="RaM7cYhR3BL3tVFJUvbzF8">频繁再平衡与买卖会吃掉复利</b>，应优先用免税/递延账户、选择税负效率高的持有方式，并尽量不要为了省一点税而承担额外风险（法则 14：小心避税计划）。</p>
+        <div class="example" data-page-node-id="eD1Wa2Dtje6J3sWIY6fscI"><b data-page-node-id="veLVA0gtYvnxBaORYh9S4O">例子</b>把高换手或不节税的资产放进养老/免税账户，减少每年的税务摩擦。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h" data-page-node-id="enY9P87rbnMNwEhMeB7IPO">
+  <div class="wrap" data-page-node-id="uIeVZet7lpzgP235GamzTl">
+    <div class="eyebrow2" data-page-node-id="n4LHsoUAuAQd237UiosjOS"><span class="num" data-page-node-id="j59du2jLgH10vp3T56jVIZ">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h" data-page-node-id="O8H7BMwMFTWE613PYsP7sZ">十八章<b class="tail" data-page-node-id="wBDmSj738ahtS7RYGxBm72">一条链</b> · 脉络</h2>
+    <p class="sub" data-page-node-id="2D5L7klHtwypWFCRvz1roB">全书从"这是什么、为什么"讲起，接着拆四类资产，再进入实施与维护，最后处理机构、地域、投机冲动与基金选择。可归为五条主线。</p>
+
+    <div class="chaptermap" role="list" data-page-node-id="hF7mWfhB9JtvxM5TbTiQds">
+      <article class="part p1" role="listitem" data-page-node-id="wmEzyDkvzEn4KIYRuwm8Zb">
+        <div class="pin" data-page-node-id="uZHnRyNXG7NAA8NujGjMUF">理念 · 一</div>
+        <h3 data-page-node-id="i1qyjXGlHoZGlckC2zNMN6">它是什么，凭什么</h3>
+        <div class="range" data-page-node-id="HmtWqNE6oC3HwkbiYt0oTr">第 1–3 章</div>
+        <ul class="chapters" data-page-node-id="GMCf1PfdriMq7Qp5Pp9x89">
+          <li data-page-node-id="G4DjIP5kEsClz7ZuE6UIxR">什么是永久投资组合</li>
+          <li data-page-node-id="Dw3nC8zDfMMEiqzMiy2EJG">16 条黄金法则之金融安全</li>
+          <li data-page-node-id="Dhrm5Xhb0vP1nObEApcLUf">永久投资组合业绩：增长、无重大损失、实际收益</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem" data-page-node-id="chPZ3sSszhDnZWopEHd1sB">
+        <div class="pin" data-page-node-id="GDoiLhll65kzn7io2bfkBi">原理 · 二</div>
+        <h3 data-page-node-id="jopVD4aHbdpWh5YbPWHJVC">简单安全稳定与四种季节</h3>
+        <div class="range" data-page-node-id="cgszaetEnAeQ4p1CPgcR9B">第 4–5 章</div>
+        <ul class="chapters" data-page-node-id="Zk2QrUAqjD1CBqWVenk98y">
+          <li data-page-node-id="pnoo2GF6zZaxj78IsbvDta">通向成功的 3 个要素：简单、安全、稳定</li>
+          <li data-page-node-id="tmLEOH73fZp3AvDND75htl">分散化的假象与它何时失效</li>
+          <li data-page-node-id="Lhi6ABPLaZ9g96qXJgBoAF">4 种经济状况 + 4 种资产 = 强大的分散化</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem" data-page-node-id="Q2RnhaGQuC7UHZUBmZVjMN">
+        <div class="pin" data-page-node-id="1jLqhe0zM2KL0AAa7364Vq">资产 · 三</div>
+        <h3 data-page-node-id="YXz5cpXbd4VCWP25usF7Kx">四块砖，各讲一章</h3>
+        <div class="range" data-page-node-id="FKr1Gme8fvgmZixTrhGv2j">第 6–9 章</div>
+        <ul class="chapters" data-page-node-id="dkdJYOVuqBJwmO24pPPeZ9">
+          <li data-page-node-id="Y8OjeGA8c2WEpdkU3WMOVb">股票：股票市场的力量与风险</li>
+          <li data-page-node-id="EOH1yJL6LMQTeBpBdtFoiu">债券：安全性与收益</li>
+          <li data-page-node-id="75UGGaFkgha4mapOSpIlhH">现金：被遗忘的资产</li>
+          <li data-page-node-id="8QEshytUW1MZovvIWNk8P2">黄金：永久投资组合的保险</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem" data-page-node-id="WSTykxfYLekHALR86yXpcE">
+        <div class="pin" data-page-node-id="ijxotEoHkxAM5jMLIfLFSJ">实施 · 四</div>
+        <h3 data-page-node-id="kgfgzOEFHxxGoqBqPDDEfj">怎么买、怎么调、怎么交税</h3>
+        <div class="range" data-page-node-id="Vxce04huydChzzJjA7YjX9">第 10–13 章</div>
+        <ul class="chapters" data-page-node-id="9uanwJINknYs4uBrygAD98">
+          <li data-page-node-id="Hkhx6T6MdBs405E8BvpQhr">实施永久投资组合：达到安全的多种方法</li>
+          <li data-page-node-id="NxBaoHwpJIf6jjoJUbY9hd">投资组合的调整与维护（再平衡）</li>
+          <li data-page-node-id="SB7BqVA7kwkZAbWyDbHYMi">在国际上实施永久投资组合</li>
+          <li data-page-node-id="A2rDYEemG05E1AnaE9P89B">税与投资</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem" data-page-node-id="wGTUORf29HzAT4GJq4aFVZ">
+        <div class="pin" data-page-node-id="vCktsV0SsoRbvGElziHvMa">进阶 · 五</div>
+        <h3 data-page-node-id="Fu0TsGkJTfUwoHiwqo9uiD">分散、投机冲动与收官</h3>
+        <div class="range" data-page-node-id="lGtF3iOuvllYugcf4GiSCB">第 14–18 章</div>
+        <ul class="chapters" data-page-node-id="vMTJazq7rfYVUpKO8sEOmd">
+          <li data-page-node-id="pzxpAuziCUYZApFpR5DhL6">机构多元化</li>
+          <li data-page-node-id="O04BsA45vIoH26g6laJcNX">地域多元化</li>
+          <li data-page-node-id="eaosTJzDL4zB6Y55A9dCVA">可变投资组合</li>
+          <li data-page-node-id="6tR5H8FDiKCm1snHDlKtBz">永久投资组合基金</li>
+          <li data-page-node-id="FR3wPDBn9btcbujURIyRCl">总结</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h" data-page-node-id="JEOKo7lg1mrDEBfhN8rkfF">
+  <div class="wrap" data-page-node-id="VihSuo0tvMDs6oRIkCAz6R">
+    <div class="eyebrow2" data-page-node-id="B1aLP0WBrLU1vuDfuJcsoC"><span class="num" data-page-node-id="ez1lj7GnfZ2flkizixDTQy">06 /</span>QUOTES</div>
+    <h2 id="quotes-h" data-page-node-id="lF3lqyZZ2nGG9f4O7SLoew">五句值得抄在笔记本上的话</h2>
+    <p class="sub" data-page-node-id="Wd40luRMko8S2Sr6DQZm1z">以下为原书观点的中文转述，覆盖了全书主线：不预测、全覆盖、先安全后收益、再平衡、以及把投机冲动隔离出去。</p>
+
+    <div class="quotes" data-page-node-id="Mg1G2uJAqcagOdNcFlgTAh">
+
+      <article class="quote-card qc1" data-page-node-id="09NAj89cy8sTuxQrCh5GTl">
+        <span class="qmark" data-page-node-id="0ejnngdsrQVFV4CmfZEJCH">“</span>
+        <p data-page-node-id="WfEUhfDx6P3Glo33JY1Pna">没有人能预测未来，<br data-page-node-id="Nq8l7NxSyCMO824rL1fIDq"/>也没有人能<br data-page-node-id="h3nrRXyxfKyAfYNwkwFE6O"/>准确掌握市场时机。</p>
+        <div class="src" data-page-node-id="mQuZ3KNYfBbrWBwXghSOpj">— 16 条黄金法则 · 法则 4、5</div>
+      </article>
+
+      <article class="quote-card qc2" data-page-node-id="enNBNo9CV2nd21ccPPotFP">
+        <span class="qmark" data-page-node-id="pHervarc2Eb9L1YAPIQwC2">“</span>
+        <p data-page-node-id="b5d3WLrkciTLb5IaYpvpE5">四种经济状况，<br data-page-node-id="g9AaoZDeilsn9W7Z7GIKQB"/>加四种资产，<br data-page-node-id="6hl8chbqpatRWWann7mKmM"/>等于强大的分散化。</p>
+        <div class="src" data-page-node-id="LlibMOeMmiF1M6W7Huqood">— 根据经济状况投资</div>
+      </article>
+
+      <article class="quote-card qc3" data-page-node-id="kiuhjWjZiiyAsuxIm53rXm">
+        <span class="qmark" data-page-node-id="FmonrliceOb83k1HNdcwQQ">“</span>
+        <p data-page-node-id="3fyUFCZwGNmaXzXJEIe89U">只有实际收益<br data-page-node-id="8NaSlkHgcOLpkkCH9G5KKB"/>才至关重要——<br data-page-node-id="E0XzHmd0bH8VfxDoznQBTK"/>扣掉通胀之后剩下的，才是真的。</p>
+        <div class="src" data-page-node-id="coVCitv9glZFBXKuO1SyC2">— 永久投资组合业绩</div>
+      </article>
+
+      <article class="quote-card qc4" data-page-node-id="hRaWB5lWUcs6LGyemtzg78">
+        <span class="qmark" data-page-node-id="utzVDnCRwiqd5fgcoMO7fu">“</span>
+        <p data-page-node-id="8oaI6dCRq1ZYiRD1J0GHKx">不要使用杠杆：<br data-page-node-id="CgK79mBS3lF1vFfH4BzOb1"/>它会让你在<br data-page-node-id="KjK6FFs3hwKwQIYRoqhzsD"/>最不该卖的时候被迫卖出。</p>
+        <div class="src" data-page-node-id="jHKyhmtUS9JVfCfOCmxAxG">— 16 条黄金法则 · 法则 7</div>
+      </article>
+
+      <article class="quote-card qc5" data-page-node-id="BEdWs5PJ1SaagKh41radPr">
+        <span class="qmark" data-page-node-id="zCAaKiUkBNXFhFBARz4TlE">“</span>
+        <p data-page-node-id="Yoi319B1DnuCYmDDFaDE7a">先把永久组合搭好，<br data-page-node-id="decPwvfbs45U8ugyw7uL2W"/>再拿输得起的钱<br data-page-node-id="EszFFADUOMjO8sRvU77Hux"/>去满足你想赌一把的冲动。</p>
+        <div class="src" data-page-node-id="gwaThG2XQbg4hTwI7L2oHK">— 可变投资组合</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h" data-page-node-id="hojDq7FXcgxEpW19ygiqMH">
+  <div class="wrap" data-page-node-id="s1jDNge3bPAbAGODKzfKHF">
+    <div class="eyebrow2" data-page-node-id="HF94PvYzHc5i3ZfYQ308Db"><span class="num" data-page-node-id="NIQDfmwqXUyHDEz3TBMqrT">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h" data-page-node-id="UICwr8bvO6vKBf3m9drK9N">可以立刻落地的<b class="tail" data-page-node-id="TrHHBPzNAy5KaHo3dFGewV">八条</b>练习</h2>
+    <p class="sub" data-page-node-id="GxeScPK5nXQylY7PQGfNIc">这是一本"照着做"的书：它的结论几乎都能直接换成一条规则。括号里标注了它来自哪一张书签。</p>
+
+    <div class="actions" data-page-node-id="WGd3r8TlvFdIgTrvKlcXVM">
+
+      <div class="action" data-page-node-id="jmdy66ktVu3raYkGRrsl1H">
+        <div class="ic" data-page-node-id="EfzIOCsDDxUrRIGOQKYhwX">01</div>
+        <div data-page-node-id="jsiAa64boTtp5XZxc8qzRV">
+          <h4 data-page-node-id="Mb2NdAmMVoL8ghuELPuGMT">先画一张四等分的资产表</h4>
+          <p data-page-node-id="lO6kJgrkeS9bvJHonEBYhm">把现有资产按股票 / 长期国债 / 现金 / 黄金四类列出来，看看各占多少。多数人会发现自己其实全押在一两种上。</p>
+          <span class="tag" data-page-node-id="QTaqhqGSEU1JdqYulZbyLa">↳ 四等分配置</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="BOCSPtnvLAFXiyHwChDk9I">
+        <div class="ic" data-page-node-id="IHAYQjoMh9jz0f9GUOyqLf">02</div>
+        <div data-page-node-id="0M3r5MMOwBhBlLalQDrDp6">
+          <h4 data-page-node-id="kGXXQcafPPAqZejQM26ZiL">写下"下一个季节"的四种可能</h4>
+          <p data-page-node-id="BZrOBT2Ps7Mrna5BbKPvtx">分别写下：如果是繁荣 / 衰退 / 通胀 / 通缩，我手里的资产分别会怎样？哪一格是空的，就是你的缺口。</p>
+          <span class="tag" data-page-node-id="ejF4XjcP5KnxecsEzzUpcV">↳ 四种经济状况</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="Cwm52Vupuc9OuN75U2Mqru">
+        <div class="ic" data-page-node-id="fECw8ErCrBZpxkfjwSMD7Z">03</div>
+        <div data-page-node-id="u1CK32YvT3qLKQkaHY5zEV">
+          <h4 data-page-node-id="QdFMEPRdqvqLOkaaIHXrUP">设定再平衡的阈值带</h4>
+          <p data-page-node-id="YnBQIaFSLFNRBWp8MG6xOx">写死规则：任一类占比突破 35% 或跌破 15%，就调回目标比例。把"什么时候调"从情绪里拿出来，交给数字。</p>
+          <span class="tag" data-page-node-id="V469iaroFcIFeurMlMVcdH">↳ 再平衡</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="qKH0VEITBZ2B5zM9Fe8lZD">
+        <div class="ic" data-page-node-id="TSUKraFwJaDxlDZMKdqZYr">04</div>
+        <div data-page-node-id="fvewjHElL5kDCj7H9qQd7O">
+          <h4 data-page-node-id="462G5RTDPnEhgS90Y1S8pe">给再平衡定一个固定检查日</h4>
+          <p data-page-node-id="mrCU69jXcU6Eiy1DoazLpI">每季度或每年一次，只看比例、不看新闻。频繁操作会放大税务与摩擦成本，一年一到两次通常足够。</p>
+          <span class="tag" data-page-node-id="pcE5JDbBJHIRZBtC0nEFE4">↳ 税与持有成本</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="B7p6ZPKy5CB335yHLVUKCA">
+        <div class="ic" data-page-node-id="Q8RCnyhKsn1Y8HhvrKqHBV">05</div>
+        <div data-page-node-id="FlnDAogWsUaljH9sHH8d3Q">
+          <h4 data-page-node-id="ODoTcQbTuVI0XzpOk1vU2F">清掉所有杠杆</h4>
+          <p data-page-node-id="9cryIw0sep4NhQ6mqfBJsW">融资融券、杠杆产品、借钱投资——先清零。杠杆不会让策略更好，只会让你在最坏的时刻失去选择权。</p>
+          <span class="tag" data-page-node-id="q8vNBGKkfBdqyB8ByoZ9Aq">↳ 不用杠杆</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="epoYJ4yyEHIUDNY5yNL1MD">
+        <div class="ic" data-page-node-id="ltIgyNedyBhMwqFpCDdCZz">06</div>
+        <div data-page-node-id="Io6ytAkXLjEu1tbvyAELec">
+          <h4 data-page-node-id="mYEk4T97C4au1oQG5LQNAc">单开一个"可变组合"小账户</h4>
+          <p data-page-node-id="CmrmGwMoapWrE6uSbheWPP">划出一笔亏光也不影响生活的钱（比如 5%–10%），专门用来满足投机冲动。承认人性，而不是硬压它。</p>
+          <span class="tag" data-page-node-id="apGoXXZoflC6OsNECQ2Sq1">↳ 可变投资组合</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="Rcx4s9QC5tj9ioL0eT5luj">
+        <div class="ic" data-page-node-id="wlUoRs92r6AdenRBGL5MMc">07</div>
+        <div data-page-node-id="8j5DANoeUkDu1YJkn0moLu">
+          <h4 data-page-node-id="um6l7qHhOri9RR2hEGfVQB">检查托管与地域是否过度集中</h4>
+          <p data-page-node-id="0llsamHUZla3YznXtXEB7G">所有资产是否都在一家券商 / 一家银行 / 一个辖区？把关键资产分散到至少两家机构，降低"极小概率但不可逆"的风险。</p>
+          <span class="tag" data-page-node-id="wRBvq8olRMpvU13BBkwkxb">↳ 机构与地域多元化</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="hYRD9xwZFruOYSXjVUFLfq">
+        <div class="ic" data-page-node-id="BRVcy7aWejDXimPjSgbIOL">08</div>
+        <div data-page-node-id="ISYE1874TMN8lVTydi5vrg">
+          <h4 data-page-node-id="2d8mIQPo886zQdA6giO28a">把 16 条法则抄在账户旁边</h4>
+          <p data-page-node-id="o8MgQtODUQilWecEINk6VW">尤其这几条：不要假定你能回本、分清投资与投机、不做不理解的事、怀疑时选择安全。在想动手的那一刻读一遍。</p>
+          <span class="tag" data-page-node-id="MEF7LB3fopOH1rQr9DBhFx">↳ 16 条黄金法则</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h" data-page-node-id="b8WHXMPhkrpJgqXMNwEWKw">
+  <div class="wrap" data-page-node-id="cGOtFmmeQaTBcyFiSS1PSp">
+    <div class="eyebrow2" data-page-node-id="QYNIHKBxj0QkOXujhLRRQe"><span class="num" data-page-node-id="YP9T9cdkLv3k6JLy8UckTC">08 /</span>FOR WHOM</div>
+    <h2 id="who-h" data-page-node-id="97i72HUHD934IM6mFVykff">适合谁读 / 不适合谁读</h2>
+    <p class="sub" data-page-node-id="ohLyBQ7X9ZFZmcdDUSpKFm">它提供的是一套"无论发生什么都不出大事"的结构，而不是一套收益最大化的方案。读之前，先确认你想要的是哪一种。</p>
+
+    <div class="readers" data-page-node-id="hKnsw3zPcTb6CBALwjzKQf">
+      <article class="who yes" data-page-node-id="OhuEHhFDCLHEYLV2lAUD01">
+        <h3 data-page-node-id="lBgB6scmlvDg0UFSjysrYN"><span class="swatch" data-page-node-id="XrRZexvlORH5WzGam6V9dp"></span>尤其推荐</h3>
+        <ul data-page-node-id="uYMtnmbHOKj14BELPwgyK6">
+          <li data-page-node-id="2yJJSWt7L1mq65NOi7eGnJ">已经攒下一笔钱、最怕"一次性亏掉"而不是"赚得不够多"的人</li>
+          <li data-page-node-id="rD4gKuIEpdCCoBq8stIvAC">厌倦了预测宏观、听消息、看行情，想要一套<b data-page-node-id="2CiJFvdOvSb8g2V991EXfL">设定完就少管</b>的方案的人</li>
+          <li data-page-node-id="uwUgsr3udMnzxG6qcJXWfG">想理解"为什么组合里要放黄金这类非生息资产"的人</li>
+          <li data-page-node-id="67jBxAROMqjZCUbppFFq9m">对再平衡机制感兴趣、想知道具体阈值怎么设的人</li>
+          <li data-page-node-id="EKQzNmDoNTqAGYkhiRRPsi">读过 NO.08《投资最重要的事》后，想落到<b data-page-node-id="HpG9qx1MnYSmQFRYzH94nB">具体配置比例</b>的人</li>
+          <li data-page-node-id="VODEhIUL5aUmGiOfYXu59T">临近退休或已退休、把"不大亏"排在"多赚"前面的人</li>
+        </ul>
+      </article>
+
+      <article class="who no" data-page-node-id="TWrNbUdLIsraW9uoVoPZDc">
+        <h3 data-page-node-id="s6gDAm3evd6mqPmBSzpIod"><span class="swatch" data-page-node-id="C7NiBuaYLb1xE3LnzKrAvT"></span>不推荐 / 慎读</h3>
+        <ul data-page-node-id="H8N8N3jxzRZ5nWNckWOLSU">
+          <li data-page-node-id="HkxnluSTfFQC7NchgGpmfs">追求<b data-page-node-id="9OGrSt8Zhv8N71rWKd2Bun">收益最大化</b>的人：本策略主动放弃了牛市里的上限</li>
+          <li data-page-node-id="3sgwQ819BOsLLFtAxgHcZY">资金量小、尚在积累早期的人：应先解决储蓄率与人力资本，可先读 NO.15《持续买入》</li>
+          <li data-page-node-id="jpvwlyGzSQTOMMps4fW0Ss">想学选股、择时、行业轮动的人：本书明确反对这些做法</li>
+          <li data-page-node-id="nKiFTHKVUEW24sfoD2KGvz">无法接受长期持有黄金（可能多年不涨）的人：这一类资产是保险，不是收益引擎</li>
+          <li data-page-node-id="mmk0RE0ExuxGtRCGBwXbS8">需要本土化落地细节的人：账户、税法与品种均以美国市场为主，需自行换算</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot" data-page-node-id="aduIlYEsbpU8RosFIIGrOy">
+  <div class="wrap" data-page-node-id="wQG71ScDBzkPEQ7P1ddCUE">
+    <div class="mark" data-page-node-id="Kx9UTDx68xuN6dHP6HU7vH">
+      "我们不需要知道接下来会发生什么，只需要不为任何一种可能毫无准备。"
+    </div>
+    <div class="rule" data-page-node-id="x5yBoQq8FfEWnST9URdGFH"></div>
+    <div class="meta" data-page-node-id="tEWd4N6QbeuPALwECXKAiM">
+      读书笔记 · 《哈利·布朗的永久投资组合》· 克雷格·罗兰 / J.M. 劳森<br data-page-node-id="RmB5yn5EY3OBueMPm5nL3N"/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="pautoorLB5e5Nd4DgD9WuR">
+<head data-page-node-id="4xRFKCKDFig6AB8HsogHVH">
+<meta charset="utf-8" data-page-node-id="SiEbEs53PNHQL0fGB0FWrI" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="TEJzV50cA31Zo7Au96rUEh" />
+<title>《持续买入》读书笔记 · by WorkBuddy</title>
+<meta name="description" content="尼克·马吉奥利《持续买入》：不择时、持续买入多样化可创收资产；储蓄率比收益率更可控，别买个股，波动不是风险，最重要的资产是人力资本。" data-page-node-id="AkXUs42i4qYE1CiGmNZXMn" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为驼褐，呼应"长期与稳健"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #7d6142;   /* 主书签色：驼褐 */
+  --accent-2:     #b08a3a;   /* 暖金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(125,97,66,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(125,97,66,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#241a10 url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#241a10;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(36,26,16,.20) 0%, rgba(36,26,16,.06) 35%, rgba(36,26,16,.82) 100%),
+    linear-gradient(90deg, rgba(36,26,16,.62) 0%, rgba(36,26,16,.20) 55%, rgba(36,26,16,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f0e9db;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }   /* 对照项 A */
+.dual .sys.b .tag{ background:var(--accent) }    /* 对照项 B */
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body data-page-node-id="cdBo4QjWVhAlUe9XoleQH6">
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner" data-page-node-id="BRwMhqLdcLQiKOdLV10BxM">
+  <div class="topbar-inner" data-page-node-id="iEXT5ctIsrsbCZoPRnE0oU">
+    <a href="index.html" class="home" aria-label="返回系列首页" data-page-node-id="ZYdpaKuKUtuVsYk8AF1gJh">一页观澜</a>
+    <div class="brand" data-page-node-id="PrXayR4FWPILOpYO3D85Cc"><span class="dot" data-page-node-id="pt1ieCw9AwjIlxjaFZ4kzV"></span> 阅读笔记 · 持续买入</div>
+    <nav aria-label="目录" data-page-node-id="sUGyCpsyyM1ZQRK7CB6Oji">
+      <a href="#info" data-page-node-id="9AQVDfobKpBJQoIfW9xQJv">书籍</a>
+      <a href="#one" data-page-node-id="xWj2ujCmhmH9xlnqs8LNsN">总览</a>
+      <a href="#dual" data-page-node-id="Fe20NLTKjDYhSbD79BSDyP">两组对照</a>
+      <a href="#bias" data-page-node-id="HONhOIickIcDMtxHyVoZzS">关键概念</a>
+      <a href="#map" data-page-node-id="9Y0veZeH3ezLH4VczivwBb">脉络</a>
+      <a href="#quotes" data-page-node-id="ffIbpQwwX2pLskuwOkemqU">金句</a>
+      <a href="#action" data-page-node-id="Rspw4CQCSJpYqdOBTQuzzB">行动</a>
+      <a href="#who" data-page-node-id="5kk91hOpEuEalWmr8sJyGh">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="Bg1Z26mQE1E4OxntJNG0lo">
+  <div class="hero-img" role="img" aria-label="桌面上摊开的笔记本与数据图表，象征以数据为依据的长期投资" data-page-node-id="xbNcYRIExhjaLBlQVZMEa2"></div>
+  <div class="ribbon" data-page-node-id="DUG4JNWbNGQVQfOI55y4GQ">NO. 15 · 投资实证</div>
+  <div class="hero-inner" data-page-node-id="iXk5CBTh3BPtE17IyIDA14">
+    <div class="eyebrow" data-page-node-id="Kh0OJ6m3iLiCADyxKibO1i"><span class="line" data-page-node-id="ZWt8DlZac7gk7AObWmW2jh"></span>READING NOTES</div>
+    <h1 data-page-node-id="LwITu88nldBkfCjG5NJr2R">
+      持续买入
+      <span class="sub" data-page-node-id="OFHuMW6pAYdlxksa4C9UzT">JUST KEEP BUYING · NICK MAGGIULLI</span>
+    </h1>
+    <p class="lede" data-page-node-id="LDBz3yfcQkzpnbgxCjH59Z">
+      一位数据科学家用近百年市场数据给出的答案：<b data-page-node-id="LNILrNFUskHSAWQEi83Clj">不用择时，持续买入就好。</b>
+      什么时候买、买什么、买多少，都不如"一直在场"重要——等待抄底的成本，通常高于抄底的收益。
+    </p>
+    <div class="byline" data-page-node-id="EKHfiPR45GUmlNAQBccdCi">
+      <span data-page-node-id="JOt764sJgCI9VL5FmEjnb4"><b data-page-node-id="nagJG40qVeNVQEzsm6x1KP">作者</b> 尼克·马吉奥利</span>
+      <span data-page-node-id="QSm3Gz42rd5ggVX4yJkehb"><b data-page-node-id="fHgUeopKMWLFSl1m5XTBlB">身份</b> 数据科学家 · 瑞索兹财富管理 COO</span>
+      <span data-page-node-id="8rqa03Be3fUsx679SDeSgt"><b data-page-node-id="GA2Ltv1eR2cyiAB0z52Umc">首版</b> 2022 · 中文版 2025 中信出版集团</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h" data-page-node-id="CbhaFrKakQek24AjDhwHlc">
+  <div class="wrap" data-page-node-id="vUoaXOb2cdJm3bzDcTLlpS">
+    <div class="eyebrow2" data-page-node-id="rPboLeR8upOBO9zFNvWY5d"><span class="num" data-page-node-id="u4WiRth1gY94qZkOP1M89G">01 /</span>关于这本书</div>
+    <h2 id="info-h" data-page-node-id="FCIStZp2U0cUrwUWo2iDE8">一本用<b class="tail" data-page-node-id="fjTMSnngQ9UPKkv81es0Fq">数据和证据</b>回答"钱该怎么投"的书</h2>
+    <p class="sub" data-page-node-id="FFCL9wb8q4RkYCGr54j4Q7">尼克·马吉奥利（Nick Maggiulli），斯坦福大学经济学学士，瑞索兹财富管理公司（Ritholtz Wealth Management）首席运营官、数据科学家，个人博客 OfDollarsAndData 创办者，作品曾见于《华尔街日报》《洛杉矶时报》。原版 2022 年出版即登亚马逊投资类畅销榜首，获 BookAuthority 评选 2022 年最佳财经书，《原子习惯》作者詹姆斯·克利尔、《金钱心理学》作者摩根·豪泽尔一致推荐。中文版由中信出版集团 2025 年 1 月推出（译者阿加嘉，276 页），全书分"储蓄"与"投资"两部分、共 20 章 + 绪章 + 结语。</p>
+
+    <div class="bookinfo" data-page-node-id="Oj059USgZP2IecEazyUq3S">
+      <div class="meta-card" data-page-node-id="zZ2entBQTkvjJLEgYWtvnK">
+        <dl data-page-node-id="nEaJu4PCz4BXhL0EwpFLDE">
+          <dt data-page-node-id="oxZQyl75eJ2ueA2AzAjgxB">书名</dt><dd data-page-node-id="cmbxvZ8RbeApt3AwRsMCRh">持续买入 <span class="small" data-page-node-id="7Dr623IXqOwlYAEEnQOlvK">/ Just Keep Buying</span></dd>
+          <dt data-page-node-id="df4ulemOemYxt0AURWHqn7">作者</dt><dd data-page-node-id="HYUfbnWm2b0cTuQGdx79NB">尼克·马吉奥利 <span class="small" data-page-node-id="c10s29cypc7sdt7PcID7Ns">Nick Maggiulli</span></dd>
+          <dt data-page-node-id="7K56T2PJOwJ8AWluQUxToV">身份</dt><dd data-page-node-id="usNwUdDDWDevuykNBZIJio">数据科学家 · 财富管理公司 COO</dd>
+          <dt data-page-node-id="5FIO4aBgazMuEpXzy8TFmy">领域</dt><dd data-page-node-id="yg5nBWLno0wLfBAvC0J2JO">个人理财 · 投资实证 · 资产配置</dd>
+          <dt data-page-node-id="CaKL0aFZI70uqoz4qpaxRQ">首版</dt><dd data-page-node-id="rg0c1lTEtiaepXdVmEQNiz">2022 <span class="small" data-page-node-id="unGCPgZrUcdJqvkCo8spOb">（中文版 2025，译者阿加嘉）</span></dd>
+          <dt data-page-node-id="BKaHbkLTMbu0idbWgdAlbX">结构</dt><dd data-page-node-id="rebgRMLE9MAdP0Pq4SbAJR">两部分 · 20 章 + 绪章 + 结语</dd>
+          <dt data-page-node-id="xGOf7toWTiFfCV91P5ovBM">核心</dt><dd data-page-node-id="eDokaDo23QGGOYgO2fXP10">不择时 · <b data-page-node-id="PjUbJvriGxLjtyI2DZEEMW">持续买入多样化可创收资产</b></dd>
+          <dt data-page-node-id="YJPVGycT0QsY1RqFGGruet">影响</dt><dd data-page-node-id="SsnHBZ6d9b0r1BdcsrwJ4I">亚马逊投资类榜首 · 2022 最佳财经书</dd>
+        </dl>
+      </div>
+
+      <div class="right" data-page-node-id="MIBamkPS3oXWxqjMhY3dmU">
+        <p class="thesis" data-page-node-id="1H8wudFCgQe6NToqmcyNwM">
+          全书的核心主张：<b data-page-node-id="zV0D3YsgYdivAt43ehB3ZY">买什么、什么时候买、买多少，都不如"持续买"重要。</b>
+          作者用数据说明，等待抄底的机会成本通常高于抄底的收益；
+          对早期积累而言，<b data-page-node-id="vdG4HLY5eecDGZyrn0Zxi0">储蓄率比收益率更可控</b>；
+          而真正最大的资产，是<b data-page-node-id="tEx4tz292BkyCrNpH6YvZE">你自己的人力资本</b>。
+        </p>
+        <div data-page-node-id="3hBdLU6InhMrwSMuUvrSWp">
+          <span class="chip" data-page-node-id="2kaCAMhAjO9llkiFNYPvf3">#持续买入</span>
+          <span class="chip" data-page-node-id="b5cVTczw5d6PUmhUZeoPF7">#不择时</span>
+          <span class="chip" data-page-node-id="tPbqhEpOuYiFgTJBnBykQy">#储蓄率</span>
+          <span class="chip" data-page-node-id="r2IRlf34nsuUrXm7JIwtEZ">#别买个股</span>
+          <span class="chip" data-page-node-id="7aePGEki7ozhb9Xfcvh2bu">#波动≠风险</span>
+          <span class="chip" data-page-node-id="5Ng7MHojC8ni98vaNZdqXE">#人力资本</span>
+          <span class="chip" data-page-node-id="uIloTrm69EMBGygOHvPkQr">#可创收资产</span>
+          <span class="chip" data-page-node-id="jkzii3DAyx3XRROHsPaN6h">#长期主义</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h" data-page-node-id="G3DaCi1r98XBmpwRWQWnoz">
+  <div class="wrap" style="padding-top:0;padding-bottom:0" data-page-node-id="iUC1GGf3L4UkwYAQGnNQYm">
+    <div class="eyebrow2" style="justify-content:center" data-page-node-id="rfsyUa8DL5SbVeevKrwypB"><span class="num" data-page-node-id="Cw4xBmE2LiWqrLSfmLoa4U">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center" data-page-node-id="TWuQTW4XsCLADe87xpkAdv">一句话总览</h2>
+    <blockquote data-page-node-id="JBq3ZFAFWpfN6OOzifmFsi">
+      别择时，<br data-page-node-id="uUf32oHEJEDPqcwUcSN2fL"/>持续买入——<br data-page-node-id="ZbHHTt2A8PTeS6q99BRviZ"/>时间比时机重要。
+    </blockquote>
+    <div class="src" data-page-node-id="TVqTBMOjdzVDNN77MHKZrf">— TIME IN THE MARKET BEATS TIMING THE MARKET</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h" data-page-node-id="aPF0dZFdpwByyhccipkDBj">
+  <div class="wrap" data-page-node-id="YuT4wAFE2cTokABC1F7WMx">
+    <div class="eyebrow2" data-page-node-id="Cgv3uosxm6LHEOascYYcN5"><span class="num" data-page-node-id="LlPWtlKCeJBEt9k1UYHDkZ">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h" data-page-node-id="baWCMmMDEhGLaJArpMCVaE">两组核心对照<b class="tail" data-page-node-id="0v0KrJCDrkqoYhlShIBG6O">·</b>买法与重心</h2>
+    <p class="sub" data-page-node-id="Sdr7EjT2xm42Ybp9UmCzR4">全书最锋利的两处：一是入场方式——在场外等抄底，还是无脑持续买入；二是积累重心——死磕省钱节流，还是把力气花在提升人力资本、抬高收入上。</p>
+
+    <div class="dualset" data-page-node-id="lLKoL9ulI2Rt1PuwrTGz7p">
+
+      <!-- 对照 A -->
+      <div class="setlabel" data-page-node-id="JuywY6qpcX5PSPaYc221kH">A · 入场方式：等待抄底，还是持续买入？</div>
+      <div class="dual" data-page-node-id="gTS6ip5uKMcFnBiNKFs7yC">
+        <div class="sys a" aria-label="等待抄底" data-page-node-id="tU1avdlXZFe3mdVAMH3N6u">
+          <div class="tag" data-page-node-id="EMsmlYIvuSfhHk4Q8LpTLA">TIME IT</div>
+          <h3 data-page-node-id="1GnFpSt4xdALmqdlaES5rK">等待抄底 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="vQ3gg0Q5orEEMcXklJ7ePd">（择时）</span></h3>
+          <div class="sub" data-page-node-id="yWo9oWCV1TytW0FT6rMygv">持币观望 · 等更低的价格</div>
+          <p data-page-node-id="DWvG8O8qxkZAtFw8UyV3yY">看着市场在高位，想等回调再进。问题是：<b data-page-node-id="OGF20acOw0yIFEJ7g9ikcC">市场大部分时间都在"高点附近"</b>，等待意味着长期空仓，错过期间的涨幅与分红；而真正的大跌来临时，往往也没人敢下手。</p>
+          <ul data-page-node-id="azoehQyjXmplZHvRUamB78">
+            <li data-page-node-id="TJ6CoUlWfplKULBkFdAI5V"><b data-page-node-id="ToPx2sX3X1IpPFrV5GUzy7">假设</b><span data-page-node-id="19ZPAk2MyFH8PwmAtxIo49">我能判断高点和低点</span></li>
+            <li data-page-node-id="zw83g9qPNEbg8UJ22V9Lkx"><b data-page-node-id="BA8eiyG4B10XJZBI99lK8m">成本</b><span data-page-node-id="x3Qu1mJNB6TFR1KmIe0roF">空仓的机会成本 + 决策焦虑</span></li>
+            <li data-page-node-id="0GbZyKOM7MnVFYptHGwxhB"><b data-page-node-id="CXdLH67WATcbnLi2W8Eiro">结果</b><span data-page-node-id="BBWoOTo6EL8EjSf52lI7UQ">多数择时跑输"买了就放着"</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="qIiCuAuuVyJzLfQxFC80Pv">"别为了抄底，把时间浪费在场外观望。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="YPNIxyAReL5CORBFrqQwjs">vs</div>
+
+        <div class="sys b" aria-label="持续买入" data-page-node-id="EORm8eCld6jbiE54yQUous">
+          <div class="tag" data-page-node-id="CywMr3DOhSmcXi93K4CISe">JUST BUY</div>
+          <h3 data-page-node-id="9zv5SxfAm6sAXZjqFFUCb3">持续买入 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="RaAJa2lc5R3IbmOW7qv36I">（不择时）</span></h3>
+          <div class="sub" data-page-node-id="Q1XFPxMr1eech4g5l67ZIx">固定节奏 · 有钱就买</div>
+          <p data-page-node-id="nfjSZATUv8ZG5VW2j7uPDd">不管高低、不管牛熊，<b data-page-node-id="Eb4YKFGhZ54qgkB7klrahS">按固定节奏买入一组多样化的可创收资产</b>。价格低时自动买到更多份额，价格高时自动买得少——把择时问题交给机制，而不是情绪。</p>
+          <ul data-page-node-id="z5j0HyUukTcEZbD1Lalhl3">
+            <li data-page-node-id="nMUV8DfYvmheBiJTx1NqyP"><b data-page-node-id="IPpAVeEAONqAY3didEVf6I">假设</b><span data-page-node-id="dN2kHAXAXn3fjgwDbGE43n">长期趋势向上，但短期不可预测</span></li>
+            <li data-page-node-id="tYzEyPwoxn6wcvGNz4iOeg"><b data-page-node-id="FN8JCicpenNjVTelyuWyIl">成本</b><span data-page-node-id="UfxERRLbDnn6FnUIhGvIwS">几乎为零：一次设定，自动执行</span></li>
+            <li data-page-node-id="CZzTWSRf85dK05fqHD40Bf"><b data-page-node-id="rWDlUQrKUOxySZ8QiDNAxf">结果</b><span data-page-node-id="407UyAmg63uUXPpY9YBGpd">留在场内，吃到长期复利</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="SwnFt7pN4eGJRhfWKqmUa9">"什么时候买、买什么都不要紧，重要的是——持续买入。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel" data-page-node-id="JTayU5TqqnLVhcEMyeARvl">B · 积累重心：死磕省钱，还是抬高收入？</div>
+      <div class="dual" data-page-node-id="CBlcNvIUnSHUyHVSfcWHv2">
+        <div class="sys a" aria-label="只靠节流" data-page-node-id="9DZOFiBEcmdRh53yZuimg3">
+          <div class="tag" data-page-node-id="YQVLDVbBbEHVXIvH0X3H0p">CUT COST</div>
+          <h3 data-page-node-id="g83pnEJCocBWrNkfdBdzO1">只靠节流 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)" data-page-node-id="BkQDlq6OaFKCcYXW3ixSrU">（省钱有下限）</span></h3>
+          <div class="sub" data-page-node-id="Bl4Tmh8KKnqRsLWfLhjq9f">削减一切开支 · 降低生活成本</div>
+          <p data-page-node-id="pvCDXaD5qNfGLWgSPAXO8i">省钱当然重要，但<b data-page-node-id="Nr3BmGBVFdPZRMJdqYpJks">支出有下限</b>：砍到一定程度就没得砍了，而且过度克扣会损害生活质量与长期动力——作者专门写了一章讲"如何让花钱没有负罪感"。</p>
+          <ul data-page-node-id="i9KuwnLs2OEKLHyKgJorDa">
+            <li data-page-node-id="1E6xD3ioXuBJ1qQQEWlCkz"><b data-page-node-id="F9yOpAUr4LfSeO8MBgtGB3">上限</b><span data-page-node-id="sZbheMpsXmKNWw1XmFRbS1">最多省到生存线</span></li>
+            <li data-page-node-id="UPNebExNGiOhD8lIQhwx0f"><b data-page-node-id="xsDjGKGM1jsNMZaUdaqFxY">风险</b><span data-page-node-id="cKarPrZaL7wGvmDHF7Zsdb">省出焦虑，反而难以坚持</span></li>
+            <li data-page-node-id="p9dOWLLC3D3ZxNNnH5Bm11"><b data-page-node-id="caZ6Dym0DllgSvHoe9HkIt">适用</b><span data-page-node-id="ScDWLrZd5UdNy3LEtIIe3S">支出明显失控时先止血</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="rQw483CuHYPy9tXVRTAbvS">"削减你不在乎的，大方花在你真正在乎的。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="m2Yu6zXMimgKunCnxBWbdG">vs</div>
+
+        <div class="sys b" aria-label="投资人力资本" data-page-node-id="N3zOraOoKIFjMYmZ9RL2NY">
+          <div class="tag" data-page-node-id="FCktNai5owSWx7qOwb6X8Q">EARN MORE</div>
+          <h3 data-page-node-id="CSktlIqt5XSzkahpdnXbBm">投资人力资本 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)" data-page-node-id="DiCxZBWmtQ1Thgv4DJCGPR">（开源无上限）</span></h3>
+          <div class="sub" data-page-node-id="t2fWdlcopX7Nf9Ud9pgCRU">提升技能 · 抬高收入曲线</div>
+          <p data-page-node-id="SlDwunE2E1Me20rXJs5Xep">书中把<b data-page-node-id="SiQlSEMf1ssCj2vWagFWHC">"最重要的资产"留给了人力资本</b>：年轻时你最大的资产不是股票账户，而是未来几十年的赚钱能力。提升收入的<b data-page-node-id="j3JrE0ZfmbeGi1pwdMdfFW">天花板远高于省钱</b>，而且会同时提高储蓄的绝对额。</p>
+          <ul data-page-node-id="4bU6D11xHOryEDhFFhbh19">
+            <li data-page-node-id="7auFdyRxfgjhlGqFcSACsq"><b data-page-node-id="MEkf3egh123uVA0eIqxBok">上限</b><span data-page-node-id="ANJlFbevsxmyGkF2Suggfu">理论上没有上限</span></li>
+            <li data-page-node-id="ivbY6t6hpSxuPZy6IxApmn"><b data-page-node-id="DsggIe0HySYGPq0HYu6EPv">优势</b><span data-page-node-id="uvb6aUv9ArjD9zBfpSSEGY">收入越高，储蓄率越容易维持</span></li>
+            <li data-page-node-id="fIsstBtd7Cnmk7U1XBIPTF"><b data-page-node-id="1HNMiJqaEAjBDzQihmbCkP">适用</b><span data-page-node-id="LTlchGkg80GyFqvMu38cKX">职业生涯早期尤其划算</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="rv0ApFAzXMUsDJuA5gSAs8">"你最重要的资产，从来不是账户里的数字，而是你自己。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h" data-page-node-id="TEenEWopHTQYAxnwWKAlYa">
+  <div class="wrap" data-page-node-id="CLyV8IsAvMiR8CoAJSgEo4">
+    <div class="eyebrow2" data-page-node-id="al2l2sPTtfQCUqHZ0zBj4T"><span class="num" data-page-node-id="joXoJEdMmyRRnQ4Pjk4SBn">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h" data-page-node-id="7tYrHgx2DKa1P4VH97ISQi">十张<b class="tail" data-page-node-id="gstu202U899UBnLsAs88ST">书签</b>，把投资变成一件简单的事</h2>
+    <p class="sub" data-page-node-id="t5DbQFnyBo95kLK9Ryw3A8">这十个概念串起全书：先解决"钱从哪来"（储蓄与消费），再解决"钱往哪去"（买什么、怎么买），最后落在"你自己才是最重要的资产"。</p>
+
+    <div class="biases" data-page-node-id="CAyMbDgSLq6wHYl0QtEjeo">
+
+      <article class="bias c1" data-page-node-id="Nwhz7ef7F3d0yj5x0pS2Ve">
+        <div class="ribbon-top" data-page-node-id="v9dQNpQfwaBBny6b9uI2D1"></div>
+        <div class="num" data-page-node-id="D5Fmy7VKlDTuQUD6uy2AkI">N° 01</div>
+        <h3 data-page-node-id="v6mmlIec1t6WxFr9s40TwN">持续买入 <span class="en" data-page-node-id="nmLfHax6EmT2q6Qr8oXL8y">Just Keep Buying</span></h3>
+        <p class="mech" data-page-node-id="wusvM6H8AmrmIwIlPfzVBd">全书总纲：<b data-page-node-id="CXJIzpbd9tRSXUeDfJmQyE">买什么、什么时候买、买多少都不重要，重要的是持续买入一组多样化的可创收资产</b>。把投资决策从"判断"降级为"习惯"，就可以绕开情绪与预测。</p>
+        <div class="example" data-page-node-id="mm8tDUAJv73l0SCrmssblp"><b data-page-node-id="ILkc8zoHYFGCQCF5Kqpagr">例子</b>每月固定日期投入固定金额，不看行情、不做判断，跌了继续买。</div>
+      </article>
+
+      <article class="bias c2" data-page-node-id="bNpY8XXXr5kUe2B6tcM4cu">
+        <div class="ribbon-top" data-page-node-id="S0VU8GDcVoKhi33mHHjCa5"></div>
+        <div class="num" data-page-node-id="5XMOsGSRKkEwEn6yt6exko">N° 02</div>
+        <h3 data-page-node-id="DA0KahH69NueVVPFRtBNDJ">别等抄底 <span class="en" data-page-node-id="dWaNR9HQIesyNMt7qpbCBf">Don't Wait for a Dip</span></h3>
+        <p class="mech" data-page-node-id="s8CeFu3cH00wfcAQTjtLIi">数据表明<b data-page-node-id="tb2vzjXmvX3RtAVc3lDyRU">市场多数时间都处在历史高点附近</b>，长期空仓等待的机会成本，通常高于抄底带来的收益；而且真正的暴跌来临时，人往往更不敢买。</p>
+        <div class="example" data-page-node-id="JvtsxUKo9sCOSH19yFWKFP"><b data-page-node-id="19U9bjlX1sCRoWXLwAzQB3">例子</b>等一次 10% 回调，可能要等上一年——这一年的涨幅常常超过回调省下的钱。</div>
+      </article>
+
+      <article class="bias c3" data-page-node-id="dnanO3loGKXEmNMzSVjI4J">
+        <div class="ribbon-top" data-page-node-id="zu1n4dHN1saYOUj0D6lKra"></div>
+        <div class="num" data-page-node-id="ZpEHACmLoR9thy5Vs2ZsIt">N° 03</div>
+        <h3 data-page-node-id="o976UA66WCrXo9ODdjZTfL">储蓄先行 <span class="en" data-page-node-id="5C076UtQP1pnoakhdlJ7ex">Save First</span></h3>
+        <p class="mech" data-page-node-id="XbOSxnHA4hw5jiT4JjZMYK">没有储蓄，投资就是无源之水。书的第一部分全部在讲<b data-page-node-id="Oj8NJL2BttaFMG5Mp5XE90">先造出可投资的现金流</b>：存多少、怎么存更多、如何不带着负罪感花钱。</p>
+        <div class="example" data-page-node-id="rQ8SURO4q415RZDbp8KpKd"><b data-page-node-id="4rLNIZ8OaXJ1372VEwohU5">例子</b>发薪日先转走固定比例，剩下的才是可花的钱——顺序决定结果。</div>
+      </article>
+
+      <article class="bias c4" data-page-node-id="Qi2mWZ3sapIl1OHAQgj1mq">
+        <div class="ribbon-top" data-page-node-id="04d2rlsC40QebtHDJfepqO"></div>
+        <div class="num" data-page-node-id="BevuI6tK5A7Wabx6rCyM1Y">N° 04</div>
+        <h3 data-page-node-id="zWCn3s1ZubKd4lCMeF8wmK">储蓄率 &gt; 收益率 <span class="en" data-page-node-id="AnmG9QRNLuqJuVpqYrX3Se">Savings Rate Wins Early</span></h3>
+        <p class="mech" data-page-node-id="mwfQkvvo6ICxYLWGjKHEIn">在积累早期，<b data-page-node-id="ADbeZ94CtohLIJKqfD7se1">本金规模的影响远大于收益率差异</b>；而收益率不可控，储蓄率可控。把力气花在"存多少"，而不是"押中哪个"。</p>
+        <div class="example" data-page-node-id="R5DmOhemoBxJJtVXdxjVu5"><b data-page-node-id="HE2u4fAOkXEJBr4ZILuHtt">例子</b>多存 10% 的效果，往往好过费劲多赚 1% 的收益。</div>
+      </article>
+
+      <article class="bias c5" data-page-node-id="mTXidcpZDqJw1OrhyckiP0">
+        <div class="ribbon-top" data-page-node-id="NnOJPLg6nn4e7qHK4jAHBs"></div>
+        <div class="num" data-page-node-id="5lKh9nNso23WdaQRX7mbE3">N° 05</div>
+        <h3 data-page-node-id="Fi3TUlGgHG8C2MvyikEjnj">花钱不留负罪感 <span class="en" data-page-node-id="Budzhf0SKruMR4iHagW3DJ">Spend Without Guilt</span></h3>
+        <p class="mech" data-page-node-id="A7Ow51yGGFfGU2mn0jml9M">作者的态度很务实：<b data-page-node-id="WPGfEjOFn8Z80Zb5rMgbos">削减你不在乎的支出，把钱大方花在真正在乎的事上</b>。可持续的储蓄，来自有取舍的预算，而不是全面的自我克制。</p>
+        <div class="example" data-page-node-id="p3a1NjcGv5CLDnrVLRBHeC"><b data-page-node-id="znyxBPoMzLT4rnSJQamwcQ">例子</b>戒掉不看的会员与随手外卖，但保留每周一次的线下聚会。</div>
+      </article>
+
+      <article class="bias c6" data-page-node-id="B5H7QOqFymHriqp7ElvZA6">
+        <div class="ribbon-top" data-page-node-id="lvPUlVZEqnYcoVCkLDyr0A"></div>
+        <div class="num" data-page-node-id="uPD5vTDZhQHbgBGPEzb9Yz">N° 06</div>
+        <h3 data-page-node-id="oql61qPcLoR8PDRbrIpbhq">生活方式膨胀 <span class="en" data-page-node-id="txbgcXvUC19n6nEkJEjJC3">Lifestyle Creep</span></h3>
+        <p class="mech" data-page-node-id="0BRY0HHxAxP2iRur2Fdbpc">收入涨了，支出同步涨，储蓄率原地踏步。作者的建议不是禁止享受，而是<b data-page-node-id="jG4aLWZHvFQZjsCvCYP1QP">给膨胀设一个上限</b>：加薪后保留相当一部分，而不是全部花掉。</p>
+        <div class="example" data-page-node-id="mvJfEKN059ZhG0ev4c6lnC"><b data-page-node-id="AhhYAftYe82G7OKahOgmcd">例子</b>涨薪 20%，把其中一半直接提高定投额，剩下一半用来改善生活。</div>
+      </article>
+
+      <article class="bias c7" data-page-node-id="zcG82hJbMRUKj7y29sZuCF">
+        <div class="ribbon-top" data-page-node-id="PFt5Z82ANUZ9Yo4FWYDUZY"></div>
+        <div class="num" data-page-node-id="xjqGgAtfkJLsMUuGgJyx9U">N° 07</div>
+        <h3 data-page-node-id="0BVKrq6up85qSFm9xOwACE">好债与坏债 <span class="en" data-page-node-id="CHSndPoJEc4Qczw5mkC8nY">Good Debt vs Bad Debt</span></h3>
+        <p class="mech" data-page-node-id="fqDQqGggrzGpWbIdm8pHRC">负债不是原罪，关键是<b data-page-node-id="o1d5FD5HMjgxN5voiRwza3">利率与用途</b>：低息且用于增值资产的债可以慢慢还，高息消费贷则应优先清掉——因为提前还清高息债等于拿到确定的高收益。</p>
+        <div class="example" data-page-node-id="2MEojlrwhuz80VS1A6RLMH"><b data-page-node-id="jMoMgv4aGo7DrR9kEDPWn9">例子</b>年化 18% 的信用卡分期，优先级远高于年化 4% 的房贷。</div>
+      </article>
+
+      <article class="bias c8" data-page-node-id="CqyPiLGPFnioan1Jy1LuXm">
+        <div class="ribbon-top" data-page-node-id="yerV9BmXn6DjYxgl5FjCha"></div>
+        <div class="num" data-page-node-id="j5Mw4bcGCFhAcbvo5X63s8">N° 08</div>
+        <h3 data-page-node-id="GI6UexnqZdtHG1563TAiO8">别买个股 <span class="en" data-page-node-id="4vJdrg8XMovR2HKylFWsum">Skip Single Stocks</span></h3>
+        <p class="mech" data-page-node-id="zRekyt9Rx4OQfcjE2x3Hsk">个股收益<b data-page-node-id="94wHQxMOjk0ViPqkkXk5bH">极度右偏</b>：极少数赢家贡献了市场绝大部分收益，多数个股长期跑输甚至归零。选中赢家的概率很低，代价却很高——所以买指数化的多元资产。</p>
+        <div class="example" data-page-node-id="4jTbJ9hd3o99tlWz6isNyp"><b data-page-node-id="pqleeQsZE1jrKJBdEwkiGl">例子</b>与其赌下一只十倍股，不如买下整个市场，稳稳拿到平均。</div>
+      </article>
+
+      <article class="bias c9" data-page-node-id="UqfB4kWmiTW0RRQrsMRetr">
+        <div class="ribbon-top" data-page-node-id="DyJARCNViZlJWZixCZcLvl"></div>
+        <div class="num" data-page-node-id="23Okh6pnrY6YwxTKVB32Fm">N° 09</div>
+        <h3 data-page-node-id="m5BOXKjVKnErm5WT7nZuAv">波动 ≠ 风险 <span class="en" data-page-node-id="hgPNGecXDx8hX2Q8lrTPjR">Volatility Is Not Risk</span></h3>
+        <p class="mech" data-page-node-id="iCcfUUTz5KeRJ9uzHkhXlQ">短期价格波动本身不是风险，<b data-page-node-id="r8rAYaWrFEy9KLygRKzfOY">真正的风险是在需要用钱时被迫在低点卖出</b>。只要期限够长、不在恐慌中离场，波动反而是持续买入者的朋友。</p>
+        <div class="example" data-page-node-id="qisuUeJqaYHjij6DxqzCuo"><b data-page-node-id="XQPcKU0CC4ybspBu3k1xKi">例子</b>提前写下"跌 30% 我该怎么办"的预案，避免临场被情绪带走。</div>
+      </article>
+
+      <article class="bias c10" data-page-node-id="Q3IHxWUsMvLUgbY0NmQ1wG">
+        <div class="ribbon-top" data-page-node-id="379jOiBdBy3nr2ibgzHGFh"></div>
+        <div class="num" data-page-node-id="XQHFme65Uy1HAYLN2BKWuE">N° 10</div>
+        <h3 data-page-node-id="2FxhIrjy3PLAoHlMUvOvTw">最重要的资产是你自己 <span class="en" data-page-node-id="XpW7pRzptIFX1okN5W11G8">Human Capital</span></h3>
+        <p class="mech" data-page-node-id="IiX8RCfqHuOCh73xhjLkFU">全书收在人力资本：<b data-page-node-id="Clr8leWLB9upMUiVGbpkPF">年轻时最大的资产是未来的赚钱能力</b>。投资自己的技能、健康与阅历，会同时抬高收入与储蓄能力，这份复利比市场来得更可靠。</p>
+        <div class="example" data-page-node-id="ixzcSA8oF6kKWILlC4rBd7"><b data-page-node-id="BXGldKti2zxP9XjEAwdr5W">例子</b>每年固定投入学习与训练，把收入曲线往上抬——这是收益率最高的一笔投资。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h" data-page-node-id="yCYVCV1ZXXxLVWcZ6iIjY3">
+  <div class="wrap" data-page-node-id="DxBHLmSYSEEgXEDF5ieb8Q">
+    <div class="eyebrow2" data-page-node-id="fbpYHMZwzobVIYMBkCBXO3"><span class="num" data-page-node-id="hr3Mypg5U5GNiqs8DqpeKA">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h" data-page-node-id="rN7atHGBjt2ar3lK3jqAVB">两部分<b class="tail" data-page-node-id="h1JuDsB5hXRWOKKfGWA7cm">二十章</b> · 脉络</h2>
+    <p class="sub" data-page-node-id="0G3CMKEBQGsHD8SnojEWCw">全书先讲储蓄（第 1–8 章），再讲投资（第 9–20 章）。可归为五条主线：把钱存下来、聪明地花、处理大项决策、把钱投出去、以及最终回到"你自己"。</p>
+
+    <div class="chaptermap" role="list" data-page-node-id="3hNMU9U6bD4SGDJK3wQ0OO">
+      <article class="part p1" role="listitem" data-page-node-id="W2TYCagS6WxWnqFPtxcBTO">
+        <div class="pin" data-page-node-id="ziGP4XmTj31fiYT1kS5Y3v">储蓄 · 一</div>
+        <h3 data-page-node-id="lSLcvuJlkSBLLrvK3EZCBM">存多少，怎么存</h3>
+        <div class="range" data-page-node-id="A7uH7t9Nx4hsNLdnFJ3kD3">第 1–2 章</div>
+        <ul class="chapters" data-page-node-id="8o9entDHsx23r0xQwmMr4m">
+          <li data-page-node-id="ZLLdkF0e0ovjSGRYLZ16Ip">你应该存多少钱</li>
+          <li data-page-node-id="9JpVdUchVNqIvzs9OdZEH7">如何存更多钱</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem" data-page-node-id="Dzccn3bfZxaBPRkQxy7HI1">
+        <div class="pin" data-page-node-id="a6zzYEEwcFrxjZOTHYE0Fk">消费 · 二</div>
+        <h3 data-page-node-id="pI8M7rp3cS19KiEf60hcDW">花钱、生活方式与负债</h3>
+        <div class="range" data-page-node-id="z0cCHbSZUOtE8PE3bblQol">第 3–5 章</div>
+        <ul class="chapters" data-page-node-id="iBTKGeBL6sovTwhgkdW38t">
+          <li data-page-node-id="BCLDBo0UPA1tNg3KGk77TD">如何让花钱没有负罪感</li>
+          <li data-page-node-id="2hBuptiuGTKCUHLAGc5KbD">能接受生活方式多大改变</li>
+          <li data-page-node-id="KN6L4kWdV5HTtm1vR0HgPy">你应该负债吗</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem" data-page-node-id="dmD3wPR0n5NDA859I2JTTF">
+        <div class="pin" data-page-node-id="hYawtyJH0253qUBgtEBNOe">大项 · 三</div>
+        <h3 data-page-node-id="Eni23jQSW3PnOfAsABwAxV">买房、大额支出与退休</h3>
+        <div class="range" data-page-node-id="Mib8zz0yAOUSXBswKWclSJ">第 6–8 章</div>
+        <ul class="chapters" data-page-node-id="BQ0ib4BMCVYG6aB67mMcFV">
+          <li data-page-node-id="p1p5R7GsJCi4lE6xbCtta9">租房还是买房</li>
+          <li data-page-node-id="tD5gBm1xqtObda9e2pYqjg">为首付和大额购买存钱</li>
+          <li data-page-node-id="8VQLdRqQQ7CZcp1dFJU84H">何时可以退休</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem" data-page-node-id="pUSrEIrPd9yBNNhZQkcTtl">
+        <div class="pin" data-page-node-id="0iXtvGEnhQNwQHwjD9kQQS">投资 · 四</div>
+        <h3 data-page-node-id="COEjJo56kH0WGOuHGnr3Oj">为什么投、投什么、怎么扛</h3>
+        <div class="range" data-page-node-id="zLc7aVlL99ZxeHGgmwacwM">第 9–16 章</div>
+        <ul class="chapters" data-page-node-id="1N0meDX40YTJmNl61OxRtr">
+          <li data-page-node-id="oWGPcPCVqArNA18oaZKzK1">为什么要投资 / 应该投什么</li>
+          <li data-page-node-id="Vy2Hs0qWH2n6PuFOvnErhH">为什么不该买个股</li>
+          <li data-page-node-id="jVl6QKRt6zKViQSUAEN4mH">为什么不该等逢低买入</li>
+          <li data-page-node-id="GmAilbxg7KCbcJUb0G8rU3">运气、波动与危机中如何投资</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem" data-page-node-id="sw2RrPmctOO8xa7e6IKE7M">
+        <div class="pin" data-page-node-id="FTrE6EivsCr8UprbfQ2eF5">收官 · 五</div>
+        <h3 data-page-node-id="63m9yD90v1VCsUTgAcyurO">卖出、富有感与人力资本</h3>
+        <div class="range" data-page-node-id="mNN35AC6lzD2yV5V6v146C">第 17–20 章 + 结语</div>
+        <ul class="chapters" data-page-node-id="yKVYWhGCl71BDdq66l04Us">
+          <li data-page-node-id="T36m9jxXNsZW9khRHzk1pW">应该什么时候卖出</li>
+          <li data-page-node-id="eGVNhxgKYp6AqYR0ZV7V9d">你应该在哪里投资</li>
+          <li data-page-node-id="B0YWbF89JBfzKf5N9EIPdr">为什么你从不觉得自己富有</li>
+          <li data-page-node-id="apsKIUt0CYVeno4INNXvlB">最重要的资产 + 持续买入法则</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h" data-page-node-id="crP5EzLgnRG3EsueSe4Dvd">
+  <div class="wrap" data-page-node-id="dIGNOQQkINSGvCw7RmHYyM">
+    <div class="eyebrow2" data-page-node-id="HMJPEYVEyySnHpWPwmZTs9"><span class="num" data-page-node-id="yRq2slTPWA30wGIipdBgYD">06 /</span>QUOTES</div>
+    <h2 id="quotes-h" data-page-node-id="PInPbvuoXHwV8v1TcTYPgJ">五句值得抄在笔记本上的话</h2>
+    <p class="sub" data-page-node-id="LeyUMuCrZAnPhX6EDsujtg">这些句子（以下为原书观点的中文转述）覆盖了全书的主线：别择时、控制能控制的、别买个股、扛住波动、投资自己。</p>
+
+    <div class="quotes" data-page-node-id="RTSxXGADDbBtueNPVyeMOs">
+
+      <article class="quote-card qc1" data-page-node-id="xroI7WCCWZOKeCt53Gqvgy">
+        <span class="qmark" data-page-node-id="hxhOkMBrG5GCAY0buTxUij">“</span>
+        <p data-page-node-id="R4C3fYA187pJrCAcSYhwmv">什么时候买、买什么<br data-page-node-id="ER6h5iaFdFB7HMLDq3KuN9"/>都不要紧，<br data-page-node-id="52Bo9WTgSItgkvCwSYugIs"/>重要的是——持续买入。</p>
+        <div class="src" data-page-node-id="YZuPGzCW12UUq2Whdf5cMa">— 持续买入法则</div>
+      </article>
+
+      <article class="quote-card qc2" data-page-node-id="TrHq4GvhfSc1CtMKWf9QOF">
+        <span class="qmark" data-page-node-id="jcgAfs8cM3JVKlI4MCLbcz">“</span>
+        <p data-page-node-id="6KMQHCI8REeu9TEMHdKzy9">你能控制的是储蓄率，<br data-page-node-id="llRkelk3l2n7DTwPzQIgJH"/>不是收益率。</p>
+        <div class="src" data-page-node-id="HwIcF96zEspJCyEwjlVUcf">— 储蓄与投资的分工</div>
+      </article>
+
+      <article class="quote-card qc3" data-page-node-id="awluzanTCk2MVlSE3NkRUa">
+        <span class="qmark" data-page-node-id="f6EjgE4yadRjS4uk9BDJUf">“</span>
+        <p data-page-node-id="7WVBTkYzSrBowLZXswTAZs">别为了抄底<br data-page-node-id="DPE2fjKDLUwvuwY2ddJDFm"/>把时间浪费在场外：<br data-page-node-id="Ijq4FHXui7aPsB6fgCkIKE"/>等待的成本通常更高。</p>
+        <div class="src" data-page-node-id="Wjt7u6rYnr17zHBpEjAYtE">— 为什么不该等待逢低买入</div>
+      </article>
+
+      <article class="quote-card qc4" data-page-node-id="Yls6JOWfx4XZzKPsOhZYD6">
+        <span class="qmark" data-page-node-id="mABErpbOAC6f00rWvqbyW3">“</span>
+        <p data-page-node-id="M6qwSpTHM4LZ1UL0XJydOQ">波动不等于风险；<br data-page-node-id="JRrCOKouREtITJZ9n7un9H"/>真正的风险，<br data-page-node-id="vosJJ35xvHh4y7JLWNb32R"/>是低点时被迫卖出。</p>
+        <div class="src" data-page-node-id="yhEjwHFF3J1P88wFv3iZlH">— 为什么不该害怕波动</div>
+      </article>
+
+      <article class="quote-card qc5" data-page-node-id="Hqk94guDXTBBmGHpQC801y">
+        <span class="qmark" data-page-node-id="1zGlM8WwIcAwHVb4DzEAD3">“</span>
+        <p data-page-node-id="i0yCfV9GXy3ox3x8puOmDE">你最重要的资产<br data-page-node-id="4x6pYxFBK2KQ5TCPKsaM2G"/>不是股票账户，<br data-page-node-id="ZasS67LJfFxaaVdhoI0d0g"/>而是你自己。</p>
+        <div class="src" data-page-node-id="UQPxhl5cEnlJORuIwsRFsU">— 人力资本</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h" data-page-node-id="PtBceNTQYGDi70Jum7cWNI">
+  <div class="wrap" data-page-node-id="nN8T9DGYjUZK3RCu6HfjDh">
+    <div class="eyebrow2" data-page-node-id="Zx8syJT2wAVMldQii9bb1N"><span class="num" data-page-node-id="rvxesMFOTPAfHOFdnQ2DBP">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h" data-page-node-id="8RRnQQdYHQLdf7k5La5rlm">可以立刻落地的<b class="tail" data-page-node-id="c7DRwULCRdoOLcfJb5fBtl">八条</b>练习</h2>
+    <p class="sub" data-page-node-id="VDQbqEzVWCRsCQAhbGNPEz">这是一本"照着做"的书：它的结论几乎都能直接换成一条规则。括号里标注了它来自哪一张书签。</p>
+
+    <div class="actions" data-page-node-id="hva1ERqskQRN8WveCGY189">
+
+      <div class="action" data-page-node-id="0dmZVGJ1Pxw1Udbwe4FVMa">
+        <div class="ic" data-page-node-id="dXBAYpRnssJVpg6R02fjjC">01</div>
+        <div data-page-node-id="E4njyCF4NfoaR8jWclzxH7">
+          <h4 data-page-node-id="uOYG0jWHDr1g0DpftJyiV0">先定储蓄率，再谈投资</h4>
+          <p data-page-node-id="iSf3FGYcWOqU7KqMNSi0cv">工资到账当天先转走固定比例（哪怕 10%–20%），剩下的才是可花的钱。收益率你控制不了，储蓄率可以。</p>
+          <span class="tag" data-page-node-id="VNYrhyWdrZRE5S18s4dOLY">↳ 储蓄率 &gt; 收益率</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="cMgFWzox0ZKt6rFIDyEdUW">
+        <div class="ic" data-page-node-id="PFh0o2MgwagAEL4g6gGFF5">02</div>
+        <div data-page-node-id="OFrrsceEDNwp40X2CSrl4p">
+          <h4 data-page-node-id="mH5Ks5f5CvSB0X5BUD81xm">设一个不看行情的自动定投</h4>
+          <p data-page-node-id="QTSAigdsMEnoxx4bmnyr5q">固定日期、固定金额、固定标的，写进日历或银行自动转账。把"要不要买"这个决定从你手里拿走。</p>
+          <span class="tag" data-page-node-id="3cKrOSFRF7SQ6Ab3RgESEc">↳ 持续买入</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="Q7gAVz3vpP3KnZr3QqsZq5">
+        <div class="ic" data-page-node-id="8Ynzfb8mljthuVF2RYNfxz">03</div>
+        <div data-page-node-id="5WmDYS5aUmOFvTWa0S23Uq">
+          <h4 data-page-node-id="EueNTwR5ld8Cq9Jea7vIHz">写一份"不后悔消费清单"</h4>
+          <p data-page-node-id="pYpUNHFb446FHo9l27U3c8">列出两三件真正让你快乐的事，大方花；其余的果断削减。可持续的储蓄来自取舍，不是全面克扣。</p>
+          <span class="tag" data-page-node-id="yGmAsAM24vVdzemuOHohFJ">↳ 花钱不留负罪感</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="sFGcPyfXsg4DRyRRXNz6RP">
+        <div class="ic" data-page-node-id="bQaCqdo6Gm96H5jSKUANEg">04</div>
+        <div data-page-node-id="zCxu33b2gIXoNOlXt1HDbM">
+          <h4 data-page-node-id="mfdsIyYYXEDBwt9JEDCAGx">加薪后先留一半</h4>
+          <p data-page-node-id="2u8A2u95lEx4KSGchboZLl">下次涨薪，把至少一半直接提高定投额，剩下一半再改善生活——这是对抗生活方式膨胀的最省事办法。</p>
+          <span class="tag" data-page-node-id="nAXr1VUuTz0orgYy5OyTFY">↳ 生活方式膨胀</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="tpBakBNrdtyFVN8sBKQgPr">
+        <div class="ic" data-page-node-id="m3yrc724poo8XHPnaYVdE9">05</div>
+        <div data-page-node-id="1AlN0JgwnoLnuJBo1vSAA5">
+          <h4 data-page-node-id="a2sq3sVYU5JD5E9ziGnt2E">先清掉高息债</h4>
+          <p data-page-node-id="YabDeToV6MOJqAsPFpGMgD">把利率高于你预期投资回报的债列出来，优先偿还。还掉 18% 的信用卡债，等于拿到一笔确定的高收益。</p>
+          <span class="tag" data-page-node-id="lfgzDqD5xHJv5BcZOOER6H">↳ 好债与坏债</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="JKiMi7vHHYfC15kIuN0NUx">
+        <div class="ic" data-page-node-id="HjjPHyliGdbHi7Vg5bDIx2">06</div>
+        <div data-page-node-id="Gr6KfXTGQj18xgr7DnaUnE">
+          <h4 data-page-node-id="z6FCXqaQTbUEmRs3nNGDRB">用宽基代替个股</h4>
+          <p data-page-node-id="ZEhFdyA5sFRJSyD6uGAjWJ">把个股仓位降到"输得起"的比例，主力配置宽基指数或多元可创收资产，接受市场平均，而不是赌赢家。</p>
+          <span class="tag" data-page-node-id="9peZsmElLJrY8aJwroM90V">↳ 别买个股</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="Gc5HJvcWIAYiCSMvMaYibk">
+        <div class="ic" data-page-node-id="bPSPEwWv7yQ4c2WxifsYjF">07</div>
+        <div data-page-node-id="UcDDrYWAwQzO1nqsBESdjm">
+          <h4 data-page-node-id="BBr6nmyetjnJRgRbVvaAjV">提前写好"下跌预案"</h4>
+          <p data-page-node-id="y0BvgS4C8cM95PuC96dvtm">在冷静时写下：跌 20% / 30% 时我做什么（答案通常是"继续买"）。临场有预案，就不会被情绪带走。</p>
+          <span class="tag" data-page-node-id="THD7MplZi5uO65hsbsAWJT">↳ 波动 ≠ 风险</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="8rxcdxfWmoU9YS05TaFyHY">
+        <div class="ic" data-page-node-id="bhS4iehHjhtenEiUnm3gLR">08</div>
+        <div data-page-node-id="NeAUkmq16P4WHrVbhmSrsw">
+          <h4 data-page-node-id="Ny1MjKI1Ghbg9LMEDxU6nL">每年给人力资本投一笔</h4>
+          <p data-page-node-id="CCgQrEKCd2JJLxPVGy7ckx">固定预算用于学习、技能与身体——抬高收入曲线，是收益率最高、也最不受行情影响的一笔投资。</p>
+          <span class="tag" data-page-node-id="rBmRhl99ndI8ygk8k7vWkB">↳ 最重要的资产是你自己</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h" data-page-node-id="pB1UfKlxLmr7HGiTsFxn0V">
+  <div class="wrap" data-page-node-id="FLgLi8EMULUO144so9unph">
+    <div class="eyebrow2" data-page-node-id="oB7vhMI1ORFPqV1eCh8qlz"><span class="num" data-page-node-id="zJEa442xz4ZcVihN0bOLWb">08 /</span>FOR WHOM</div>
+    <h2 id="who-h" data-page-node-id="JHlDPL5EVMxfdnyE4d2Mve">适合谁读 / 不适合谁读</h2>
+    <p class="sub" data-page-node-id="NKz9ZxVmFiUTUm1kgS1Nt5">它补上了很多理财书缺的一环——从"为什么"落到"具体怎么买"。读之前，先确认你想要的是哪一种。</p>
+
+    <div class="readers" data-page-node-id="gp5YGwhqAHJAdGLovEXYcW">
+      <article class="who yes" data-page-node-id="5IFNHDBiUFQINtaVhJxtVn">
+        <h3 data-page-node-id="9TvhgW7uYmxZahSoBDYzd7"><span class="swatch" data-page-node-id="z6CWLEZ3oapCjGthRR94CO"></span>尤其推荐</h3>
+        <ul data-page-node-id="sU3eADBZO6b8QNazydJAq1">
+          <li data-page-node-id="GBvDKQaszmqWwtBCj8xtmh">想开始投资，却总怕"买在高点"、一直观望的人</li>
+          <li data-page-node-id="1fItB0oLD3r17mbKCzq5PO">每月有结余、但不知道该买什么、买多少的人</li>
+          <li data-page-node-id="1Mt0ftZpaZQgg3rRgkuRVs">被"抄底""择时""低买高卖"这些说法反复困扰的人</li>
+          <li data-page-node-id="oamOGLIowJHgqBPtEo6jH3">年轻人：人力资本那章对早期职业阶段尤其有用</li>
+          <li data-page-node-id="LbKlF9ierSnWSlr28oLAX3">喜欢<b data-page-node-id="UEoZvxOhZd4uGguSPYTJql">数据实证</b>而非故事与观点的人</li>
+          <li data-page-node-id="EMKwSp3rDMheNjz9tA2CYU">读过 NO.04《金钱心理学》后，想落到<b data-page-node-id="JmA9iCUtPpFrsNfy9TNJSb">可操作层面</b>的人</li>
+        </ul>
+      </article>
+
+      <article class="who no" data-page-node-id="xvLDRSo3mgSMwBcmcWgfaI">
+        <h3 data-page-node-id="0CnQYiDiIroGHiCFrHL2Ev"><span class="swatch" data-page-node-id="yhrRwJ4q3mhVIWiFmhYMmC"></span>不推荐 / 慎读</h3>
+        <ul data-page-node-id="3k2RlEmMsmYUYVJQRNm9GM">
+          <li data-page-node-id="2O3WOkmXFKi1DKQ0kd5vj5">想学<b data-page-node-id="Nf1IwLXDJRCmzZcGXgnBQ4">选股、技术分析、抄底技巧</b>的人：本书明确反对买个股</li>
+          <li data-page-node-id="pQeVRTJrz8JhjHDfaOUdeT">期待<b data-page-node-id="pvsECilY0xe228FUNPqBNl">短期暴富策略</b>的人：核心结论朴素到近乎无聊</li>
+          <li data-page-node-id="sy8DxncfUOgJ6OOEDzvYzM">已有成熟<b data-page-node-id="DVl7XFjoHz90ojpfDGlT1u">投资体系</b>的人：增量有限，可只读第 11、13、20 章</li>
+          <li data-page-node-id="Kk7Q0Sk6N2rkkkoNbtWawf">讨厌<b data-page-node-id="d2AsptcdzgYzVJYp2WOyoz">数据图表</b>的人：论证几乎全靠统计与回测</li>
+          <li data-page-node-id="CDCA4adYO2RLIjewROFIsx">需要本土化落地细节的人：数据与账户体系以美国市场为主</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot" data-page-node-id="mstROQO31jFtXDYSXrDdsZ">
+  <div class="wrap" data-page-node-id="GIg170dltewKMZukKOxmlI">
+    <div class="mark" data-page-node-id="Bt3gUTXdncn6B4FnKwTtgx">
+      "什么时候买、买什么都不要紧，重要的是——持续买入。"
+    </div>
+    <div class="rule" data-page-node-id="TqEA0IMvhZj6IArabOmviF"></div>
+    <div class="meta" data-page-node-id="jyElMRC32MAFWW4vOHuXAs">
+      读书笔记 · 《持续买入》· 尼克·马吉奥利<br data-page-node-id="dVurPenuHkO1mdBnXKtc8U"/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

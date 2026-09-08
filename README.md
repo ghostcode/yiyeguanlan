@@ -26,8 +26,13 @@ yiyeguanlan/
 │                                     # NO.12《高效能人士的七个习惯》· 主色 靛蓝 #38488c
 ├── work-consumerism-and-the-new-poor.html
 │                                     # NO.13《工作、消费主义和新穷人》· 主色 炭褐 #54463c
-└── the-millionaire-next-door.html
-                                      # NO.14《邻家的百万富翁》· 主色 苍青 #39605c
+├── the-millionaire-next-door.html
+│                                     # NO.14《邻家的百万富翁》· 主色 苍青 #39605c
+├── just-keep-buying.html             # NO.15《持续买入》· 主色 驼褐 #7d6142
+├── the-permanent-portfolio.html      # NO.16《哈利·布朗的永久投资组合》· 主色 玄石 #414a52
+├── elon-musk.html                    # NO.17《硅谷钢铁侠》· 主色 钢蓝 #4a6fa5
+├── the-simple-path-to-wealth.html    # NO.18《简单致富》· 主色 翠玉 #3f8f7a
+└── the-alchemy-of-finance.html       # NO.19《金融炼金术》· 主色 炼金紫 #70307c
 ```
 
 - `index.html`：系列入口。展示书架（书卡直链到各卷）、**分类筛选**、系列说明、页脚。
@@ -39,13 +44,16 @@ yiyeguanlan/
 
 | 分类 | `data-cat` | 卷次 |
 | --- | --- | --- |
-| 财富投资 | `wealth` | NO.03《纳瓦尔宝典》· NO.04《金钱心理学》· NO.07《秒懂金融》· NO.08《投资最重要的事》· NO.09《穷查理宝典》· NO.14《邻家的百万富翁》 |
+| 财富投资 | `wealth` | NO.03《纳瓦尔宝典》· NO.04《金钱心理学》· NO.07《秒懂金融》· NO.08《投资最重要的事》· NO.09《穷查理宝典》· NO.14《邻家的百万富翁》· NO.15《持续买入》· NO.16《哈利·布朗的永久投资组合》· NO.18《简单致富》· NO.19《金融炼金术》 |
+| 人物传记 | `biography` | NO.17《硅谷钢铁侠》 |
 | 心智认知 | `mind` | NO.01《思考，快与慢》· NO.06《认知觉醒》· NO.10《刻意练习》 |
 | 人际自我 | `people` | NO.02《被讨厌的勇气》· NO.05《人性的弱点》 |
 | 方法效能 | `method` | NO.11《以终为始》· NO.12《高效能人士的七个习惯》 |
 | 社会观察 | `society` | NO.13《工作、消费主义和新穷人》 |
 
 新增一卷时，除了"笔记页 + 书架卡 + README 目录"三处，还要多两小步：给书卡加 `data-cat="<分类>"`，并更新筛选条上对应分类的计数。
+
+若要**新增一个分类**：只需在筛选条加一个 `<button class="filter" data-filter="<新分类>">` 并在分类表补一行——过滤逻辑是按 `data-cat` 字符串匹配的，**不需要改 JS**。
 
 ## 设计系统
 

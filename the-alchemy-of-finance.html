@@ -1,0 +1,1029 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>《金融炼金术》读书笔记</title>
+<meta name="description" content="乔治·索罗斯《金融炼金术》：反身性理论——参与者的思维与现实互相塑造，价格会改变基本面；市场不存在均衡，只有自我强化、最终自我毁灭的繁荣/萧条序列。不预测，只试探并随时认错。" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为炼金紫，呼应"炼金术"）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #70307c;   /* 主书签色：炼金紫 */
+  --accent-2:     #b0903f;   /* 古金（点缀） */
+  --teal:         #3d6f68;   /* 青瓷 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a3d55;   /* 梅 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(112,48,124,.12), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(112,48,124,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#191027 url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#191027;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(25,16,39,.22) 0%, rgba(25,16,39,.06) 35%, rgba(25,16,39,.84) 100%),
+    linear-gradient(90deg, rgba(25,16,39,.64) 0%, rgba(25,16,39,.20) 55%, rgba(25,16,39,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f2efdf;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }
+.dual .sys.b .tag{ background:var(--accent) }
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="index.html" class="home" aria-label="返回系列首页">一页观澜</a>
+    <div class="brand"><span class="dot"></span> 阅读笔记 · 金融炼金术</div>
+    <nav aria-label="目录">
+      <a href="#info">书籍</a>
+      <a href="#one">总览</a>
+      <a href="#dual">两组对照</a>
+      <a href="#bias">关键概念</a>
+      <a href="#map">脉络</a>
+      <a href="#quotes">金句</a>
+      <a href="#action">行动</a>
+      <a href="#who">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0">
+  <div class="hero-img" role="img" aria-label="深色交易终端上跳动的行情曲线，象征市场价格与预期的互相塑造"></div>
+  <div class="ribbon">NO. 19 · 财富投资</div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="line"></span>READING NOTES</div>
+    <h1>
+      金融炼金术
+      <span class="sub">THE ALCHEMY OF FINANCE · GEORGE SOROS</span>
+    </h1>
+    <p class="lede">
+      索罗斯把一生的投资方法写进这本书：<b>价格不只是反映基本面，它还会改变基本面</b>。
+      因为参与者的思维本身就嵌在事件里，市场永远到不了均衡，
+      只会走完一段<b>先自我强化、最终自我毁灭</b>的繁荣—萧条序列。
+    </p>
+    <div class="byline">
+      <span><b>作者</b> 乔治·索罗斯（George Soros）</span>
+      <span><b>译者</b> 孙忠 · 侯纯</span>
+      <span><b>中文版</b> 2016 · 海南出版社</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">01 /</span>关于这本书</div>
+    <h2 id="info-h">市场不是一面镜子，<b class="tail">而是一台回声机</b></h2>
+    <p class="sub">《金融炼金术》（<i>The Alchemy of Finance</i>）是乔治·索罗斯最重要、也最难读的一本书，副标题常写作"索罗斯的反身性理论及其投资模型"。原作 1987 年首版，2003 年修订版重写了导论与第一章；中文版由孙忠、侯纯翻译，海南出版社 2016 年 8 月出版（ISBN 978-7-5443-6500-0）。全书<b>五部分</b>——理论、历史的回顾、历时实验、评述、前瞻，另有序言、导论与结束语。它既不是投资教材，也不是自传：索罗斯真正想做的是为金融市场提供一个能替代"均衡范式"的新框架，并把这套框架放进一段<b>实时记录</b>的实验里接受检验。</p>
+
+    <div class="bookinfo">
+      <div class="meta-card">
+        <dl>
+          <dt>书名</dt><dd>金融炼金术 <span class="small">/ The Alchemy of Finance</span></dd>
+          <dt>副标题</dt><dd>索罗斯的反身性理论及其投资模型</dd>
+          <dt>作者</dt><dd>乔治·索罗斯 <span class="small">George Soros</span></dd>
+          <dt>译者</dt><dd>孙忠 · 侯纯 <span class="small">（海南出版社，2016）</span></dd>
+          <dt>身份</dt><dd>量子基金创始人 · 金融家 · 自视为哲学家</dd>
+          <dt>领域</dt><dd>宏观投资 · 金融市场哲学 · 信贷与管制周期</dd>
+          <dt>首版</dt><dd>1987 年（2003 年修订）</dd>
+          <dt>结构</dt><dd>五部分 · 理论 / 历史 / 实验 / 评述 / 前瞻</dd>
+          <dt>独特之处</dt><dd>第三部分是一份实时投资日记</dd>
+          <dt>关键词</dt><dd>反身性 · 反均衡 · 繁荣—萧条 · 试错法</dd>
+        </dl>
+      </div>
+
+      <div class="right">
+        <p class="thesis">
+          索罗斯的核心主张只有一句：<b>在有思维参与者介入的情境里，参与者的认知与现实互相塑造，
+          因此不存在自然科学意义上的"均衡"。</b>
+          价格不只反映基本面，它还会通过融资、并购、抵押、消费等渠道<b>反过来改变基本面</b>；
+          这个双向反馈一旦形成，就会先自我强化（繁荣），直到无法维持，再急剧自我毁灭（萧条）。
+          所以市场<b>永远处于偏离之中</b>——均衡不是目标，只是周期里一闪而过的瞬间。
+        </p>
+        <div>
+          <span class="chip">#反身性</span>
+          <span class="chip">#反均衡</span>
+          <span class="chip">#人类不确定性原则</span>
+          <span class="chip">#主流偏见</span>
+          <span class="chip">#繁荣—萧条</span>
+          <span class="chip">#信贷周期</span>
+          <span class="chip">#试错法</span>
+          <span class="chip">#可错性</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="eyebrow2" style="justify-content:center"><span class="num">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center">一句话总览</h2>
+    <blockquote>
+      不预测未来，<br/>只试探它，<br/>并随时准备认错。
+    </blockquote>
+    <div class="src">— REFLEXIVITY, NOT PROPHECY</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h">两组核心对照<b class="tail">·</b>均衡与求真</h2>
+    <p class="sub">第一组是本书对主流经济学的正面挑战：市场到底会不会趋向均衡。第二组是它与所有"预测派"的分野：索罗斯不追求预言准确，他追求在错误暴露之前就先改正。</p>
+
+    <div class="dualset">
+
+      <!-- 对照 A -->
+      <div class="setlabel">A · 均衡范式 vs 反身性范式：市场会不会自己走对？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="均衡范式">
+          <div class="tag">EQUILIBRIUM</div>
+          <h3>均衡范式 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（有效市场 · 理性预期）</span></h3>
+          <div class="sub">价格被动反映基本面</div>
+          <p>主流范式认为：<b>基本面单向决定价格</b>，价格围绕价值波动，参与者足够理性时，市场会趋向一个能反映全部信息的均衡。索罗斯的反驳是——这套说法在"纯交换"里成立，搬到金融市场就成了<b>神学概念</b>：它假设价格不影响参与者的态度与基本面，而<b>"价格会影响它们"恰恰是金融市场的本质</b>。</p>
+          <ul>
+            <li><b>因果</b><span>单向：基本面 → 价格</span></li>
+            <li><b>偏差</b><span>被视为随机噪声，长期抵消</span></li>
+            <li><b>用途</b><span>解释与预测</span></li>
+          </ul>
+          <div class="quote">"在金融市场中，均衡更像是一个神学概念。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="反身性范式">
+          <div class="tag">REFLEXIVITY</div>
+          <h3>反身性范式 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（认知函数 × 参与函数）</span></h3>
+          <div class="sub">价格与基本面互相塑造</div>
+          <p>索罗斯把参与者的作用拆成两个函数：试图认识现实的<b>认知函数</b>，与试图改变现实的<b>参与函数</b>。两者同时运作、方向相反，互相干涉——这就是<b>反身性</b>。于是因果不再单向，而是<b>在预期与结果之间来回穿梭</b>（他称之为"历史的拉链"）：过去已封口，未来仍是开的。</p>
+          <ul>
+            <li><b>因果</b><span>双向：价格 ↔ 基本面</span></li>
+            <li><b>偏差</b><span>系统性、会自我强化，直到反转</span></li>
+            <li><b>用途</b><span>识别过程、选择行动</span></li>
+          </ul>
+          <div class="quote">"市场总是错的——它的趋势体现为膨胀期的自我满足，以及衰退期的自我瓦解。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel">B · 科学 vs 炼金术：是要求真，还是要求成？</div>
+      <div class="dual">
+        <div class="sys a" aria-label="科学路径">
+          <div class="tag">SCIENCE</div>
+          <h3>科学路径 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent-2)">（求真 · 可证伪 · 可预测）</span></h3>
+          <div class="sub">先解释，再预言</div>
+          <p>科学理论要求<b>可证伪、可重复、能预测</b>。索罗斯坦率承认：反身性做不到这些——它无法被证伪，同一个过程可能在任何时刻夭折，每一次繁荣—萧条都是独一无二的。因此他<b>不把反身性称为科学理论，而称其为一种哲学／元理论</b>。</p>
+          <ul>
+            <li><b>目标</b><span>真理</span></li>
+            <li><b>方法</b><span>提出假说并检验</span></li>
+            <li><b>局限</b><span>对有思维参与者的过程预测力有限</span></li>
+          </ul>
+          <div class="quote">"人类不确定性原则：我们对世界的认识，无法同时满足真实性、完整性与连贯性。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="炼金术路径">
+          <div class="tag">ALCHEMY</div>
+          <h3>炼金术路径 <span class="en" style="font-size:14px;font-family:var(--serif);font-style:italic;color:var(--accent)">（试错 · 可错性 · 求成）</span></h3>
+          <div class="sub">先试探，再修正</div>
+          <p>"炼金术"这个词是索罗斯故意挑的：<b>不假装自己在做科学，而是坦白地追求操作上的成功</b>。方法是——<b>小仓位试探，对了加码，错了立刻撤</b>；并把<b>可错性</b>当作前提：所有人类构造（概念、商业计划、制度安排）都有缺陷，<b>发现缺陷的人占先手</b>，而当所有人都发现时，拐点就到了。</p>
+          <ul>
+            <li><b>目标</b><span>成功（活下来并盈利）</span></li>
+            <li><b>方法</b><span>试探—检验—修正</span></li>
+            <li><b>纪律</b><span>先承认自己可能错，再谈对</span></li>
+          </ul>
+          <div class="quote">"我之所以还能活着，唯一的解释是：我知道自己什么时候错了。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">04 /</span>KEY CONCEPTS</div>
+    <h2 id="bias-h">十张<b class="tail">书签</b>，把反身性拆成零件</h2>
+    <p class="sub">前五张是理论内核（反身性、反均衡、不确定性、偏见与趋势、繁荣—萧条），中间三张是它在不同场景里的形态（信贷、外汇、里根大循环），最后两张是方法论（实时实验、试错与可错性）。</p>
+
+    <div class="biases">
+
+      <article class="bias c1">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 01</div>
+        <h3>反身性 <span class="en">Reflexivity</span></h3>
+        <p class="mech">全书的地基：在<b>有思维参与者</b>的情境中，参与者一方面试图理解现实（认知功能），另一方面试图改变现实（参与功能）。两个过程方向相反、同时发生、互相干涉，形成<b>没有终点的反馈环</b>。这与自然科学根本不同——那里的观察者站在局外，这里的人既是观众也是演员。</p>
+        <div class="example"><b>例子</b>相信某行业前景好 → 买入推高股价 → 公司高位增发、低成本并购 → 业绩改善"证实"了预期 → 更多人买入。</div>
+      </article>
+
+      <article class="bias c2">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 02</div>
+        <h3>反均衡 <span class="en">Anti-Equilibrium</span></h3>
+        <p class="mech">均衡理论假设价格被动反映供需、最终回归基本面。索罗斯的批评极其锋利：<b>纯交换中均衡有明确定义（出清价格），搬到金融市场就退化成了"如果价格不影响参与者与基本面时应该出清的那个价"</b>——而这个前提恰恰不成立。所以金融市场常见的是<b>远离均衡的状态</b>。</p>
+        <div class="example"><b>例子</b>房价上涨 → 抵押品升值 → 银行更愿放贷 → 更多买房需求 → 房价继续上涨；这不是"回归"，是"远离"。</div>
+      </article>
+
+      <article class="bias c3">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 03</div>
+        <h3>人类不确定性原则 <span class="en">Human Uncertainty</span></h3>
+        <p class="mech">人们对所处世界的认识，<b>不可能同时满足真实性、完整性与连贯性</b>。思维既受现实制约（不能完美决策），又会干扰现实（因而无法控制走向）。这带来的是<b>与随机性不同的、实实在在的未知</b>——不是掷骰子，而是参与者本身在改写概率。</p>
+        <div class="example"><b>例子</b>一份被普遍相信的"房价永不跌"的叙事，本身就会让更多人加杠杆买入——叙事制造了它所描述的现实。</div>
+      </article>
+
+      <article class="bias c4">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 04</div>
+        <h3>主流偏见 × 基本趋势 <span class="en">Bias × Trend</span></h3>
+        <p class="mech">股票市场里有两个变量在互动：<b>主流偏见</b>（参与者集体的认知偏差）与<b>基本趋势</b>（基本面自身的方向）。两者同向时互相加强，价格与基本面一起被推向极端；<b>当偏差大到基本面无法支撑时，趋势反转，偏见随之崩塌</b>。自我强化只在少数时候发生，但一旦发生就足以制造泡沫。</p>
+        <div class="example"><b>例子</b>80 年代并购潮：高市盈率公司融资并购低市盈率公司 → EPS 增厚 → 市盈率更高 → 再并购；并购一断，循环即反。</div>
+      </article>
+
+      <article class="bias c5">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 05</div>
+        <h3>繁荣—萧条序列 <span class="en">Boom/Bust</span></h3>
+        <p class="mech">索罗斯给反身性的典型形态起了这个名字：<b>先是自我强化，最终自我毁灭</b>。它的结构天生<b>不对称</b>——繁荣缓慢渐进地积累，萧条则在某一个触发点上骤然崩落。他也提醒：并非所有反身性都长这样（自由浮动汇率更像波形），别把它当成万能模具。</p>
+        <div class="example"><b>例子</b>信贷繁荣里，借款人的偿债能力"被证实"是因为钱已经借出去了；一旦停止新增贷款，证实立刻变成证伪。</div>
+      </article>
+
+      <article class="bias c6">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 06</div>
+        <h3>信贷与管制的周期 <span class="en">Credit &amp; Regulation</span></h3>
+        <p class="mech">信贷是反身性最典型的载体：<b>放贷与否取决于对偿债能力的预期，而放贷本身会改变偿债能力</b>。同时，监管者的认知也有偏差——繁荣时放松、萧条时收紧，常常<b>放大而不是熨平</b>周期。抵押品价值与放贷意愿互为因果，是这一循环的关键齿轮。</p>
+        <div class="example"><b>例子</b>1980 年代美国储贷协会放松管制 → 高息揽储、投向高风险资产 → 地产下行 → 大批破产。</div>
+      </article>
+
+      <article class="bias c7">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 07</div>
+        <h3>外汇市场的反身性 <span class="en">FX Reflexivity</span></h3>
+        <p class="mech">外汇比股票更"纯粹"：<b>预期几乎是汇率的主导变量</b>。购买力平价、利率平价等传统理论忽略了这一点，因而解释力有限。结论很硬——<b>自由浮动汇率具有内在不稳定性</b>，它倾向于走出波形而非收敛到某个均衡值，并需要政策协调来对冲这种不稳定。</p>
+        <div class="example"><b>例子</b>预期美元升值 → 资本流入推高美元 → 强势本身吸引更多资本 → 直到贸易赤字无法被资本流入覆盖，预期反转。</div>
+      </article>
+
+      <article class="bias c8">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 08</div>
+        <h3>里根的"大循环" <span class="en">Imperial Circle</span></h3>
+        <p class="mech">1982–1985 年美国的宏观案例：减税＋扩军＋高利率 → 资本流入 → <b>强美元</b> → 压住通胀、吸引更多资本 → 支撑财政赤字与经济繁荣。循环自我强化的同时，<b>贸易赤字也在同步膨胀</b>，直到资本流入盖不住它，预期转向，强美元崩塌，最终促成了《广场协议》式的联合干预。</p>
+        <div class="example"><b>例子</b>一个"看起来很成功"的政策，其成功本身在累积导致它失败的条件——这正是反身性在宏观层面的样子。</div>
+      </article>
+
+      <article class="bias c9">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 09</div>
+        <h3>历时实验 <span class="en">Real-Time Experiment</span></h3>
+        <p class="mech">全书最特别的一节：索罗斯把 1985 年 8 月到 1986 年 11 月的<b>真实交易过程逐日记录</b>——先写下判断，再附上当时的持仓与理由，最后回头打分。他要证明的不是"我每次都对"，而是<b>这套框架能在事前识别出正在展开的过程</b>。这种"先预测、后对照"的做法，本身就是给读者的示范。</p>
+        <div class="example"><b>例子</b>把你下一次重大判断连同理由写下来，半年后回看——你会发现真正昂贵的错误，往往是事后被自己合理化的那些。</div>
+      </article>
+
+      <article class="bias c10">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 10</div>
+        <h3>可错性与试错法 <span class="en">Fallibility</span></h3>
+        <p class="mech">索罗斯从波普那里继承的核心：<b>所有人类构造都有缺陷，缺陷往往要等它变成现实时才暴露</b>。所以他不用"对/错"，而用<b>试探—加码—撤退</b>：先小仓位验证假说，对了就加大，错了就立刻离场、不问沉没成本。投资的胜负手不是预测准，而是<b>认错快</b>。</p>
+        <div class="example"><b>例子</b>与其问"我能涨多少"，不如先写"如果发生 X，就说明我的假设错了"——X 一到，无条件执行。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">05 /</span>CHAPTER MAP</div>
+    <h2 id="map-h">五部分<b class="tail">一条论证链</b> · 脉络</h2>
+    <p class="sub">结构本身就是一次完整的科学尝试：先提出理论，再用历史案例检验它，接着做一场实时实验，然后自己给实验打分，最后推及对市场与管制的看法。（各版本章序与编号略有出入，此处按 2016 年中文修订版的五部分归并。）</p>
+
+    <div class="chaptermap" role="list">
+      <article class="part p1" role="listitem">
+        <div class="pin">理论 · 一</div>
+        <h3>反身性是怎么运作的</h3>
+        <div class="range">第 1 部分 · 第 1–3 章</div>
+        <ul class="chapters">
+          <li>反身性理论：认知功能与参与功能</li>
+          <li>股票市场中的反身性（主流偏见 × 基本趋势）</li>
+          <li>外汇市场中的反身性</li>
+          <li>信贷与管制的周期（繁荣—萧条的原型）</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem">
+        <div class="pin">历史 · 二</div>
+        <h3>用它重读 80 年代</h3>
+        <div class="range">第 2 部分 · 第 4–8 章</div>
+        <ul class="chapters">
+          <li>国际债务问题：主权债务"无风险"的集体偏见</li>
+          <li>贷款的集团体制：银行羊群效应</li>
+          <li>里根的"大循环"：强美元的自我强化与逆转</li>
+          <li>银行体系的演进 / 美国的"公司大精简"</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem">
+        <div class="pin">实验 · 三</div>
+        <h3>一场实时记录的交易</h3>
+        <div class="range">第 3 部分 · 第 9–13 章</div>
+        <ul class="chapters">
+          <li>起点：1985 年 8 月（写下初始判断与持仓）</li>
+          <li>第一阶段：1985.8–12</li>
+          <li>控制对照阶段：1986.1–7</li>
+          <li>第二阶段：1986.7–11 → 结论</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem">
+        <div class="pin">评述 · 四</div>
+        <h3>给自己的实验打分</h3>
+        <div class="range">第 4 部分 · 第 14 章起</div>
+        <ul class="chapters">
+          <li>金融炼金术的视界：实验评判</li>
+          <li>哪些判断成立、哪些只是运气</li>
+          <li>社会科学的窘境：为什么它无法成为科学</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem">
+        <div class="pin">前瞻 · 五</div>
+        <h3>从市场到制度</h3>
+        <div class="range">第 5 部分 + 结束语</div>
+        <ul class="chapters">
+          <li>自由市场与管制：市场原教旨主义的危险</li>
+          <li>走向国际性的中央银行</li>
+          <li>全面改革的悖论</li>
+          <li>1987 年大崩盘 / 结束语</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">06 /</span>QUOTES</div>
+    <h2 id="quotes-h">五句值得抄在笔记本上的话</h2>
+    <p class="sub">以下为书中观点的中文转述，尽量保留原意，未逐字照搬；中译本在关键处的措辞与英文原文存在争议，重要概念建议对照原文理解。</p>
+
+    <div class="quotes">
+
+      <article class="quote-card qc1">
+        <span class="qmark">“</span>
+        <p>在金融市场中，<br/>均衡更像是一个<br/>神学概念。</p>
+        <div class="src">— 关于"反均衡"</div>
+      </article>
+
+      <article class="quote-card qc2">
+        <span class="qmark">“</span>
+        <p>市场总是错的：<br/>膨胀期的自我满足，<br/>与衰退期的自我瓦解。</p>
+        <div class="src">— 关于繁荣—萧条</div>
+      </article>
+
+      <article class="quote-card qc3">
+        <span class="qmark">“</span>
+        <p>所有的人类构造<br/>都有缺陷——<br/>意识到它，你就领先一步。</p>
+        <div class="src">— 关于可错性</div>
+      </article>
+
+      <article class="quote-card qc4">
+        <span class="qmark">“</span>
+        <p>过去已经盖棺定论，<br/>而未来是自由的。<br/>（历史的拉链）</p>
+        <div class="src">— 关于预期与结果的双向反馈</div>
+      </article>
+
+      <article class="quote-card qc5">
+        <span class="qmark">“</span>
+        <p>我用"炼金术"这个词：<br/>我并不假装在做科学，<br/>我只是想成功。</p>
+        <div class="src">— 关于"炼金术"这个书名</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h">可以立刻落地的<b class="tail">八条</b>练习</h2>
+    <p class="sub">这本书不给你买卖规则，但它给你一副"看过程"的眼镜。下面八条把它翻译成个人可执行的动作。（括号里标注了它来自哪一张书签。）</p>
+
+    <div class="actions">
+
+      <div class="action">
+        <div class="ic">01</div>
+        <div>
+          <h4>为每个持仓写下"我相信、但市场还没认同"的假设</h4>
+          <p>一句话写完，必须包含机制（为什么会兑现）。如果写不出机制，说明你持有的是情绪而不是判断。</p>
+          <span class="tag">↳ 可错性与试错法</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">02</div>
+        <div>
+          <h4>同时写下"证伪条件"，并提前约定动作</h4>
+          <p>格式：如果发生 X，就说明我错了，届时无条件减仓。把它写在买入之前——事后再写，一定会被合理化覆盖。</p>
+          <span class="tag">↳ 可错性与试错法</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">03</div>
+        <div>
+          <h4>画出你所在标的的正反馈环路</h4>
+          <p>问一句：<b>价格上涨会改变谁的行为，从而改变基本面本身？</b>（融资、并购、抵押、消费、跟风）画不出来，就不存在反身性，别硬套。</p>
+          <span class="tag">↳ 反身性</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">04</div>
+        <div>
+          <h4>检查信贷与抵押品这条链条</h4>
+          <p>繁荣期的信号是"抵押品升值 → 放贷更松 → 抵押品进一步升值"。问自己：这个循环靠什么新增资金维持？什么时候会停？</p>
+          <span class="tag">↳ 信贷与管制的周期</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">05</div>
+        <div>
+          <h4>列出三个"转折点特征"当作检查清单</h4>
+          <p>例如：价格与基本面背离持续扩大、维持趋势所需的增量资金越来越大、叙事从"为什么涨"变成"为什么不涨"。出现两项以上就降低仓位而非加仓。</p>
+          <span class="tag">↳ 繁荣—萧条序列</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">06</div>
+        <div>
+          <h4>改用"试探—加码—撤退"代替一次性下注</h4>
+          <p>先小仓位验证假说，对了再加，错了立刻撤、不看成本价。把"分批"当成信息收集，而不是安慰剂。</p>
+          <span class="tag">↳ 可错性与试错法</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">07</div>
+        <div>
+          <h4>建立一本"实时决策日志"</h4>
+          <p>模仿第三部分：每次重大判断，当场写下理由、预期与时间点，半年后回看打分。你会看清自己的错误模式，而不是只记得对的几次。</p>
+          <span class="tag">↳ 历时实验</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">08</div>
+        <div>
+          <h4>把"稳定"从假设降级为待检验项</h4>
+          <p>对汇率、房价、任何靠预期支撑的价格，默认它<b>内在不稳定</b>、会走出波形而非收敛。别把已经持续很久的趋势当成稳态的证据。</p>
+          <span class="tag">↳ 外汇市场的反身性</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">08 /</span>FOR WHOM</div>
+    <h2 id="who-h">适合谁读 / 不适合谁读</h2>
+    <p class="sub">它解决的是"泡沫与周期是怎么形成的"。如果你想要的是一份能照做的操作手册，这本书会让你非常难受——而那恰恰是它最诚实的地方。</p>
+
+    <div class="readers">
+      <article class="who yes">
+        <h3><span class="swatch"></span>尤其推荐</h3>
+        <ul>
+          <li>想弄清<b>泡沫与崩盘的内在机制</b>，而不满足于"情绪面"三个字的人</li>
+          <li>对有效市场假说、理性预期长期存疑，想看一套系统替代方案的人</li>
+          <li>做宏观、周期、地产、信贷相关判断，需要<b>过程视角</b>的人</li>
+          <li>亲身经历过一轮牛熊，想复盘"当时到底发生了什么"的人</li>
+          <li>读过 NO.08《投资最重要的事》后，想再深挖一层<b>"周期为什么存在"</b>的人</li>
+          <li>喜欢把投资当思想实验、能容忍抽象与自我质疑的人</li>
+        </ul>
+      </article>
+
+      <article class="who no">
+        <h3><span class="swatch"></span>不推荐 / 慎读</h3>
+        <ul>
+          <li>想要<b>明确买卖规则与选股方法</b>的人：本书刻意不提供，索罗斯的方法不可复制</li>
+          <li>刚入门、先要搭好资产配置框架的人：建议先看 NO.15《持续买入》与 NO.18《简单致富》</li>
+          <li>对哲学思辨不耐烦的人：前半部抽象、术语密集，读起来会很挫败</li>
+          <li>只想被验证已有观点的人：本书反复强调"你可能错了"，读着并不舒服</li>
+          <li><b>中文读者需留意译本</b>：关键段落（尤其导论）的译文与英文原文存在争议，建议新版导论多读几遍，有条件对照原文</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="mark">
+      "过去已经盖棺定论，而未来是自由的。"
+    </div>
+    <div class="rule"></div>
+    <div class="meta">
+      读书笔记 · 《金融炼金术：索罗斯的反身性理论及其投资模型》· 乔治·索罗斯<br/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
