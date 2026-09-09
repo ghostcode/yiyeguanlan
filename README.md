@@ -35,8 +35,9 @@ yiyeguanlan/
 ├── the-alchemy-of-finance.html       # NO.19《金融炼金术》· 主色 炼金紫 #70307c
 ├── jensen-huang-the-thinking-machine.html
                                       # NO.20《黄仁勋：英伟达之芯》· 主色 新绿 #3f6f29
-└── demis-hassabis-the-infinity-machine.html
-                                      # NO.21《哈萨比斯：谷歌AI之脑》· 主色 紫棠 #8e2f7b
+├── demis-hassabis-the-infinity-machine.html
+│                                     # NO.21《哈萨比斯：谷歌AI之脑》· 主色 紫棠 #8e2f7b
+└── jian-zhu-ke-ling.html             # NO.22《谏逐客令》· 主色 竹青 #3f7a4e
 ```
 
 - `index.html`：系列入口。展示书架（书卡直链到各卷）、**分类筛选**、系列说明、页脚。
@@ -48,6 +49,7 @@ yiyeguanlan/
 
 | 分类 | `data-cat` | 卷次 |
 | --- | --- | --- |
+| 经典名篇 | `classic` | NO.22《谏逐客令》 |
 | 财富投资 | `wealth` | NO.03《纳瓦尔宝典》· NO.04《金钱心理学》· NO.07《秒懂金融》· NO.08《投资最重要的事》· NO.09《穷查理宝典》· NO.14《邻家的百万富翁》· NO.15《持续买入》· NO.16《哈利·布朗的永久投资组合》· NO.18《简单致富》· NO.19《金融炼金术》 |
 | 人物传记 | `biography` | NO.17《硅谷钢铁侠》· NO.20《黄仁勋：英伟达之芯》· NO.21《哈萨比斯：谷歌AI之脑》 |
 | 心智认知 | `mind` | NO.01《思考，快与慢》· NO.06《认知觉醒》· NO.10《刻意练习》 |

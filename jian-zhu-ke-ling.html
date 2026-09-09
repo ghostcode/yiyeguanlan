@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="rnGqByViAZL9eDXlsbnXTZ">
+
+<head data-page-node-id="WoqxVRLiVsVrsZ3VTFd9r5">
+<meta charset="utf-8" data-page-node-id="aA7edUyqqZiznq3RLlxT42" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" data-page-node-id="hBxv2H1a31ETcqd7MvE1Bs" />
+<title>《谏逐客令》名篇笔记</title>
+<meta name="description" content="李斯《谏逐客书》（《谏逐客令》）：秦宗室借郑国渠事请一切逐客，李斯在被逐途中上此书，历举穆公、孝公、惠王、昭王四君用客之功，以"重物轻人"之矛盾反问秦王，终使逐客令得除。一篇八百字的奏疏，写尽了说服的全部技巧。" data-page-node-id="743LDm8ZfVJUCDwU6GDSPC" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为竹青，呼应汗青竹简）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #3f7a4e;   /* 主书签色：竹青 */
+  --accent-2:     #b0903f;   /* 古金（点缀） */
+  --teal:         #3d5a6c;   /* 黛蓝 */
+  --indigo:       #4b4a7d;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #6b4f2a;   /* 赭褐 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(63,122,78,.13), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(63,122,78,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#0f1f14 url("https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#0f1f14;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(15,31,20,.22) 0%, rgba(15,31,20,.06) 35%, rgba(15,31,20,.84) 100%),
+    linear-gradient(90deg, rgba(15,31,20,.66) 0%, rgba(15,31,20,.22) 55%, rgba(15,31,20,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f2efdf;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 名篇信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }
+.dual .sys.b .tag{ background:var(--accent) }
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body data-page-node-id="E6d0oXEHtNLU3Q7DWaAEye">
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner" data-page-node-id="IIH5TyUlha2lWdMPPUQoWH">
+  <div class="topbar-inner" data-page-node-id="0IB37EfyDd9jQhYFskQUMD">
+    <a href="index.html" class="home" aria-label="返回系列首页" data-page-node-id="cMXdnCCT1ZRTiEvHTlITzf">一页观澜</a>
+    <div class="brand" data-page-node-id="9eHGvRNcif5wzX2miP7iuM"><span class="dot" data-page-node-id="MRsIVSzvOMoqZrfwtw4zxv"></span> 阅读笔记 · 谏逐客令</div>
+    <nav aria-label="目录" data-page-node-id="Cg8JFngk6846sqh60JQiVt">
+      <a href="#info" data-page-node-id="fKEWHl6T1zyIKta68PFykw">名篇</a>
+      <a href="#one" data-page-node-id="JoYgxQ12NgLt0yC6t7ROrI">总览</a>
+      <a href="#dual" data-page-node-id="LYT6cona86taaHuviBMSry">两组对照</a>
+      <a href="#bias" data-page-node-id="iSTb4PYkx16it2g6NLNV4B">论证拆解</a>
+      <a href="#map" data-page-node-id="RSMvq7347KOkqzAhreXMBG">脉络</a>
+      <a href="#quotes" data-page-node-id="1KquRA1KqcOmWOpI83GQ97">金句</a>
+      <a href="#action" data-page-node-id="hNdl6a8eLD1GhYRod4su9I">行动</a>
+      <a href="#who" data-page-node-id="QWBZxKtXFJ9rZ22SQPoQy1">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="ZwrDP9dKlnZo8Hn8TDwli8">
+  <div class="hero-img" role="img" aria-label="雨后竹林，竹叶上挂着水珠，象征书写于竹简之上的谏书" data-page-node-id="YCvO3eaBwP5DjutPBHdBmI"></div>
+  <div class="ribbon" data-page-node-id="xgaTjfPqAt04ZdkjZhcJ4q">NO. 22 · 经典名篇</div>
+  <div class="hero-inner" data-page-node-id="D6bzuSfanRy7hVabqZvfqA">
+    <div class="eyebrow" data-page-node-id="F8fQT10BDsC5RptxICf1t4"><span class="line" data-page-node-id="HLiDnn3gPYpAPNxTuHnA6Z"></span>READING NOTES</div>
+    <h1 data-page-node-id="yvyqn9lB5g7fXPDzQscbEK">
+      谏逐客令
+      <span class="sub" data-page-node-id="DMFUFD9RSLO4HTBfoOlTCD">JIAN ZHU KE SHU · 李斯 · 前 237</span>
+    </h1>
+    <p class="lede" data-page-node-id="QlgHLCVcDBYCoF5Ru8MLt4">
+      一篇八百来字的奏疏，作者本人正被押在出境的路上。
+      他没有辩解自己忠不忠，只做了一件事——<b data-page-node-id="9ihBGpW5B9M7WPVFZy6RoG">把秦王已有的行为摊开给他看</b>：
+      昆山之玉、随和之宝、太阿之剑、郑卫之音，无一产于秦，却无一不被珍爱。
+      于是"逐客"这件事，第一次显得不像政策，而像一个<b data-page-node-id="CmJWma3Bx4dQ0AOdQXvaFc">说不通的矛盾</b>。
+    </p>
+    <div class="byline" data-page-node-id="MTNrG8q5EgAEHo99gZCl9q">
+      <span data-page-node-id="Fsv0EvxSmxrHV9ZZUyHbxE"><b data-page-node-id="pvCrEjp1njcmbAmOd60vYB">作者</b> 李斯（约前 284—前 208，楚上蔡人）</span>
+      <span data-page-node-id="OLADsVhfTiABicGjACBGBu"><b data-page-node-id="GPsQ5nl1rghiVBYqCM649W">出处</b> 《史记·李斯列传》</span>
+      <span data-page-node-id="VE1aryJgIcTeiywdjvBGGA"><b data-page-node-id="4QelAsGZpxwUTwuV6PiSpY">时间</b> 秦王政十年（公元前 237 年）</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 名篇信息 ============ -->
+<section id="info" aria-labelledby="info-h" data-page-node-id="Cv4bGMY9lclhD6YwHf4JCK">
+  <div class="wrap" data-page-node-id="FCaUA2eevcik2GniwAHuNB">
+    <div class="eyebrow2" data-page-node-id="A5CVlo7nu4z6eS8wtLHECB"><span class="num" data-page-node-id="Gr2rsnaEnzmdRDGGleAGfH">01 /</span>关于这篇名篇</div>
+    <h2 id="info-h" data-page-node-id="hdyQ3UrwC9BkM1TSap1EKW">被逐出境的路上，<b class="tail" data-page-node-id="domFpgi76QrOaFcQaYJYPI">写了一封信把命令劝了回来</b></h2>
+    <p class="sub" data-page-node-id="c2tVtVFL845Df4ONg5wQg1">《谏逐客书》又名《上秦王书》《上书谏逐客》《上书秦始皇》，见于《史记·李斯列传》，是秦代李斯写给秦王嬴政的一篇奏议。事情起于郑国渠：韩国派水工郑国入秦，建议开凿引泾入洛的大渠，本意是消耗秦国国力，使其无暇东进；工程进行中被发觉，秦宗室大臣于是借题发挥，说"诸侯人来事秦者，大抵为其主游间于秦耳"，请<b data-page-node-id="yzBHJUVc4ro8rhpxZDSsBI">一切逐客</b>。楚国人李斯也在被逐之列，于途中上此书。秦王读后<b data-page-node-id="87t8sfubAyge0IkP821wtH">除逐客之令，复李斯官</b>，此后长期倚重其谋。这不是一篇抒情文章，而是一次高风险、有明确目标的说服——作者本人的前途与秦国的走向，都压在这八百字上。</p>
+
+    <div class="bookinfo" data-page-node-id="mZNJHAAdq8i3vH0PegypZR">
+      <div class="meta-card" data-page-node-id="AQlpS8YaWgmQAyn4u58gGC">
+        <dl data-page-node-id="umPw7nDquv8IroNXbK67we">
+          <dt data-page-node-id="ZAFqdllCGBFpNTiGrMpIBu">篇名</dt><dd data-page-node-id="6CuVXBPGVLEkuNx30sBObX">谏逐客令 <span class="small" data-page-node-id="KYNIolm40jnPt7GBCO94fR">/ 谏逐客书 · 上秦王书</span></dd>
+          <dt data-page-node-id="ALK4rG4EjpEtB7uH1GEY5V">作者</dt><dd data-page-node-id="wxJa5lU6QrbQhEu5nMCIK8">李斯 <span class="small" data-page-node-id="uoifQVE5jhAEgtCY4yKXh5">（约前 284—前 208，楚国上蔡人）</span></dd>
+          <dt data-page-node-id="04VAYhCQUPuigshJInICh4">体裁</dt><dd data-page-node-id="Qd4qqcaXVl2vxRUd7siK76">奏疏 · 政论散文 <span class="small" data-page-node-id="dG1Zkgc1EN1cdlCYIjvusr">（一说兼有辞赋铺排之风）</span></dd>
+          <dt data-page-node-id="VBZ19O8sup9xSNDKFanWyh">出处</dt><dd data-page-node-id="mtR5pAxDgRZHYCGL6CM8nZ">《史记·李斯列传》 <span class="small" data-page-node-id="jGMfBPbMpMKNjXpYIv14wP">（另见《古文观止》《全秦文》）</span></dd>
+          <dt data-page-node-id="FAi2f8tk6VWm5Ir6p6p1ar">时间</dt><dd data-page-node-id="aLraaEQEnoST0vRpIPEvdS">秦王政十年 <span class="small" data-page-node-id="Ma1IKgfBjzjByMeC5zhktN">公元前 237 年</span></dd>
+          <dt data-page-node-id="EU2X7CgNYnRCVtcvQcxgoc">缘起</dt><dd data-page-node-id="FUeh8NVZt0xuDHzJdCla0a">郑国渠事泄，宗室大臣请"一切逐客"</dd>
+          <dt data-page-node-id="RzjC7VjChMGcivnbMHhK3o">篇幅</dt><dd data-page-node-id="W2xiX4fDKiXNMV9tfXyETc">约 800 字 <span class="small" data-page-node-id="CDGynXhtqoGbv8R5HxaKna">（四段，一气呵成）</span></dd>
+          <dt data-page-node-id="CuA5BYR1ATvr6oB0vWORHg">结果</dt><dd data-page-node-id="zcmZA0gEf7CMx0NuyTlsDY">秦王除逐客令，复李斯官，卒用其计</dd>
+          <dt data-page-node-id="Ww0LC9ONtUBeCK5Ecw3qYj">领域</dt><dd data-page-node-id="ajZazL78TgSKsjchKiNYCP">古典散文 · 说服术 · 人才观 · 决策</dd>
+          <dt data-page-node-id="L3adhwv7DPN73bM0rwbWDS">关键词</dt><dd data-page-node-id="q5JcP9Dbxr6DTMJR63TmD7">纳客 · 重物轻人 · 太山不让土壤 · 藉寇兵而赍盗粮</dd>
+        </dl>
+      </div>
+
+      <div class="right" data-page-node-id="OG9BstrvmzWDp7ixk5IZpv">
+        <p class="thesis" data-page-node-id="BZF5pHB7IRuz49uxLOnsZp">
+          这篇奏疏真正的锋利之处在于：<b data-page-node-id="VGjPTXNtbY5SnTQOR0ftRT">它一句也没有为"客卿"辩护人格，只算利害。</b>
+          第一段摆秦国自己四代君主用客而强的史实，第二段摆秦王自己爱异国珠玉声色的事实，
+          第三段讲"太山不让土壤"的道理，第四段落到一个谁都承受不起的后果——
+          <b data-page-node-id="TtVewiUzL0ry0A0fFHOsG8">逐客等于把人才送到敌国去，是"藉寇兵而赍盗粮"。</b>
+          通篇不说"你应该怎样"，只说"你想要的那件事，会因此办不成"。
+        </p>
+        <div data-page-node-id="rLGYsZOebNAE5zBJQ4SPHQ">
+          <span class="chip" data-page-node-id="Vrhdi7LhsOKr5ys3KGLdnE">#谏逐客书</span>
+          <span class="chip" data-page-node-id="ebieFZiRBBSVd1yJnAVEiJ">#李斯</span>
+          <span class="chip" data-page-node-id="8c0JqX4oaq9mKCC1ZKNEFc">#郑国渠</span>
+          <span class="chip" data-page-node-id="XdF7Fjsurj0zNGWwm8vAVc">#说服术</span>
+          <span class="chip" data-page-node-id="lg0tce0ccPiW5cwI38yH7N">#重物轻人</span>
+          <span class="chip" data-page-node-id="cVYDWHixHEUyHm766UAeP7">#太山不让土壤</span>
+          <span class="chip" data-page-node-id="Lf9BwwIU17TlU0P073rgZB">#藉寇兵而赍盗粮</span>
+          <span class="chip" data-page-node-id="1uTyVAYTqD6a0yxJlXa6YV">#古文观止</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h" data-page-node-id="xayVNE3c8YhGRMxnMlcKuJ">
+  <div class="wrap" style="padding-top:0;padding-bottom:0" data-page-node-id="gxxwsjQqBaryBUWaHSrrOh">
+    <div class="eyebrow2" style="justify-content:center" data-page-node-id="7xamGxFPq0TPIVBWs8wAyJ"><span class="num" data-page-node-id="3fBvpMHyZfMfBVnOo28AoI">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center" data-page-node-id="GDMHvGsEYxgQxyeKissqiy">一句话总览</h2>
+    <blockquote data-page-node-id="zafkQMmQwNhkLNDlQywq7l">
+      逐客不是防间谍，<br data-page-node-id="9LYznn3l3FDxQmuQIhkiJc"/>是把人才<br data-page-node-id="hNgzYa9pMAvFf1fMP520qg"/>送去敌国。
+    </blockquote>
+    <div class="src" data-page-node-id="BmrDDpRMvomeVACQWQLkeI">— 内自虚而外树怨于诸侯，求国无危，不可得也</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h" data-page-node-id="dJo2WvOb2uDE6664V9b5di">
+  <div class="wrap" data-page-node-id="lMvehn3my1CGmgqDZY2eDf">
+    <div class="eyebrow2" data-page-node-id="sGZXmknS2IhlxCDFbLjY06"><span class="num" data-page-node-id="97OfdZKvuEX2a1AAOLj6yh">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h" data-page-node-id="eYsHhMXq8dBEOUYGmJl9xY">两组核心对照<b class="tail" data-page-node-id="Cq8asCC8Fovg6GrhsXQg6M">·</b>纳与逐，物与人</h2>
+    <p class="sub" data-page-node-id="5PqjIdg6OXv2gGXG1oiVHi">第一组是政策层面的对照：秦国四代君主用客而强，逐客则是把这份力量推给对手。第二组是全文最狠的一刀——同一个秦王，对物和对人，用的是两套完全相反的标准。</p>
+
+    <div class="dualset" data-page-node-id="6xXhkyvHs0jw80aDeL3GBW">
+
+      <!-- 对照 A -->
+      <div class="setlabel" data-page-node-id="MxztIMjRKHlCcJVd9DlHeg">A · 纳客 vs 逐客：同一批人，可以是帝业的基石，也可以是敌国的资粮</div>
+      <div class="dual" data-page-node-id="oApiNWqVR2LoFUNuCWcPR8">
+        <div class="sys a" aria-label="纳客" data-page-node-id="RrqsXs9yiMfTlgIlAAcRsW">
+          <div class="tag" data-page-node-id="N4OGQUXWihk2nbhQHoiLL1">纳 · 史</div>
+          <h3 data-page-node-id="FoXvN1tPV5Is34mCFqCsLk">四君用客，秦因此强</h3>
+          <div class="sub" data-page-node-id="6YnvURz5PdrtBQEIAGXIfv">穆公 · 孝公 · 惠王 · 昭王</div>
+          <p data-page-node-id="4ugQkHc9uTA5eQrJRkNSPw">李斯没有讲道理，先讲<b data-page-node-id="oEwUTbAe96GDyZTfpLDFU2">秦国自己的历史</b>：穆公得由余、百里奚、蹇叔、丕豹、公孙支，"并国二十，遂霸西戎"；孝公用商鞅，"民以殷盛，国以富强"；惠王用张仪，"遂散六国之从"；昭王得范雎，"蚕食诸侯，使秦成帝业"。四人皆非秦人。</p>
+          <ul data-page-node-id="tdZWa2zWNaHv6EMJLKVf3V">
+            <li data-page-node-id="x3wnGGze0I0sF5Y5VRWlIV"><b data-page-node-id="4J2aVRkEDTrDQXViW5u9Ow">论据说服力</b><span data-page-node-id="VZP9Lc7snrTYOzUC2fP0mN">全部取自秦国的官方记忆，无法被反驳</span></li>
+            <li data-page-node-id="JgA5fiqmk96sFJ9rIghHDC"><b data-page-node-id="AN0SiMvKpkD3xvjQXzCE6v">反问</b><span data-page-node-id="aoigM43rfP3HzAbwxv6Hms">"客何负于秦哉"——客卿到底哪里对不起秦国</span></li>
+            <li data-page-node-id="oglQbok6bHnLt4fLZDZPMf"><b data-page-node-id="bGSD4mAlNpqEYuCuf8Yjrw">反证</b><span data-page-node-id="VgCo2UN3ArBn6Htp8xJmbS">向使四君却客而不内，是使国无富利之实，而秦无强大之名也</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="o8PhBiufG33dLJokGBIK6h">"此四君者，皆以客之功。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="P5eE8nUY29XcTtDBFv9E9l">vs</div>
+
+        <div class="sys b" aria-label="逐客" data-page-node-id="uxbzMU9zpB2OdlXm9nmTl2">
+          <div class="tag" data-page-node-id="7dm7GJCuMW2T7Sgt3A7bXx">逐 · 后果</div>
+          <h3 data-page-node-id="mq3jaEwn1xLvLvsOL16ttE">逐客以资敌国</h3>
+          <div class="sub" data-page-node-id="YcMYzL4rqQfyObvmYHhLpz">弃黔首 · 却宾客 · 树怨于诸侯</div>
+          <p data-page-node-id="YV1c0tnK1EJzqF9gtSaqkZ">文章后半段把后果算到底：被逐的人不会消失，他们会<b data-page-node-id="a9P0EJEOvlvGDMaFGBO4T1">带着对秦国的了解去投奔别国</b>。"弃黔首以资敌国，却宾客以业诸侯，使天下之士退而不敢西向，裹足不入秦"——结果是<b data-page-node-id="VZMVw5Mii7SoFzbRMpf0Be">内自虚而外树怨</b>，秦国既少了人，又多了敌人。</p>
+          <ul data-page-node-id="EFtzX1zGvwIeissJvSShg1">
+            <li data-page-node-id="zB5XmZwkzfIMuXML6AREmh"><b data-page-node-id="QxQtIvVsLCWfAbJHHwTsDC">短期</b><span data-page-node-id="y3akqAsPyCSMvp395TZ7S2">消除了几个可能的间谍</span></li>
+            <li data-page-node-id="JLVYpYhFRJN37QN4KLnYLj"><b data-page-node-id="MLw8JBokuRG5YdFF5FFGAX">长期</b><span data-page-node-id="eMdyP79ICK5WizxXmkIkyz">人才断流，且把人力资源转让给对手</span></li>
+            <li data-page-node-id="BttE6gS1UwscDE7SuNynYo"><b data-page-node-id="AzAeUXEQxLj5UVTDAMmNGn">结论</b><span data-page-node-id="zW0ALHDESKlZcjjftgiUAi">求国无危，不可得也</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="eQGUmqC43Cmf2k80qDN6Oo">"此所谓'藉寇兵而赍盗粮'者也。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel" data-page-node-id="n7GiHeYhEFReanhpwWvCYZ">B · 重物 vs 轻人：同一道门槛，对物敞开，对人关上</div>
+      <div class="dual" data-page-node-id="JP8pCkSOvgjyorI5rI0fKe">
+        <div class="sys a" aria-label="重物" data-page-node-id="q4xwccT77MmlN1PkeBHHVd">
+          <div class="tag" data-page-node-id="GjVgK918EAuRfXOq2cMTqR">物</div>
+          <h3 data-page-node-id="JtIqhcSMbR3Zt7zXCS3BE1">昆山之玉、随和之宝、太阿之剑、郑卫之音</h3>
+          <div class="sub" data-page-node-id="BQpBPtXu17I5eQXGGPIDiq">秦不生一焉，而陛下说之</div>
+          <p data-page-node-id="gsKNji5WQCDvJ4L4Nc0lKp">李斯一口气铺排出秦王珍爱的一切：昆山之玉、随和之宝、明月之珠、太阿之剑、纤离之马、翠凤之旗、灵鼍之鼓——<b data-page-node-id="qSlwPOI4IvZLBA54u41qCx">没有一样产自秦国</b>。再看日用：夜光之璧饰朝廷、犀象之器为玩好、郑卫之女充后宫、江南金锡西蜀丹青为用；再看音乐：弃击瓮叩缶而就郑卫，退弹筝而取韶虞。</p>
+          <ul data-page-node-id="cgbbX2qspAR76ls4ERjKMu">
+            <li data-page-node-id="E61BCtQXDOnZr4cupaIwWp"><b data-page-node-id="UZLgAjcg2clXEeT6lWUZ6E">标准</b><span data-page-node-id="cjwNPbh0yvN2xW0oVyWsrb">不问出处，只问好不好用、悦不悦目</span></li>
+            <li data-page-node-id="7Ve8UZ0YSeCTTTHORB79Pa"><b data-page-node-id="4EiB7XiSET4v4yUTRD1TuS">理由</b><span data-page-node-id="ByDBORlZkNLjeBRrGNcNsr">快意当前，适观而已矣</span></li>
+            <li data-page-node-id="eHSXtguzRLPnkOFRFfGZXB"><b data-page-node-id="VU2RA7pJ2aKJjyp5JVnyde">性质</b><span data-page-node-id="ljm10cI8BratyWJpPwRLtf">对"异国产"完全开放，毫无戒心</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="K9MTcPPJo52yZFbyzskBIa">"若是者何也？快意当前，适观而已矣。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true" data-page-node-id="dr2JOxSGL7xrYU85khdHfA">vs</div>
+
+        <div class="sys b" aria-label="轻人" data-page-node-id="H2h8P11QTks5iT8OJFBnuG">
+          <div class="tag" data-page-node-id="Pen3Av7sTmjIBhJDPAixhb">人</div>
+          <h3 data-page-node-id="DvEDIPBBdteFyqHcNjGjrr">不问可否，不论曲直，非秦者去</h3>
+          <div class="sub" data-page-node-id="1Wt3laQYnk0KbrhdU4gmDF">今取人则不然</div>
+          <p data-page-node-id="JXCU7P3djbrdrbAEr03xZd">同一位秦王，到了选人时，标准忽然变了：<b data-page-node-id="90vuFmeO3faFiqCtirU7CG">不问能力，不问是非，只看籍贯</b>。李斯把两栏并排放，矛盾自己就浮出水面——"然则是所重者在乎色乐珠玉，而所轻者在乎人民也"。他没有骂秦王昏庸，只让他看见<b data-page-node-id="9GOTz7N04DnyptyJztDW72">自己的行为与自己的野心不自洽</b>。</p>
+          <ul data-page-node-id="QdNXAfGOrltjHX2wOeUnTu">
+            <li data-page-node-id="sg8TXYBh4NAexqYNaT40Fy"><b data-page-node-id="fXYrdhpuP7N64JoYYwgeb9">标准</b><span data-page-node-id="5l8GlTF9py9AiQXkxteUGx">不问可否、不论曲直，非秦者去，为客者逐</span></li>
+            <li data-page-node-id="zeUzdktBvH2Wtgt3yUpr6W"><b data-page-node-id="Q9a9O4EFaNmOSeOmRDUcrY">代价</b><span data-page-node-id="km8wPW6pAr1L7zyLaomWe5">所重者色乐珠玉，所轻者人民</span></li>
+            <li data-page-node-id="gajjBVRIpiKHFlQgqZLQxx"><b data-page-node-id="SXXsRujpvJS0iFxKQTFEq7">定性</b><span data-page-node-id="iYPwCYfVy5A8uhCc4nltUT">此非所以跨海内、制诸侯之术也</span></li>
+          </ul>
+          <div class="quote" data-page-node-id="TSpZSpPlksGbjolZZF1VTH">"此非所以跨海内、制诸侯之术也。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h" data-page-node-id="bdL5vjqIvsFy8mMY0ngvOz">
+  <div class="wrap" data-page-node-id="Gt03Vb6mobvF3v6E8Rpuoc">
+    <div class="eyebrow2" data-page-node-id="uuZK5FMWCuoribwW4cQ65n"><span class="num" data-page-node-id="pi8fMW84PdOUzI9MMtSKte">04 /</span>ARGUMENTS</div>
+    <h2 id="bias-h" data-page-node-id="pTHH5BBvHX46jTFhNfTgoy">十张<b class="tail" data-page-node-id="DRo9CLxLlzI7VDB3pRNLoz">书签</b>，把八百字拆成零件</h2>
+    <p class="sub" data-page-node-id="fPQDVAJcCQKtPGdhEmEHiL">前四张是他怎么把门打开的（卸力、史实、反证、反问），中间四张是他怎么让人无处可躲（铺排、归谬、双标、定性），最后两张是他怎么把话说圆（比喻、后果）。</p>
+
+    <div class="biases" data-page-node-id="PIGmn4d8fiPvYaBodwymPq">
+
+      <article class="bias c1" data-page-node-id="PffjwwGBVjatTZoj3ilJeC">
+        <div class="ribbon-top" data-page-node-id="wPaSS8BpmyGnUoL0sE1yb1"></div>
+        <div class="num" data-page-node-id="eEQtAmJhhjuunxPZHy52WA">N° 01</div>
+        <h3 data-page-node-id="Q8S9HbrcWaGy5zV9UUxUBt">"臣闻吏议逐客，窃以为过矣" <span class="en" data-page-node-id="gOA6rD6bQYsATDpZg9Tivg">Opening</span></h3>
+        <p class="mech" data-page-node-id="sPKEgOZzCtDGkSFEHBqdtm">第一句就极讲究：把"逐客"写成<b data-page-node-id="IG2bIwL07FSwaXDO189yxY">"吏议"</b>——听说是官员们在议论，而不是大王您已经定策。这样秦王即便收回成命，也不必承认自己错了。<b data-page-node-id="veBAnlZDRbLZb5mhn9MHAj">先给对方留一道台阶，是说服的第一步。</b></p>
+        <div class="example" data-page-node-id="7tg3J5Ip6LZW5wuIph1r5n"><b data-page-node-id="G3PylDTTMrb6SNG9CHKQZe">例子</b>刘勰评其"顺情入机，动言中务，虽批逆鳞，而功成计合"。</div>
+      </article>
+
+      <article class="bias c2" data-page-node-id="vDBjCkS15vIypUCPXBzEpA">
+        <div class="ribbon-top" data-page-node-id="T6zrDjNvbODRuQS4bAGgeV"></div>
+        <div class="num" data-page-node-id="8iPMOW0mtpEiCXsbYxVR8U">N° 02</div>
+        <h3 data-page-node-id="6MkDK2ZrFPqQ9fz3NKfDHw">四君用客 <span class="en" data-page-node-id="lmCWZUpw3Vr5vMvIKOTV7y">Precedent</span></h3>
+        <p class="mech" data-page-node-id="w0Nx0PwJCCyvVpkoou9p2i">穆公、孝公、惠王、昭王，四代君主，五位以上的关键人物，<b data-page-node-id="DHCQrhxOgXPfAfkR3CNCJc">没有一个是秦国人</b>。这不是外来史料，是秦国自己的功业簿。用对方最珍视的历史做证据，对方就无法否认。</p>
+        <div class="example" data-page-node-id="NSAnCwaj2RafcUjf092Xio"><b data-page-node-id="LZrhYkdkGLREHBnGu8Zjng">例子</b>由余（戎）· 百里奚（宛）· 蹇叔（宋）· 丕豹公孙支（晋）· 商鞅（卫）· 张仪（魏）· 范雎（魏）。</div>
+      </article>
+
+      <article class="bias c3" data-page-node-id="Ar7DdyFT4TUSxJJZ86WdEW">
+        <div class="ribbon-top" data-page-node-id="D9f2E7ggYM2NFNbmgcOkSH"></div>
+        <div class="num" data-page-node-id="6G85Q4kft9xqAAnWT5qj8Q">N° 03</div>
+        <h3 data-page-node-id="cIwQ6NOoT08JTZFYCSHl11">向使四君却客而不内 <span class="en" data-page-node-id="PPvLaBxS3Q8kEM8dhsyoQl">Counterfactual</span></h3>
+        <p class="mech" data-page-node-id="jncQpv76gClT4sh1zBozBM">摆完史实，立刻做一次<b data-page-node-id="vS81xt9QV3PBHIcGjhCT0A">反向假设</b>：假使四位君主当年也拒绝客卿、疏远士人，那么秦国"无富利之实，无强大之名"。正反两面对照，结论不需要再讲——读者自己会算出来。</p>
+        <div class="example" data-page-node-id="qj0KbTxOdRZxkcFYooAztU"><b data-page-node-id="d613m9hc4xEPZYGcFE788V">例子</b>只摆事实容易滑过去；补一个"如果不这样会怎样"，才压得住。</div>
+      </article>
+
+      <article class="bias c4" data-page-node-id="32BxwXjDU7Bq2C8xX4GBzK">
+        <div class="ribbon-top" data-page-node-id="7IIeKxiFT6EtdhgO9pdadz"></div>
+        <div class="num" data-page-node-id="VxTbgApCYJCPtyLR9vv7de">N° 04</div>
+        <h3 data-page-node-id="XX3wVUVgTUGn2x6Idf2Mhj">"客何负于秦哉" <span class="en" data-page-node-id="DBGDzuQPTqAB8kA3EHvJkL">The Question</span></h3>
+        <p class="mech" data-page-node-id="QS8mOGoZlSWBM6rmjPG6UO">一个<b data-page-node-id="cirtJSsxgtPLP6Y0kTnSFC">不需要回答的反问</b>。它没有指责任何人，却把举证责任轻轻推给了对方：如果客卿没做错什么，那要驱逐他们的理由是什么？反问的力量在于，对方必须自己开口，而他自己说不出。</p>
+        <div class="example" data-page-node-id="JutMopmbqIUHi6vhLUSDpF"><b data-page-node-id="DIvC6moFW7EUqRjgYiHM0q">例子</b>说服里最有力量的，往往是一句对方答不上来的问句。</div>
+      </article>
+
+      <article class="bias c5" data-page-node-id="1uiZcfyWdb8fQ94Vq2oEYd">
+        <div class="ribbon-top" data-page-node-id="89pKF186LELaSrFN1gVc4W"></div>
+        <div class="num" data-page-node-id="WX2ApOxNqKPAwevbWxdfhK">N° 05</div>
+        <h3 data-page-node-id="dLetYlKc1QfEbFRi7KNSWE">七宝铺排 <span class="en" data-page-node-id="rY5lZXKmhL76pvwqDpCCZ3">Enumeration</span></h3>
+        <p class="mech" data-page-node-id="rBohvDZtFDKKVavGIlXU87">昆山之玉、随和之宝、明月之珠、太阿之剑、纤离之马、翠凤之旗、灵鼍之鼓——<b data-page-node-id="jnSvisXjxxTUBXzp1CAoWz">七件器物连缀而下，形成不可辩驳的密度</b>。一件可以说例外，七件就构成了"规律"。这是辞赋式的铺排，也是数据感。</p>
+        <div class="example" data-page-node-id="ZUf8fVLaLVrGdkGkDruyAA"><b data-page-node-id="OF2mR0LTe6K377fzXnICU3">例子</b>"此数宝者，秦不生一焉，而陛下说之，何也？"</div>
+      </article>
+
+      <article class="bias c6" data-page-node-id="7qJwrk3gxO6Qpr825M1Mmc">
+        <div class="ribbon-top" data-page-node-id="cJs8GuPJ1hGQbGyTCfciFP"></div>
+        <div class="num" data-page-node-id="8VmDRWvgoMZKbkc04Cak4m">N° 06</div>
+        <h3 data-page-node-id="2DnjR5jIf9dUa7Es6A3xUB">"必秦国之所生然后可" <span class="en" data-page-node-id="HbSivBBEDTHpUQw8VlDLSs">Reductio</span></h3>
+        <p class="mech" data-page-node-id="HLrAsVFkU1JSuA2L7xMTyZ">把对方的标准<b data-page-node-id="517pOyIRE91rPZliif7alO">推到极端，看它荒谬不荒谬</b>：如果只有秦国产的才配用，那么夜光之璧不能饰朝廷、犀象之器不能作玩好、郑卫之女不能充后宫、江南金锡西蜀丹青都不能用。你当然不会接受——那这条标准本身就不成立。</p>
+        <div class="example" data-page-node-id="DiA6F7FzReuhH64V7Xf8bm"><b data-page-node-id="4hu3HtfJz1U40ZR5gn1Xnl">例子</b>归谬法：不否定结论，只把前提用到底，让它自己塌掉。</div>
+      </article>
+
+      <article class="bias c7" data-page-node-id="6cLtCWPEdmWXUnJ2515pZp">
+        <div class="ribbon-top" data-page-node-id="u9Q1k5z1eYLEs9Q222ycVK"></div>
+        <div class="num" data-page-node-id="h4uCHmGdZrnQcCdME0MHRU">N° 07</div>
+        <h3 data-page-node-id="VFqf50mGEo5gBccZp5iA9p">击瓮叩缶 vs 郑卫韶虞 <span class="en" data-page-node-id="KurG6uerzo5pNIlLxOphko">Double Standard</span></h3>
+        <p class="mech" data-page-node-id="DjAfPEo4mqLfDeZAPQqGAm">再说音乐：秦国本土的击瓮叩缶、弹筝搏髀被放着，郑卫桑间、韶虞武象被取用，理由是"快意当前，适观而已矣"。<b data-page-node-id="XNKDzwHFbKLh3w4f2u8Mq3">既然对物可以只问好不好，为什么对人就要先问哪儿来的？</b>双标就此显形。</p>
+        <div class="example" data-page-node-id="6pPX9vEkWG7EBtSbMDwzeZ"><b data-page-node-id="Yv10MqhNiXxLnBdZJRZE98">例子</b>指出矛盾，比指出错误更有杀伤力——因为矛盾是对方自己造成的。</div>
+      </article>
+
+      <article class="bias c8" data-page-node-id="695aJGUNOlUuXKzTKP20Bz">
+        <div class="ribbon-top" data-page-node-id="L9zGuDlGRTBGFdpWqqjg0e"></div>
+        <div class="num" data-page-node-id="UNEhPU7YJOQXYLEzs2XKjh">N° 08</div>
+        <h3 data-page-node-id="tVBcXFLdbM4kZXGpg22AAY">所重者珠玉，所轻者人民 <span class="en" data-page-node-id="cckPRXnwE8z9c1xD5xDsWd">The Verdict</span></h3>
+        <p class="mech" data-page-node-id="KYQbxEmLR7an0JGY23q4Zk">全篇最重的一句判断，但它<b data-page-node-id="LDUQEECtav91Zrfsu8D8mX">不是道德指责，而是战略判断</b>："此非所以跨海内、制诸侯之术也。"——你想要的是天下，这样做达不到。整篇文章的落点始终是<b data-page-node-id="j01Rf7cACwpRLhef6Gd7qT">对方的目标</b>，不是作者的是非观。</p>
+        <div class="example" data-page-node-id="TIsYYAa4s8XQfETkvsDZgC"><b data-page-node-id="Qq0DauYUSqVB69Vjws2f8B">例子</b>把"你不对"翻译成"这不利于你想要的那个结果"。</div>
+      </article>
+
+      <article class="bias c9" data-page-node-id="OcHsMWz0vdGov7E04IzmGu">
+        <div class="ribbon-top" data-page-node-id="MSHR9pMyC0HUwArIP2M5so"></div>
+        <div class="num" data-page-node-id="y1PRij4cLJFt63OjlxXhhU">N° 09</div>
+        <h3 data-page-node-id="KHYd7BqHUtC5OwzP2TBvh6">太山不让土壤，河海不择细流 <span class="en" data-page-node-id="JkAdxFBBdXcWfyf3TJLErC">Metaphor</span></h3>
+        <p class="mech" data-page-node-id="MmfYmtCtU6cdANKEmznfRF">三个递进的比喻：<b data-page-node-id="RtWEofwLSyNrBaR0OFRNUh">地广者粟多</b>——太山不让土壤故能成其大，河海不择细流故能就其深，王者不却众庶故能明其德。它把"纳客"从权宜之计，抬到了"成大事者的基本结构"这一层。</p>
+        <div class="example" data-page-node-id="ojsDo7t5wfOb5jDKvx2InC"><b data-page-node-id="H6HalnwB4KEnLHHXiPJZPL">例子</b>《史记》原文作"太山"，后世多引作"泰山"；"五帝三王之所以无敌也"。</div>
+      </article>
+
+      <article class="bias c10" data-page-node-id="Kc8ALQJtxyItPrl1Jt7kf3">
+        <div class="ribbon-top" data-page-node-id="msgXBMm48i1HIqXUzO4QhX"></div>
+        <div class="num" data-page-node-id="Q7dxXApjB63gOQEgntKrZM">N° 10</div>
+        <h3 data-page-node-id="ZIYoStR2Sj2CQrZMptFlHc">藉寇兵而赍盗粮 <span class="en" data-page-node-id="hOpQVIXF6lotD2UjKPBiwY">Consequence</span></h3>
+        <p class="mech" data-page-node-id="w7NFFwWHcfVeaQEfrgGpE7">收尾落到最刺痛的八个字：<b data-page-node-id="XT5TbH94jgz8BiRByoVcUO">借兵器给贼寇，送粮食给强盗</b>。被逐的人不会凭空消失，他们会成为对手的智囊。最后一句"求国无危，不可得也"，语气平静，却是整篇里最重的威胁。</p>
+        <div class="example" data-page-node-id="BqJhJ5dYhXksm7PHBPDBaI"><b data-page-node-id="nmjvSrCrYJqMpEb0PTyUQa">例子</b>把后果具体到一个画面，比抽象地说"有风险"有效得多。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h" data-page-node-id="cbaTSpCWDVFWehmhjis5f0">
+  <div class="wrap" data-page-node-id="tcx49VKaqtZAZ41C4WwpjL">
+    <div class="eyebrow2" data-page-node-id="6pWPkWl8ycKAwh0yHBk5N8"><span class="num" data-page-node-id="9VVFHLfaeU9OCB9pwh0kII">05 /</span>STRUCTURE</div>
+    <h2 id="map-h" data-page-node-id="OEe7RNgnc11fNXCGfUnCw7">四段<b class="tail" data-page-node-id="4H0ENgXohfe8kiSmLW8O99">五步</b> · 脉络</h2>
+    <p class="sub" data-page-node-id="JqqguhmJFoWR3vrl7UuA9X">全文一气呵成，可以拆成五步：立论 → 摆史 → 揭矛盾 → 讲道理 → 算后果。每一步都比上一步更近对方的切身利益。</p>
+
+    <div class="chaptermap" role="list" data-page-node-id="jykO8ATTL55mtFOqpKkIvi">
+      <article class="part p1" role="listitem" data-page-node-id="oBIJo9VbfXYVMRAHSevGI8">
+        <div class="pin" data-page-node-id="VxE9Wa1ehUZ0HtoDSiBw3I">立论 · 一</div>
+        <h3 data-page-node-id="hELfjP8TK3Ch91lMdRsMiW">先给台阶，再下判断</h3>
+        <div class="range" data-page-node-id="kUCSrTAy5i5zLlRRXO1gl9">起句八字</div>
+        <ul class="chapters" data-page-node-id="lwnWRdEg7HBm0a7L5nzhlS">
+          <li data-page-node-id="GMHob16ZUJA4ccXt5k6cu3">臣闻吏议逐客——说是"官员们的议论"</li>
+          <li data-page-node-id="3hGPhT6L5nFrdAbA08EBZ4">窃以为过矣——谦辞之下是明确判断</li>
+          <li data-page-node-id="L9ZGvAQG6Gg0H5sV3lQ3wn">不把秦王放到被指责的位置上</li>
+          <li data-page-node-id="y1CrAJCKICAbYemulISXqK">为后文留出一个可以转弯的余地</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem" data-page-node-id="wqBQlWv3mBZkik39qCWJhy">
+        <div class="pin" data-page-node-id="4dsrzFa6BOFAV7h15zNLBK">摆史 · 二</div>
+        <h3 data-page-node-id="oeRIEDRGbjRnByxCzDDY3a">四君用客，秦以此强</h3>
+        <div class="range" data-page-node-id="tEwFLAN3FRgPWW7yijC9ir">穆公 · 孝公 · 惠王 · 昭王</div>
+        <ul class="chapters" data-page-node-id="wyX533yjfqFUdjtXHhOHTE">
+          <li data-page-node-id="nGXkeWCdroHnb7yqN2twSR">穆公：五子不产于秦，并国二十，霸西戎</li>
+          <li data-page-node-id="YqRTIIB9tlChxKZILTKIDq">孝公：用商鞅之法，举地千里，至今治强</li>
+          <li data-page-node-id="ZguajlM9z6ZyYEIe7VApXV">惠王：用张仪之计，散六国之从，功施到今</li>
+          <li data-page-node-id="uznXfIgPKWepLuFNEwMVQH">昭王：得范雎，强公室杜私门，使秦成帝业</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem" data-page-node-id="VNsoOiDPNZxq8r3DJFgqKM">
+        <div class="pin" data-page-node-id="070DjJ0AI7xukZN0Xq2Shp">揭矛盾 · 三</div>
+        <h3 data-page-node-id="dE2YYYoV5Jp5ioBKFcJvGs">你爱的一切，都不产于秦</h3>
+        <div class="range" data-page-node-id="9jXfDWdZrZMGHrTKF3bFRZ">由物及人</div>
+        <ul class="chapters" data-page-node-id="SrArI1WGzSGrVSl8sigpvO">
+          <li data-page-node-id="U7AFiT9y8Sor7hE0oFbJP0">七宝：昆山之玉、随和之宝、太阿之剑……</li>
+          <li data-page-node-id="SLIvFe3ubEuQRPIOYqaI9g">归谬：必秦所生然后可，则一切都不可用</li>
+          <li data-page-node-id="jwdNNoaBSkfJHPeHNOopG6">郑卫之女、江南金锡、西蜀丹青、赵女</li>
+          <li data-page-node-id="JR56BK7A57QJylMvGDEKIV">音乐：弃击瓮叩缶而就郑卫，快意当前而已</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem" data-page-node-id="mgWiCXSSDbOqSk5bXjUBEN">
+        <div class="pin" data-page-node-id="cFdNKHFTk1vcjKptSUZWzJ">讲道理 · 四</div>
+        <h3 data-page-node-id="0fnryE9nAUJbtpGKP7a0dw">太山不让土壤，王者不却众庶</h3>
+        <div class="range" data-page-node-id="4oh8eBrTmAjUukCsL8pIEU">由比喻及原则</div>
+        <ul class="chapters" data-page-node-id="pjnq1f52rFwKsQBHN5xBnE">
+          <li data-page-node-id="t6BxGuKbSeSVbiZ335NWoT">地广者粟多，国大者人众，兵强则士勇</li>
+          <li data-page-node-id="aHrCKGLweBJ2P0lsy9qGqz">太山不让土壤，故能成其大</li>
+          <li data-page-node-id="nxP6vBLEunGCCbOVDp8bba">河海不择细流，故能就其深</li>
+          <li data-page-node-id="XJl2TCrDUpqOCnLZs2iujj">地无四方，民无异国——五帝三王之所以无敌</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem" data-page-node-id="D2FSSmcpOQxkNr4fhGhm4M">
+        <div class="pin" data-page-node-id="by4OIpibnZpD13BbILsEGK">算后果 · 五</div>
+        <h3 data-page-node-id="Hyc9E4CBJK9SsMvBF7LrAc">藉寇兵而赍盗粮</h3>
+        <div class="range" data-page-node-id="ylNaesIeEZ3xlsOfoAsvMD">收束全篇</div>
+        <ul class="chapters" data-page-node-id="YNrjVBDwbieet32Z1A3pot">
+          <li data-page-node-id="hKUc964rCV2OgtUGlrjcOZ">弃黔首以资敌国，却宾客以业诸侯</li>
+          <li data-page-node-id="DaJh6CXULwhzOfomHgUhaG">使天下之士退而不敢西向，裹足不入秦</li>
+          <li data-page-node-id="HuUgVJECEwlYsxFvFGmiKp">物不产于秦，可宝者多；士不产于秦，愿忠者众</li>
+          <li data-page-node-id="zjPQRLDTZ9udFbmogZ2X2m">内自虚而外树怨于诸侯，求国无危，不可得也</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h" data-page-node-id="Rbs4RslgiVBgDQmmkasQU3">
+  <div class="wrap" data-page-node-id="yHeahLFaMIYsF8CF938lO9">
+    <div class="eyebrow2" data-page-node-id="2v4k3WvHI4hsGwCP1inNsz"><span class="num" data-page-node-id="e2bTp8yj2DDSXwgxBHmERU">06 /</span>QUOTES</div>
+    <h2 id="quotes-h" data-page-node-id="uUlEGwwduywUoQ5V2yChS9">五句值得抄在笔记本上的话</h2>
+    <p class="sub" data-page-node-id="h7ri99Nmft6Mq4dGcppGhz">以下为原文摘录（《史记·李斯列传》所载通行文本）。《史记》原作"太山"，后世多引作"泰山"；"昭"一作"韶"，均属传抄异文。</p>
+
+    <div class="quotes" data-page-node-id="8iJcSlH2Ggoq75gZpCAwPD">
+
+      <article class="quote-card qc1" data-page-node-id="FXnLFS3tQZV2D4YN2RPv0I">
+        <span class="qmark" data-page-node-id="ZTbI3m4vI3PF1l3gUBXo9I">“</span>
+        <p data-page-node-id="tt6Cfm0t2JqiuzmYUIc0v6">太山不让土壤，故能成其大；<br data-page-node-id="sGAgUJqjXAquV3rIMJNffX"/>河海不择细流，故能就其深。</p>
+        <div class="src" data-page-node-id="FE1xmFftKwtkjOlzehvfOY">— 关于格局</div>
+      </article>
+
+      <article class="quote-card qc2" data-page-node-id="k8tk8sH3Jn471ztkfokfHj">
+        <span class="qmark" data-page-node-id="zLkxBMyGzCeYF07yNYqoFT">“</span>
+        <p data-page-node-id="pwxmDLCPy04MO60BjPCegX">王者不却众庶，<br data-page-node-id="Xs9r5O9PmKEyRnnHVa0nUH"/>故能明其德。</p>
+        <div class="src" data-page-node-id="nA06Etn35Bcn3ZJswgfk2X">— 关于用人</div>
+      </article>
+
+      <article class="quote-card qc3" data-page-node-id="P5RNELmjOvkYTGrKqC0MOX">
+        <span class="qmark" data-page-node-id="NAtuBvwOIRarf46NDWJdOh">“</span>
+        <p data-page-node-id="fe96LAdEpKr8g7HdQmLimd">此所谓<br data-page-node-id="2NGTGyvzEmis31UdMiumNn"/>"藉寇兵而赍盗粮"<br data-page-node-id="LU7bJj7ExfGN8uHtGECTpY"/>者也。</p>
+        <div class="src" data-page-node-id="SGWYVSbgwedQSWPZCuLSQU">— 关于后果</div>
+      </article>
+
+      <article class="quote-card qc4" data-page-node-id="kDEnkE6rKZAm14xzxFfFBm">
+        <span class="qmark" data-page-node-id="0s9lCXwQTZ8LMsygpdEhEZ">“</span>
+        <p data-page-node-id="T0QKzTEW7ZqDahuuvw2nDB">地无四方，民无异国，<br data-page-node-id="Oj0AfjPGmDXtIm9SzEvyb7"/>四时充美，鬼神降福。</p>
+        <div class="src" data-page-node-id="JMLRfE2jMhfc9MEmSLOv1S">— 关于无敌</div>
+      </article>
+
+      <article class="quote-card qc5" data-page-node-id="diM1YDgbCVi4VynKV0CtYc">
+        <span class="qmark" data-page-node-id="6azXbP1j4qD5IH7Y0AMGou">“</span>
+        <p data-page-node-id="W9UpHwxxUC7YuxTMqDPEdE">内自虚而外树怨于诸侯，<br data-page-node-id="HrtClKtJviU562zMYknJNo"/>求国无危，不可得也。</p>
+        <div class="src" data-page-node-id="Rgk023GXNukRLraH5HTAUZ">— 关于结论</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h" data-page-node-id="RZSSLT2QGsB0gv629sM64s">
+  <div class="wrap" data-page-node-id="6OTuyXqoZFxKHSXQ2dDAej">
+    <div class="eyebrow2" data-page-node-id="pk2rhr4DtZtNf4uFd96G4n"><span class="num" data-page-node-id="oyOZFik5WJHlzeQDh4tmBB">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h" data-page-node-id="EDetoDS9ICMd80RibPDqZP">可以立刻落地的<b class="tail" data-page-node-id="wKKRV6DcXfWnPTFqi2AM2C">八条</b>练习</h2>
+    <p class="sub" data-page-node-id="cvW55PyNufqrAjSySn5faV">这是一篇奏疏，不是方法书。但它是中文世界里最完整的一份"高风险说服"样本——每一步都可以拆成个人能用的动作。（括号里标注了它来自哪一张书签。）</p>
+
+    <div class="actions" data-page-node-id="IF8FB2tI5LlAnckCTpr8Vs">
+
+      <div class="action" data-page-node-id="3vkKCu92GGdrGWU1d3SR9y">
+        <div class="ic" data-page-node-id="ptKqGOpXxnPFKiNkb5fm6Y">01</div>
+        <div data-page-node-id="KclfOr0SaRpCvs5xX9jgW7">
+          <h4 data-page-node-id="ntGF1Q4g04Ge2c6CkjpDaq">把"你错了"改写成"我听说有人提议"</h4>
+          <p data-page-node-id="bATVATQ25jEyBFoWVZeqKT">开篇八个字就把责任从秦王身上挪开。下次要反对一个已经定下来的决定，先给它一个"尚未定型"的说法——对方才可能改变主意而不丢脸。</p>
+          <span class="tag" data-page-node-id="kmXqR6rzxAIZtQnCfzhPze">↳ 臣闻吏议逐客</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="5S1yrIk1hZf6AcuSwaRCGc">
+        <div class="ic" data-page-node-id="mCPU8A2lyVwMqOw8qBYJzN">02</div>
+        <div data-page-node-id="YYdMuA5vTcgjdzLuIhuIGV">
+          <h4 data-page-node-id="LH61X4ShDqghi6Ca4nMruq">用对方的历史，而不是你的道理</h4>
+          <p data-page-node-id="cW7EFmlymKZOnc4CNu5UIY">李斯全程没讲"人才流动有多重要"，只讲秦国四代君主做过什么。说服一个人，先去翻他自己最引以为豪的那段经历——那才是他无法否认的证据。</p>
+          <span class="tag" data-page-node-id="UwRSGDhvxupnaVrbGEodgS">↳ 四君用客</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="Euoy6TaTgEDapnwFzEnFPT">
+        <div class="ic" data-page-node-id="nyZLpA7FUBj2OeNh37NStn">03</div>
+        <div data-page-node-id="l05qNsIbsZYkZKGt9EJpvr">
+          <h4 data-page-node-id="7uhOxmZTgPnXAbJSVF66pW">补一个"如果不这样会怎样"</h4>
+          <p data-page-node-id="PAVUeQ7lGtGLPTAGv5iqlg">摆完正面史实，立刻做反向假设。写方案时也一样：写完"这么做的好处"，一定补一段"不这么做的代价"，结论才立得住。</p>
+          <span class="tag" data-page-node-id="XwRcgtmlMCGJupWCjIK8EL">↳ 向使四君却客而不内</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="9z0FHlp6RoMoZGBBb2IyfH">
+        <div class="ic" data-page-node-id="HtTMyrILL9T8OszpiICWuU">04</div>
+        <div data-page-node-id="FjJJgmmZluH7Z9TUdphMsX">
+          <h4 data-page-node-id="PGd0bNJdRZo4XFsdGOxQCB">找出对方行为里的自相矛盾</h4>
+          <p data-page-node-id="by0g2AELarOehdJzV0QeR3">"重物轻人"这一刀最狠，因为它不需要作者下判断，矛盾是秦王自己造成的。批评一个人时，先去找他"对 A 这么做、对 B 却那么做"的地方——那比讲道理有用得多。</p>
+          <span class="tag" data-page-node-id="dJWlcjp3KCaJ1Z1F8hBWBd">↳ 所重者珠玉，所轻者人民</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="1JiXLRSFTljdx3TQq4BhGG">
+        <div class="ic" data-page-node-id="0Hliva16CgGJr8qYpzqSQ1">05</div>
+        <div data-page-node-id="US0H9bFCgQHzkrIWUYq4Jq">
+          <h4 data-page-node-id="pxl4cqcfUkLZj5PPT88ecr">把对方的标准一路推到底</h4>
+          <p data-page-node-id="Fkui9Mz3lH5IPMN2bIrcEC">"必秦国之所生然后可"——把前提用到极致，看它荒不荒谬。遇到一个你觉得不对的规则，不要急着反对，先认真执行它一次，把荒谬的结果摊开给制定者看。</p>
+          <span class="tag" data-page-node-id="81Go4M2tapsWH79AkYvn30">↳ 归谬法</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="SZ0uMJp34rU07B4CaVwbwv">
+        <div class="ic" data-page-node-id="abZytRhoOBZ1rLpeLlI6WE">06</div>
+        <div data-page-node-id="jSH1WvKkLARz7pCDUGYEUi">
+          <h4 data-page-node-id="SE5z41JUhIeyct65FIR5Do">始终站在对方真正的目标上说话</h4>
+          <p data-page-node-id="RB165hioa8ALq6kkUan2WP">全篇的落点是"此非所以跨海内、制诸侯之术也"——你想要天下，这样做达不到。说服时少谈你的立场，多谈他的目标；把你的主张翻译成"达成他目标的路径"。</p>
+          <span class="tag" data-page-node-id="HjYr8jToVMUZSeUYAVYdes">↳ 跨海内、制诸侯之术</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="hcGbjxUEo81ZRDB4jI9Y2H">
+        <div class="ic" data-page-node-id="ok6S6VY0Kgg4MwInsAoWvp">07</div>
+        <div data-page-node-id="ZRCzNqqkuvSlpQjInfsvBd">
+          <h4 data-page-node-id="Xjv5PGBGtXJKtLf7nzjorc">把后果说成一个具体的画面</h4>
+          <p data-page-node-id="uufrBVaRQNmR20wenOWVdi">"藉寇兵而赍盗粮"——把抽象风险变成一个人人脑海里能看见的动作。汇报工作时别说"存在流失风险"，说清楚"谁会走、走到哪里去、他们会替谁做事"。</p>
+          <span class="tag" data-page-node-id="KBI0OhCXxIlnbMJ7bdi3qB">↳ 藉寇兵而赍盗粮</span>
+        </div>
+      </div>
+
+      <div class="action" data-page-node-id="VqSHOytFJ7SmenREr4WeFk">
+        <div class="ic" data-page-node-id="6Q8jpzvsZggESVYIGXDgOC">08</div>
+        <div data-page-node-id="4U8zWUdqxjudYsLC8naNzJ">
+          <h4 data-page-node-id="gGBpEKRCgOrlHGwRfrWIh1">检查你自己是不是也在"逐客"</h4>
+          <p data-page-node-id="ln2Dbg5WOKjdaWdAQyptga">反过来问一次：我有没有只因为"不是自己人"就否掉一个人、一条信息、一个新工具？招聘时看背景还是看能力？读文章时看立场还是看论证？——逐客的冲动，从来不只属于秦国。</p>
+          <span class="tag" data-page-node-id="pRiufPRYYqAO807fLlLY4B">↳ 反向自省</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h" data-page-node-id="YR7i2nI443lQVnn83ZYKhg">
+  <div class="wrap" data-page-node-id="Ir5onn1eTMEWAIhz063FSW">
+    <div class="eyebrow2" data-page-node-id="VenHXOffKfb1Dj4uOEPrcT"><span class="num" data-page-node-id="94BlBIxWy8YQzGlPVM5YFF">08 /</span>FOR WHOM</div>
+    <h2 id="who-h" data-page-node-id="2NSPD7Pr3JzBdr3YCZjTBE">适合谁读 / 不适合谁读</h2>
+    <p class="sub" data-page-node-id="OhQOFGlkemjI2Bw56NjkF7">它解决的是"如何在不撕破脸的前提下，让一个握有决定权的人收回成命"。如果你想学的是秦史全貌或古文辞藻，这篇都太短——它是一份被压缩到八百字的说服工程图。</p>
+
+    <div class="readers" data-page-node-id="xYYjCaaEIrs06OHxzCiPV3">
+      <article class="who yes" data-page-node-id="wAQ4YNEBJ1kG6wWFJa6nPf">
+        <h3 data-page-node-id="zHs0EpkKx0cmLO6LAE6D8y"><span class="swatch" data-page-node-id="jHDu5fUc6AIymydTIliFOZ"></span>尤其推荐</h3>
+        <ul data-page-node-id="eEUcrnNVxtY6pSk86Gi6wf">
+          <li data-page-node-id="aMJG5SAc9PJLSymWmFpuW4">需要经常<b data-page-node-id="t7L7JZhpguuSCX3y2G3v6f">向上级、客户、合作方提反对意见</b>的人：这是中文里最经典的"逆鳞而上"范本</li>
+          <li data-page-node-id="A6soYX3qXsLXiySLHMzW1D">做<b data-page-node-id="eGHtTtKbceu0ByWdhzdRZo">写作、演讲、提案</b>的人：立论、铺排、归谬、比喻、收束，五种手法一应俱全</li>
+          <li data-page-node-id="2HrVTCQBhHuR2NilJZm3hy"><b data-page-node-id="V2wz5IOJCQ037CmXNSgHRD">管理者与 HR</b>：一篇两千年前就写透了的"用人不问出处"论</li>
+          <li data-page-node-id="zKFUDPDvIIqYkMGAWrYCJn">关心<b data-page-node-id="Ybg1UbxUNYHI5bRsxP3bzk">组织如何对待外来者</b>的人：宗室 vs 客卿，是任何一个成熟组织都会遇到的张力</li>
+          <li data-page-node-id="xepT6dOmZaQkFFrXzAwh3x"><b data-page-node-id="IrGHlMefa9Twicnjwy86sU">古文爱好者</b>与中学、大学语文学习者：篇幅短，密度极高，适合逐句精读</li>
+          <li data-page-node-id="wsorCfg17fxreUTfN7dWTq">喜欢对照阅读的人：可与本系列 NO.12《高效能人士的七个习惯》"知彼解己"、NO.05《人性的弱点》"不说你错了"并读</li>
+        </ul>
+      </article>
+
+      <article class="who no" data-page-node-id="BjympD1IwpCX3pPnypGOpK">
+        <h3 data-page-node-id="TBzSop9f3VVJJHQvREm7hH"><span class="swatch" data-page-node-id="bRkuNUxS6uR7fZ925ejDAh"></span>不推荐 / 慎读</h3>
+        <ul data-page-node-id="qfvrrWWQ3fZGAlCvOoiEKW">
+          <li data-page-node-id="sUfwaF07ylfMCH3nZPGBUE">想了解<b data-page-node-id="p96HezwYVigb0j8AaADHAv">秦代历史全貌</b>的人：这只是一封奏疏，不是史书（可读《史记》相关列传）</li>
+          <li data-page-node-id="wSd6YteoOj9HjmUQHIDRlB">想找<b data-page-node-id="U0GaFsysg3GcT935QJg9VJ">权谋与厚黑</b>的人：文中没有算计人，只有算清利害</li>
+          <li data-page-node-id="H1LogTHuPekckqhVG9myjV">期待<b data-page-node-id="KNHqt2NQBBrrGX3Npfa4j7">系统性的说服学教材</b>的人：它给的是范本，不是方法体系（可看 NO.05《人性的弱点》）</li>
+          <li data-page-node-id="9U5E9P7qmX99xjDxWcrVhA">希望它<b data-page-node-id="7yuN04dCIHT6H1W1J2qYgC">回答"要不要开放人才引进"</b>的人：李斯谈的是秦国的利害，不是抽象原则</li>
+          <li data-page-node-id="eWUyUIuCGIUDzfnfb8aJmT">对<b data-page-node-id="N5e8GlfkU1Xg4bx8x8Hw8w">文言有阅读障碍</b>的人：建议先读一遍白话译文，再回来看原文的铺排气势</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot" data-page-node-id="03PhvufWT4Q55dAOzJ80Ap">
+  <div class="wrap" data-page-node-id="PeUkw0QlWz1M5vsGNXB2kX">
+    <div class="mark" data-page-node-id="XXbgpeOFIRJiElqSoUwVGV">
+      "太山不让土壤，故能成其大；河海不择细流，故能就其深。"
+    </div>
+    <div class="rule" data-page-node-id="KtAyT58fAFtwAzfngyXMhb"></div>
+    <div class="meta" data-page-node-id="rFkq6urTwm1sHPQGG0B0n0">
+      读书笔记 · 《谏逐客令》（《谏逐客书》）· 李斯 · 《史记·李斯列传》<br data-page-node-id="Ps2oHCm5077xeiR9UFRbmR"/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
