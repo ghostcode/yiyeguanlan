@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>《月亮与六便士》读书笔记 · 一页观澜</title>
+<meta name="description" content="毛姆《月亮与六便士》读书笔记：以高更生平为原型的长篇小说，写一个人被创作冲动附体后如何毁掉全部体面生活。八段式笔记——信息卡、一句话总览、两组对照、十张书签、五脉脉络、金句、八条行动启发、适合谁读。" />
+<style>
+/* =========================================================
+   基础与排印：米色纸感 + 衬线主导 + 墨色文字
+   （与同系列各卷同一套系统，主色换为夜穹紫，呼应月亮与夜色）
+   ========================================================= */
+:root{
+  --paper:        #f4ecd8;
+  --paper-2:      #faf4e1;
+  --paper-deep:   #ece2c6;
+  --ink:          #1f1a14;
+  --ink-2:        #4a4035;
+  --ink-3:        #7a6e5d;
+  --rule:         #c9b993;
+  --rule-soft:    #d9cba6;
+  --accent:       #503960;   /* 主书签色：夜穹紫 */
+  --accent-2:     #bb9b4a;   /* 月金（点缀） */
+  --teal:         #2f5d6e;   /* 黛蓝 */
+  --indigo:       #4a4a72;   /* 紫蓝 */
+  --olive:        #6f7f42;   /* 苔绿 */
+  --plum:         #7a4356;   /* 绛紫 */
+  --serif:        "Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun", Georgia, "Times New Roman", serif;
+  --sans:         "Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei", system-ui, sans-serif;
+  --max:          1080px;
+  --gutter:       clamp(20px, 4vw, 56px);
+  --shadow-1:     0 1px 0 rgba(31,26,20,.06), 0 8px 24px -16px rgba(31,26,20,.18);
+  --shadow-2:     0 2px 0 rgba(31,26,20,.06), 0 18px 40px -22px rgba(31,26,20,.28);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--serif);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(80,57,96,.14), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-attachment: fixed, fixed;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#d6ccbe;color:var(--ink)}
+
+/* =========================================================
+   顶部细条导航
+   ========================================================= */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(244,236,216,.78);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom:1px solid var(--rule-soft);
+  font-family:var(--sans);
+  font-size:13.5px;
+  color:var(--ink-2);
+}
+.topbar-inner{
+  max-width:var(--max); margin:0 auto;
+  padding:10px var(--gutter);
+  display:flex; align-items:center; gap:18px;
+}
+.topbar .brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--serif); font-weight:600; color:var(--ink);
+  letter-spacing:.5px;
+}
+.topbar .brand .dot{
+  width:8px;height:8px;border-radius:50%; background:var(--accent);
+  box-shadow:0 0 0 3px rgba(80,57,96,.18);
+}
+.topbar nav{margin-left:auto; display:flex; gap:14px; flex-wrap:wrap}
+.topbar nav a{
+  text-decoration:none; padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s, color .2s;
+}
+.topbar nav a:hover{color:var(--accent); border-bottom-color:var(--accent)}
+.topbar .home{
+  text-decoration:none; font-family:var(--sans); font-size:13px; letter-spacing:1px;
+  color:var(--accent); font-weight:600; white-space:nowrap;
+  border:1px solid var(--rule); border-radius:999px; padding:4px 12px;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.topbar .home:hover{ background:var(--accent); color:var(--paper-2); border-color:var(--accent) }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative; overflow:hidden;
+  min-height: min(82svh, 720px);
+  display:flex; align-items:flex-end;
+  color:#f2efdf;
+  isolation:isolate;
+}
+.hero-img{
+  position:absolute; inset:0; z-index:-2;
+  background:#150e1d url("https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+  background-color:#150e1d;
+  filter:saturate(.85) contrast(1.05);
+  transform: scale(1.02);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(21,14,29,.22) 0%, rgba(21,14,29,.06) 35%, rgba(21,14,29,.84) 100%),
+    linear-gradient(90deg, rgba(21,14,29,.66) 0%, rgba(21,14,29,.22) 55%, rgba(21,14,29,0) 100%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:var(--max); margin:0 auto;
+  padding: clamp(28px, 5vw, 56px) var(--gutter) clamp(32px, 6vw, 64px);
+}
+.hero .eyebrow{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:3.5px; text-transform:uppercase;
+  color:#d3c6b4; opacity:.95; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.hero .eyebrow .line{width:36px;height:1px;background:#d3c6b4;opacity:.6}
+.hero h1{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(34px, 6.4vw, 78px);
+  line-height:1.08; letter-spacing:2px;
+  margin:0 0 14px;
+  text-shadow: 0 2px 16px rgba(0,0,0,.5);
+}
+.hero h1 .sub{
+  display:block; font-size:.28em; font-weight:400; letter-spacing:4px; color:#d3c6b4; margin-top:14px;
+}
+.hero .lede{
+  font-size: clamp(15px, 1.5vw, 18px);
+  color:#e6ddcd; max-width: 58ch; line-height:1.7;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.hero .byline{
+  margin-top:18px; display:flex; flex-wrap:wrap; gap:14px 22px;
+  font-family:var(--sans); font-size:13.5px; color:#d3c6b4; letter-spacing:.5px;
+}
+.hero .byline span{display:inline-flex;align-items:center;gap:8px}
+.hero .byline b{font-weight:600;color:#f0e9db}
+.hero .ribbon{
+  position:absolute; top:22px; right:-32px;
+  background:var(--accent); color:#f2efdf;
+  padding:8px 44px; transform:rotate(35deg);
+  font-family:var(--sans); font-size:12px; letter-spacing:3px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.28);
+  z-index:2;
+}
+
+/* =========================================================
+   通用容器
+   ========================================================= */
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+section{ padding: clamp(56px, 8vw, 96px) 0; position:relative; }
+section + section{ border-top:1px dashed var(--rule-soft); }
+
+.eyebrow2{
+  font-family:var(--sans); font-size:12px; letter-spacing:3.5px; text-transform:uppercase;
+  color:var(--accent); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+}
+.eyebrow2 .num{
+  display:inline-block; font-family:var(--serif); font-style:italic; font-size:14px;
+  color:var(--ink-2); letter-spacing:1px;
+}
+h2{
+  font-family:var(--serif); font-weight:700;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height:1.2; letter-spacing:.5px;
+  margin: 0 0 8px;
+}
+h2 .tail{ color:var(--accent); }
+h2 + .sub{ color:var(--ink-2); margin: 0 0 36px; max-width:62ch; font-size:16px }
+h3{
+  font-family:var(--serif); font-weight:700; font-size:21px; margin:0 0 10px; letter-spacing:.3px;
+}
+
+/* =========================================================
+   1. 书籍信息
+   ========================================================= */
+.bookinfo{
+  display:grid; grid-template-columns: 1.05fr 1.2fr; gap:48px; align-items:start;
+}
+.meta-card{
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding:28px 28px 24px;
+  box-shadow: var(--shadow-1);
+  position:relative;
+}
+.meta-card::before{
+  content:""; position:absolute; left:28px; right:28px; top:-1px; height:4px;
+  background: linear-gradient(90deg, var(--accent) 0 22%, var(--accent-2) 22% 44%, var(--teal) 44% 66%, var(--indigo) 66% 100%);
+  border-top-left-radius:6px; border-top-right-radius:6px;
+}
+.meta-card dl{ margin:0; display:grid; grid-template-columns: 88px 1fr; row-gap:14px; column-gap:18px}
+.meta-card dt{ color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1px}
+.meta-card dd{ margin:0; color:var(--ink); font-size:16.5px}
+.meta-card dd .small{ color:var(--ink-3); font-size:13.5px; font-family:var(--sans)}
+.thesis{
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink);
+  border-left:3px solid var(--accent); padding:4px 0 4px 18px; margin:0 0 18px;
+}
+.thesis b{ color:var(--accent) }
+.bookinfo .right .chip{
+  display:inline-block; font-family:var(--sans); font-size:12px; letter-spacing:1.5px;
+  color:var(--ink-2); border:1px solid var(--rule); background:var(--paper-2);
+  padding:4px 10px; border-radius:999px; margin: 0 6px 6px 0;
+}
+
+/* =========================================================
+   一句话总览
+   ========================================================= */
+.oneliner{
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-top:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft);
+}
+.oneliner blockquote{
+  margin:0 auto; max-width: 22ch;
+  font-family:var(--serif); font-size: clamp(26px, 4vw, 42px); line-height:1.4; letter-spacing:1px;
+  color:var(--ink);
+}
+.oneliner blockquote::before, .oneliner blockquote::after{
+  content:""; display:block; width:48px; height:1px; background:var(--accent); margin: 14px auto; opacity:.7;
+}
+.oneliner .src{ margin-top:18px; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:2px}
+
+/* =========================================================
+   2. 两组核心对照
+   ========================================================= */
+.dualset{ display:grid; gap: 34px; }
+.dualset .setlabel{
+  font-family:var(--sans); font-size:12.5px; letter-spacing:2.5px; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin-bottom:16px;
+}
+.dualset .setlabel::after{ content:""; flex:1; height:1px; background:var(--rule-soft) }
+.dual{
+  display:grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items:stretch;
+}
+.dual .vs{
+  align-self:center; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--accent);
+  width:54px; height:54px; border:1.5px solid var(--accent); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--paper-2);
+}
+.dual .sys{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:8px; padding:24px 24px 22px;
+  position:relative; box-shadow:var(--shadow-1);
+  overflow:hidden;
+}
+.dual .sys .tag{
+  position:absolute; top:0; right:0;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding:6px 12px; color:#f2efdf;
+}
+.dual .sys.a .tag{ background:var(--accent-2) }
+.dual .sys.b .tag{ background:var(--accent) }
+.dual .sys.a h3{ color:var(--accent-2) }
+.dual .sys.b h3{ color:var(--accent) }
+.dual .sys .sub{ font-family:var(--sans); font-size:13px; color:var(--ink-3); letter-spacing:1px; margin-bottom:14px}
+.dual .sys p{ margin:0 0 4px }
+.dual .sys ul{ list-style:none; padding:0; margin:14px 0 0; display:grid; gap:10px}
+.dual .sys li{ display:grid; grid-template-columns: 76px 1fr; gap:12px; font-size:15.5px; line-height:1.65}
+.dual .sys li b{ color:var(--ink); font-weight:600; font-family:var(--sans); font-size:12.5px; letter-spacing:1.5px; padding-top:3px}
+.dual .sys .quote{
+  margin-top:18px; padding:12px 14px; background:var(--paper-deep);
+  border-left:3px solid currentColor;
+  font-size:14.5px; color:var(--ink-2); line-height:1.7;
+}
+.dual .sys.a .quote{ border-color:var(--accent-2) }
+.dual .sys.b .quote{ border-color:var(--accent) }
+
+/* =========================================================
+   3. 关键概念卡片（书签式）
+   ========================================================= */
+.biases{
+  display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px 22px;
+}
+.bias{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 26px 22px 22px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.bias:hover{ transform: translateY(-2px); box-shadow: var(--shadow-2) }
+.bias .ribbon-top{
+  position:absolute; top:0; left:18px; width:34px; height:18px;
+  background: var(--rib, var(--accent));
+  box-shadow: 0 4px 10px -4px rgba(0,0,0,.25);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+.bias .num{
+  font-family:var(--serif); font-style:italic; color:var(--ink-3);
+  font-size:13px; letter-spacing:2px; margin-bottom:6px;
+}
+.bias h3{
+  font-size:18.5px; line-height:1.3; margin:0 0 4px; color:var(--ink);
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+}
+.bias h3 .en{
+  font-family:var(--serif); font-style:italic; font-size:13px; color:var(--rib, var(--accent)); letter-spacing:.5px;
+}
+.bias .mech{
+  font-size:15px; color:var(--ink); line-height:1.7; margin: 6px 0 10px;
+}
+.bias .example{
+  font-size:14px; color:var(--ink-2); background: var(--paper-deep);
+  border-radius:4px; padding:10px 12px; margin-top:auto;
+}
+.bias .example b{ color:var(--ink); font-family:var(--sans); font-size:11.5px; letter-spacing:1.5px; display:block; margin-bottom:4px}
+
+.bias.c1{ --rib: var(--accent) }
+.bias.c2{ --rib: var(--accent-2) }
+.bias.c3{ --rib: var(--teal) }
+.bias.c4{ --rib: var(--indigo) }
+.bias.c5{ --rib: var(--olive) }
+.bias.c6{ --rib: var(--plum) }
+.bias.c7{ --rib: var(--accent) }
+.bias.c8{ --rib: var(--accent-2) }
+.bias.c9{ --rib: var(--teal) }
+.bias.c10{ --rib: var(--indigo) }
+
+/* =========================================================
+   4. 脉络图
+   ========================================================= */
+.chaptermap{
+  position:relative;
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  align-items:stretch;
+}
+.chaptermap::before{
+  content:""; position:absolute; left: 4%; right: 4%; top: 38px; height:2px;
+  background: repeating-linear-gradient(90deg, var(--ink-3) 0 6px, transparent 6px 12px);
+  opacity:.35; z-index:0;
+}
+.part{
+  position:relative; z-index:1;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 0 16px 18px;
+  box-shadow: var(--shadow-1);
+  display:flex; flex-direction:column;
+}
+.part .pin{
+  align-self:flex-start;
+  margin: 0 0 12px;
+  background: var(--pin, var(--accent));
+  color:#f2efdf;
+  font-family:var(--sans); font-size:11px; letter-spacing:2px;
+  padding: 8px 12px 10px; border-radius: 0 0 6px 6px;
+  position:relative; margin-left:-16px;
+}
+.part .pin::after{
+  content:""; position:absolute; right:-6px; top:0; width:0; height:0;
+  border-left:6px solid var(--pin, var(--accent));
+  border-top:18px solid transparent; border-bottom:18px solid transparent;
+  opacity:.55;
+}
+.part h3{ font-size:17px; margin: 12px 0 4px; line-height:1.35}
+.part .range{ font-family:var(--sans); font-size:12px; color:var(--ink-3); letter-spacing:1.5px; margin-bottom:10px}
+.part .chapters{ font-size:14px; color:var(--ink-2); line-height:1.7; margin:0; padding-left:18px}
+.part.p1{ --pin: var(--accent) }
+.part.p2{ --pin: var(--accent-2) }
+.part.p3{ --pin: var(--teal) }
+.part.p4{ --pin: var(--indigo) }
+.part.p5{ --pin: var(--plum) }
+
+/* =========================================================
+   5. 金句
+   ========================================================= */
+.quotes{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.quote-card{
+  position:relative;
+  background: var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:6px;
+  padding: 38px 30px 26px;
+  box-shadow: var(--shadow-1);
+  overflow:hidden;
+}
+.quote-card .qmark{
+  position:absolute; top:2px; left:20px;
+  font-family:var(--serif); font-size:52px; line-height:1;
+  color: var(--qm, var(--accent));
+  opacity:.20;
+  z-index:0;
+  pointer-events:none;
+  user-select:none;
+}
+.quote-card p{
+  position:relative; z-index:1;
+  font-family:var(--serif); font-size:19px; line-height:1.85; color:var(--ink); margin:0 0 12px;
+}
+.quote-card .src{ position:relative; z-index:1; color:var(--ink-3); font-family:var(--sans); font-size:13px; letter-spacing:1.5px}
+.quote-card.qc1{ --qm: var(--accent) }
+.quote-card.qc2{ --qm: var(--teal) }
+.quote-card.qc3{ --qm: var(--indigo) }
+.quote-card.qc4{ --qm: var(--plum) }
+.quote-card.qc5{ --qm: var(--accent-2) }
+
+/* =========================================================
+   6. 行动启发
+   ========================================================= */
+.actions{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.action{
+  display:grid; grid-template-columns: 38px 1fr; gap:14px; align-items:start;
+  padding:16px 18px; background:var(--paper-2);
+  border:1px solid var(--rule); border-radius:6px;
+  box-shadow: var(--shadow-1);
+}
+.action .ic{
+  width:34px;height:34px; border-radius:50%;
+  background: var(--paper-deep); color: var(--accent);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-style:italic; font-weight:700; font-size:16px;
+  border:1px solid var(--rule);
+}
+.action h4{ margin:0 0 4px; font-size:16.5px; line-height:1.35; color:var(--ink)}
+.action p{ margin:0; font-size:14.5px; color:var(--ink-2); line-height:1.7}
+.action .tag{
+  display:inline-block; font-family:var(--sans); font-size:11px; letter-spacing:1.5px;
+  color:var(--ink-3); margin-top:8px;
+}
+
+/* =========================================================
+   7. 适合谁读
+   ========================================================= */
+.readers{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.who{
+  background: var(--paper-2); border:1px solid var(--rule); border-radius:6px;
+  padding: 24px 24px 22px; box-shadow: var(--shadow-1);
+}
+.who h3{ display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:18px}
+.who h3 .swatch{ width:12px;height:12px;border-radius:3px; display:inline-block}
+.who.yes h3 .swatch{ background: var(--olive) }
+.who.no  h3 .swatch{ background: var(--accent) }
+.who ul{ margin:0; padding-left:18px; color:var(--ink-2); line-height:1.85; font-size:15px}
+.who ul li{ margin-bottom:4px }
+
+/* =========================================================
+   页脚
+   ========================================================= */
+.foot{
+  padding: 56px 0 72px;
+  text-align:center;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+  border-top: 1px solid var(--rule);
+  font-family:var(--sans);
+  color:var(--ink-3);
+}
+.foot .mark{
+  font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink-2);
+  letter-spacing:1px; margin-bottom:10px; line-height:1.9; max-width:44ch; margin-left:auto; margin-right:auto;
+}
+.foot .rule{ width:64px;height:1px; background:var(--rule); margin:14px auto}
+.foot .meta{ font-size:12.5px; letter-spacing:1.5px}
+
+/* =========================================================
+   响应式
+   ========================================================= */
+@media (max-width: 920px){
+  .bookinfo{ grid-template-columns: 1fr; gap: 28px }
+  .biases{ grid-template-columns: 1fr 1fr }
+  .quotes{ grid-template-columns: 1fr }
+  .actions{ grid-template-columns: 1fr }
+  .readers{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr 1fr; gap: 18px }
+  .chaptermap::before{ display:none }
+  .dual{ grid-template-columns: 1fr; }
+  .dual .vs{ margin: -6px auto 0; }
+}
+@media (max-width: 560px){
+  body{ font-size:16px }
+  .topbar nav{ display:none }
+  .topbar-inner{ justify-content:space-between }
+  .biases{ grid-template-columns: 1fr }
+  .chaptermap{ grid-template-columns: 1fr }
+  .hero{ min-height: 78svh }
+  .hero .ribbon{ right:-44px; transform:rotate(35deg) scale(.9); transform-origin: top right }
+  .meta-card dl{ grid-template-columns: 78px 1fr }
+}
+@media (prefers-reduced-motion: reduce){
+  .bias{ transition:none }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部细条 ============ -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a href="index.html" class="home" aria-label="返回系列首页">一页观澜</a>
+    <div class="brand"><span class="dot"></span> 阅读笔记 · The Moon and Sixpence</div>
+    <nav aria-label="目录">
+      <a href="#info">这本书</a>
+      <a href="#one">总览</a>
+      <a href="#dual">两组对照</a>
+      <a href="#bias">十张书签</a>
+      <a href="#map">脉络</a>
+      <a href="#quotes">金句</a>
+      <a href="#action">行动</a>
+      <a href="#who">读者</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="封面" style="padding:0;border-top:0">
+  <div class="hero-img" role="img" aria-label="夜空中的一轮明月，象征书名中的月亮"></div>
+  <div class="ribbon">NO. 23 · 文学小说</div>
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="line"></span>READING NOTES</div>
+    <h1>
+      月亮与六便士
+      <span class="sub">THE MOON AND SIXPENCE · 毛姆 · 1919</span>
+    </h1>
+    <p class="lede">
+      四十岁那年，一个体面的伦敦证券经纪人留下十行字就走了。
+      妻子以为他带了女人，他只是去画画。
+      此后十七年，他穷、病、惹人嫌，把救过他命的人的家拆得粉碎，
+      最后在南太平洋一个小岛上双目失明，<b>把毕生最好的一幅画涂在自己家的四堵墙上，然后让人烧掉</b>。
+      毛姆写的不是追梦，是<b>一种不容分说的、近乎残酷的必然</b>。
+    </p>
+    <div class="byline">
+      <span><b>作者</b> 威廉·萨默塞特·毛姆（1874—1965）</span>
+      <span><b>原型</b> 保罗·高更（1848—1903）</span>
+      <span><b>首版</b> 1919 年 4 月 15 日</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. 书籍信息 ============ -->
+<section id="info" aria-labelledby="info-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">01 /</span>关于这本书</div>
+    <h2 id="info-h">一个被附体的人，<b class="tail">和他毁掉的一切</b></h2>
+    <p class="sub">《月亮与六便士》是毛姆最重要的长篇之一，1919 年出版，以法国后印象派画家保罗·高更的生平为素材：高更在成为画家之前也做过证券经纪人，晚年也去了塔希提，埋骨荒岛。但毛姆写的<b>不是传记</b>——他自己借叙述者之口提醒过读者，除了生活的大致轮廓，斯特里克兰德完全是另一个人，更怪、更狠，也更有血有肉。全书用第一人称旁观者叙事，"我"是个初出茅庐的年轻作家，通过一次次转述、追访与偶遇，把一个无法被直接看清楚的人拼了出来。</p>
+
+    <div class="bookinfo">
+      <div class="meta-card">
+        <dl>
+          <dt>书名</dt><dd>月亮与六便士 <span class="small">/ The Moon and Sixpence</span></dd>
+          <dt>作者</dt><dd>毛姆 <span class="small">（W. Somerset Maugham，1874—1965，英国小说家、剧作家）</span></dd>
+          <dt>首版</dt><dd>1919 年 <span class="small">4 月 15 日</span></dd>
+          <dt>中译</dt><dd>傅惟慈 译 <span class="small">上海译文出版社（另有多个译本）</span></dd>
+          <dt>体裁</dt><dd>长篇小说 <span class="small">第一人称旁观者叙事</span></dd>
+          <dt>篇幅</dt><dd>58 节 <span class="small">通行版本分 14 章</span></dd>
+          <dt>主人公</dt><dd>查尔斯·斯特里克兰德 <span class="small">原型：保罗·高更</span></dd>
+          <dt>主要场景</dt><dd>伦敦 · 巴黎 · 马赛 · 塔希提</dd>
+          <dt>书名由来</dt><dd>《人性的枷锁》书评 <span class="small">"终日仰慕月亮，却没看到脚下的六便士"</span></dd>
+          <dt>领域</dt><dd>文学 · 艺术小说 · 人生选择 · 创造冲动</dd>
+          <dt>关键词</dt><dd>月亮 · 六便士 · 我必须画画 · 塔希提 · 付之一炬</dd>
+        </dl>
+      </div>
+
+      <div class="right">
+        <p class="thesis">
+          这本书真正难的地方在于：毛姆<b>既没有把他写成英雄，也没有审判他</b>。
+          斯特里克兰德抛妻弃子、害死布兰奇、对救过自己的人毫无愧意，说"我不需要爱情"，
+          最后留下遗言把画烧掉——他不在乎任何人，包括后世。
+          毛姆只是把这件事摆出来，然后让你自己去判断：
+          <b>一个人被某种东西彻底附体，到底算伟大，还是算一种病？</b>
+        </p>
+        <div>
+          <span class="chip">#毛姆</span>
+          <span class="chip">#月亮与六便士</span>
+          <span class="chip">#高更</span>
+          <span class="chip">#我必须画画</span>
+          <span class="chip">#塔希提</span>
+          <span class="chip">#斯特里克兰德</span>
+          <span class="chip">#创造冲动</span>
+          <span class="chip">#付之一炬</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 一句话总览 ============ -->
+<section id="one" class="oneliner" aria-labelledby="one-h">
+  <div class="wrap" style="padding-top:0;padding-bottom:0">
+    <div class="eyebrow2" style="justify-content:center"><span class="num">02 /</span>ONE SENTENCE</div>
+    <h2 id="one-h" style="text-align:center">一句话总览</h2>
+    <blockquote>
+      满地都是六便士，<br/>他却抬头<br/>看见了月亮。
+    </blockquote>
+    <div class="src">— 书名意象最广为流传的中译概括（非傅惟慈译本原句）</div>
+  </div>
+</section>
+
+<!-- ============ 2. 两组核心对照 ============ -->
+<section id="dual" aria-labelledby="dual-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">03 /</span>THE CORE CONTRASTS</div>
+    <h2 id="dual-h">两组核心对照<b class="tail">·</b>月亮与六便士，以及两种出走</h2>
+    <p class="sub">第一组是书名本身：安稳体面的人生，和非做不可的那件事。第二组是书里最容易被漏掉的一段——毛姆其实给了两种"抛下一切"的样本，一种是毁灭式的，一种是建造式的。</p>
+
+    <div class="dualset">
+
+      <!-- 对照 A -->
+      <div class="setlabel">A · 六便士 vs 月亮：一种生活，和一种命令</div>
+      <div class="dual">
+        <div class="sys a" aria-label="六便士">
+          <div class="tag">六便士 · 生活</div>
+          <h3>体面、安稳、可解释的人生</h3>
+          <div class="sub">伦敦 · 证券交易所 · 妻子儿女</div>
+          <p>出走之前的斯特里克兰德，是一个<b>毫无特点的中年人</b>：证券经纪人，太太爱开文学派对，两个孩子，十七年婚姻，生活安排得妥妥当当。毛姆特意把他写得极其平庸——正因为平庸，后面的崩塌才有重量。</p>
+          <ul>
+            <li><b>价值来源</b><span>别人的评价：体面、和睦、可预期</span></li>
+            <li><b>时间观</b><span>线性：读书、工作、结婚、退休</span></li>
+            <li><b>风险</b><span>人可以被安排得很好，却从没被问过想不想要</span></li>
+          </ul>
+          <div class="quote">"这种生活模式给人以安详亲切之感。它使人想到一条平静的小河，蜿蜒流过绿茸茸的牧场……"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="月亮">
+          <div class="tag">月亮 · 命令</div>
+          <h3>我必须画画，我由不了我自己</h3>
+          <div class="sub">巴黎 · 马赛 · 塔希提</div>
+          <p>他的出走没有理由、没有规划、没有浪漫。被问到"你是不是有了别的女人"，他说："<b>我告诉你我必须画画。我由不了我自己。</b>一个人要是掉进水里，他游泳游得好不好无关紧要，反正他得挣扎出来，不然就得淹死。"——这不是选择，是<b>被附体</b>。</p>
+          <ul>
+            <li><b>价值来源</b><span>内在的命令：画出来，别的都不算数</span></li>
+            <li><b>时间观</b><span>只剩下"还没画完"这一件事</span></li>
+            <li><b>代价</b><span>贫困、疾病、孤独，以及身边所有人</span></li>
+          </ul>
+          <div class="quote">"我必须画画。"</div>
+        </div>
+      </div>
+
+      <!-- 对照 B -->
+      <div class="setlabel">B · 两种出走：把一切烧掉，和亲手造出自己的生活</div>
+      <div class="dual">
+        <div class="sys a" aria-label="斯特里克兰德式">
+          <div class="tag">毁灭式</div>
+          <h3>斯特里克兰德：为了画，可以毁掉任何人</h3>
+          <div class="sub">包括救过他命的人</div>
+          <p>荷兰画家德克·斯特罗夫在他快病死时把他接到家里照料，他却占有了斯特罗夫的妻子布兰奇，并在布兰奇自杀后毫无悔意，只说"她的死跟我有什么关系"。<b>他不是坏人——他是根本没有"别人"这个维度。</b>毛姆借叙述者说：这是一个惹人嫌的人，但我仍然认为他伟大。</p>
+          <ul>
+            <li><b>对他人</b><span>不恨，也不爱，只是看不见</span></li>
+            <li><b>对作品</b><span>画完即弃，连名声都不想要</span></li>
+            <li><b>结局</b><span>麻风失明后画满四壁，遗命烧掉</span></li>
+          </ul>
+          <div class="quote">"他创造了一个世界，也看到自己创造的世界有多美好。然后，带着骄傲和轻蔑，又把它毁掉了。"</div>
+        </div>
+
+        <div class="vs" aria-hidden="true">vs</div>
+
+        <div class="sys b" aria-label="船长式">
+          <div class="tag">建造式</div>
+          <h3>布吕诺船长：我也从未后悔过</h3>
+          <div class="sub">以及放弃外科主任的阿伯拉罕</div>
+          <p>书中另有两条暗线：才华横溢的医生阿伯拉罕，在即将当上外科主任时辞了职，去亚历山大港当个检疫员，旁人替他惋惜，他却"从未后悔"；布吕诺船长破产后带着妻子去荒岛，一砖一瓦亲手建起家园。<b>他们同样放弃了世俗意义上的成功，却把生活建了起来，而不是烧掉。</b></p>
+          <ul>
+            <li><b>对他人</b><span>与所爱的人共同完成一件事</span></li>
+            <li><b>对作品</b><span>作品就是生活本身</span></li>
+            <li><b>答案</b><span>"做自己最想做的事，过自己想过的生活"</span></li>
+          </ul>
+          <div class="quote">"我不知道，是什么让他做出这个选择……但他从未后悔过。"</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. 关键概念卡片 ============ -->
+<section id="bias" aria-labelledby="bias-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">04 /</span>KEY IDEAS</div>
+    <h2 id="bias-h">十张<b class="tail">书签</b>，把这本书拆开</h2>
+    <p class="sub">前五张讲"为什么书名这样取、他为什么非走不可"，中间三张讲书里最刺痛也最有争议的部分，最后两张讲结局：为什么他要毁掉自己最好的画。</p>
+
+    <div class="biases">
+
+      <article class="bias c1">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 01</div>
+        <h3>月亮与六便士 <span class="en">The Title</span></h3>
+        <p class="mech">书名来自一篇书评：《泰晤士报文学增刊》评论毛姆前作《人性的枷锁》，说主人公菲利普"像许多年轻人一样，终日仰慕月亮，却没看见脚下的六便士"。毛姆很喜欢这个说法，就拿来做了下一本小说的名字。<b>六便士是英国面值最小的银币</b>——卑微的现实；月亮则是抬头才看得见的东西。</p>
+        <div class="example"><b>注意</b>广为流传的"满地都是六便士，他却抬头看见了月亮"是后人概括，并非译本原句。</div>
+      </article>
+
+      <article class="bias c2">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 02</div>
+        <h3>"我必须画画" <span class="en">I Must Paint</span></h3>
+        <p class="mech">全书最重要的一句，也是理解主人公的钥匙。它不是理想、不是爱好、不是中年叛逆，而是<b>一种不可协商的内在命令</b>。毛姆用掉进水里的比喻说明：这不是游得好不好的问题，是淹不淹死的问题。于是后面所有的冷酷都有了同一个解释——他不是在对抗谁，他是在逃命。</p>
+        <div class="example"><b>例子</b>被问"你多大年纪了？""四十七。""这个年纪才开始，太晚了。""我必须画画。"</div>
+      </article>
+
+      <article class="bias c3">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 03</div>
+        <h3>十行字的出走 <span class="en">The Departure</span></h3>
+        <p class="mech">他留给妻子的信只有十来行，说"我不再回来了"，没有解释、没有道歉、没有安排。妻子最不能忍受的不是被抛弃，而是<b>无法把它解释成一场桃色事件</b>——如果他是跟人跑了，她还能恨；他是去画画，这件事没法恨，也没法懂。</p>
+        <div class="example"><b>例子</b>毛姆的刻薄：女人可以原谅男人伤害她，但永远不能原谅男人为她做出牺牲。</div>
+      </article>
+
+      <article class="bias c4">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 04</div>
+        <h3>德克·斯特罗夫 <span class="en">The Good Man</span></h3>
+        <p class="mech">全书最让人难受的角色：画得不好却极有鉴赏力，心地善良、常被嘲笑，是唯一一眼看出斯特里克兰德天才的人，也是唯一在对方快死时出手相救的人。<b>然后他被毁了</b>——妻子跟了斯特里克兰德，又自杀身亡，他最后回到荷兰老家。善良在此书里没有得到任何回报。</p>
+        <div class="example"><b>提醒</b>毛姆不是在说"好人活该"，而是在问：天赋与德性是否毫无关系？</div>
+      </article>
+
+      <article class="bias c5">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 05</div>
+        <h3>布兰奇之死 <span class="en">Blanche</span></h3>
+        <p class="mech">她本是斯特罗夫的妻子，曾极度厌恶斯特里克兰德，却在照料中沦陷，最终被抛弃后服毒自杀。斯特里克兰德的反应最冷：<b>"她自杀是因为她蠢，不是因为我。"</b>这一段是全书道德上最锋利的地方——毛姆没有替任何一方开脱，只让读者直面一个无法被原谅的事实。</p>
+        <div class="example"><b>例子</b>他说："我不需要爱情。我没有时间谈情说爱，那是人性的弱点。"</div>
+      </article>
+
+      <article class="bias c6">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 06</div>
+        <h3>书中的女性观 <span class="en">Controversy</span></h3>
+        <p class="mech">必须写清楚：<b>这是本书最需要警惕的部分</b>。书中关于女性的大量议论（如"女人除了谈情说爱不会干别的"）带有明显的时代偏见与作者个人色彩，今天读来刺眼。毛姆写的是他那个时代的旁观者，也是他自己——<b>承认这一点，不影响这本书的价值，但影响你怎么读它。</b></p>
+        <div class="example"><b>建议</b>把这些段落当成"1919 年的作者侧写"来读，而不是当作对两性关系的判断。</div>
+      </article>
+
+      <article class="bias c7">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 07</div>
+        <h3>塔希提 <span class="en">Tahiti</span></h3>
+        <p class="mech">离开文明世界之后，他终于找到了"适合自己的土壤"。毛姆在此处笔调一变：湿热、明亮、原始。这不是田园牧歌式的赞美——岛上同样有贫困、疾病与死亡——但对斯特里克兰德而言，<b>这里没有人要求他解释自己</b>。环境的正确，有时比努力更重要。</p>
+        <div class="example"><b>例子</b>有人说他坏话，土著人替他说话的情节：人们对一个异类的容忍度，取决于这片土地有多宽。</div>
+      </article>
+
+      <article class="bias c8">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 08</div>
+        <h3>爱塔 <span class="en">Ata</span></h3>
+        <p class="mech">土著女子爱塔嫁给他，住在偏远的山谷里，他染上麻风病后她仍守着他，直到他死去、按要求放火烧屋。<b>斯特里克兰德说过一句罕见的话："她不打扰我，她给我做饭，她照顾我，她要的只是我的画。"</b>——这依然不是爱情，但这是他唯一能接受的关系形态。</p>
+        <div class="example"><b>提醒</b>这段同样带有殖民与性别视角的时代局限，建议带着距离读。</div>
+      </article>
+
+      <article class="bias c9">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 09</div>
+        <h3>失明后的四壁 <span class="en">The Last Work</span></h3>
+        <p class="mech">他晚年染上麻风，双目失明，却在自己的茅屋四壁画了一幅表现伊甸园的巨作。库特拉斯医生进屋时几乎无法呼吸——那是他一生最好的东西，<b>画在一个即将被烧掉的房子里，给一个看不见的人看</b>。创作在此刻彻底脱离了观众、市场、名声。</p>
+        <div class="example"><b>例子</b>艺术史上没有留下这幅画——它只存在于小说里，和见过它的人的眼睛里。</div>
+      </article>
+
+      <article class="bias c10">
+        <div class="ribbon-top"></div>
+        <div class="num">N° 10</div>
+        <h3>付之一炬 <span class="en">Burn It Down</span></h3>
+        <p class="mech">他临终前要爱塔答应：他一死就放火烧掉房子，一片木板也不留。<b>他完成了，所以不需要被看见。</b>这也是全书最反成功学的一笔——今天我们拼命积累作品、履历、影响力，而他画完了就烧。毛姆把它写成一种近乎宗教的完成：创造本身就是全部回报。</p>
+        <div class="example"><b>例子</b>他死后，那些当年不值钱的画成了稀世珍品。他对此毫无兴趣，因为他已经死了。</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. 脉络图 ============ -->
+<section id="map" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">05 /</span>STRUCTURE</div>
+    <h2 id="map-h">五段<b class="tail">五脉</b> · 脉络</h2>
+    <p class="sub">全书 58 节，按场景可归为五脉：出走 → 巴黎 → 马赛 → 塔希提 → 身后。叙述者"我"从一个旁观者，逐渐变成唯一的转述人，最后只能拼凑别人的回忆。</p>
+
+    <div class="chaptermap" role="list">
+      <article class="part p1" role="listitem">
+        <div class="pin">出走 · 一</div>
+        <h3>一个毫无特点的中年人</h3>
+        <div class="range">伦敦</div>
+        <ul class="chapters">
+          <li>"我"在斯特里克兰德太太的文学沙龙里初见他：沉默、无趣</li>
+          <li>他突然离家，留下一封十行字的信</li>
+          <li>太太断言：他一定是跟女人跑了</li>
+          <li>"我"受托去巴黎找他，得到的答案是"我要画画"</li>
+        </ul>
+      </article>
+
+      <article class="part p2" role="listitem">
+        <div class="pin">巴黎 · 二</div>
+        <h3>贫困、自尊与一个好人</h3>
+        <div class="range">破旅馆 · 画室</div>
+        <ul class="chapters">
+          <li>五年过去，他住在最破的旅馆，穷得连颜料都买不起</li>
+          <li>他从不卖画、不让人看画、对评价毫无兴趣</li>
+          <li>德克·斯特罗夫一眼认出他是天才，救了他的命</li>
+          <li>布兰奇随他而去，最终自杀；斯特罗夫家破人亡</li>
+        </ul>
+      </article>
+
+      <article class="part p3" role="listitem">
+        <div class="pin">马赛 · 三</div>
+        <h3>底层，与一个更野的样本</h3>
+        <div class="range">港口 · 收容所</div>
+        <ul class="chapters">
+          <li>"我"在马赛的贫民窟再次遇到他，身无分文</li>
+          <li>盘桓于水手、流浪汉之间，靠施舍与零工活着</li>
+          <li>依旧不解释自己，依旧只对画画这件事认真</li>
+          <li>从这里，他搭船去了南太平洋</li>
+        </ul>
+      </article>
+
+      <article class="part p4" role="listitem">
+        <div class="pin">塔希提 · 四</div>
+        <h3>他终于找到了自己的土壤</h3>
+        <div class="range">帕皮提 · 山谷</div>
+        <ul class="chapters">
+          <li>由商人、船长、医生等人分段转述他在岛上的岁月</li>
+          <li>与爱塔结婚，住进偏远山谷，日夜作画</li>
+          <li>染上麻风，被隔离，仍然画</li>
+          <li>双目失明后，在四壁画满伊甸园</li>
+        </ul>
+      </article>
+
+      <article class="part p5" role="listitem">
+        <div class="pin">身后 · 五</div>
+        <h3>火灾，与两条平行的暗线</h3>
+        <div class="range">尾声</div>
+        <ul class="chapters">
+          <li>他死后，爱塔按遗命烧掉房子，一片木板不留</li>
+          <li>当年无人问津的画，后来成了稀世珍品</li>
+          <li>阿伯拉罕：放弃外科主任，去当检疫员，从未后悔</li>
+          <li>布吕诺船长：在荒岛上亲手建造出自己的生活</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. 金句 ============ -->
+<section id="quotes" aria-labelledby="quotes-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">06 /</span>QUOTES</div>
+    <h2 id="quotes-h">五句值得抄在笔记本上的话</h2>
+    <p class="sub">以下为通行中译本的意译摘录，个别句子存在多种译法；标注"意象概括"者非译本原句，而是书名意象的通行中文表达。</p>
+
+    <div class="quotes">
+
+      <article class="quote-card qc1">
+        <span class="qmark">“</span>
+        <p>满地都是六便士，<br/>他却抬头看见了月亮。</p>
+        <div class="src">— 书名意象的通行中译概括</div>
+      </article>
+
+      <article class="quote-card qc2">
+        <span class="qmark">“</span>
+        <p>我告诉你我必须画画。<br/>我由不了我自己。<br/>一个人掉进水里，他游得好不好无关紧要，<br/>他得挣扎出来，不然就得淹死。</p>
+        <div class="src">— 关于命令</div>
+      </article>
+
+      <article class="quote-card qc3">
+        <span class="qmark">“</span>
+        <p>做自己最想做的事，<br/>生活在自己喜爱的环境里，<br/>这难道是糟蹋自己吗？</p>
+        <div class="src">— 关于成功</div>
+      </article>
+
+      <article class="quote-card qc4">
+        <span class="qmark">“</span>
+        <p>上帝的磨盘磨得很慢，<br/>但磨得很细。</p>
+        <div class="src">— 关于报应</div>
+      </article>
+
+      <article class="quote-card qc5">
+        <span class="qmark">“</span>
+        <p>我们每个人生在世界上都是孤独的。<br/>每个人都被囚禁在一座铁塔里，<br/>只能靠一些符号同别人传达自己的思想。</p>
+        <div class="src">— 关于沟通</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. 行动启发 ============ -->
+<section id="action" aria-labelledby="action-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">07 /</span>TAKEAWAYS</div>
+    <h2 id="action-h">可以立刻落地的<b class="tail">八条</b>练习</h2>
+    <p class="sub">这本书不该被读成"辞职去追梦"的鸡汤——毛姆写的是被附体，不是可复制的选择。所以下面这些练习，重点不是学他抛下一切，而是借他这面镜子看清自己的处境。</p>
+
+    <div class="actions">
+
+      <div class="action">
+        <div class="ic">01</div>
+        <div>
+          <h4>先分清：是"想做"，还是"必须做"</h4>
+          <p>斯特里克兰德的区别在于"我由不了我自己"。给自己一件想做的事打一次分：如果十年内不允许任何人知道、不允许任何回报，你还做不做？如果答案是"那就没必要了"，它是愿望，不是命令——愿望同样值得做，但别用它的标准要求自己辞职。</p>
+          <span class="tag">↳ 我必须画画</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">02</div>
+        <div>
+          <h4>写下你自己的"六便士"清单</h4>
+          <p>把你现在维持的体面逐条写下来：职位、房、车、某项社会身份、某个你其实不在乎的评价。然后标出哪些是你真想要的，哪些只是"别人以为你该要"。这份清单不一定要改动，但你得先看见它。</p>
+          <span class="tag">↳ 六便士</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">03</div>
+        <div>
+          <h4>找出你的"斯特罗夫"——并别做那样的人</h4>
+          <p>斯特罗夫有鉴赏力、有善心，却把这两样全用来服务一个根本看不见他的人，最后家破人亡。如果你身边有人长期消耗你的善意，请承认一个事实：善良不是理解，牺牲换不来被看见。把善意留给会回应的人。</p>
+          <span class="tag">↳ 德克·斯特罗夫</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">04</div>
+        <div>
+          <h4>检查你的环境是不是在拖你</h4>
+          <p>他在伦敦毫无生气，在巴黎贫困但专注，在塔希提才真正画出来。同一件事换一个土壤，结果可以完全不同。问自己：我现在这件事做不成，是因为能力不够，还是因为身边的人一直在要求我解释自己？</p>
+          <span class="tag">↳ 塔希提</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">05</div>
+        <div>
+          <h4>做一件"完成即焚"的事</h4>
+          <p>他画完最好的画，然后烧掉。你可以小范围试试：写一篇不给任何人看的字、做一个不留档的作品、完成一件事而不发朋友圈。体会一下"为了做而做"是什么手感——这是对"一切都要被看见"的一种解毒。</p>
+          <span class="tag">↳ 付之一炬</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">06</div>
+        <div>
+          <h4>用"从未后悔"而不是"值得羡慕"来检验</h4>
+          <p>阿伯拉罕放弃外科主任去当检疫员，旁人替他惋惜，他自己从未后悔。评价别人的选择时，用"他后不后悔"，不要用"值不值"。评价自己时更是如此——别人算的是市价，你算的是余生。</p>
+          <span class="tag">↳ 阿伯拉罕</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">07</div>
+        <div>
+          <h4>提醒自己：天才不是道德豁免权</h4>
+          <p>这本书最危险的地方，是它容易让人把冷酷当成深刻。请在合上书之前写下一句：斯特里克兰德的伟大在于他的作品，不在于他对人的方式。你可以欣赏前者，不必模仿后者。</p>
+          <span class="tag">↳ 反向提醒</span>
+        </div>
+      </div>
+
+      <div class="action">
+        <div class="ic">08</div>
+        <div>
+          <h4>如果你真想动，先做"布吕诺船长式"的版本</h4>
+          <p>同样是抛下一切，船长的版本是：带着爱的人，去一个地方，一砖一瓦亲手把生活建起来。它不比斯特里克兰德的版本逊色，而且不伤害任何人。想改变人生，先从"建造"开始，而不是从"烧掉"开始。</p>
+          <span class="tag">↳ 布吕诺船长</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. 适合谁读 ============ -->
+<section id="who" aria-labelledby="who-h">
+  <div class="wrap">
+    <div class="eyebrow2"><span class="num">08 /</span>FOR WHOM</div>
+    <h2 id="who-h">适合谁读 / 不适合谁读</h2>
+    <p class="sub">它解决的是"当内心的命令与世俗的体面彻底冲突时，人会变成什么样"。它不提供答案，也不提供鼓励——它提供的是一个极端样本，让你回去审视自己那份没那么极端的生活。</p>
+
+    <div class="readers">
+      <article class="who yes">
+        <h3><span class="swatch"></span>尤其推荐</h3>
+        <ul>
+          <li>在<b>安稳与想做的事之间反复拉扯</b>的人：这本书会把两边的价码都摊开给你看</li>
+          <li>做<b>创作、设计、写作</b>的人：关于"为谁而做""要不要被看见"，它比任何创作谈都狠</li>
+          <li>喜欢<b>第一人称旁观者叙事</b>的人：主角几乎不出场，全靠转述拼出来，是叙事上的教科书</li>
+          <li>想读<b>高更</b>的人：可作为入口，但请接着去读真正的传记与画册（本书是小说，不是传记）</li>
+          <li>对<b>"成功"的定义</b>有疑问的人：书中给出三种人生，各自成立，互不否定</li>
+          <li>可对照本系列 NO.02《被讨厌的勇气》"课题分离"、NO.11《以终为始》并读</li>
+        </ul>
+      </article>
+
+      <article class="who no">
+        <h3><span class="swatch"></span>不推荐 / 慎读</h3>
+        <ul>
+          <li>想找<b>追梦励志故事</b>的人：这不是励志书，主人公冷酷、自私、毁人，最后还烧掉作品</li>
+          <li>期待<b>高更的真实生平</b>的人：毛姆明说除了轮廓外完全是另一个人，请勿当传记读</li>
+          <li>对<b>性别议题敏感</b>的读者：书中关于女性的大量议论带有 1919 年的明确偏见，需带距离阅读</li>
+          <li>正在<b>情绪低谷</b>中考虑重大人生变动的人：这本书可能强化"抛下一切"的冲动，请先读完再决定</li>
+          <li>想找<b>绘画技法或艺术史</b>的人：书中几乎没有具体谈画，只谈一个人被画这件事占据的样子</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="mark">
+      "我告诉你我必须画画。我由不了我自己。"
+    </div>
+    <div class="rule"></div>
+    <div class="meta">
+      读书笔记 · 《月亮与六便士》· 毛姆 · 1919<br/>
+      本笔记用于个人学习，请勿商用
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
