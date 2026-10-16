@@ -27,7 +27,7 @@ export function buildShareData(book: Book): ShareData {
     sub: book.sub,
     author: book.authorShort || book.author,
     summary: book.lede,
-    url: typeof location !== 'undefined' ? location.href.split('#')[0] : '',
+    url: typeof location !== 'undefined' ? location.href : '',
     accent: book.accent
   }
 }
