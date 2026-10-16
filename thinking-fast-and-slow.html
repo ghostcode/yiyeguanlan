@@ -540,12 +540,6 @@ h3{
     .share-poster{border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#f4ecd8}
     .share-poster canvas{display:block;width:100%;height:auto}
     .share-poster-img{display:block;width:100%;height:auto;border-radius:6px}
-    .share-qr{display:flex;align-items:center;gap:14px;margin:16px 0 0;padding:12px;
-      border:1px dashed var(--rule);border-radius:8px;background:var(--paper)}
-    .share-qr canvas{width:104px;height:104px;flex:0 0 auto;background:#fff;border-radius:4px}
-    .share-qr-tx{display:flex;flex-direction:column;gap:4px}
-    .share-qr-tx b{font-family:var(--serif);font-size:15px;letter-spacing:.5px}
-    .share-qr-tx span{font-size:12px;color:var(--ink-3);line-height:1.65}
     .share-note{margin:10px 0 0;font-size:11.5px;line-height:1.7;color:var(--ink-3)}
     .share-acts{display:flex;gap:10px;margin-top:16px}
     .share-btn{flex:1;appearance:none;cursor:pointer;font-family:var(--sans);font-size:13.5px;letter-spacing:1px;
@@ -1597,9 +1591,6 @@ h3{
         '<div class="share-head"><b>分享这一卷</b>' +
           '<button type="button" class="share-x" data-share-close aria-label="关闭">×</button></div>' +
         '<div class="share-poster"><canvas></canvas></div>' +
-        '<div class="share-qr"><canvas></canvas>' +
-          '<div class="share-qr-tx"><b>扫码打开这一卷</b>' +
-            '<span>手机扫码即可阅读；长按二维码可保存图片</span></div></div>' +
         '<div class="share-note" hidden></div>' +
         '<div class="share-acts">' +
           '<button type="button" class="share-btn primary" data-share-act="download">下载图片</button>' +
@@ -1609,8 +1600,7 @@ h3{
       '</div>';
     document.body.appendChild(modal);
     posterCv = modal.querySelector('.share-poster canvas');
-    qrCv = modal.querySelector('.share-qr canvas');
-
+    
     modal.addEventListener('click', function (e) {
       var t = e.target;
       if (t.hasAttribute && t.hasAttribute('data-share-close')) { close(); return; }
@@ -1627,7 +1617,7 @@ h3{
   function open(data) {
     if (!modal) build();
     curData = data;
-    if (!paintQR(qrCv, data.url, 420)) {
+    if (qrCv && !paintQR(qrCv, data.url, 420)) {
       qrCv.width = qrCv.height = 420;
       var c = qrCv.getContext('2d');
       c.fillStyle = '#ffffff'; c.fillRect(0, 0, 420, 420);
@@ -1638,7 +1628,7 @@ h3{
     var note = modal.querySelector('.share-note');
     if (location.protocol === 'file:') {
       note.hidden = false;
-      note.textContent = '提示：当前以本地文件方式打开，二维码编码的是本机路径；部署到线上后，扫码即可直接打开这一卷。';
+      note.textContent = '提示：当前以本地文件方式打开；部署到线上后，链接方可正常访问。';
     } else note.hidden = true;
     var cp = modal.querySelector('[data-share-act="copy"]');
     cp.textContent = '复制链接';
