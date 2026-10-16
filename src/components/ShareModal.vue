@@ -23,8 +23,9 @@ function open(book: Book) {
       renderPoster(posterCv.value, curData.value)
       if (isWeChat) posterImg.value = posterCv.value.toDataURL('image/png')
     }
-    note.value =
-      location.protocol === 'file:'
+    note.value = isWeChat
+      ? '微信环境：请长按上方海报进行分享、下载'
+      : location.protocol === 'file:'
         ? '提示：当前以本地文件方式打开；部署到线上后，链接方可正常访问。'
         : ''
   })
@@ -51,6 +52,7 @@ function flash(btn: HTMLElement, _ok: boolean, msg: string) {
 async function copyImage(btn: HTMLElement) {
   if (isWeChat || !posterCv.value) {
     showImg()
+    flash(btn, false, '长按上图进行分享、下载')
     return
   }
   try {
@@ -79,7 +81,11 @@ function copy(btn: HTMLElement) {
 }
 
 function download(btn: HTMLElement) {
-  if (!posterCv.value) return
+  if (isWeChat || !posterCv.value) {
+    showImg()
+    flash(btn, false, '长按上图进行分享、下载')
+    return
+  }
   posterCv.value.toBlob((blob) => {
     if (!blob) {
       flash(btn, false, '保存失败')
