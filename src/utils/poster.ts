@@ -313,7 +313,7 @@ function paintQRInline(ctx: CanvasRenderingContext2D, text: string, x: number, y
       const y0 = Math.round((r + qz) * unit)
       const x1 = Math.round((c + qz + 1) * unit)
       const y1 = Math.round((r + qz + 1) * unit)
-      ctx.fillRect(x0, y0, x1 - x0, y1 - y0)
+      ctx.fillRect(x + x0, y + y0, x1 - x0, y1 - y0)
     }
   }
 }
