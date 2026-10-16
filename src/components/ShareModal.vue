@@ -8,6 +8,18 @@ const note = ref('')
 const posterCv = ref<HTMLCanvasElement | null>(null)
 const posterImg = ref('')
 const curData = ref<ShareData | null>(null)
+const toast = ref(false)
+const toastMsg = ref('')
+let toastTimer: number | undefined
+
+function showToast(msg: string, ms = 1800) {
+  toastMsg.value = msg
+  toast.value = true
+  if (toastTimer) window.clearTimeout(toastTimer)
+  toastTimer = window.setTimeout(() => {
+    toast.value = false
+  }, ms)
+}
 
 const isWeChat =
   /micromessenger/i.test(navigator.userAgent) ||
@@ -52,7 +64,7 @@ function flash(btn: HTMLElement, _ok: boolean, msg: string) {
 async function copyImage(btn: HTMLElement) {
   if (isWeChat || !posterCv.value) {
     showImg()
-    flash(btn, false, '长按上图进行分享、下载')
+    showToast('长按上图进行分享、下载')
     return
   }
   try {
@@ -83,7 +95,7 @@ function copy(btn: HTMLElement) {
 function download(btn: HTMLElement) {
   if (isWeChat || !posterCv.value) {
     showImg()
-    flash(btn, false, '长按上图进行分享、下载')
+    showToast('长按上图进行分享、下载')
     return
   }
   posterCv.value.toBlob((blob) => {
@@ -115,7 +127,10 @@ function onKey(e: KeyboardEvent) {
 }
 
 onMounted(() => document.addEventListener('keydown', onKey))
-onBeforeUnmount(() => document.removeEventListener('keydown', onKey))
+onBeforeUnmount(() => {
+  document.removeEventListener('keydown', onKey)
+  if (toastTimer) window.clearTimeout(toastTimer)
+})
 
 defineExpose({ open })
 </script>
@@ -158,6 +173,9 @@ defineExpose({ open })
           </button>
         </div>
       </div>
+      <transition name="share-toast">
+        <div class="share-toast" v-if="toast">{{ toastMsg }}</div>
+      </transition>
     </div>
   </Teleport>
 </template>
