@@ -1,0 +1,387 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "一页观澜" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - button "分享这一卷" [active] [ref=e7] [cursor=pointer]: 分享
+        - generic [ref=e8]: 阅读笔记 · THINKING, FAST & SLOW · DANIEL KAHNEMAN
+        - navigation "目录" [ref=e9]:
+          - link "书籍" [ref=e10] [cursor=pointer]:
+            - /url: "#info"
+          - link "总览" [ref=e11] [cursor=pointer]:
+            - /url: "#one"
+          - link "双系统" [ref=e12] [cursor=pointer]:
+            - /url: "#dual"
+          - link "偏误" [ref=e13] [cursor=pointer]:
+            - /url: "#bias"
+          - link "脉络" [ref=e14] [cursor=pointer]:
+            - /url: "#map"
+          - link "金句" [ref=e15] [cursor=pointer]:
+            - /url: "#quotes"
+          - link "行动" [ref=e16] [cursor=pointer]:
+            - /url: "#action"
+          - link "读者" [ref=e17] [cursor=pointer]:
+            - /url: "#who"
+    - region "封面" [ref=e18]:
+      - img "暖光下的图书馆书架" [ref=e19]
+      - generic [ref=e20]: NO. 01 · 行为决策
+      - generic [ref=e21]:
+        - generic [ref=e22]: READING NOTES
+        - heading "思考，快与慢 THINKING, FAST & SLOW · DANIEL KAHNEMAN" [level=1] [ref=e24]:
+          - text: 思考，快与慢
+          - generic [ref=e25]: THINKING, FAST & SLOW · DANIEL KAHNEMAN
+        - paragraph [ref=e26]: 一部关于"我们究竟如何思考"的大书。它告诉我们：我们的自信，往往来自一个并不真正了解自己如何思考的系统。
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: 作者
+            - text: 丹尼尔·卡尼曼（Daniel Kahneman, 1934–2024）
+          - generic [ref=e30]:
+            - generic [ref=e31]: 领域
+            - text: 认知心理学 · 行为经济学
+          - generic [ref=e32]:
+            - generic [ref=e33]: 首版
+            - text: 2011 · 38章 / 5部分
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: 01 /
+        - text: 关于这本书
+      - heading "一本让人重新认识自己判断力的书" [level=2] [ref=e38]
+      - paragraph [ref=e39]: 卡尼曼以心理学家身份获2002年诺贝尔经济学奖，与已故搭档阿莫斯·特沃斯基（Amos Tversky）共同奠定了"启发法与偏差"研究的基石。《思考，快与慢》是其集大成之作。
+      - generic [ref=e40]:
+        - generic [ref=e42]:
+          - term [ref=e43]: 书名
+          - definition [ref=e44]: 思考，快与慢 / Thinking, Fast and Slow
+          - term [ref=e45]: 作者
+          - definition [ref=e46]: 丹尼尔·卡尼曼 Daniel Kahneman, 1934–2024
+          - term [ref=e47]: 合作者
+          - definition [ref=e48]: 阿莫斯·特沃斯基 Amos Tversky（已故）
+          - term [ref=e49]: 领域
+          - definition [ref=e50]: 认知心理学 · 行为经济学 · 判断与决策
+          - term [ref=e51]: 首版
+          - definition [ref=e52]: 2011 年 （Farrar, Straus and Giroux）
+          - term [ref=e53]: 结构
+          - definition [ref=e54]: 5 部分 · 38 章
+          - term [ref=e55]: 荣誉
+          - definition [ref=e56]: 2002 年诺贝尔经济学奖 （与 Vernon Smith 共享）
+          - term [ref=e57]: 影响
+          - definition [ref=e58]: 行为经济学与"助推"理论的奠基读物
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: 人的判断不是由一个理性主体做出的，而是由快的直觉系统与慢的理性系统协作产生。 直觉系统高效却系统性出错；认识到这些可预测的偏差，才有可能在关键决策上做得更好。
+          - generic [ref=e61]:
+            - generic [ref=e62]: "#双系统"
+            - generic [ref=e63]: "#启发法与偏差"
+            - generic [ref=e64]: "#前景理论"
+            - generic [ref=e65]: "#峰终定律"
+            - generic [ref=e66]: "#经验自我·记忆自我"
+    - generic [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]: 02 /
+        - text: ONE SENTENCE
+      - heading "一句话总览" [level=2] [ref=e71]
+      - blockquote [ref=e72]: 我们对自己思维的信心，往往来自一个并不了解自己如何思考的系统。
+      - generic [ref=e73]: — WHAT YOU SEE IS ALL THERE IS
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]: 03 /
+        - text: THE TWO SYSTEMS
+      - heading "双系统核心框架·快与慢" [level=2] [ref=e78]
+      - paragraph [ref=e79]: 卡尼曼把心智拆成两套"装置"。它们不是解剖结构，而是一种隐喻：用来描述我们大脑中两种不同的工作方式。
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]: SYSTEM 1
+          - heading "系统 1 · 快" [level=3] [ref=e84]
+          - generic [ref=e85]: FAST · INTUITIVE · ALWAYS ON
+          - paragraph [ref=e86]: 无意识、自动、快速、低能耗、并行、联想、情绪化、不可关闭。看见2+2就报4，被人骂了立刻有情绪，听见巨响立刻警觉——都是它在工作。
+          - list [ref=e87]:
+            - listitem [ref=e88]:
+              - generic [ref=e89]: 擅长
+              - generic [ref=e90]: 模式识别、熟练技能、即时反应、把感觉当作判断
+            - listitem [ref=e91]:
+              - generic [ref=e92]: 缺陷
+              - generic [ref=e93]: 受锚定、替代、情绪、WYSIATI 限制；"所见即全部"
+            - listitem [ref=e94]:
+              - generic [ref=e95]: 代价
+              - generic [ref=e96]: 几乎免费地持续运行，错误却难被察觉
+          - generic [ref=e97]: "\"系统1不是可以被关掉的。真正能做的，是学会识别它在哪里、在什么时候会出错的。\""
+        - generic [aria-hidden] [ref=e98]: vs
+        - generic [ref=e99]:
+          - generic [ref=e100]: SYSTEM 2
+          - heading "系统 2 · 慢" [level=3] [ref=e101]
+          - generic [ref=e102]: SLOW · DELIBERATE · LAZY
+          - paragraph [ref=e103]: 有意识、受控、慢速、高能耗、串行、规则化、可计算、容易"摸鱼"。17×24 这种不熟悉的乘法、做复杂的风险评估、忍住不刷手机——都要它出手。
+          - list [ref=e104]:
+            - listitem [ref=e105]:
+              - generic [ref=e106]: 擅长
+              - generic [ref=e107]: 复杂运算、比较、逻辑校验、抑制冲动、规划与校验
+            - listitem [ref=e108]:
+              - generic [ref=e109]: 缺陷
+              - generic [ref=e110]: 带宽有限、自律成本高、容易默认接受系统1的建议
+            - listitem [ref=e111]:
+              - generic [ref=e112]: 代价
+              - generic [ref=e113]: 能量稀缺，因此"懒"——这正是偏误的源头
+          - generic [ref=e114]: "\"系统2并不天然理性，它只是更慢、更费力地遵循规则——而一旦疲劳，它会直接放弃思考。\""
+    - generic [ref=e116]:
+      - generic [ref=e117]:
+        - generic [ref=e118]: 04 /
+        - text: KEY BIASES
+      - heading "十张书签，十个常踩的认知偏误" [level=2] [ref=e119]
+      - paragraph [ref=e120]: 卡尼曼与特沃斯基用实验反复证明：人类的判断会系统性地、可预测地偏离"理性人模型"。下面这些偏误，是工作、决策与自我理解中最常出现的一组。
+      - generic [ref=e121]:
+        - article [ref=e122]:
+          - generic [ref=e124]: N° 01
+          - heading "锚定效应 Anchoring" [level=3] [ref=e125]:
+            - text: 锚定效应
+            - generic [ref=e126]: Anchoring
+          - paragraph [ref=e127]: 做判断时， 先出现的数字 会像一个"锚"一样，把后续估计悄悄拉向它，即使它毫无信息量。
+          - generic [ref=e128]:
+            - generic [ref=e129]: 例
+            - text: 先被问"非洲国家在联合国的占比是 65% 还是 10%"，再估计联合国成员总数，前者会把答案拉高很多。
+        - article [ref=e130]:
+          - generic [ref=e132]: N° 02
+          - heading "可得性启发 Availability" [level=3] [ref=e133]:
+            - text: 可得性启发
+            - generic [ref=e134]: Availability
+          - paragraph [ref=e135]: 凭 "想不想得起" 来判断事情有多频繁/多可能。容易想起 = 容易被高估；难想起 = 容易被低估。
+          - generic [ref=e136]:
+            - generic [ref=e137]: 例
+            - text: 飞机失事新闻多 → 觉得飞行比开车危险；实际上单位里程的死亡率，开车高得多。
+        - article [ref=e138]:
+          - generic [ref=e140]: N° 03
+          - heading "代表性启发 Representativeness" [level=3] [ref=e141]:
+            - text: 代表性启发
+            - generic [ref=e142]: Representativeness
+          - paragraph [ref=e143]: 用"像不像典型形象"代替"概率有多高"，忽视 基率 与样本量。
+          - generic [ref=e144]:
+            - generic [ref=e145]: 例
+            - text: "\"琳达\"问题：把\"银行出纳 + 女权主义者\"判断为比\"银行出纳\"更可能——合取谬误。"
+        - article [ref=e146]:
+          - generic [ref=e148]: N° 04
+          - heading "损失厌恶 Loss Aversion" [level=3] [ref=e149]:
+            - text: 损失厌恶
+            - generic [ref=e150]: Loss Aversion
+          - paragraph [ref=e151]: 同样大小的 损失 带来的痛苦，约为等量 收益 带来快乐的 2 倍 。参考点在哪儿，决定是"赚"还是"亏"。
+          - generic [ref=e152]:
+            - generic [ref=e153]: 例
+            - text: 已买入的股票跌 10% 比"少赚 10%"更让人难受；导致"不卖就不算亏"式的死扛。
+        - article [ref=e154]:
+          - generic [ref=e156]: N° 05
+          - heading "框架效应 Framing" [level=3] [ref=e157]:
+            - text: 框架效应
+            - generic [ref=e158]: Framing
+          - paragraph [ref=e159]: 同一件事被 怎么描述 ，决定我们如何选择。"存活率 90%" 与 "死亡率 10%" 是同一回事，但反应不同。
+          - generic [ref=e160]:
+            - generic [ref=e161]: 例
+            - text: 医疗方案"术后 90% 存活"会被偏好；同样事实的"10% 死亡率"则被拒绝——尽管数学完全相同。
+        - article [ref=e162]:
+          - generic [ref=e164]: N° 06
+          - heading "禀赋效应 Endowment" [level=3] [ref=e165]:
+            - text: 禀赋效应
+            - generic [ref=e166]: Endowment
+          - paragraph [ref=e167]: 一旦拥有， 估值 就变高。这与"它值多少"无关，与"它是我的"有关。
+          - generic [ref=e168]:
+            - generic [ref=e169]: 例
+            - text: 赠品实验：刚拿到杯子的人，估值中位数 ≈ 7 美元；未拿到的人愿意付 ≈ 3 美元买同样的杯子。
+        - article [ref=e170]:
+          - generic [ref=e172]: N° 07
+          - heading "沉没成本 Sunk Cost" [level=3] [ref=e173]:
+            - text: 沉没成本
+            - generic [ref=e174]: Sunk Cost
+          - paragraph [ref=e175]: 已经付出、 不可回收 的成本，不应再影响未来决策。但人却会为了"不浪费"而继续投入。
+          - generic [ref=e176]:
+            - generic [ref=e177]: 例
+            - text: 一部看到一半却发现很差的电影，理性应离场；但"已经看了 1 小时"让我们坐到底。
+        - article [ref=e178]:
+          - generic [ref=e180]: N° 08
+          - heading "回归均值 Regression to the Mean" [level=3] [ref=e181]:
+            - text: 回归均值
+            - generic [ref=e182]: Regression to the Mean
+          - paragraph [ref=e183]: 极端表现之后， 自然会有 向均值靠拢的回弹。但人习惯把它归因于自己的"干预"或"惩罚"。
+          - generic [ref=e184]:
+            - generic [ref=e185]: 例
+            - text: 骂了表现糟糕的球员，下场他反弹——教练会以为骂有用。真实原因常常是回归，而不是管教。
+        - article [ref=e186]:
+          - generic [ref=e188]: N° 09
+          - heading "过度自信 · 后见之明 Overconfidence / Hindsight" [level=3] [ref=e189]:
+            - text: 过度自信 · 后见之明
+            - generic [ref=e190]: Overconfidence / Hindsight
+          - paragraph [ref=e191]: 事前 我们高估自己的判断； 事后 我们又觉得"早就知道"——这让我们既冒险，又学不到东西。
+          - generic [ref=e192]:
+            - generic [ref=e193]: 例
+            - text: "\"我早就说了会涨\"——这种回忆几乎从不出错；于是错判的原因被悄悄抹平，下次继续重蹈覆辙。"
+        - article [ref=e194]:
+          - generic [ref=e196]: N° 10
+          - heading "峰终定律 Peak–End Rule" [level=3] [ref=e197]:
+            - text: 峰终定律
+            - generic [ref=e198]: Peak–End Rule
+          - paragraph [ref=e199]: 对一段经历的 记忆 ，由"最强烈的瞬间"与"结尾"决定，与持续时长几乎无关。这就是"记忆自我"的工作方式。
+          - generic [ref=e200]:
+            - generic [ref=e201]: 例
+            - text: 两次同样时长的体检：A 过程温和但结尾刺痛；B 过程难忍但结尾温柔。事后 B 的评价更高。
+    - generic [ref=e203]:
+      - generic [ref=e204]:
+        - generic [ref=e205]: 05 /
+        - text: CHAPTER MAP
+      - heading "全书五部分 · 38 章脉络" [level=2] [ref=e206]
+      - paragraph [ref=e207]: 从"两套心智"出发，走过启发法、过度自信、选择与风险，最终回到"两个自我"——一本关于人类判断的完整地形图。
+      - generic [ref=e208]:
+        - article [ref=e209]:
+          - generic [ref=e210]: PART 01
+          - heading "两个系统" [level=3] [ref=e211]
+          - generic [ref=e212]: CH. 1 – 9
+          - list [ref=e213]:
+            - listitem [ref=e214]: 本书怎么读
+            - listitem [ref=e215]: 快与慢的机制
+            - listitem [ref=e216]: 注意力与努力
+            - listitem [ref=e217]: 联想激活与启动效应
+            - listitem [ref=e218]: 认知放松与常态理论
+            - listitem [ref=e219]: 眼见即为事实（WYSIATI）
+        - article [ref=e220]:
+          - generic [ref=e221]: PART 02
+          - heading "启发法与偏差" [level=3] [ref=e222]
+          - generic [ref=e223]: CH. 10 – 18
+          - list [ref=e224]:
+            - listitem [ref=e225]: 大数法则与小数定律
+            - listitem [ref=e226]: 锚定效应
+            - listitem [ref=e227]: 可得性启发
+            - listitem [ref=e228]: 代表性 · 合取谬误
+            - listitem [ref=e229]: 因果与回归均值
+            - listitem [ref=e230]: 直觉 vs 算法
+        - article [ref=e231]:
+          - generic [ref=e232]: PART 03
+          - heading "过度自信" [level=3] [ref=e233]
+          - generic [ref=e234]: CH. 19 – 24
+          - list [ref=e235]:
+            - listitem [ref=e236]: 后见之明
+            - listitem [ref=e237]: 动机的力量
+            - listitem [ref=e238]: 规划谬误
+            - listitem [ref=e239]: 乐观主义与乐观偏差
+            - listitem [ref=e240]: 专家直觉的边界
+            - listitem [ref=e241]: 外部视角
+        - article [ref=e242]:
+          - generic [ref=e243]: PART 04
+          - heading "选择与风险" [level=3] [ref=e244]
+          - generic [ref=e245]: CH. 25 – 34
+          - list [ref=e246]:
+            - listitem [ref=e247]: 伯努利的错误
+            - listitem [ref=e248]: 前景理论
+            - listitem [ref=e249]: 时间与风险
+            - listitem [ref=e250]: 禀赋效应
+            - listitem [ref=e251]: 坏事比好事强
+            - listitem [ref=e252]: 框架与心理账户
+        - article [ref=e253]:
+          - generic [ref=e254]: PART 05
+          - heading "两个自我" [level=3] [ref=e255]
+          - generic [ref=e256]: CH. 35 – 38
+          - list [ref=e257]:
+            - listitem [ref=e258]: 经验自我 · 记忆自我
+            - listitem [ref=e259]: 人生满意度
+            - listitem [ref=e260]: 聚焦错觉
+            - listitem [ref=e261]: 活在当下
+    - generic [ref=e263]:
+      - generic [ref=e264]:
+        - generic [ref=e265]: 06 /
+        - text: QUOTES
+      - heading "五条值得抄在笔记本上的话" [level=2] [ref=e266]
+      - paragraph [ref=e267]: 不一定是原文逐字，但意旨忠实于卡尼曼。
+      - generic [ref=e268]:
+        - article [ref=e269]:
+          - generic: “
+          - paragraph [ref=e270]: 我们所见的一切，就是全部了。系统 1 构建出的世界，比真实世界更整齐、更连贯、也更可控——也因此更危险。
+          - generic [ref=e271]: — WYSIATI · What you see is all there is
+        - article [ref=e272]:
+          - generic: “
+          - paragraph [ref=e273]: 对随机事件自动给出因果解释，是人类的本能。我们受不了"它就是发生了"这种答案。
+          - generic [ref=e274]: — 第二部分 · 因果与解释
+        - article [ref=e275]:
+          - generic: “
+          - paragraph [ref=e276]: 损失带来的痛苦，大约是等量收益带来快乐的两倍。理性人没有这个比值，但普通人都有。
+          - generic [ref=e277]: — 第四部分 · 前景理论
+        - article [ref=e278]:
+          - generic: “
+          - paragraph [ref=e279]: 真正可信的直觉，只可能来自规律可循、且有快速、准确反馈的环境。在大多数专业领域，这种条件并不存在。
+          - generic [ref=e280]: — 第三部分 · 专家直觉的边界
+        - article [ref=e281]:
+          - generic: “
+          - paragraph [ref=e282]: 记住的自己并不关心过程，它只在意高潮与结尾——于是我们总在为一段记忆打分，而不是在活它。
+          - generic [ref=e283]: — 第五部分 · 峰终定律
+    - generic [ref=e285]:
+      - generic [ref=e286]:
+        - generic [ref=e287]: 07 /
+        - text: TAKEAWAYS
+      - heading "对工作与决策的八条行动启发" [level=2] [ref=e288]
+      - paragraph [ref=e289]: 本书给的不是"不再犯错"的豁免权，而是对冲偏误的制度与方法。下列每条都对应到前文中的偏误，可在团队流程里直接落地。
+      - generic [ref=e290]:
+        - generic [ref=e291]:
+          - generic [ref=e292]: "01"
+          - generic [ref=e293]:
+            - heading "会议前先写\"独立判断\"" [level=4] [ref=e294]
+            - paragraph [ref=e295]: 任何重要讨论开始前，每位成员先独立写下自己的估计与理由，再公开。对抗锚定与从众。
+        - generic [ref=e296]:
+          - generic [ref=e297]: "02"
+          - generic [ref=e298]:
+            - heading "用评分卡替代\"整体印象\"" [level=4] [ref=e299]
+            - paragraph [ref=e300]: 招聘、绩效、方案评审：把维度拆开独立打分，再加权汇总，避免系统 1 的"看个大概"。
+        - generic [ref=e301]:
+          - generic [ref=e302]: "03"
+          - generic [ref=e303]:
+            - heading "重大决策前先问\"基率\"" [level=4] [ref=e304]
+            - paragraph [ref=e305]: 项目估值、新业务可行性，先看行业/同类的基率，再叠加本项目的特异性。对抗规划谬误。
+        - generic [ref=e306]:
+          - generic [ref=e307]: "04"
+          - generic [ref=e308]:
+            - heading "做一次 Premortem（预演失败）" [level=4] [ref=e309]
+            - paragraph [ref=e310]: 在项目启动前，假设"半年后它彻底失败了"，写下最可能的 5 个原因。把后见之明前置为预防。
+        - generic [ref=e311]:
+          - generic [ref=e312]: "05"
+          - generic [ref=e313]:
+            - heading "用\"机会成本\"复述一遍选项" [level=4] [ref=e314]
+            - paragraph [ref=e315]: 把"是否做 A"换成"放弃 B、C 来做 A"再比一次。对抗框架效应与沉没成本。
+        - generic [ref=e316]:
+          - generic [ref=e317]: "06"
+          - generic [ref=e318]:
+            - heading "建立\"决策日志\"" [level=4] [ref=e319]
+            - paragraph [ref=e320]: 关键判断时记录：当时看到了什么、估计是什么、依据是什么。半年后回看。对抗后见之明。
+        - generic [ref=e321]:
+          - generic [ref=e322]: "07"
+          - generic [ref=e323]:
+            - heading "风险沟通统一为\"得/失\"两版" [level=4] [ref=e324]
+            - paragraph [ref=e325]: 给老板/客户/用户的关键数字，同时提供"获益框架"与"损失框架"两版，揭示框架效应本身。
+        - generic [ref=e326]:
+          - generic [ref=e327]: "08"
+          - generic [ref=e328]:
+            - heading "把\"重要决策\"留到状态最好时" [level=4] [ref=e329]
+            - paragraph [ref=e330]: 系统 2 是有限资源。重要判断避开深夜、饥饿、连续会议之后——这不是矫情，是带宽。
+    - generic [ref=e332]:
+      - generic [ref=e333]:
+        - generic [ref=e334]: 08 /
+        - text: FOR WHOM
+      - heading "适合谁读 / 不适合谁读" [level=2] [ref=e335]
+      - paragraph [ref=e336]: 本书是一面镜子，不是工具书。它不教你"怎么做对"，但能让你看清自己"为什么常常做错"。
+      - generic [ref=e337]:
+        - article [ref=e338]:
+          - heading "尤其推荐" [level=3] [ref=e339]
+          - list [ref=e341]:
+            - listitem [ref=e342]: 需要做判断与决策的人：管理者、创业者、投资人、产品经理、咨询顾问
+            - listitem [ref=e343]: 设计流程与制度的人：HR、风控、运营、增长、合规
+            - listitem [ref=e344]: 对自己直觉为何出错感到好奇的人
+            - listitem [ref=e345]: 对认知科学、行为经济学、心理学感兴趣的读者
+        - article [ref=e346]:
+          - heading "不推荐 / 慎读" [level=3] [ref=e347]
+          - list [ref=e349]:
+            - listitem [ref=e350]: 寻找快速成功学的人：本书给的是清醒，不是捷径
+            - listitem [ref=e351]: 期待"读完就再也不会犯错"的人：偏误是结构性的，不会消失
+            - listitem [ref=e352]: 只想知道"我该不该理财 / 买不买 X"的人：本书讲的是判断机制，不是答案
+            - listitem [ref=e353]: 完全没读过任何行为科学读物的读者：可先从《噪声》《助推》入门
+    - contentinfo [ref=e354]:
+      - generic [ref=e355]:
+        - generic [ref=e356]: "\"Nothing in life is as important as you think it is, while you are thinking about it.\""
+        - generic [ref=e358]: 读书笔记 · 《思考，快与慢》 · 丹尼尔·卡尼曼 本笔记用于个人学习，请勿商用
+  - generic [ref=e361]:
+    - generic [ref=e362]:
+      - generic [ref=e363]: 分享这一卷
+      - button "关闭" [ref=e364] [cursor=pointer]: ×
+    - generic [ref=e367]:
+      - button "下载图片" [ref=e368] [cursor=pointer]
+      - button "复制图片" [ref=e369] [cursor=pointer]
+      - button "复制链接" [ref=e370] [cursor=pointer]

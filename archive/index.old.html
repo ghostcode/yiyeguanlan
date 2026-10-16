@@ -1,0 +1,2060 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="UxiGUZUBCBd7pvCDV1LsMP">
+
+<head data-page-node-id="mpQbjgorJgssSUhLFOArfM">
+  <meta charset="utf-8" data-page-node-id="LLMWzaOa1lVEGsQ5uzY5Sv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"
+    data-page-node-id="f5m96HV8ctSmE7GHEg7K54" />
+  <title>经典书籍读书笔记 · 系列书架 · by WorkBuddy</title>
+  <meta name="description" content="一页观澜 · 经典书籍读书笔记系列的书架首页：单文件 HTML、米色纸感、读书笔记风格。目前收录三十三卷，按经典名篇、文学小说、财富投资、人物传记、心智认知、人际自我、方法效能、社会观察分类。"
+    data-page-node-id="Lql57ak3jFcLpG65GnU95s" />
+  <style>
+    /* =========================================================
+   基础与排印：与读书笔记同款米色纸感 + 衬线主导
+   系列首页品牌色取中性古铜，各卷以自身主色区分
+   ========================================================= */
+    :root {
+      --paper: #f4ecd8;
+      --paper-2: #faf4e1;
+      --paper-deep: #ece2c6;
+      --ink: #1f1a14;
+      --ink-2: #4a4035;
+      --ink-3: #7a6e5d;
+      --rule: #c9b993;
+      --rule-soft: #d9cba6;
+      --accent: #7a4a2a;
+      /* 系列品牌色：古铜 */
+      --accent-2: #b8893a;
+      --teal: #2e6a6a;
+      --indigo: #394867;
+      --olive: #6a7a3c;
+      --plum: #6c3a52;
+      --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", Georgia, "Times New Roman", serif;
+      --sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      --max: 1080px;
+      --gutter: clamp(20px, 4vw, 56px);
+      --shadow-1: 0 1px 0 rgba(31, 26, 20, .06), 0 8px 24px -16px rgba(31, 26, 20, .18);
+      --shadow-2: 0 2px 0 rgba(31, 26, 20, .06), 0 18px 40px -22px rgba(31, 26, 20, .28);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      font-family: var(--serif);
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.75;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      background-image:
+        radial-gradient(1200px 600px at 50% -10%, rgba(122, 90, 40, .10), transparent 60%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.13  0 0 0 0 0.08  0 0 0 0.045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      background-attachment: fixed, fixed;
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    ::selection {
+      background: #e8d4a8;
+      color: var(--ink)
+    }
+
+    /* =========================================================
+   顶部细条导航
+   ========================================================= */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 236, 216, .80);
+      backdrop-filter: saturate(140%) blur(8px);
+      -webkit-backdrop-filter: saturate(140%) blur(8px);
+      border-bottom: 1px solid var(--rule-soft);
+      font-family: var(--sans);
+      font-size: 13.5px;
+      color: var(--ink-2);
+    }
+
+    .topbar-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px var(--gutter);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .topbar .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--serif);
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: .5px;
+    }
+
+    .topbar .brand .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(122, 74, 42, .18);
+    }
+
+    .topbar nav {
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .topbar nav a {
+      padding: 4px 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s, color .2s;
+    }
+
+    .topbar nav a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent)
+    }
+
+    /* =========================================================
+   HERO
+   ========================================================= */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: min(74svh, 560px);
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: #27211a url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=2400&q=72") center/cover no-repeat;
+      background-color: #27211a;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(20, 14, 8, .35) 0%, rgba(20, 14, 8, .55) 100%),
+        linear-gradient(90deg, rgba(20, 14, 8, .60) 0%, rgba(20, 14, 8, .20) 60%, rgba(20, 14, 8, 0) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: clamp(40px, 7vw, 88px) var(--gutter);
+      color: #f4ecd8;
+    }
+
+    .hero .eyebrow {
+      font-family: var(--sans);
+      font-size: 12.5px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #e8d3a3;
+      opacity: .92;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero .eyebrow .line {
+      width: 36px;
+      height: 1px;
+      background: #e8d3a3;
+      opacity: .6
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(34px, 6vw, 68px);
+      line-height: 1.1;
+      letter-spacing: 2px;
+      margin: 0 0 16px;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, .5);
+    }
+
+    .hero h1 .sub {
+      display: block;
+      font-size: .34em;
+      font-weight: 400;
+      letter-spacing: 5px;
+      color: #e8d3a3;
+      margin-top: 14px;
+    }
+
+    .hero .lede {
+      font-size: clamp(15px, 1.5vw, 18px);
+      color: #e6d6ab;
+      max-width: 60ch;
+      line-height: 1.7;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+    }
+
+    /* =========================================================
+   通用容器与标题
+   ========================================================= */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--gutter)
+    }
+
+    section {
+      padding: clamp(56px, 8vw, 96px) 0;
+      position: relative;
+    }
+
+    section+section {
+      border-top: 1px dashed var(--rule-soft);
+    }
+
+    .eyebrow2 {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow2 .num {
+      display: inline-block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--ink-2);
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: clamp(28px, 3.6vw, 40px);
+      line-height: 1.2;
+      letter-spacing: .5px;
+      margin: 0 0 8px;
+    }
+
+    h2 .tail {
+      color: var(--accent);
+    }
+
+    h2+.sub {
+      color: var(--ink-2);
+      margin: 0 0 44px;
+      max-width: 64ch;
+      font-size: 16px
+    }
+
+    /* =========================================================
+   书架 / 书卡
+   ========================================================= */
+    /* 分类筛选条 */
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 26px;
+      padding: 0 0 24px;
+      border-bottom: 1px dashed var(--rule-soft);
+    }
+
+    .filters .flabel {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 2.5px;
+      color: var(--ink-3);
+      margin-right: 2px;
+    }
+
+    .filter {
+      appearance: none;
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: .5px;
+      color: var(--ink-2);
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 7px 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .filter:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter .cnt {
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--ink-3);
+    }
+
+    .filter.is-active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #f6ecd6;
+    }
+
+    .filter.is-active .cnt {
+      color: #e6d8bb;
+    }
+
+    .filter:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* 筛选后的隐藏与空状态 */
+    .book.is-hidden {
+      display: none;
+    }
+
+    .shelf-empty {
+      display: none;
+      padding: 44px 0 12px;
+      text-align: center;
+      color: var(--ink-3);
+      font-family: var(--sans);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .shelf-empty.is-on {
+      display: block;
+    }
+
+    .shelf {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .book {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--paper-2);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 30px 26px 26px 34px;
+      box-shadow: var(--shadow-1);
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .book::before {
+      /* 书脊 */
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 10px;
+      background: var(--bacc, var(--accent));
+    }
+
+    .book:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-2)
+    }
+
+    .book .ribbon-no {
+      position: absolute;
+      top: 16px;
+      right: -30px;
+      background: var(--bacc, var(--accent));
+      color: #f6ecd6;
+      padding: 5px 38px;
+      transform: rotate(36deg);
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+    }
+
+    .book .kicker {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 2px;
+      color: var(--bacc, var(--accent));
+      margin-bottom: 10px;
+    }
+
+    .book .cat {
+      align-self: flex-start;
+      font-family: var(--sans);
+      font-size: 10.5px;
+      letter-spacing: 1.5px;
+      color: var(--bacc, var(--accent));
+      background: var(--paper);
+      border: 1px solid var(--rule-soft);
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin: 0 0 14px;
+    }
+
+    .book h3 {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.25;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+
+    .book .author {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--ink-3);
+      letter-spacing: .5px;
+      margin-bottom: 16px;
+    }
+
+    .book .desc {
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.7;
+      margin: 0 0 16px;
+    }
+
+    .book .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px
+    }
+
+    .book .chips span {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--ink-2);
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .book .read {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: var(--bacc, var(--accent));
+      font-weight: 600;
+      transition: gap .2s ease;
+    }
+
+    .book .read .arrow {
+      transition: transform .2s ease;
+    }
+
+    .book:hover .read .arrow {
+      transform: translateX(4px)
+    }
+
+    .book .meta-line {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--rule-soft);
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--ink-3);
+      letter-spacing: 1px;
+    }
+
+    /* 筹备中的幽灵卡片 */
+    .book.ghost {
+      opacity: .72;
+      border-style: dashed;
+    }
+
+    .book.ghost::before {
+      background: var(--rule);
+    }
+
+    .book.ghost h3 {
+      color: var(--ink-3)
+    }
+
+    .book.ghost .read {
+      color: var(--ink-3);
+      pointer-events: none
+    }
+
+    .book.ghost .soon {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--ink-3);
+      background: var(--paper-deep);
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-top: auto;
+    }
+
+    /* =========================================================
+   关于系列
+   ========================================================= */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about .lead {
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.9;
+      color: var(--ink);
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 18px;
+      margin: 0;
+      max-width: 64ch;
+    }
+
+    .about .lead b {
+      color: var(--accent)
+    }
+
+    /* =========================================================
+   页脚
+   ========================================================= */
+    .foot {
+      padding: 56px 0 72px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+      border-top: 1px solid var(--rule);
+      font-family: var(--sans);
+      color: var(--ink-3);
+    }
+
+    .foot .mark {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 20px;
+      color: var(--ink-2);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      line-height: 1.9;
+      max-width: 44ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .foot .rule {
+      width: 64px;
+      height: 1px;
+      background: var(--rule);
+      margin: 14px auto
+    }
+
+    .foot .meta {
+      font-size: 12.5px;
+      letter-spacing: 1.5px
+    }
+
+    /* =========================================================
+   响应式
+   ========================================================= */
+    @media (max-width: 920px) {
+      .shelf {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 16px
+      }
+
+      .topbar nav {
+        display: none
+      }
+
+      .topbar-inner {
+        justify-content: space-between
+      }
+
+      .shelf {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    /* =========================================================
+       分享：图片预览 + 二维码（零依赖，二维码由内置编码器生成）
+       ========================================================= */
+    .share-open{appearance:none;cursor:pointer;font-family:var(--sans);font-size:13px;letter-spacing:1px;
+      color:var(--ink-2);font-weight:600;white-space:nowrap;background:transparent;
+      border:1px dashed var(--rule);border-radius:999px;padding:4px 12px;
+      transition:background .2s,color .2s,border-color .2s}
+    .share-open:hover{background:var(--ink-2);color:var(--paper-2);border-color:var(--ink-2)}
+    .share-open:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+    .book .share-mini{appearance:none;cursor:pointer;position:absolute;right:22px;bottom:70px;z-index:2;
+      font-family:var(--sans);font-size:11.5px;letter-spacing:1.5px;color:var(--ink-3);
+      background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:4px 11px;
+      transition:background .2s,color .2s,border-color .2s}
+    .book .share-mini:hover{background:var(--bacc,var(--accent));color:#f6ecd6;border-color:var(--bacc,var(--accent))}
+    .book .share-mini:focus-visible{outline:2px solid var(--bacc,var(--accent));outline-offset:2px}
+
+    .share-modal{position:fixed;inset:0;z-index:200;display:none}
+    .share-modal.is-on{display:block}
+    .share-mask{position:absolute;inset:0;background:rgba(31,26,20,.55);
+      backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+    .share-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+      width:min(430px,calc(100vw - 32px));max-height:min(88vh,920px);overflow:auto;
+      background:var(--paper-2);border:1px solid var(--rule);border-radius:10px;
+      box-shadow:0 30px 80px -30px rgba(31,26,20,.6);padding:20px 20px 18px;
+      font-family:var(--sans);color:var(--ink)}
+    .share-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .share-head b{font-family:var(--serif);font-size:18px;letter-spacing:1px}
+    .share-x{appearance:none;background:transparent;border:0;cursor:pointer;font-size:22px;line-height:1;
+      color:var(--ink-3);padding:2px 8px;border-radius:6px}
+    .share-x:hover{color:var(--ink);background:var(--paper-deep)}
+    .share-poster{border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#f4ecd8}
+    .share-poster canvas{display:block;width:100%;height:auto}
+    .share-poster-img{display:block;width:100%;height:auto;border-radius:6px}
+    .share-note{margin:10px 0 0;font-size:11.5px;line-height:1.7;color:var(--ink-3)}
+    .share-acts{display:flex;gap:10px;margin-top:16px}
+    .share-btn{flex:1;appearance:none;cursor:pointer;font-family:var(--sans);font-size:13.5px;letter-spacing:1px;
+      padding:11px 14px;border-radius:999px;border:1px solid var(--rule);background:var(--paper);
+      color:var(--ink-2);transition:background .2s,color .2s,border-color .2s}
+    .share-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .share-btn.primary{background:var(--accent);border-color:var(--accent);color:#f6ecd6;font-weight:600}
+    .share-btn.primary:hover{filter:brightness(1.08);color:#f6ecd6}
+    @media (max-width:600px){
+      .share-card{width:calc(100vw - 20px);padding:16px 14px 14px}
+    }
+
+  </style>
+</head>
+
+<body data-page-node-id="OQZG5EqArdJ4L25gVLyowT">
+
+  <!-- ============ 顶部细条 ============ -->
+  <header class="topbar" role="banner" data-page-node-id="zJdG7BPfRQcGdD1o2WS8qN">
+    <div class="topbar-inner" data-page-node-id="rOcGr1U3pDDQ5pOn3EO2t0">
+      <div class="brand" data-page-node-id="LoiN8YmcF10DeGESSrG2J1"><span class="dot"
+          data-page-node-id="sHdSF3NVoNvIhnjDtbSCbj"></span>一页观澜 · 经典书籍读书笔记 · 系列书架</div>
+      <nav aria-label="目录" data-page-node-id="Mi6fSzl26Gwr86ia6vpl9Q">
+        <a href="#shelf" data-page-node-id="RrEwA6PguE7VbmdWKXRPHO">书架</a>
+        <a href="#about" data-page-node-id="hqbyV42JchFb7Y3BaIxy47">关于系列</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="封面" style="padding:0;border-top:0" data-page-node-id="aGnrtzNNUM1xk4FVzEWlev">
+    <div class="hero-img" role="img" aria-label="暖光下的图书馆书架" data-page-node-id="VHVeCLyIh1XWtSnMybyjio"></div>
+    <div class="hero-inner" data-page-node-id="aHWBZylU62eYE6XiYlEoaC">
+      <div class="eyebrow" data-page-node-id="aB0U6XLAFZbyfCtxu1i7sv"><span class="line"
+          data-page-node-id="5m1xHt13rSo1P8woc7yB7D"></span>READING NOTES SERIES</div>
+      <h1 data-page-node-id="IfmTCtc2jOLFLIf0c0cpCM">
+        经典书籍读书笔记
+        <span class="sub" data-page-node-id="f5M8UOC8IEehH59SUTobjt">A BOOKNOTE SHELF · 米色纸感</span>
+      </h1>
+      <p class="lede" data-page-node-id="V2MVWgVIwFAe1yBQWcHk27">
+        把一整本书，读成一张可以反复翻阅的纸。同一套设计系统、换一种主色，就是一卷新的笔记——
+        这里收着已经上架的书，也留着即将到来的卷次。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 书架 ============ -->
+  <section id="shelf" aria-labelledby="shelf-h" data-page-node-id="8imut9ecQMWM5hOXlfDVYl">
+    <div class="wrap" data-page-node-id="NfBqy2OkX9jvkcu5RaB2n3">
+      <div class="eyebrow2" data-page-node-id="LmxFRfh3ZMYCUdPIJwzNOU"><span class="num"
+          data-page-node-id="Da4fAXpVEjEX1Ap0lQ5fHl">01 /</span>THE SHELF</div>
+      <h2 id="shelf-h" data-page-node-id="fEOKBToTRAVevI7ag3ODaC">书架上，目前有 <b class="tail"
+          data-page-node-id="x1A3UiOJ2rPCOvFc8OrrRF">二十四卷</b></h2>
+      <p class="sub" data-page-node-id="Qw5jIr0SKoY6XmnCVxPvgV">每一卷都是独立的单文件读书笔记，点开即读。卷次以编号与主色区分，但共享同一套视觉语言；也可以按下面的分类筛选。</p>
+
+      <div class="filters" role="group" aria-label="按分类筛选卷次">
+        <span class="flabel">分类</span>
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">全部 <span
+            class="cnt">33</span></button>
+        <button type="button" class="filter" data-filter="classic" aria-pressed="false">经典名篇 <span
+            class="cnt">1</span></button>
+        <button type="button" class="filter" data-filter="fiction" aria-pressed="false">文学小说 <span
+            class="cnt">2</span></button>
+        <button type="button" class="filter" data-filter="biography" aria-pressed="false">人物传记 <span
+            class="cnt">12</span></button>
+        <button type="button" class="filter" data-filter="wealth" aria-pressed="false">财富投资 <span
+            class="cnt">10</span></button>
+        <button type="button" class="filter" data-filter="mind" aria-pressed="false">心智认知 <span
+            class="cnt">3</span></button>
+        <button type="button" class="filter" data-filter="people" aria-pressed="false">人际自我 <span
+            class="cnt">2</span></button>
+        <button type="button" class="filter" data-filter="method" aria-pressed="false">方法效能 <span
+            class="cnt">2</span></button>
+        <button type="button" class="filter" data-filter="society" aria-pressed="false">社会观察 <span
+            class="cnt">1</span></button>
+      </div>
+
+      <div class="shelf" data-page-node-id="EXvevijOQjDwkaehAp0mTG">
+
+        <a class="book" href="konosuke-matsushita-open-the-way.html" style="--bacc:#c9a23a" data-cat="biography">
+          <div class="ribbon-no">NO. 25</div>
+          <div class="kicker">人物传记 · 经营哲学 · 创业</div>
+          <div class="cat">人物传记</div>
+          <h3>开路</h3>
+          <div class="author">松下幸之助</div>
+          <p class="desc">小学没毕业的学徒，如何成为'经营之神'：自来水哲学、水库式经营、素直心——把做生意写成一场对社会有益的修行。</p>
+          <div class="chips"><span>自来水哲学</span><span>水库式经营</span><span>素直心</span><span>PHP研究所</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">自述 · PHP研究所 1961 · 1894—1989</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="konosuke-matsushita-decisive-management.html" style="--bacc:#c06a4d" data-cat="biography">
+          <div class="ribbon-no">NO. 26</div>
+          <div class="kicker">人物传记 · 经营判断 · 领导力</div>
+          <div class="cat">人物传记</div>
+          <h3>决断的经营</h3>
+          <div class="author">松下幸之助</div>
+          <p class="desc">经营者的每一天都是赌上明天的选择：松下晚年拆解'如何在不确定的世界里不慌地做决定'——时机、直觉、担当与修行。</p>
+          <div class="chips"><span>决断力</span><span>时机</span><span>经营者素养</span><span>不慌</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">谈话与文集 · PHP研究所 · 经营判断</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="akio-morita-made-in-japan.html" style="--bacc:#7a3f6e" data-cat="biography">
+          <div class="ribbon-no">NO. 27</div>
+          <div class="kicker">人物传记 · 创业 · 品牌</div>
+          <div class="cat">人物传记</div>
+          <h3>日本制造</h3>
+          <div class="author">盛田昭夫</div>
+          <p class="desc">索尼共同创始人的唯一自传：从酿酒少东家到'日本制造'征服世界——不做代工、自有品牌、随身听如何创造需求、以及早早全球化的远见。</p>
+          <div class="chips"><span>索尼</span><span>随身听</span><span>自有品牌</span><span>全球化</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">自传 · 1986 · 与莱因戈尔德合著</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="akio-morita-the-japan-that-can-say-no.html" style="--bacc:#c08a2e" data-cat="biography">
+          <div class="ribbon-no">NO. 28</div>
+          <div class="kicker">人物传记 · 政经评论 · 日美关系</div>
+          <div class="cat">人物传记</div>
+          <h3>日本可以说不</h3>
+          <div class="author">盛田昭夫 · 石原慎太郎</div>
+          <p class="desc">盛田昭夫与石原慎太郎 1989 年的争议之作：一个富起来的日本，该不该在技术与贸易上挺直腰杆。核心一课——经济实力如何转化为话语权。</p>
+          <div class="chips"><span>日美关系</span><span>技术自主</span><span>话语权</span><span>1989</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">政经评论 · 1989 · 与石原太郎合著</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="soichiro-honda-autobiography.html" style="--bacc:#9c4a5a" data-cat="biography">
+          <div class="ribbon-no">NO. 29</div>
+          <div class="kicker">人物传记 · 技术 · 创业</div>
+          <div class="cat">人物传记</div>
+          <h3>本田宗一郎自传</h3>
+          <div class="author">本田宗一郎</div>
+          <p class="desc">本田技研创始人的自述：一个小学毕业的技术疯子，用'三现主义''让年轻人自由失败'把本田开上世界赛道。给过度谨慎的时代一剂解药。</p>
+          <div class="chips"><span>三现主义</span><span>技术尊严</span><span>允许失败</span><span>Honda</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">自传 · 1906—1991 · 技术者</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="soichiro-honda-let-my-hands-speak.html" style="--bacc:#b23b4e" data-cat="biography">
+          <div class="ribbon-no">NO. 30</div>
+          <div class="kicker">人物传记 · 技术哲学 · 信条</div>
+          <div class="cat">人物传记</div>
+          <h3>让我的手来说话</h3>
+          <div class="author">本田宗一郎</div>
+          <p class="desc">本田晚年的技术信条集：反形式主义、会社是'做事的场'、年轻人别怕失败。相较自传的叙事，这本更短更狠，带着机油味。</p>
+          <div class="chips"><span>动手</span><span>反形式主义</span><span>会社观</span><span>年轻人</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">技术随笔 · 晚年 · 本田宗一郎</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="kazuo-inamori-a-compass-to-fulfillment.html" style="--bacc:#2d5aa0" data-cat="biography">
+          <div class="ribbon-no">NO. 31</div>
+          <div class="kicker">人物传记 · 人生哲学 · 经营</div>
+          <div class="cat">人物传记</div>
+          <h3>活法</h3>
+          <div class="author">稻盛和夫</div>
+          <p class="desc">京瓷、KDDI 两家世界 500 强创始人稻盛和夫的原点之书：把成功从技巧拉回做人，用'作为人，何谓正确'挡住欲望与捷径。</p>
+          <div class="chips"><span>作为人何谓正确</span><span>利他</span><span>人生方程式</span><span>敬天爱人</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">人生哲学 · 2004 · 京瓷哲学</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="kazuo-inamori-how-to-work.html" style="--bacc:#c0603a" data-cat="biography">
+          <div class="ribbon-no">NO. 32</div>
+          <div class="kicker">人物传记 · 工作哲学 · 热情</div>
+          <div class="cat">人物传记</div>
+          <h3>干法</h3>
+          <div class="author">稻盛和夫</div>
+          <p class="desc">稻盛和夫的工作观：把'不得不干'翻转为'磨炼灵魂的道场'。极度认真、迷恋工作、持续——给所有找不到意义的人一剂硬核鼓励。</p>
+          <div class="chips"><span>工作即修行</span><span>极度认真</span><span>迷恋工作</span><span>持续</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">工作哲学 · 2009 · 稻盛和夫</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="kazuo-inamori-the-mind-to-live.html" style="--bacc:#4a4f9e" data-cat="biography">
+          <div class="ribbon-no">NO. 33</div>
+          <div class="kicker">人物传记 · 心性 · 哲学</div>
+          <div class="cat">人物传记</div>
+          <h3>心法</h3>
+          <div class="author">稻盛和夫</div>
+          <p class="desc">稻盛和夫 87 岁的收官之作：把一生归结为'心'。利他、感恩、反省——人生的一切都是内心的投射。是《活法》《干法》之后最接近总纲的一本。</p>
+          <div class="chips"><span>心相</span><span>利他之心</span><span>感恩</span><span>反省</span></div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">心性哲学 · 2019 · 收官之作</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="thinking-fast-and-slow.html" style="--bacc:#8a4a2a" data-cat="mind"
+          data-page-node-id="Shug9nDxrHyfoBGSbvqbUn">
+          <div class="ribbon-no" data-page-node-id="k4AIN7FyPHoVix0Xmsh34u">NO. 01</div>
+          <div class="kicker" data-page-node-id="77gMvXR1ifMh5iN6LOpLYS">行为决策 · 认知心理学</div>
+          <div class="cat">心智认知</div>
+          <h3 data-page-node-id="cg39AvyVXyVGsnt2mqpDYQ">思考，快与慢</h3>
+          <div class="author" data-page-node-id="fUoV9RVAYrEHBJfU8tHRjo">丹尼尔·卡尼曼（Daniel Kahneman）</div>
+          <p class="desc" data-page-node-id="DgRlkwxgHtDHOUcAmHanQV">一部关于"我们究竟如何思考"的大书：系统 1 与系统
+            2、十种可预测的认知偏误，以及怎样在关键决策上少出错。</p>
+          <div class="chips" data-page-node-id="D4Tf2dFJExVsecfiZC9EMW">
+            <span data-page-node-id="ttGbmctFl9bDUIIAKUn2KG">#双系统</span><span
+              data-page-node-id="pRDGnKq8rC8J8DwvYzKEvu">#启发法与偏差</span><span
+              data-page-node-id="Lee9K4SXFFbn0DN9Nlv3XC">#前景理论</span><span
+              data-page-node-id="YHFEcgOaJzDFwFvwXXw8hO">#峰终定律</span>
+          </div>
+          <div class="read" data-page-node-id="0sofMBMDFvpFBusBvno4OV">阅读笔记 <span class="arrow"
+              data-page-node-id="RQQTuDmygqNgdp1nAwa3YH">→</span></div>
+          <div class="meta-line" data-page-node-id="DQf5xuNny57RrcABQsae10">38 章 / 5 部分 · 2002 诺贝尔经济学奖</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-courage-to-be-disliked.html" style="--bacc:#2c4a63" data-cat="people"
+          data-page-node-id="BABeujYefBjM7HBTnviCVK">
+          <div class="ribbon-no" data-page-node-id="VkrTfWhq5Dz1nxx556khGK">NO. 02</div>
+          <div class="kicker" data-page-node-id="KuHnEGi1MCnN84vipfvva0">阿德勒 · 实践哲学</div>
+          <div class="cat">人际自我</div>
+          <h3 data-page-node-id="HqYfIrlU2FzUC2cGBRk3rm">被讨厌的勇气</h3>
+          <div class="author" data-page-node-id="zQzVigG22r3sYTG3lF3Msw">岸見一郎 · 古賀史健</div>
+          <p class="desc" data-page-node-id="KNucV86rNasCC4YlFqmHp9">
+            青年与哲人的五个夜晚论辩。目的论、课题分离、共同体感觉——它不温柔，但锋利地指出：你的不幸，是你自己"选择"的。</p>
+          <div class="chips" data-page-node-id="Kd1yJF4NDtHknSZ95BSz9E">
+            <span data-page-node-id="Ws63p07yucKpHGzGefMhgk">#目的论</span><span
+              data-page-node-id="65oA0RPGGAHuMMPNcUzxSL">#课题分离</span><span
+              data-page-node-id="KIOuYDoH7dnazRho7NVHfl">#共同体感觉</span><span
+              data-page-node-id="WAOEYq4ZyVbRsgFGNsGHei">#活在当下</span>
+          </div>
+          <div class="read" data-page-node-id="tLG06ysUoZtoZODAunRiue">阅读笔记 <span class="arrow"
+              data-page-node-id="JVsP5eDHfem8cK2EqsnEm4">→</span></div>
+          <div class="meta-line" data-page-node-id="xVV3ECnwdcYs9c9bGrJKld">对话体 · 共五夜 · 阿德勒心理学</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-almanack-of-naval-ravikant.html" style="--bacc:#2f6b54" data-cat="wealth"
+          data-page-node-id="NavalBookCard">
+          <div class="ribbon-no" data-page-node-id="NavalRibbon">NO. 03</div>
+          <div class="kicker" data-page-node-id="NavalKicker">财富哲学 · 幸福 · 自我成长</div>
+          <div class="cat">财富投资</div>
+          <h3 data-page-node-id="NavalTitle">纳瓦尔宝典</h3>
+          <div class="author" data-page-node-id="NavalAuthor">纳瓦尔·拉维坎特 / 埃里克·乔根森 编</div>
+          <p class="desc" data-page-node-id="NavalDesc">一位天使投资人的现代箴言集：财富是睡觉时也在赚的资产，幸福是出厂设置。特定知识、杠杆、责任、股权、复利，以及放下欲望的当下。</p>
+          <div class="chips" data-page-node-id="NavalChips">
+            <span data-page-node-id="NavalC1">#财富</span><span
+              data-page-node-id="NavalC2">#特定知识</span><span
+              data-page-node-id="NavalC3">#杠杆</span><span
+              data-page-node-id="NavalC4">#欲望</span>
+          </div>
+          <div class="read" data-page-node-id="NavalRead">阅读笔记 <span class="arrow"
+              data-page-node-id="NavalArrow">→</span></div>
+          <div class="meta-line" data-page-node-id="NavalMeta">财富篇 + 幸福篇 · 主题式编排 · 2020</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-psychology-of-money.html" style="--bacc:#9a6b1c" data-cat="wealth">
+          <div class="ribbon-no">NO. 04</div>
+          <div class="kicker">个人理财 · 行为金融 · 投资</div>
+          <div class="cat">财富投资</div>
+          <h3>金钱心理学</h3>
+          <div class="author">摩根·豪泽尔 · Morgan Housel</div>
+          <p class="desc">财经作家用 20 个故事说明：财务结果更多由行为决定，而非金融智商。运气与风险、知足、复利、守富、自由，以及看不见的财富。</p>
+          <div class="chips">
+            <span>#行为金融</span><span
+              >#运气与风险</span><span
+              >#复利</span><span
+              >#守富</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">20 课独立短文 · 行为金融 · 2020</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-weakness-of-human-nature.html" style="--bacc:#7a3d55" data-cat="people">
+          <div class="ribbon-no">NO. 05</div>
+          <div class="kicker">人际交往 · 沟通 · 影响力</div>
+          <div class="cat">人际自我</div>
+          <h3>人性的弱点</h3>
+          <div class="author">戴尔·卡耐基 · Dale Carnegie</div>
+          <p class="desc">近百年不过时的"人际说明书"：让人喜欢你、说服他人、做领导者，靠的是原则而非天赋——不批评、真诚赞赏、关心他人、倾听、记住名字。</p>
+          <div class="chips">
+            <span>#人际交往</span><span
+              >#真诚赞赏</span><span
+              >#倾听</span><span
+              >#影响力</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">四篇原则 · 案例驱动 · 1936</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="awareness-of-cognition.html" style="--bacc:#1f6f8b" data-cat="mind">
+          <div class="ribbon-no">NO. 06</div>
+          <div class="kicker">自我成长 · 认知科学 · 习惯</div>
+          <div class="cat">心智认知</div>
+          <h3>认知觉醒</h3>
+          <div class="author">周岭</div>
+          <p class="desc">把"知道却做不到"讲明白的成长书：用元认知跳出本能脑与情绪脑的控制，让理智脑觉醒，再以早冥读写跑把成长变成可复利的慢功夫。</p>
+          <div class="chips">
+            <span>#自我成长</span><span
+              >#元认知</span><span
+              >#认知科学</span><span
+              >#习惯</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">上下两篇 · 内观自己/外观世界 · 2019</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="finance-made-simple.html" style="--bacc:#b0432a" data-cat="wealth">
+          <div class="ribbon-no">NO. 07</div>
+          <div class="kicker">金融通识 · 货币 · 投资理财</div>
+          <div class="cat">财富投资</div>
+          <h3>秒懂金融</h3>
+          <div class="author">陈材杰</div>
+          <p class="desc">把"金融小白"补上理财必修课：从货币、银行到基金股票与个人投资，用生活现象讲清钱怎么流动、风险从哪来、普通人如何看懂金融并持有优质资产。</p>
+          <div class="chips">
+            <span>#金融通识</span><span
+              >#货币</span><span
+              >#资产配置</span><span
+              >#基金股票</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">从货币到投资理财 · 生活现象驱动 · 2024</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-most-important-thing.html" style="--bacc:#6b7233" data-cat="wealth">
+          <div class="ribbon-no">NO. 08</div>
+          <div class="kicker">价值投资 · 逆向策略 · 风险管理</div>
+          <div class="cat">财富投资</div>
+          <h3>投资最重要的事</h3>
+          <div class="author">霍华德·马克斯</div>
+          <p class="desc">橡树资本创始人的实战信条：投资最重要的不是"买好的"，而是"买得好"；不是冒进求胜，而是先学会控制风险。巴菲特连读两遍的必读经典。</p>
+          <div class="chips">
+            <span>#价值投资</span><span
+              >#第二层次思维</span><span
+              >#安全边际</span><span
+              >#周期逆向</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">18 项原则 · 防御优先 · 2011</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="poor-charlies-almanack.html" style="--bacc:#6a4a93" data-cat="wealth">
+          <div class="ribbon-no">NO. 09</div>
+          <div class="kicker">投资 · 思维 · 人生智慧</div>
+          <div class="cat">财富投资</div>
+          <h3>穷查理宝典</h3>
+          <div class="author">查理·芒格</div>
+          <p class="desc">巴菲特人生合伙人的智慧箴言录：多元思维模型、能力圈、逆向思考、人类误判心理学与终身学习。"反过来想，总是反过来想。"</p>
+          <div class="chips">
+            <span>#多元思维</span><span
+              >#能力圈</span><span
+              >#逆向思考</span><span
+              >#误判心理</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">传记 + 十一讲 · 普世智慧 · 2005</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="peak-secrets-expertise.html" style="--bacc:#16756b" data-cat="mind">
+          <div class="ribbon-no">NO. 10</div>
+          <div class="kicker">学习方法 · 专业特长 · 技能训练</div>
+          <div class="cat">心智认知</div>
+          <h3>刻意练习</h3>
+          <div class="author">安德斯·艾利克森 / 罗伯特·普尔</div>
+          <p class="desc">"专业特长科学"奠基人的研究结晶：杰出不是天赋，而是正确的练习。有目的、出舒适区、有反馈、够专注——以及被误传的"一万小时定律"真相。</p>
+          <div class="chips">
+            <span>#有目的的练习</span><span
+              >#心理表征</span><span
+              >#走出舒适区</span><span
+              >#即时反馈</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">9 章 · 黄金标准 · 2016</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="begin-with-the-end-in-mind.html" style="--bacc:#45596b" data-cat="method">
+          <div class="ribbon-no">NO. 11</div>
+          <div class="kicker">个人成长 · 领导力 · 目标管理</div>
+          <div class="cat">方法效能</div>
+          <h3>以终为始</h3>
+          <div class="author">史蒂芬·柯维</div>
+          <p class="desc">《高效能人士的七个习惯》第二习惯的深度展开：所有事物都经过两次创造。写下一份个人使命宣言，让你的梯子搭在正确的墙上。</p>
+          <div class="chips">
+            <span>#两次创造</span><span
+              >#使命宣言</span><span
+              >#以原则为中心</span><span
+              >#角色与目标</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">约 14 章 · 分步练习 · 2024</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="seven-habits-of-highly-effective-people.html" style="--bacc:#38488c" data-cat="method">
+          <div class="ribbon-no">NO. 12</div>
+          <div class="kicker">自我管理 · 领导力 · 人际效能</div>
+          <div class="cat">方法效能</div>
+          <h3>高效能人士的七个习惯</h3>
+          <div class="author">史蒂芬·柯维</div>
+          <p class="desc">从依赖到独立、再从独立到互赖：七个习惯串成一条由内而外的成长主线。品格先于技巧，效能在于产出与产能的平衡。</p>
+          <div class="chips">
+            <span>#由内而外</span><span
+              >#要事第一</span><span
+              >#双赢思维</span><span
+              >#不断更新</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">四部分 11 章 · 管理经典 · 1989</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="work-consumerism-and-the-new-poor.html" style="--bacc:#54463c" data-cat="society">
+          <div class="ribbon-no">NO. 13</div>
+          <div class="kicker">社会学 · 消费文化 · 贫困研究</div>
+          <div class="cat">社会观察</div>
+          <h3>工作、消费主义<br/>和新穷人</h3>
+          <div class="author">齐格蒙特·鲍曼</div>
+          <p class="desc">从生产者社会到消费者社会：贫穷曾经来自失业，如今来自"买不起"。工作伦理如何被发明、又如何变成审判穷人的锤子。</p>
+          <div class="chips">
+            <span>#工作伦理</span><span
+              >#消费美学</span><span
+              >#新穷人</span><span
+              >#生活道德</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">三部分 6 章 · 社会批判 · 2004</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-millionaire-next-door.html" style="--bacc:#39605c" data-cat="wealth">
+          <div class="ribbon-no">NO. 14</div>
+          <div class="kicker">财富研究 · 个人理财 · 消费行为</div>
+          <div class="cat">财富投资</div>
+          <h3>邻家的<br/>百万富翁</h3>
+          <div class="author">托马斯·斯坦利 · 威廉·丹科</div>
+          <p class="desc">访谈 14000 位白手起家的富人后得到的反直觉结论：真正的富人不住高端社区，就住在普通人隔壁。财富是攒下来的净资产，不是赚出来的高收入。</p>
+          <div class="chips">
+            <span>#财富≠收入</span><span
+              >#节俭</span><span
+              >#财富积累能手</span><span
+              >#经济门诊关怀</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">8 章 + 2 附录 · 14000 份访谈 · 1996</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="just-keep-buying.html" style="--bacc:#7d6142" data-cat="wealth">
+          <div class="ribbon-no">NO. 15</div>
+          <div class="kicker">投资实证 · 个人理财 · 资产配置</div>
+          <div class="cat">财富投资</div>
+          <h3>持续买入</h3>
+          <div class="author">尼克·马吉奥利（Nick Maggiulli）</div>
+          <p class="desc">数据科学家用近百年市场数据给出的答案：别择时，持续买入。储蓄率比收益率更可控，别买个股，波动不是风险，最重要的资产是你自己。</p>
+          <div class="chips">
+            <span>#持续买入</span><span
+              >#不择时</span><span
+              >#别买个股</span><span
+              >#人力资本</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">两部分 20 章 · 数据实证 · 2022</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-permanent-portfolio.html" style="--bacc:#414a52" data-cat="wealth">
+          <div class="ribbon-no">NO. 16</div>
+          <div class="kicker">资产配置 · 风险管理 · 全天候策略</div>
+          <div class="cat">财富投资</div>
+          <h3>哈利·布朗的永久投资组合</h3>
+          <div class="author">克雷格·罗兰 / J.M. 劳森（Craig Rowland &amp; J.M. Lawson）</div>
+          <p class="desc">一套不预测未来的配置法：股票、长期国债、现金、黄金各占四分之一，让四种经济季节里总有一份在保护你。先安全、再稳定，最后才是收益。</p>
+          <div class="chips">
+            <span>#四等分配置</span><span
+              >#不预测未来</span><span
+              >#再平衡</span><span
+              >#黄金</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">18 章 + 总结 · 16 条黄金法则 · 2012</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="elon-musk.html" style="--bacc:#4a6fa5" data-cat="biography">
+          <div class="ribbon-no">NO. 17</div>
+          <div class="kicker">人物传记 · 创业 · 科技创新</div>
+          <div class="cat">人物传记</div>
+          <h3>硅谷钢铁侠</h3>
+          <div class="author">阿什利·万斯（Ashlee Vance）</div>
+          <p class="desc">全球首部马斯克授权传记：40 小时深访、300 余位受访者。第一性原理、跨领域创造、垂直整合，以及 2008 年那个几乎失去一切的至暗时刻。</p>
+          <div class="chips">
+            <span>#第一性原理</span><span
+              >#跨领域创造</span><span
+              >#极限执行</span><span
+              >#2008</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">11 章 + 结语 · 40 小时深访 · 2015</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-simple-path-to-wealth.html" style="--bacc:#3f8f7a" data-cat="wealth">
+          <div class="ribbon-no">NO. 18</div>
+          <div class="kicker">个人理财 · 指数投资 · 财务独立</div>
+          <div class="cat">财富投资</div>
+          <h3>简单致富</h3>
+          <div class="author">J.L. 柯林斯（J.L. Collins）</div>
+          <p class="desc">源自写给女儿的信：不负债、提高储蓄率、只买低费率宽基指数基金，然后什么都不做。复杂只对卖产品的人有利，对你有害。</p>
+          <div class="chips">
+            <span>#指数基金</span><span
+              >#不负债</span><span
+              >#储蓄率</span><span
+              >#4%法则</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">四部分 35 章 · FIRE 入门 · 2025</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-alchemy-of-finance.html" style="--bacc:#70307c" data-cat="wealth">
+          <div class="ribbon-no">NO. 19</div>
+          <div class="kicker">宏观投资 · 金融市场哲学 · 周期</div>
+          <div class="cat">财富投资</div>
+          <h3>金融炼金术</h3>
+          <div class="author">乔治·索罗斯（George Soros）</div>
+          <p class="desc">反身性理论：价格不只反映基本面，还会改变基本面。市场到不了均衡，只会走完一段先自我强化、最终自我毁灭的繁荣—萧条序列。</p>
+          <div class="chips">
+            <span>#反身性</span><span
+              >#反均衡</span><span
+              >#繁荣—萧条</span><span
+              >#试错法</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">五部分 · 含实时投资实验 · 1987</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="jensen-huang-the-thinking-machine.html" style="--bacc:#3f6f29" data-cat="biography">
+          <div class="ribbon-no">NO. 20</div>
+          <div class="kicker">科技商业 · 半导体 · 人工智能</div>
+          <div class="cat">人物传记</div>
+          <h3>黄仁勋：英伟达之芯</h3>
+          <div class="author">斯蒂芬·威特（Stephen Witt）</div>
+          <p class="desc">从餐厅里起步的游戏显卡公司，到地球上市值最高的企业：离破产只有 30 天、秘密押注 CUDA 十年、AlexNet 时刻、周五决定周一转型 AI 公司。</p>
+          <div class="chips">
+            <span>#加速计算</span><span
+              >#CUDA</span><span
+              >#长期押注</span><span
+              >#光速执行</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">23 章 + 后记 · 近 200 位受访者 · 2024</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="demis-hassabis-the-infinity-machine.html" style="--bacc:#8e2f7b" data-cat="biography">
+          <div class="ribbon-no">NO. 21</div>
+          <div class="kicker">人工智能 · 科技商业 · AGI</div>
+          <div class="cat">人物传记</div>
+          <h3>哈萨比斯：谷歌AI之脑</h3>
+          <div class="author">塞巴斯蒂安·马拉比（Sebastian Mallaby）</div>
+          <p class="desc">从 4 岁学棋的伦敦男孩到诺贝尔化学奖得主：DeepMind 的创立、AlphaGo 时刻、低估 Transformer 的代价、AlphaFold 与"先解决智能，再用智能解决一切"。</p>
+          <div class="chips">
+            <span>#AGI</span><span
+              >#AlphaGo</span><span
+              >#AlphaFold</span><span
+              >#无限机器</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">三部分 20 章 · 30+ 小时深访 · 2026</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="jian-zhu-ke-ling.html" style="--bacc:#3f7a4e" data-cat="classic">
+          <div class="ribbon-no">NO. 22</div>
+          <div class="kicker">奏疏 · 古典散文 · 说服术</div>
+          <div class="cat">经典名篇</div>
+          <h3>谏逐客令</h3>
+          <div class="author">李斯（约前 284—前 208，楚上蔡人）</div>
+          <p class="desc">被逐出境的路上写了八百字，把一道已经下达的命令劝了回来。四君用客的史实、重物轻人的反诘、太山不让土壤的比喻、藉寇兵而赍盗粮的后果——中文世界里最完整的一份高风险说服范本。</p>
+          <div class="chips">
+            <span>#谏逐客书</span><span
+              >#郑国渠</span><span
+              >#说服术</span><span
+              >#太山不让土壤</span><span
+              >#藉寇兵而赍盗粮</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">约 800 字 · 《史记·李斯列传》· 前 237</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-moon-and-sixpence.html" style="--bacc:#503960" data-cat="fiction">
+          <div class="ribbon-no">NO. 23</div>
+          <div class="kicker">长篇小说 · 艺术小说 · 人生选择</div>
+          <div class="cat">文学小说</div>
+          <h3>月亮与六便士</h3>
+          <div class="author">毛姆（W. Somerset Maugham，1874—1965）</div>
+          <p class="desc">四十岁的证券经纪人留下十行字离家出走，只说"我必须画画"。此后十七年他穷、病、惹人嫌，毁掉救过他命的人的家，最后在塔希提失明后画满四壁，遗命付之一炬。毛姆写的不是追梦，是一种不容分说的必然。</p>
+          <div class="chips">
+            <span>#毛姆</span><span
+              >#我必须画画</span><span
+              >#高更</span><span
+              >#塔希提</span><span
+              >#付之一炬</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">58 节 / 14 章 · 以高更为原型 · 1919</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+        <a class="book" href="the-gift-of-the-magi.html" style="--bacc:#9a3c42" data-cat="fiction">
+          <div class="ribbon-no">NO. 24</div>
+          <div class="kicker">短篇小说 · 圣诞 · 欧·亨利式结尾</div>
+          <div class="cat">文学小说</div>
+          <h3>麦琪的礼物</h3>
+          <div class="author">欧·亨利（O. Henry，1862—1910）</div>
+          <p class="desc">圣诞前夜，只有一块八毛七分钱的妻子卖掉长发，给丈夫的金表买了白金表链；丈夫卖掉金表，给她买了玳瑁梳子。两件礼物同时作废，却把"舍得"称出了价钱——欧·亨利式结尾的教科书。</p>
+          <div class="chips">
+            <span>#欧亨利</span><span
+              >#麦琪</span><span
+              >#反转结尾</span><span
+              >#圣诞</span><span
+              >#四百万</span>
+          </div>
+          <div class="read">阅读笔记 <span class="arrow">→</span></div>
+          <div class="meta-line">约两千余词 · 收入《四百万》· 1905</div>
+          <button type="button" class="share-mini" data-share-card aria-label="分享这一卷">分享</button>
+        </a>
+      </div>
+      <div class="shelf-empty">这一分类下暂时还没有卷次——换一个分类看看。</div>
+    </div>
+  </section>
+
+  <!-- ============ 关于系列 ============ -->
+  <section id="about" aria-labelledby="about-h" data-page-node-id="wKD1V1QFQF7NRiGqIiVRBf">
+    <div class="wrap" data-page-node-id="8QEzWcC51zRsrjpwNOseAh">
+      <div class="eyebrow2" data-page-node-id="lpk3nzhkofMDuqZysLh7BR"><span class="num"
+          data-page-node-id="jfXC0kBnJ6zIl9U9z7lTcl">02 /</span>ABOUT THE SERIES</div>
+      <h2 id="about-h" data-page-node-id="6HSLg7Roc1CUfElSOutUev">关于这个<b class="tail"
+          data-page-node-id="gnwTZu7eGjp9QclKKaxwN5">系列</b></h2>
+      <p class="sub" data-page-node-id="jNIjcj3KPl1WgIt8t05CA5">它不是书评，也不是摘抄。每一卷都按固定的八段式骨架重写：信息卡 → 一句话总览 → 核心对照 → 关键概念书签
+        → 脉络图 → 金句 → 行动启发 → 适合谁读。</p>
+
+      <div class="about" data-page-node-id="wTqpVSnS2K1x7qeeLJhFxA">
+        <p class="lead" data-page-node-id="SXk1zACdGx1iFYQsFyYVUn">
+          设计哲学很简单：<b data-page-node-id="x6YfFe9phjH4PqdTOrEBij">米色纸感、衬线主导、中性配色</b>。
+          每一卷是独立的单文件 HTML，<b data-page-node-id="3RKdjV5PRtMO2U7bhAyGEu">零依赖、可离线</b>；
+          换一本书，只需要换主色与内容——骨架始终如一，
+          于是整面书架看起来像一套书。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="foot" data-page-node-id="WDfhwW2U6KjMJgQhWZrW50">
+    <div class="wrap" data-page-node-id="BHNZRs0As5f3pS4brVXF95">
+      <div class="mark" data-page-node-id="sUnWyECBXvDHp2IxjkOv9F">
+        "把一整本书，读成一张可以反复翻阅的纸。"
+      </div>
+      <div class="rule" data-page-node-id="UQEvS8pat0IEvn9wXtoD7j"></div>
+      <div class="meta" data-page-node-id="dVYurlEAd3Z8mHYVCHemgM">
+        经典书籍读书笔记系列 · 2026<br data-page-node-id="ztMiueyjX4Ji9sg9Ilo0uC" />
+        本系列用于个人学习，请勿商用
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* 书架分类筛选：无依赖，禁用 JS 时默认展示全部卷次 */
+    (function () {
+      var filters = document.querySelectorAll('.filter');
+      var books = document.querySelectorAll('.shelf .book');
+      var empty = document.querySelector('.shelf-empty');
+      if (!filters.length || !books.length) return;
+
+      function apply(cat) {
+        var shown = 0;
+        books.forEach(function (b) {
+          var hit = (cat === 'all') || (b.getAttribute('data-cat') === cat);
+          b.classList.toggle('is-hidden', !hit);
+          if (hit) shown++;
+        });
+        if (empty) empty.classList.toggle('is-on', shown === 0);
+        filters.forEach(function (f) {
+          var on = f.getAttribute('data-filter') === cat;
+          f.classList.toggle('is-active', on);
+          f.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+      }
+
+      filters.forEach(function (f) {
+        f.addEventListener('click', function () {
+          apply(f.getAttribute('data-filter'));
+        });
+      });
+
+      /* 支持 #cat=wealth 这类深链直达 */
+      var m = /cat=([a-z]+)/.exec(window.location.hash || '');
+      if (m) apply(m[1]);
+    })();
+  </script>
+
+
+<!-- =========================================================
+     分享：图片预览（海报）+ 二维码
+     零依赖、可离线——二维码为内置编码器实时生成
+     ========================================================= -->
+<script>
+(function () {
+  'use strict';
+
+  /* ============ 1. QR 编码器（字节模式 / 纠错等级 M / 版本 1-10） ============ */
+  var QR = (function () {
+    var EXP = new Uint8Array(512), LOG = new Uint8Array(256);
+    (function () {
+      var x = 1;
+      for (var i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11D; }
+      for (var j = 255; j < 512; j++) EXP[j] = EXP[j - 255];
+    })();
+    function gmul(a, b) { return (a === 0 || b === 0) ? 0 : EXP[LOG[a] + LOG[b]]; }
+    var genCache = {};
+    function rsGen(n) {
+      if (genCache[n]) return genCache[n];
+      var poly = [1];
+      for (var i = 0; i < n; i++) {
+        var a = EXP[i], next = new Array(poly.length + 1).fill(0);
+        next[0] = poly[0];
+        for (var j = 1; j < poly.length; j++) next[j] = poly[j] ^ gmul(poly[j - 1], a);
+        next[poly.length] = gmul(poly[poly.length - 1], a);
+        poly = next;
+      }
+      genCache[n] = poly;
+      return poly;
+    }
+    var TBL = {
+      1: [10, [[1, 16]]], 2: [16, [[1, 28]]], 3: [26, [[1, 44]]], 4: [18, [[2, 32]]], 5: [24, [[2, 43]]],
+      6: [16, [[4, 27]]], 7: [18, [[4, 31]]], 8: [22, [[2, 38], [2, 39]]], 9: [22, [[3, 36], [2, 37]]], 10: [26, [[4, 43], [1, 44]]]
+    };
+    var ALIGN = { 1: [], 2: [6, 18], 3: [6, 22], 4: [6, 26], 5: [6, 30], 6: [6, 34], 7: [6, 22, 38], 8: [6, 24, 42], 9: [6, 26, 46], 10: [6, 28, 50] };
+    function dataCW(v) { var n = 0, g = TBL[v][1]; for (var i = 0; i < g.length; i++) n += g[i][0] * g[i][1]; return n; }
+    function capacity(v) { return Math.floor((dataCW(v) * 8 - (4 + (v < 10 ? 8 : 16))) / 8); }
+    function utf8(str) {
+      var out = [];
+      for (var i = 0; i < str.length; i++) {
+        var c = str.charCodeAt(i);
+        if (c < 0x80) out.push(c);
+        else if (c < 0x800) out.push(0xC0 | (c >> 6), 0x80 | (c & 63));
+        else if (c >= 0xD800 && c <= 0xDBFF && i + 1 < str.length) {
+          var c2 = str.charCodeAt(++i), cp = 0x10000 + ((c - 0xD800) << 10) + (c2 - 0xDC00);
+          out.push(0xF0 | (cp >> 18), 0x80 | ((cp >> 12) & 63), 0x80 | ((cp >> 6) & 63), 0x80 | (cp & 63));
+        } else out.push(0xE0 | (c >> 12), 0x80 | ((c >> 6) & 63), 0x80 | (c & 63));
+      }
+      return out;
+    }
+    function encodeData(bytes, v) {
+      var bits = [];
+      function push(val, len) { for (var i = len - 1; i >= 0; i--) bits.push((val >> i) & 1); }
+      push(4, 4);
+      push(bytes.length, v < 10 ? 8 : 16);
+      for (var i = 0; i < bytes.length; i++) push(bytes[i], 8);
+      var total = dataCW(v) * 8;
+      for (var t = 0; t < 4 && bits.length < total; t++) bits.push(0);
+      while (bits.length % 8 !== 0) bits.push(0);
+      var pads = [0xEC, 0x11], pi = 0;
+      while (bits.length < total) push(pads[(pi++) % 2], 8);
+      var cw = [];
+      for (var b = 0; b < bits.length; b += 8) {
+        var val = 0;
+        for (var j = 0; j < 8; j++) val = (val << 1) | bits[b + j];
+        cw.push(val);
+      }
+      return cw;
+    }
+    function codewords(data, v) {
+      var ecLen = TBL[v][0], groups = TBL[v][1], blocks = [], idx = 0;
+      for (var g = 0; g < groups.length; g++) {
+        for (var n = 0; n < groups[g][0]; n++) {
+          var k = groups[g][1], blk = data.slice(idx, idx + k); idx += k;
+          var gen = rsGen(ecLen), res = new Array(k + ecLen).fill(0);
+          for (var i = 0; i < k; i++) res[i] = blk[i];
+          for (var d = 0; d < k; d++) {
+            var coef = res[d];
+            if (coef) for (var j = 0; j < gen.length; j++) res[d + j] ^= gmul(gen[j], coef);
+          }
+          blocks.push({ d: blk, e: res.slice(k) });
+        }
+      }
+      var out = [], maxD = 0;
+      blocks.forEach(function (b) { if (b.d.length > maxD) maxD = b.d.length; });
+      for (var i2 = 0; i2 < maxD; i2++) blocks.forEach(function (b) { if (i2 < b.d.length) out.push(b.d[i2]); });
+      for (var i3 = 0; i3 < ecLen; i3++) blocks.forEach(function (b) { out.push(b.e[i3]); });
+      return out;
+    }
+    function maskAt(mask, r, c) {
+      switch (mask) {
+        case 0: return (r + c) % 2 === 0;
+        case 1: return r % 2 === 0;
+        case 2: return c % 3 === 0;
+        case 3: return (r + c) % 3 === 0;
+        case 4: return (Math.floor(r / 2) + Math.floor(c / 3)) % 2 === 0;
+        case 5: return ((r * c) % 2 + (r * c) % 3) === 0;
+        case 6: return (((r * c) % 2 + (r * c) % 3) % 2) === 0;
+        default: return ((((r + c) % 2) + (r * c) % 3) % 2) === 0;
+      }
+    }
+    function formatBits(mask) {
+      var d = mask, v = d << 10;
+      for (var i = 14; i >= 10; i--) if ((v >> i) & 1) v ^= 0x537 << (i - 10);
+      return ((d << 10) | v) ^ 0x5412;
+    }
+    function versionBits(ver) {
+      var r = ver << 12;
+      for (var i = 17; i >= 12; i--) if ((r >> i) & 1) r ^= 0x1F25 << (i - 12);
+      return (ver << 12) | r;
+    }
+    function base(v, cws) {
+      var size = v * 4 + 17, m = [], fn = [];
+      for (var i = 0; i < size; i++) { m.push(new Array(size).fill(0)); fn.push(new Array(size).fill(false)); }
+      function finder(r0, c0) {
+        for (var dr = -1; dr <= 7; dr++) for (var dc = -1; dc <= 7; dc++) {
+          var r = r0 + dr, c = c0 + dc;
+          if (r < 0 || r >= size || c < 0 || c >= size) continue;
+          var ring = ((dr >= 0 && dr <= 6) && (dc === 0 || dc === 6)) || ((dc >= 0 && dc <= 6) && (dr === 0 || dr === 6));
+          var core = dr >= 2 && dr <= 4 && dc >= 2 && dc <= 4;
+          m[r][c] = (ring || core) ? 1 : 0; fn[r][c] = true;
+        }
+      }
+      finder(0, 0); finder(0, size - 7); finder(size - 7, 0);
+      for (var t = 8; t < size - 8; t++) {
+        var bit = (t % 2 === 0) ? 1 : 0;
+        if (!fn[6][t]) { m[6][t] = bit; fn[6][t] = true; }
+        if (!fn[t][6]) { m[t][6] = bit; fn[t][6] = true; }
+      }
+      var ap = ALIGN[v], last = ap.length - 1;
+      for (var a = 0; a < ap.length; a++) for (var b = 0; b < ap.length; b++) {
+        /* 只跳过与三个定位图形重叠的三处；位于时序线上的那一方阵仍须绘制 */
+        if ((a === 0 && b === 0) || (a === 0 && b === last) || (a === last && b === 0)) continue;
+        var cr = ap[a], cc = ap[b];
+        for (var dr2 = -2; dr2 <= 2; dr2++) for (var dc2 = -2; dc2 <= 2; dc2++) {
+          m[cr + dr2][cc + dc2] = (Math.max(Math.abs(dr2), Math.abs(dc2)) !== 1) ? 1 : 0;
+          fn[cr + dr2][cc + dc2] = true;
+        }
+      }
+      m[size - 8][8] = 1; fn[size - 8][8] = true;
+      for (var f = 0; f <= 8; f++) { fn[8][f] = true; fn[f][8] = true; }
+      for (var f2 = 0; f2 < 8; f2++) { fn[8][size - 1 - f2] = true; fn[size - 1 - f2][8] = true; }
+      if (v >= 7) {
+        var vb = versionBits(v);
+        for (var i2 = 0; i2 < 18; i2++) {
+          var bitv = (vb >> i2) & 1, rr = Math.floor(i2 / 3), cc2 = size - 11 + (i2 % 3);
+          m[rr][cc2] = bitv; fn[rr][cc2] = true;
+          m[cc2][rr] = bitv; fn[cc2][rr] = true;
+        }
+      }
+      var total = cws.length * 8, bi = 0;
+      for (var right = size - 1; right >= 1; right -= 2) {
+        if (right === 6) right = 5;
+        for (var vert = 0; vert < size; vert++) {
+          for (var j = 0; j < 2; j++) {
+            var col = right - j, up = ((right + 1) & 2) === 0;
+            var row = up ? (size - 1 - vert) : vert;
+            if (fn[row][col]) continue;
+            var bv = 0;
+            if (bi < total) bv = (cws[bi >> 3] >> (7 - (bi & 7))) & 1;
+            bi++;
+            m[row][col] = bv;
+          }
+        }
+      }
+      return { m: m, fn: fn, size: size };
+    }
+    function applyMask(b, mask, size) {
+      var m = b.m, fn = b.fn, out = [];
+      for (var r = 0; r < size; r++) {
+        out.push(m[r].slice());
+        for (var c = 0; c < size; c++) if (!fn[r][c] && maskAt(mask, r, c)) out[r][c] ^= 1;
+      }
+      var fb = formatBits(mask);
+      function set(r, c, bit) { out[r][c] = bit; }
+      for (var i = 0; i <= 5; i++) set(i, 8, (fb >> i) & 1);
+      set(7, 8, (fb >> 6) & 1);
+      set(8, 8, (fb >> 7) & 1);
+      set(8, 7, (fb >> 8) & 1);
+      for (var i2 = 9; i2 < 15; i2++) set(8, 14 - i2, (fb >> i2) & 1);
+      for (var i3 = 0; i3 < 8; i3++) set(8, size - 1 - i3, (fb >> i3) & 1);
+      for (var i4 = 8; i4 < 15; i4++) set(size - 15 + i4, 8, (fb >> i4) & 1);
+      out[size - 8][8] = 1;
+      return out;
+    }
+    function penalty(g) {
+      var size = g.length, score = 0, r, c;
+      for (r = 0; r < size; r++) {
+        var run = 1;
+        for (c = 1; c < size; c++) {
+          if (g[r][c] === g[r][c - 1]) run++;
+          else { if (run >= 5) score += 3 + (run - 5); run = 1; }
+        }
+        if (run >= 5) score += 3 + (run - 5);
+      }
+      for (c = 0; c < size; c++) {
+        var run2 = 1;
+        for (r = 1; r < size; r++) {
+          if (g[r][c] === g[r - 1][c]) run2++;
+          else { if (run2 >= 5) score += 3 + (run2 - 5); run2 = 1; }
+        }
+        if (run2 >= 5) score += 3 + (run2 - 5);
+      }
+      for (r = 0; r < size - 1; r++) for (c = 0; c < size - 1; c++) {
+        var v0 = g[r][c];
+        if (v0 === g[r][c + 1] && v0 === g[r + 1][c] && v0 === g[r + 1][c + 1]) score += 3;
+      }
+      var p1 = [1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0], p2 = [0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1];
+      function scan(seq) {
+        var n = 0;
+        for (var s = 0; s + 11 <= seq.length; s++) {
+          var ok1 = true, ok2 = true;
+          for (var k = 0; k < 11; k++) {
+            if (seq[s + k] !== p1[k]) ok1 = false;
+            if (seq[s + k] !== p2[k]) ok2 = false;
+          }
+          if (ok1) n += 40;
+          if (ok2) n += 40;
+        }
+        return n;
+      }
+      for (r = 0; r < size; r++) score += scan(g[r]);
+      for (c = 0; c < size; c++) {
+        var colArr = [];
+        for (r = 0; r < size; r++) colArr.push(g[r][c]);
+        score += scan(colArr);
+      }
+      var dark = 0;
+      for (r = 0; r < size; r++) for (c = 0; c < size; c++) dark += g[r][c];
+      var totalMod = size * size;
+      score += (Math.ceil(Math.abs(dark * 20 - totalMod * 10) / totalMod) - 1) * 10;
+      return score;
+    }
+    function matrix(text) {
+      var bytes = utf8(text), v = 0;
+      for (var ver = 1; ver <= 10; ver++) if (capacity(ver) >= bytes.length) { v = ver; break; }
+      if (!v) return null;
+      var cws = codewords(encodeData(bytes, v), v), b = base(v, cws), best = null, bestScore = Infinity;
+      for (var mk = 0; mk < 8; mk++) {
+        var g = applyMask(b, mk, b.size), sc = penalty(g);
+        if (sc < bestScore) { bestScore = sc; best = g; }
+      }
+      return { size: b.size, data: best };
+    }
+    return { matrix: matrix };
+  }());
+
+  /* ============ 2. 工具 ============ */
+  var SERIF = '"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",Georgia,serif';
+  var SANS = '"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif';
+
+  function squeeze(s) { return (s || '').replace(/\s+/g, ' ').trim(); }
+  /* 去掉因 HTML 换行缩进而产生的「汉字之间的空格」 */
+  var CJK = '[\\u2E80-\\u9FFF\\uF900-\\uFAFF\\uFF00-\\uFFEF]';
+  function cjkTight(s) { return squeeze(s).replace(new RegExp('(' + CJK + ')[ ]+(?=' + CJK + ')', 'g'), '$1'); }
+  function clip(s, n) {
+    s = squeeze(s);
+    if (s.length <= n) return s;
+    var out = s.slice(0, n - 1);
+    out = out.replace(/[（(][^（）()]*$/, '');   /* 丢弃被截断的半个括号 */
+    out = out.replace(/[，,、·\-–—\s]+$/, '');
+    if (!out) out = s.slice(0, n - 1).replace(/\s+$/, '');
+    return out + '…';
+  }
+  function hexToRgb(h) {
+    h = (h || '').replace('#', '');
+    if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    var n = parseInt(h, 16);
+    return isNaN(n) ? [122, 74, 42] : [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+  function abs(href) { try { return new URL(href, location.href).href; } catch (e) { return location.href; } }
+
+  /* 中英混排折行：汉字逐字断、西文按词断 */
+  function tokens(s) {
+    var out = [], buf = '';
+    for (var i = 0; i < s.length; i++) {
+      var ch = s.charAt(i), code = s.charCodeAt(i);
+      var cjk = (code >= 0x2E80 && code <= 0x9FFF) || (code >= 0xF900 && code <= 0xFAFF) ||
+        (code >= 0xFF00 && code <= 0xFFEF) || (code >= 0x3000 && code <= 0x303F);
+      if (cjk || ch === ' ') {
+        if (buf) { out.push(buf); buf = ''; }
+        out.push(ch);
+      } else buf += ch;
+    }
+    if (buf) out.push(buf);
+    return out;
+  }
+  /* 行首禁则字符：不允许被折到下一行行首 */
+  var NO_LINE_HEAD = /^[，。、；：！？）」』”’）》〉〕］】·…%]$/;
+  function wrap(ctx, text, maxW, maxLines) {
+    var ts = tokens(squeeze(text)), lines = [], cur = '';
+    for (var i = 0; i < ts.length; i++) {
+      var t = ts[i];
+      if (t === ' ' && cur === '') continue;
+      /* 单个 token 比整行还宽（如长 URL）：逐字硬拆 */
+      if (ctx.measureText(t).width > maxW) {
+        for (var k = 0; k < t.length; k++) {
+          var ch = t.charAt(k);
+          if (cur !== '' && ctx.measureText(cur + ch).width > maxW) {
+            lines.push(cur);
+            if (lines.length === maxLines) {
+              if (k < t.length - 1 || i < ts.length - 1) lines[maxLines - 1] += '…';
+              return lines;
+            }
+            cur = ch;
+          } else cur += ch;
+        }
+        continue;
+      }
+      if (cur !== '' && !NO_LINE_HEAD.test(t) && ctx.measureText(cur + t).width > maxW) {
+        var rest = t + ts.slice(i + 1).join('');
+        lines.push(cur.replace(/\s+$/, ''));
+        if (lines.length === maxLines) {
+          if (squeeze(rest)) lines[maxLines - 1] += '…';
+          return lines;
+        }
+        cur = (t === ' ') ? '' : t;
+      } else cur += t;
+    }
+    if (squeeze(cur)) lines.push(cur.replace(/\s+$/, ''));
+    return lines;
+  }
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.lineTo(x + w - r, y); ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h - r); ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    ctx.lineTo(x + r, y + h); ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+    ctx.lineTo(x, y + r); ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.closePath();
+  }
+
+  /* 把二维码画进任意 canvas（含 4 模块静默区） */
+  function paintQR(cv, text, size) {
+    var q = QR.matrix(text);
+    if (!q) return false;
+    cv.width = size; cv.height = size;
+    var ctx = cv.getContext('2d');
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, size, size);
+    var qz = 2, unit = size / (q.size + qz * 2);
+    ctx.fillStyle = '#1f1a14';
+    for (var r = 0; r < q.size; r++) for (var c = 0; c < q.size; c++) {
+      if (!q.data[r][c]) continue;
+      var x0 = Math.round((c + qz) * unit), x1 = Math.round((c + qz + 1) * unit);
+      var y0 = Math.round((r + qz) * unit), y1 = Math.round((r + qz + 1) * unit);
+      ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
+    }
+    return true;
+  }
+
+  /* ============ 3. 海报渲染 ============ */
+  var PW = 800, PH = 1120;
+
+  function renderPoster(cv, d) {
+    cv.width = PW; cv.height = PH;
+    var ctx = cv.getContext('2d');
+    var rgb = hexToRgb(d.accent);
+    var accent = 'rgb(' + rgb.join(',') + ')';
+    var x0 = 92, x1 = 730;
+
+    /* 纸面 */
+    ctx.fillStyle = '#f4ecd8'; ctx.fillRect(0, 0, PW, PH);
+    var g1 = ctx.createRadialGradient(PW / 2, -120, 40, PW / 2, -120, PH);
+    g1.addColorStop(0, 'rgba(' + rgb.join(',') + ',0.13)');
+    g1.addColorStop(1, 'rgba(' + rgb.join(',') + ',0)');
+    ctx.fillStyle = g1; ctx.fillRect(0, 0, PW, PH);
+
+    /* 边框 + 书脊 */
+    ctx.strokeStyle = '#d9cba6'; ctx.lineWidth = 2;
+    ctx.strokeRect(29, 29, PW - 58, PH - 58);
+    ctx.fillStyle = accent; ctx.fillRect(30, 30, 12, PH - 60);
+
+    ctx.textBaseline = 'alphabetic';
+    ctx.textAlign = 'left';
+
+    /* 品牌 + 卷号 */
+    ctx.fillStyle = '#7a6e5d'; ctx.font = '600 19px ' + SANS;
+    ctx.fillText('一页观澜 · 经典书籍读书笔记', x0, 112);
+    ctx.textAlign = 'right';
+    ctx.fillStyle = accent; ctx.font = '700 32px ' + SERIF;
+    ctx.fillText(d.no || '', x1, 114);
+    ctx.textAlign = 'left';
+
+    /* 分类胶囊 */
+    if (d.cat) {
+      ctx.font = '500 19px ' + SANS;
+      var cw = ctx.measureText(d.cat).width + 36;
+      roundRect(ctx, x0, 150, cw, 44, 22);
+      ctx.strokeStyle = 'rgba(' + rgb.join(',') + ',0.5)'; ctx.lineWidth = 1.6; ctx.stroke();
+      ctx.fillStyle = accent; ctx.fillText(d.cat, x0 + 18, 179);
+    }
+
+    /* 书名：优先单行（缩到 44px），放不下再两行（缩到 34px） */
+    var ts, lines = null;
+    for (ts = 62; ts >= 44; ts -= 2) {
+      ctx.font = '700 ' + ts + 'px ' + SERIF;
+      if (ctx.measureText(squeeze(d.title)).width <= x1 - x0) { lines = [squeeze(d.title)]; break; }
+    }
+    if (!lines) {
+      for (ts = 62; ts >= 34; ts -= 3) {
+        ctx.font = '700 ' + ts + 'px ' + SERIF;
+        var t2 = wrap(ctx, d.title, x1 - x0, 2);
+        if (t2.length <= 2 && t2.join('').indexOf('…') < 0) { lines = t2; break; }
+      }
+      if (!lines) { ts = 34; ctx.font = '700 34px ' + SERIF; lines = wrap(ctx, d.title, x1 - x0, 2); }
+    }
+    ctx.fillStyle = '#1f1a14';
+    var ty = 274;
+    for (var i = 0; i < lines.length; i++) { ctx.fillText(lines[i], x0, ty); ty += Math.round(ts * 1.24); }
+
+    /* 作者 / 副题 */
+    ty += 8;
+    ctx.fillStyle = '#4a4035'; ctx.font = '500 23px ' + SANS;
+    ctx.fillText(clip(d.author, 26), x0, ty);
+    ty += 38;
+    if (d.sub) {
+      ctx.fillStyle = '#7a6e5d'; ctx.font = '400 18px ' + SANS;
+      ctx.fillText(clip(d.sub, 34), x0, ty);
+    }
+
+    /* 分隔线 */
+    var dy = ty + 30;
+    ctx.save();
+    ctx.setLineDash([7, 7]); ctx.strokeStyle = '#d9cba6'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(x0, dy); ctx.lineTo(x1, dy); ctx.stroke();
+    ctx.restore();
+
+    /* 一句话总览 */
+    ctx.fillStyle = '#4a4035'; ctx.font = '400 25px ' + SERIF;
+    var sy = dy + 54, sl = wrap(ctx, d.summary, x1 - x0, 4);
+    for (var k = 0; k < sl.length; k++) { ctx.fillText(sl[k], x0, sy); sy += 43; }
+
+    /* ---- 底部二维码区 ---- */
+    var qTop = 806;
+    ctx.save();
+    ctx.setLineDash([7, 7]); ctx.strokeStyle = '#d9cba6'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(x0, qTop); ctx.lineTo(x1, qTop); ctx.stroke();
+    ctx.restore();
+
+    var qy = 838, qs = 188;
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(x0 + 8, qy + 8, qs - 16, qs - 16);
+    ctx.strokeStyle = '#e2d6bb'; ctx.lineWidth = 1; ctx.strokeRect(x0 + 8.5, qy + 8.5, qs - 17, qs - 17);
+    var ok = paintQRInline(ctx, d.url, x0 + 8, qy + 8, qs - 16);
+    if (!ok) {
+      ctx.fillStyle = '#7a6e5d'; ctx.font = '400 16px ' + SANS;
+      ctx.fillText('链接过长', x0 + 54, qy + qs / 2);
+    }
+
+    var tx = x0 + qs + 34;
+    ctx.fillStyle = '#1f1a14'; ctx.font = '600 27px ' + SERIF;
+    ctx.fillText('扫码阅读这一卷', tx, qy + 62);
+    ctx.fillStyle = '#7a6e5d'; ctx.font = '400 18px ' + SANS;
+    ctx.fillText('长按识别二维码', tx, qy + 100);
+    ctx.font = '400 14px ' + SANS;
+    var ul = wrap(ctx, d.url.replace(/^https?:\/\//, ''), x1 - tx, 3);
+    var uy = qy + 138;
+    for (var u = 0; u < ul.length; u++) { ctx.fillText(ul[u], tx, uy); uy += 23; }
+
+    /* 页脚 */
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#7a6e5d'; ctx.font = '400 15px ' + SANS;
+    ctx.fillText('本系列用于个人学习，请勿商用 · 2026', PW / 2, 1072);
+    ctx.textAlign = 'left';
+
+    return d.url;
+  }
+
+  /* 在既有 ctx 的指定区域绘制二维码 */
+  function paintQRInline(ctx, text, x, y, size) {
+    var q = QR.matrix(text);
+    if (!q) return false;
+    var qz = 2, unit = size / (q.size + qz * 2);
+    ctx.fillStyle = '#1f1a14';
+    for (var r = 0; r < q.size; r++) for (var c = 0; c < q.size; c++) {
+      if (!q.data[r][c]) continue;
+      var px0 = x + Math.round((c + qz) * unit), px1 = x + Math.round((c + qz + 1) * unit);
+      var py0 = y + Math.round((r + qz) * unit), py1 = y + Math.round((r + qz + 1) * unit);
+      ctx.fillRect(px0, py0, px1 - px0, py1 - py0);
+    }
+    return true;
+  }
+
+  /* ============ 4. 数据提取 ============ */
+  function cardData(card) {
+    var q = function (s) { var n = card.querySelector(s); return n ? squeeze(n.textContent) : ''; };
+    return {
+      no: q('.ribbon-no'),
+      cat: q('.cat'),
+      sub: q('.kicker'),
+      title: q('h3'),
+      author: q('.author'),
+      summary: cjkTight(q('.desc')),
+      url: abs(card.getAttribute('href')),
+      accent: squeeze(getComputedStyle(card).getPropertyValue('--bacc')) || '#7a4a2a'
+    };
+  }
+  function pageData() {
+    var h1 = document.querySelector('.hero h1') || document.querySelector('h1');
+    var title = '';
+    if (h1) {
+      for (var i = 0; i < h1.childNodes.length; i++) {
+        if (h1.childNodes[i].nodeType === 3) title += h1.childNodes[i].nodeValue;
+      }
+    }
+    title = squeeze(title);
+    if (!title) {
+      var t = document.title || '';
+      title = squeeze((t.split('·')[0] || t).replace(/[《》]/g, ''));
+    }
+    var subEl = document.querySelector('.hero h1 .sub');
+    var byline = document.querySelector('.hero .byline');
+    var author = '';
+    if (byline) {
+      var spans = byline.querySelectorAll('span');
+      for (var j = 0; j < spans.length; j++) {
+        var txt = squeeze(spans[j].textContent);
+        if (/作者|著者|编者/.test(txt)) {
+          var cl = spans[j].cloneNode(true), bs = cl.querySelectorAll('b');
+          for (var k = 0; k < bs.length; k++) cl.removeChild(bs[k]);
+          author = squeeze(cl.textContent);
+          break;
+        }
+      }
+    }
+    var lede = document.querySelector('.hero .lede');
+    var rib = document.querySelector('.hero .ribbon');
+    var no = '', cat = '';
+    if (rib) {
+      var parts = squeeze(rib.textContent).split('·');
+      no = squeeze(parts[0]);
+      cat = squeeze(parts.slice(1).join('·'));
+    }
+    var accent = squeeze(getComputedStyle(document.documentElement).getPropertyValue('--accent')) || '#7a4a2a';
+    return {
+      no: no, cat: cat,
+      sub: subEl ? squeeze(subEl.textContent) : '',
+      title: title,
+      author: author || (subEl ? squeeze(subEl.textContent).split('·')[1] || '' : ''),
+      summary: lede ? cjkTight(lede.textContent) : '',
+      url: location.href.split('#')[0],
+      accent: accent
+    };
+  }
+
+  /* ============ 5. 弹窗 ============ */
+  var modal = null, posterCv = null, qrCv = null, curData = null, lastFocus = null;
+
+  function build() {
+    modal = document.createElement('div');
+    modal.className = 'share-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', '分享');
+    modal.innerHTML =
+      '<div class="share-mask" data-share-close></div>' +
+      '<div class="share-card">' +
+        '<div class="share-head"><b>分享这一卷</b>' +
+          '<button type="button" class="share-x" data-share-close aria-label="关闭">×</button></div>' +
+        '<div class="share-poster"><canvas></canvas></div>' +
+        '<div class="share-note" hidden></div>' +
+        '<div class="share-acts">' +
+          '<button type="button" class="share-btn primary" data-share-act="download">下载图片</button>' +
+          '<button type="button" class="share-btn" data-share-act="copyimg">复制图片</button>' +
+          '<button type="button" class="share-btn" data-share-act="copy">复制链接</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(modal);
+    posterCv = modal.querySelector('.share-poster canvas');
+    
+    modal.addEventListener('click', function (e) {
+      var t = e.target;
+      if (t.hasAttribute && t.hasAttribute('data-share-close')) { close(); return; }
+      var act = t.getAttribute && t.getAttribute('data-share-act');
+      if (act === 'download') download(t);
+      if (act === 'copyimg') copyImage(t);
+      if (act === 'copy') copy(t);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-on')) close();
+    });
+  }
+
+  function open(data) {
+    if (!modal) build();
+    curData = data;
+    if (qrCv && !paintQR(qrCv, data.url, 420)) {
+      qrCv.width = qrCv.height = 420;
+      var c = qrCv.getContext('2d');
+      c.fillStyle = '#ffffff'; c.fillRect(0, 0, 420, 420);
+      c.fillStyle = '#7a6e5d'; c.font = '400 20px ' + SANS;
+      c.fillText('链接过长，无法生成', 40, 214);
+    }
+    renderPoster(posterCv, data);
+    var note = modal.querySelector('.share-note');
+    if (location.protocol === 'file:') {
+      note.hidden = false;
+      note.textContent = '提示：当前以本地文件方式打开；部署到线上后，链接方可正常访问。';
+    } else note.hidden = true;
+    var cp = modal.querySelector('[data-share-act="copy"]');
+    cp.textContent = '复制链接';
+    lastFocus = document.activeElement;
+    modal.classList.add('is-on');
+    document.documentElement.style.overflow = 'hidden';
+    modal.querySelector('.share-x').focus();
+  }
+  function close() {
+    modal.classList.remove('is-on');
+    document.documentElement.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  function filename() {
+    var n = (curData.no ? curData.no.replace(/[^\w\u4e00-\u9fa5]+/g, '-') + '-' : '') + curData.title;
+    return '一页观澜-' + n.replace(/[\\/:*?"<>|]/g, '').slice(0, 48) + '.png';
+  }
+  function download(btn) {
+    var old = btn.textContent;
+    function done(ok) { btn.textContent = ok ? '已保存' : '保存失败'; setTimeout(function () { btn.textContent = old; }, 1600); }
+    try {
+      if (posterCv.toBlob) {
+        posterCv.toBlob(function (blob) {
+          var a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = filename();
+          document.body.appendChild(a); a.click();
+          setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1200);
+          done(true);
+        }, 'image/png');
+      } else {
+        var a2 = document.createElement('a');
+        a2.href = posterCv.toDataURL('image/png');
+        a2.download = filename();
+        document.body.appendChild(a2); a2.click(); a2.remove();
+        done(true);
+      }
+    } catch (e) { done(false); }
+  }
+  function copy(btn) {
+    var url = curData.url, old = btn.textContent;
+    function done(ok) { btn.textContent = ok ? '已复制' : '复制失败'; setTimeout(function () { btn.textContent = old; }, 1600); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { done(true); }, function () { fallback(); });
+    } else fallback();
+    function fallback() {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = url; ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand('copy');
+        ta.remove(); done(ok);
+      } catch (e) { done(false); }
+    }
+  }
+
+
+  function copyImage(btn) {
+    var old = btn.textContent;
+    function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = old; }, 1800); }
+    function showImg() {
+      var box = modal.querySelector('.share-poster');
+      if (posterCv) posterCv.style.display = 'none';
+      var img = modal.querySelector('.share-poster-img');
+      if (!img) { img = document.createElement('img'); img.className = 'share-poster-img'; img.alt = '分享海报'; box.appendChild(img); }
+      img.src = posterCv.toDataURL('image/png');
+      var note = modal.querySelector('.share-note');
+      note.hidden = false;
+      note.textContent = '微信内请长按上方海报，在弹出的菜单中选择「复制」或「保存到相册」。';
+      done('请长按复制');
+    }
+    var isWeChat = /micromessenger/i.test(navigator.userAgent) || (typeof WeixinJSBridge !== 'undefined');
+    if (isWeChat) { showImg(); return; }
+    if (navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
+      try {
+        if (posterCv.toBlob) {
+          posterCv.toBlob(function (blob) {
+            if (!blob) { showImg(); return; }
+            navigator.clipboard.write([new ClipboardItem({ 'image/png': new Promise(function (res) { res(blob); }) })])              .then(function () { done('已复制图片'); }, function () { showImg(); });
+          }, 'image/png');
+        } else showImg();
+      } catch (e) { showImg(); }
+    } else showImg();
+  }
+
+  /* ============ 6. 绑定 ============ */
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var trigger = t.closest('[data-share-card],[data-share-page]');
+    if (!trigger) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (trigger.hasAttribute('data-share-page')) open(pageData());
+    else {
+      var card = trigger.closest('.book');
+      if (card) open(cardData(card));
+    }
+  }, false);
+}());
+</script>
+
+</body>
+
+</html>
