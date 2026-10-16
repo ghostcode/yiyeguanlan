@@ -39,7 +39,16 @@ yiyeguanlan/
 │                                     # NO.21《哈萨比斯：谷歌AI之脑》· 主色 紫棠 #8e2f7b
 ├── jian-zhu-ke-ling.html             # NO.22《谏逐客令》· 主色 竹青 #3f7a4e
 ├── the-moon-and-sixpence.html        # NO.23《月亮与六便士》· 主色 夜穹紫 #503960
-└── the-gift-of-the-magi.html         # NO.24《麦琪的礼物》· 主色 冬青红 #9a3c42
+├── the-gift-of-the-magi.html         # NO.24《麦琪的礼物》· 主色 冬青红 #9a3c42
+├── konosuke-matsushita-open-the-way.html      # NO.25《开路》· 主色 麦秆 #c9a23a
+├── konosuke-matsushita-decisive-management.html # NO.26《决断的经营》· 主色 柿 #c06a4d
+├── akio-morita-made-in-japan.html             # NO.27《日本制造》· 主色 江户紫 #7a3f6e
+├── akio-morita-the-japan-that-can-say-no.html # NO.28《日本可以说不》· 主色 琥珀 #c08a2e
+├── soichiro-honda-autobiography.html          # NO.29《本田宗一郎自传》· 主色 红梅 #9c4a5a
+├── soichiro-honda-let-my-hands-speak.html     # NO.30《让我的手来说话》· 主色 绯 #b23b4e
+├── kazuo-inamori-a-compass-to-fulfillment.html # NO.31《活法》· 主色 群青 #2d5aa0
+├── kazuo-inamori-how-to-work.html             # NO.32《干法》· 主色 朱柿 #c0603a
+└── kazuo-inamori-the-mind-to-live.html        # NO.33《心法》· 主色 桔梗 #4a4f9e
 ```
 
 - `index.html`：系列入口。展示书架（书卡直链到各卷）、**分类筛选**、**每张书卡的分享按钮**、系列说明、页脚。
@@ -72,7 +81,7 @@ yiyeguanlan/
 | 经典名篇 | `classic` | NO.22《谏逐客令》 |
 | 文学小说 | `fiction` | NO.23《月亮与六便士》· NO.24《麦琪的礼物》 |
 | 财富投资 | `wealth` | NO.03《纳瓦尔宝典》· NO.04《金钱心理学》· NO.07《秒懂金融》· NO.08《投资最重要的事》· NO.09《穷查理宝典》· NO.14《邻家的百万富翁》· NO.15《持续买入》· NO.16《哈利·布朗的永久投资组合》· NO.18《简单致富》· NO.19《金融炼金术》 |
-| 人物传记 | `biography` | NO.17《硅谷钢铁侠》· NO.20《黄仁勋：英伟达之芯》· NO.21《哈萨比斯：谷歌AI之脑》 |
+| 人物传记 | `biography` | NO.17《硅谷钢铁侠》· NO.20《黄仁勋：英伟达之芯》· NO.21《哈萨比斯：谷歌AI之脑》· NO.25《开路》· NO.26《决断的经营》· NO.27《日本制造》· NO.28《日本可以说不》· NO.29《本田宗一郎自传》· NO.30《让我的手来说话》· NO.31《活法》· NO.32《干法》· NO.33《心法》 |
 | 心智认知 | `mind` | NO.01《思考，快与慢》· NO.06《认知觉醒》· NO.10《刻意练习》 |
 | 人际自我 | `people` | NO.02《被讨厌的勇气》· NO.05《人性的弱点》 |
 | 方法效能 | `method` | NO.11《以终为始》· NO.12《高效能人士的七个习惯》 |
