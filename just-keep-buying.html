@@ -1406,7 +1406,7 @@ h3{
     cv.width = size; cv.height = size;
     var ctx = cv.getContext('2d');
     ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, size, size);
-    var qz = 4, unit = size / (q.size + qz * 2);
+    var qz = 2, unit = size / (q.size + qz * 2);
     ctx.fillStyle = '#1f1a14';
     for (var r = 0; r < q.size; r++) for (var c = 0; c < q.size; c++) {
       if (!q.data[r][c]) continue;
@@ -1507,8 +1507,8 @@ h3{
     ctx.restore();
 
     var qy = 838, qs = 188;
-    ctx.fillStyle = '#ffffff'; ctx.fillRect(x0, qy, qs, qs);
-    ctx.strokeStyle = '#e2d6bb'; ctx.lineWidth = 1; ctx.strokeRect(x0 + 0.5, qy + 0.5, qs - 1, qs - 1);
+    ctx.fillStyle = '#ffffff'; ctx.fillRect(x0 + 8, qy + 8, qs - 16, qs - 16);
+    ctx.strokeStyle = '#e2d6bb'; ctx.lineWidth = 1; ctx.strokeRect(x0 + 8.5, qy + 8.5, qs - 17, qs - 17);
     var ok = paintQRInline(ctx, d.url, x0 + 8, qy + 8, qs - 16);
     if (!ok) {
       ctx.fillStyle = '#7a6e5d'; ctx.font = '400 16px ' + SANS;
@@ -1538,7 +1538,7 @@ h3{
   function paintQRInline(ctx, text, x, y, size) {
     var q = QR.matrix(text);
     if (!q) return false;
-    var qz = 4, unit = size / (q.size + qz * 2);
+    var qz = 2, unit = size / (q.size + qz * 2);
     ctx.fillStyle = '#1f1a14';
     for (var r = 0; r < q.size; r++) for (var c = 0; c < q.size; c++) {
       if (!q.data[r][c]) continue;
