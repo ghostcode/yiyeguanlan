@@ -540,6 +540,7 @@ h3{
     .share-x:hover{color:var(--ink);background:var(--paper-deep)}
     .share-poster{border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#f4ecd8}
     .share-poster canvas{display:block;width:100%;height:auto}
+    .share-poster-img{display:block;width:100%;height:auto;border-radius:6px}
     .share-qr{display:flex;align-items:center;gap:14px;margin:16px 0 0;padding:12px;
       border:1px dashed var(--rule);border-radius:8px;background:var(--paper)}
     .share-qr canvas{width:104px;height:104px;flex:0 0 auto;background:#fff;border-radius:4px}
@@ -1642,6 +1643,7 @@ h3{
         '<div class="share-note" hidden></div>' +
         '<div class="share-acts">' +
           '<button type="button" class="share-btn primary" data-share-act="download">下载图片</button>' +
+          '<button type="button" class="share-btn" data-share-act="copyimg">复制图片</button>' +
           '<button type="button" class="share-btn" data-share-act="copy">复制链接</button>' +
         '</div>' +
       '</div>';
@@ -1654,6 +1656,7 @@ h3{
       if (t.hasAttribute && t.hasAttribute('data-share-close')) { close(); return; }
       var act = t.getAttribute && t.getAttribute('data-share-act');
       if (act === 'download') download(t);
+      if (act === 'copyimg') copyImage(t);
       if (act === 'copy') copy(t);
     });
     document.addEventListener('keydown', function (e) {
@@ -1732,6 +1735,35 @@ h3{
         ta.remove(); done(ok);
       } catch (e) { done(false); }
     }
+  }
+
+
+  function copyImage(btn) {
+    var old = btn.textContent;
+    function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = old; }, 1800); }
+    function showImg() {
+      var box = modal.querySelector('.share-poster');
+      if (posterCv) posterCv.style.display = 'none';
+      var img = modal.querySelector('.share-poster-img');
+      if (!img) { img = document.createElement('img'); img.className = 'share-poster-img'; img.alt = '分享海报'; box.appendChild(img); }
+      img.src = posterCv.toDataURL('image/png');
+      var note = modal.querySelector('.share-note');
+      note.hidden = false;
+      note.textContent = '微信内请长按上方海报，在弹出的菜单中选择「复制」或「保存到相册」。';
+      done('请长按复制');
+    }
+    var isWeChat = /micromessenger/i.test(navigator.userAgent) || (typeof WeixinJSBridge !== 'undefined');
+    if (isWeChat) { showImg(); return; }
+    if (navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
+      try {
+        if (posterCv.toBlob) {
+          posterCv.toBlob(function (blob) {
+            if (!blob) { showImg(); return; }
+            navigator.clipboard.write([new ClipboardItem({ 'image/png': new Promise(function (res) { res(blob); }) })])              .then(function () { done('已复制图片'); }, function () { showImg(); });
+          }, 'image/png');
+        } else showImg();
+      } catch (e) { showImg(); }
+    } else showImg();
   }
 
   /* ============ 6. 绑定 ============ */

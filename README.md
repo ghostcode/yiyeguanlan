@@ -11,6 +11,15 @@
 ```
 yiyeguanlan/
 ├── index.html                        # 系列书架首页（导航 + 卷次总览）
+├── konosuke-matsushita-open-the-way.html      # NO.25《开路》· 主色 麦秆 #c9a23a
+├── konosuke-matsushita-decisive-management.html # NO.26《决断的经营》· 主色 柿 #c06a4d
+├── akio-morita-made-in-japan.html             # NO.27《日本制造》· 主色 江户紫 #7a3f6e
+├── akio-morita-the-japan-that-can-say-no.html # NO.28《日本可以说不》· 主色 琥珀 #c08a2e
+├── soichiro-honda-autobiography.html          # NO.29《本田宗一郎自传》· 主色 红梅 #9c4a5a
+├── soichiro-honda-let-my-hands-speak.html     # NO.30《让我的手来说话》· 主色 绯 #b23b4e
+├── kazuo-inamori-a-compass-to-fulfillment.html # NO.31《活法》· 主色 群青 #2d5aa0
+├── kazuo-inamori-how-to-work.html             # NO.32《干法》· 主色 朱柿 #c0603a
+├── kazuo-inamori-the-mind-to-live.html        # NO.33《心法》· 主色 桔梗 #4a4f9e
 ├── thinking-fast-and-slow.html       # NO.01《思考，快与慢》· 主色 铁锈红 #8a4a2a
 ├── the-courage-to-be-disliked.html   # NO.02《被讨厌的勇气》· 主色 蓝染 #2c4a63
 ├── the-almanack-of-naval-ravikant.html # NO.03《纳瓦尔宝典》· 主色 松绿 #2f6b54
@@ -39,16 +48,7 @@ yiyeguanlan/
 │                                     # NO.21《哈萨比斯：谷歌AI之脑》· 主色 紫棠 #8e2f7b
 ├── jian-zhu-ke-ling.html             # NO.22《谏逐客令》· 主色 竹青 #3f7a4e
 ├── the-moon-and-sixpence.html        # NO.23《月亮与六便士》· 主色 夜穹紫 #503960
-├── the-gift-of-the-magi.html         # NO.24《麦琪的礼物》· 主色 冬青红 #9a3c42
-├── konosuke-matsushita-open-the-way.html      # NO.25《开路》· 主色 麦秆 #c9a23a
-├── konosuke-matsushita-decisive-management.html # NO.26《决断的经营》· 主色 柿 #c06a4d
-├── akio-morita-made-in-japan.html             # NO.27《日本制造》· 主色 江户紫 #7a3f6e
-├── akio-morita-the-japan-that-can-say-no.html # NO.28《日本可以说不》· 主色 琥珀 #c08a2e
-├── soichiro-honda-autobiography.html          # NO.29《本田宗一郎自传》· 主色 红梅 #9c4a5a
-├── soichiro-honda-let-my-hands-speak.html     # NO.30《让我的手来说话》· 主色 绯 #b23b4e
-├── kazuo-inamori-a-compass-to-fulfillment.html # NO.31《活法》· 主色 群青 #2d5aa0
-├── kazuo-inamori-how-to-work.html             # NO.32《干法》· 主色 朱柿 #c0603a
-└── kazuo-inamori-the-mind-to-live.html        # NO.33《心法》· 主色 桔梗 #4a4f9e
+└── the-gift-of-the-magi.html         # NO.24《麦琪的礼物》· 主色 冬青红 #9a3c42
 ```
 
 - `index.html`：系列入口。展示书架（书卡直链到各卷）、**分类筛选**、**每张书卡的分享按钮**、系列说明、页脚。
