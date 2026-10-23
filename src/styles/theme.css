@@ -96,6 +96,7 @@ a {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: auto;
   font-family: var(--serif);
   font-weight: 600;
   color: var(--ink);
@@ -107,22 +108,6 @@ a {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 3px rgba(201, 162, 58, 0.18);
-}
-.topbar nav {
-  margin-left: auto;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.topbar nav a {
-  text-decoration: none;
-  padding: 4px 2px;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
-}
-.topbar nav a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
 }
 .topbar .home {
   text-decoration: none;
@@ -1327,7 +1312,6 @@ h3 {
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  .topbar nav { display: none; }
   .topbar-inner { justify-content: space-between; }
   .biases { grid-template-columns: 1fr; }
   .chaptermap { grid-template-columns: 1fr; }

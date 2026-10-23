@@ -30,16 +30,6 @@ function heroStyle(b: Book) {
           分享
         </button>
         <div class="brand">阅读笔记 · {{ book.sub }}</div>
-        <nav aria-label="目录">
-          <a href="#info">书籍</a>
-          <a href="#one">总览</a>
-          <a v-if="book.dual.length" href="#dual">双系统</a>
-          <a href="#bias">偏误</a>
-          <a href="#map">脉络</a>
-          <a href="#quotes">金句</a>
-          <a href="#action">行动</a>
-          <a href="#who">读者</a>
-        </nav>
       </div>
     </header>
 
