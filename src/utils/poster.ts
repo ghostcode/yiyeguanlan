@@ -274,13 +274,6 @@ export function renderPoster(canvas: HTMLCanvasElement, d: ShareData): string {
   ctx.fillStyle = '#7a6e5d'
   ctx.font = '400 18px ' + SANS
   ctx.fillText('长按识别二维码', tx, qy + 100)
-  ctx.font = '400 14px ' + SANS
-  const ul = wrap(ctx, d.url.replace(/^https?:\/\//, ''), x1 - tx, 3)
-  let uy = qy + 138
-  for (let u = 0; u < ul.length; u++) {
-    ctx.fillText(ul[u], tx, uy)
-    uy += 23
-  }
 
   ctx.textAlign = 'center'
   ctx.fillStyle = '#7a6e5d'
